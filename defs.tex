@@ -1,0 +1,53 @@
+%% editing comment
+\newcommand{\cmt}[1]{{\footnotesize\textcolor{red}{#1}}}
+\newcommand{\note}[1]{\cmt{Note: #1}}
+\newcommand{\todo}[1]{\cmt{TO-DO: #1}}
+\newcommand{\sergey}[1]{\cmt{Sergey: #1}}
+\newcommand{\chelsea}[1]{\cmt{Chelsea: #1}}
+\newcommand{\pieter}[1]{\cmt{Pieter: #1}}
+
+%% ignore text
+\long\def\ignorethis#1{}
+
+%% abbreviations
+\newcommand{\etal}{{et~al.}\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\ie}{i.e.\ }
+\newcommand{\nth}{\text{th}}
+\newcommand{\pr}{^\prime}
+\newcommand{\tr}{^\mathrm{T}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\pinv}{^{\dagger}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\gauss}{\mathcal{N}}
+\newcommand{\norm}[1]{\left|#1\right|}
+\newcommand{\trace}{\text{tr}}
+
+%% defines autoref commands
+\def\sectionautorefname{Section}
+\let\subsectionautorefname\sectionautorefname
+\let\subsubsectionautorefname\sectionautorefname
+\providecommand\algorithmname{Algorithm}
+\def\equationautorefname~#1\null{Equation~(#1)\null}
+\def\appendixautorefname{Appendix}
+
+%% reference shortcuts
+\newcommand{\figtodo}[1]{\framebox[0.8\columnwidth]{\rule{0pt}{1in}#1}}
+\newcommand{\figref}[1]{\autoref{#1}}
+\renewcommand{\eqref}[1]{\autoref{#1}}
+\newcommand{\secref}[1]{\autoref{#1}}
+
+%% citation shortcuts
+\newcommand{\atari}{acvpa-oglls-15}
+\newcommand{\nyu}{vpbmse-mcl-16}
+
+\newcommand{\model}{\mathcal{M}}
+\newcommand{\action}{\mathbf{a}}
+\newcommand{\state}{\mathbf{x}}
+\newcommand{\image}{I_t}
+\newcommand{\flow}{\hat{F}}
+\newcommand{\pixel}{d} % the designated pixel
+\newcommand{\pixelstate}{s} % the state of the desginated pixel
+\newcommand{\goal}{g}
+
+
