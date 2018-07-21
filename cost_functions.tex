@@ -1,0 +1,20 @@
+\section{Planning Cost Functions}
+
+
+\subsection{Pixel-Distance based Cost}
+A convenient way to define a robot task is by choosing one or more pixels in the given an image from the robot's camera and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left. Formally, the user specifies $P$ source pixel locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ in the initial image $I_0$, and $P$ goal locations $\goal^{(1)}, \dots, \goal^{(P)}$. The source and goal pixel locations are denoted by the coordinates $(x_d^{(i)}, y_d^{(i)})$ and $(x_g^{(i)}, y_g^{(i)})$. Given a goal, the robot plans for a sequence of actions $\action_{1:T}$ over $T$ time steps, where $T$ is the planning horizon. For this type of task definition the problem is formulated as the minimization of a cost function $c$ which depends on the predicted pixel positions $d_t^{(j)}$. The planner makes use of a learned model that predicts a distribution over the pixel position by internally predicting pixel transformations. Given a distribution over pixel positions $P_{t_0, d^{(i)}}\in\mathbb{R}^{H\times W}, \sum_{H,W} P_{t_0, d^{(i)}} = 1$ at time $t = 0$, the model predicts distributions over its positions $P_{t, d^{(i)}}$ at time $t \in \{ 1, \dots, T \}$. The optimizer then finds the action sequence $a_{t_0:T}$ for which the sum of the costs $c_t$ over the time steps is minimal. $c_t$ is defined as the expected euclidean distance between to the goal point $g^{(i)}$.
+
+The expetecd distance to the goal provides smoother planning objective that makes used of the uncertainty estimates of the predictor enabling complex, longer-horizon tasks. This cost function encourages the movement of the designated objects in the right direction for each step of the execution, regardless of whether the $\goal$ position can be reached within $T$ time steps. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together weighting them equally.
+
+
+
+In subsequent steps ($\tau > 0$), the 1-step ahead prediction of the previous step is used to initialize $P_{t=0,d^{(i)}}$. 
+
+\subsection{Registration-based Cost}
+
+
+
+\subsection{Classifier-based Cost}
+\label{subsec:class_cost}
+
+

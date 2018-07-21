@@ -1,0 +1,28 @@
+\IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
+
+current approaches for general-purpose robotic manipulation can be loosely categorized into two schools: The first where algorithms are designed, trained or tuned in simulation and then deployed in the real world. While simulation has the advantage of being cheaper and running orders of magnitudes faster it also often comes at a price: Many real-world phenomena such as complex friction, soft-objects, liquids or even other agents such as humans often cannot be modeled with sufficient fidelity. Therefore the resulting policies often do not transfer very well from simulation the real world.
+
+A completely different approach is to avoid simulation and manual feature engineering and instead learn models and policies through interacting with the real world. This typically requires human resets and complex hand-engineered reward functions. For example \cite{DBLP:journals/corr/GuHLL16} presents a method for learning door opening using robot manipulators in the real world while humans are required to perform hundreds of resets in addition to sensors measuring the success of the door opening task.
+
+Here we present a family of methods (extending our work in \cite{foresight}, \cite{sna}, \todo{cite robustness from retry, SAVP, classifier VMPC}) that enable robots to learn complex manipulation skills from interacting with their environment requiring \emph{very little or no human supervision at all}. We show that the need for human supervision can be removed by training an action-conditioned video-prediction model from data that is collected completely autonomously by the robot interacting with its environment. This work demonstrates that by training the model on the task of predicting what it will see next (for a given sequence of motor commands) it learns models of environment dynamics that can be used effectively for robotic control.
+
+In the proposed approach neither models of the robot nor the environment dynamics need to be provided ahead of time, since the action-conditioned prediction model is learned purely on autonomously collected data.
+
+For video-prediction-based control a specific type of model -- transformation-based video-prediction -- has proven to be particularly effective. One of the reasons is that the transformations can be used to obtain predictions of \emph{where} certain pixels in the image are moving. However due to occlusion (of objects by the arm) severe limitations for planning performance can arise when planning costs are computed from transformation-based predictions. We propose type of video-prediction model that uses temporal skip connections to recover parts of the images that are occluded during the predictions and demonstrates that this yields significant improvements for manipulation planning.\
+
+\todo{mention stochastic video prediction in case improvements are observed}
+
+To achieve complex long-term behaviour the ability to correct for mistakes due to uncertainty and accumulating erros in the models predictions is a key requirement. If the agent can always evaluate the goal (along its predictions), it can continuously retry, so that even flawed predictions allow for an eventual successful execution. To this end we propose a cost function for video-prediction based planning based on image registration, which we demonstrate can itself be learned on the same dataset as the one used to train the predictive model. This closed-loop visual control allows the robot to be persistent, correcting for mistakes caused by inevitable model inaccuracies allowing it to retry indefinitely until it succeeds.
+
+\todo{motivate one-shot classifier based control}
+
+The technical contribution of this work is four-fold. First, we present a video-prediction-based method for robotic control that enables learning complex manipulation skills \emph{purely from autonomously collected data}. Second we show that the video-prediction model's capability to \emph{accurately maintain object permanence through occlusions} can be enhanced by incorporating temporal skip connections. Third we propose a method for allowing \emph{closed loop control} equipping the agent with the ability to retry the task indefinitely until it succeeds which contributes significantly to the method's robustness. Fourth a cost function based on a few-shot classifier-based is presented which allows the agent to successfully \emph{execute tasks defined by a single demonstration}.
+
+Our evaluation demonstrates that these components can be combined to enable a learned video prediction model to perform a range of real-world pushing tasks. Our experiments include manipulation of previously unseen objects, handling multiple objects, pushing objects around obstructions, and moving the arm around and over other obstacle-objects, recovering from large perturbations, grasping objects and maneuvering them to a user-specified point in 3D-space representing a significant advance in the range and complexity of skills that can be acquired through entirely self-supervised learning.
+
+ 
+
+
+
+
+
