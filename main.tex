@@ -192,7 +192,9 @@
 % version and documentation can be obtained at:
 % http://www.ctan.org/pkg/amsmath
 
-
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
 
 
 
@@ -233,6 +235,9 @@
 % IEEEtran contains the IEEEeqnarray family of commands that can be used to
 % generate multiline equations as well as matrices, tables, etc., of high
 % quality.
+
+%for tables
+\usepackage{makecell}
 
 
 
@@ -383,9 +388,23 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Robotic Manipulation \\ 
-Using Video-prediction Models}
+\title{Deep Reinforcement Learning with Observation Models}
+%% TITLE IDEAS HERE (separate from method names)
+% Learning Observation Models for Real-World Planning and Control
+% Deep Reinforcement Learning from Images with Observation Models
+% Observation Models for Scalable, Real-World Reinforcement Learning
+% Observation Models for Scalable Deep Reinforcement Learning
 %
+% Robotic Manipluation using Video Prediction Models
+% Deep Model-Based Reinforcement Learning for Real-World Visual Control
+% Deep Visual Predictive Models for Control
+% Predictive Models for Visual Planning
+% Deep Predictive Models for Visual Planning
+% Learning Visual Foresight for Robotic Manipulation
+% Observation Models for Self-Supervised Planning and Control
+% Learning Observation Models for Real-World Planning and Control
+% Learning Observation Models for Planning and Control
+% Observation Models for Real-World Reinforcement Learning
 %
 % author names and IEEE memberships
 % note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
@@ -408,10 +427,11 @@ Using Video-prediction Models}
 % journal papers have the author affiliations above the "Manuscript
 % received ..."  text while in non-compsoc journals this is reversed. Sigh.
 
-\author{Frederik Ebert, Chelsea Finn, Alex Lee, Anni Xie, Sudeep Dasari, Sergey Levine
+\author{TBD
+%Frederik Ebert, Chelsea Finn, Alex Lee, Annie Xie, Sudeep Dasari, Sergey Levine
         
 \IEEEcompsocitemizethanks{
-\IEEEcompsocthanksitem The authors are with UC Berkeley}% <-this % stops an unwanted space
+\IEEEcompsocthanksitem  Frederik Ebert*, Chelsea Finn*, Annie Xie, Sudeep Dasari, Alex Lee, Sergey Levine}% <-this % stops an unwanted space
 \thanks{Manuscript received xx.xx.xxx}}
 
 % note the % following the last \IEEEmembership and also \thanks - 
@@ -475,12 +495,13 @@ Using Video-prediction Models}
 % in the abstract or keywords.
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-
+Deep reinforcement learning algorithms have enabled learning of complex skills and mastery of complex games. Unlike prior works that have focused on mastery of complex, specialized behaviors in limited, closed-world environments, we consider a reinforcement learning problem setting with more simple skills but with substantial diversity, raw observations, and sparse rewards. As a result, rewards are simply not enough supervision to be learned from alone. Instead we propose to learn from the observations themselves, learning predictive models of future observations conditioned on the agent's future actions, and then choosing actions by planning under this observation model. We show that we can learn observation models effectively from real videos of a robot's experience, that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of object manipulation goals, even when faced with novel objects.
+\todo{Page limit is 12!!}
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-Robotic Manipulation, Visio-Motor Control, Video-prediction, Model-predictive Control, Self-supervised Learning
+Deep Reinforcement Learning, Observations Models, Video Prediction, Robotic Manipulation, Model Predictive Control
 \end{IEEEkeywords}}
 
 
