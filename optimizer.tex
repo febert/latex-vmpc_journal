@@ -1,5 +1,6 @@
 \section{Trajectory Optimizer}
 \label{sec:optimizer}
+Prior work has also proposed to plan through learned models via differentiation, though not with visual inputs~\cite{deep_mpc}. We instead use a stochastic, sampling-based planning method~\cite{cem-rk-13,foresight}, which we extend to handle a mixture of continuous and discrete actions
 
 The role of the optimizer is to find actions sequences $a_{t:t+T}$ which minimize the sum of the costs $c_{t:t+T}$.
 

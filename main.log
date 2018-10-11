@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  10 OCT 2018 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  11 OCT 2018 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -620,7 +620,7 @@ LaTeX Warning: Reference `sec:compare_cost' on page 3 undefined on input line 2
 .
 
 
-<images_sna/occlusionaware/occlusion_model.pdf, id=286, 511.31122pt x 273.45363
+<images_sna/occlusionaware/occlusion_model.pdf, id=279, 511.31122pt x 273.45363
 pt>
 File: images_sna/occlusionaware/occlusion_model.pdf Graphic file (type pdf)
  <use images_sna/occlusionaware/occlusion_model.pdf>
@@ -629,7 +629,7 @@ input line 6.
 (pdftex.def)             Requested size: 252.94499pt x 135.27858pt.
 LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 7.
 
-<images_sna/occlusionaware/probability_curves.pdf, id=291, 569.05513pt x 284.52
+<images_sna/occlusionaware/probability_curves.pdf, id=284, 569.05513pt x 284.52
 756pt>
 File: images_sna/occlusionaware/probability_curves.pdf Graphic file (type pdf)
  <use images_sna/occlusionaware/probability_curves.pdf>
@@ -637,7 +637,7 @@ Package pdftex.def Info: images_sna/occlusionaware/probability_curves.pdf used
 on input line 24.
 (pdftex.def)             Requested size: 227.64894pt x 113.82202pt.
 
-<images_sna/occlusionaware/img_desigpixb0.png, id=295, 483.8075pt x 484.81125pt
+<images_sna/occlusionaware/img_desigpixb0.png, id=288, 483.8075pt x 484.81125pt
 >
 File: images_sna/occlusionaware/img_desigpixb0.png Graphic file (type png)
  <use images_sna/occlusionaware/img_desigpixb0.png>
@@ -660,7 +660,7 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images_sna/occlusionaware/probability
 _curves.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
 > <./images_sna/occlusionaware/img_desigpixb0.png>]
-<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=370, 5
+<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=363, 5
 13.92pt x 128.48pt>
 File: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png Graph
 ic file (type png)
@@ -670,7 +670,7 @@ Package pdftex.def Info: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0
 _overtime.png used on input line 59.
 (pdftex.def)             Requested size: 227.64894pt x 56.91168pt.
 
-<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=371, 514.92375pt
+<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=364, 514.92375pt
  x 128.48pt>
 File: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png Graphic file (t
 ype png)
@@ -689,7 +689,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 LaTeX Warning: Reference `fig:reg_single' on page 5 undefined on input line 22.
 
 
-<images_rfr/registration_test_start.pdf, id=387, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_start.pdf, id=381, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_start.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_start.pdf>
@@ -697,7 +697,7 @@ Package pdftex.def Info: images_rfr/registration_test_start.pdf used on input l
 ine 39.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_test_goal.pdf, id=388, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_goal.pdf, id=382, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_goal.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_goal.pdf>
@@ -705,7 +705,7 @@ Package pdftex.def Info: images_rfr/registration_test_goal.pdf used on input li
 ne 40.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_train.pdf, id=389, 390.45876pt x 229.85875pt>
+<images_rfr/registration_train.pdf, id=383, 390.45876pt x 229.85875pt>
 File: images_rfr/registration_train.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_train.pdf>
@@ -713,7 +713,7 @@ Package pdftex.def Info: images_rfr/registration_train.pdf used on input line 4
 6.
 (pdftex.def)             Requested size: 139.12051pt x 75.81432pt.
 
-<images_rfr/registration_overtime.pdf, id=391, 1422.63783pt x 312.98033pt>
+<images_rfr/registration_overtime.pdf, id=385, 1422.63783pt x 312.98033pt>
 File: images_rfr/registration_overtime.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_overtime.pdf>
@@ -732,11 +732,8 @@ Underfull \hbox (badness 3179) in paragraph at lines 4--5
 
  []
 
-
-Underfull \vbox (badness 2846) has occurred while \output is active []
-
- [6 <./images_rfr/registration_overtime.pdf>]
-<images_sna/longdistance_pushing/pushing.pdf, id=487, 301.125pt x 301.125pt>
+[6 <./images_rfr/registration_overtime.pdf>]
+<images_sna/longdistance_pushing/pushing.pdf, id=486, 301.125pt x 301.125pt>
 File: images_sna/longdistance_pushing/pushing.pdf Graphic file (type pdf)
 
 <use images_sna/longdistance_pushing/pushing.pdf>
@@ -752,7 +749,7 @@ Underfull \hbox (badness 1383) in paragraph at lines 15--16
 LaTeX Warning: Reference `eq:cost' on page 7 undefined on input line 17.
 
 
-<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=493, 1280.37404pt x 
+<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=492, 1280.37404pt x 
 227.62204pt>
 File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type 
 pdf)
@@ -767,7 +764,7 @@ LaTeX Warning: Reference `eq:cost' on page 7 undefined on input line 41.
 
 LaTeX Warning: Reference `eq:cost' on page 7 undefined on input line 43.
 
-<images_rfr/push_correction.pdf, id=500, 995.84645pt x 85.35826pt>
+<images_rfr/push_correction.pdf, id=499, 995.84645pt x 85.35826pt>
 File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
 <use images_rfr/push_correction.pdf>
@@ -775,7 +772,7 @@ Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 119.
 
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_rfr/pick_place_plush.pdf, id=501, 995.84645pt x 85.35826pt>
+<images_rfr/pick_place_plush.pdf, id=500, 995.84645pt x 85.35826pt>
 File: images_rfr/pick_place_plush.pdf Graphic file (type pdf)
 
 <use images_rfr/pick_place_plush.pdf>
@@ -783,7 +780,7 @@ Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 126
 .
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_rfr/pushlong_bench_same_range.pdf, id=502, 542.025pt x 433.62pt>
+<images_rfr/pushlong_bench_same_range.pdf, id=501, 542.025pt x 433.62pt>
 File: images_rfr/pushlong_bench_same_range.pdf Graphic file (type pdf)
 
 <use images_rfr/pushlong_bench_same_range.pdf>
@@ -795,7 +792,7 @@ Package pdftex.def Info: images_rfr/pushlong_bench_same_range.pdf used on input
 LaTeX Warning: Reference `fig:push_bench' on page 8 undefined on input line 142
 .
 
-<images_rfr/pushshort_bench_plots.pdf, id=526, 361.35pt x 289.08pt>
+<images_rfr/pushshort_bench_plots.pdf, id=525, 361.35pt x 289.08pt>
 File: images_rfr/pushshort_bench_plots.pdf Graphic file (type pdf)
 
 <use images_rfr/pushshort_bench_plots.pdf>
@@ -894,10 +891,10 @@ mf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uz
 dr.pfb>
-Output written on main.pdf (10 pages, 3817797 bytes).
+Output written on main.pdf (10 pages, 3817794 bytes).
 PDF statistics:
- 753 PDF objects out of 1000 (max. 8388607)
- 563 compressed objects within 6 object streams
+ 752 PDF objects out of 1000 (max. 8388607)
+ 562 compressed objects within 6 object streams
  104 named destinations out of 1000 (max. 500000)
  381 words of extra memory for PDF output out of 10000 (max. 10000000)
 
