@@ -1,0 +1,161 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: IEEEabrv.bib
+Database file #2: bib.bib
+Repeated entry---line 705 of file bib.bib
+ : @inproceedings{lerrel
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 719 of file bib.bib
+ : @article{google_handeye
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 740 of file bib.bib
+ : @book{cem-rk-13
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 747 of file bib.bib
+ : @inproceedings{dsae
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 809 of file bib.bib
+ : @inproceedings{deep_mpc
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 915 of file bib.bib
+ : @article{crashing
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 922 of file bib.bib
+ : @article{greg_kahn_uncertainty
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 929 of file bib.bib
+ : @inproceedings{vondrick
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 943 of file bib.bib
+ : @inproceedings{convlstm
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 950 of file bib.bib
+ : @article{beyond_mse
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 973 of file bib.bib
+ : @article{prednet
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1016 of file bib.bib
+ : @inproceedings{bootsetal
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1031 of file bib.bib
+ : @article{scott_reed
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1038 of file bib.bib
+ : @article{se3
+ :             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1045 of file bib.bib
+ : @article{recurrentsimulators
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1052 of file bib.bib
+ : @inproceedings{dynamic_filter_networks
+ :                                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1059 of file bib.bib
+ : @inproceedings{finn_nips
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1074 of file bib.bib
+ : @inproceedings{atarioh
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1097 of file bib.bib
+ : @article{video_pixel_networks
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1111 of file bib.bib
+ : @inproceedings{pulkit
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1118 of file bib.bib
+ : @inproceedings{foresight
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1344 of file bib.bib
+ : @article{e2e
+ :             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1371 of file bib.bib
+ : @article{maml
+ :              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1403 of file bib.bib
+ : @article{ADAM
+ :              ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "todo"
+Warning--I didn't find a database entry for "atari"
+Warning--I didn't find a database entry for "openai_hand"
+Warning--I didn't find a database entry for "asymmetric_ac"
+Warning--I didn't find a database entry for "gps"
+Warning--I didn't find a database entry for "etc"
+Warning--I didn't find a database entry for "alphago"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 31 entries,
+            4087 wiz_defined-function locations,
+            1487 strings with 23188 characters,
+and the built_in function-call counts, 16811 in all, are:
+= -- 1179
+> -- 541
+< -- 31
++ -- 262
+- -- 121
+* -- 783
+:= -- 2630
+add.period$ -- 68
+call.type$ -- 31
+change.case$ -- 30
+chr.to.int$ -- 78
+cite$ -- 31
+duplicate$ -- 1364
+empty$ -- 1650
+format.name$ -- 152
+if$ -- 3889
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 280
+newline$ -- 118
+num.names$ -- 31
+pop$ -- 794
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1279
+stack$ -- 0
+substring$ -- 212
+swap$ -- 829
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 31
+warning$ -- 0
+while$ -- 43
+width$ -- 33
+write$ -- 277
+(There were 24 error messages)

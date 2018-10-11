@@ -90,6 +90,10 @@
 \usepackage{wrapfig}
 \usepackage{hyperref}
 
+%for tables
+\usepackage{booktabs}
+\usepackage{makecell}
+
 \input{defs.tex}
 
 \providecommand\todo[1]{\textcolor{Red}{#1}}
@@ -388,7 +392,8 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Deep Reinforcement Learning with Observation Models}
+%\title{Deep Reinforcement Learning with Observation Models}
+\title{Reinforcement Learning with Deep Sensory Prediction Models for diverse Real-World Environments}
 %% TITLE IDEAS HERE (separate from method names)
 % Learning Observation Models for Real-World Planning and Control
 % Deep Reinforcement Learning from Images with Observation Models
@@ -406,26 +411,6 @@
 % Learning Observation Models for Planning and Control
 % Observation Models for Real-World Reinforcement Learning
 %
-% author names and IEEE memberships
-% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
-% a structure at a ~ so this keeps an author's name from being broken across
-% two lines.
-% use \thanks{} to gain access to the first footnote area
-% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
-% was not built to handle multiple paragraphs
-%
-%
-%\IEEEcompsocitemizethanks is a special \thanks that produces the bulleted
-% lists the Computer Society journals use for "first footnote" author
-% affiliations. Use \IEEEcompsocthanksitem which works much like \item
-% for each affiliation group. When not in compsoc mode,
-% \IEEEcompsocitemizethanks becomes like \thanks and
-% \IEEEcompsocthanksitem becomes a line break with idention. This
-% facilitates dual compilation, although admittedly the differences in the
-% desired content of \author between the different types of papers makes a
-% one-size-fits-all approach a daunting prospect. For instance, compsoc 
-% journal papers have the author affiliations above the "Manuscript
-% received ..."  text while in non-compsoc journals this is reversed. Sigh.
 
 \author{TBD
 %Frederik Ebert, Chelsea Finn, Alex Lee, Annie Xie, Sudeep Dasari, Sergey Levine
@@ -495,13 +480,15 @@
 % in the abstract or keywords.
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-Deep reinforcement learning algorithms have enabled learning of complex skills and mastery of complex games. Unlike prior works that have focused on mastery of complex, specialized behaviors in limited, closed-world environments, we consider a reinforcement learning problem setting with more simple skills but with substantial diversity, raw observations, and sparse rewards. As a result, rewards are simply not enough supervision to be learned from alone. Instead we propose to learn from the observations themselves, learning predictive models of future observations conditioned on the agent's future actions, and then choosing actions by planning under this observation model. We show that we can learn observation models effectively from real videos of a robot's experience, that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of object manipulation goals, even when faced with novel objects.
+%Deep reinforcement learning algorithms have enabled learning of complex skills and mastery of complex games. Unlike prior works that have focused on mastery of complex, specialized behaviors in limited, closed-world environments, we consider a reinforcement learning problem setting with more simple skills but with substantial diversity, raw observations, and sparse rewards. As a result, rewards are simply not enough supervision to be learned from alone. 
+
+Applying deep reinforcement learning algorithms to robotic control tasks in complex, diverse open-world environments without access to precisely hand-engineered rewards is an open problem. We take a step towards solving this problem by drawing supervision from predicting future sensory observations. Concretely we propose to learn predictive models of future observations conditioned on the agent's future actions, and a method for planning actions under this model. We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
 \todo{Page limit is 12!!}
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-Deep Reinforcement Learning, Observations Models, Video Prediction, Robotic Manipulation, Model Predictive Control
+Deep Reinforcement Learning, Sensory Prediction Models, Video Prediction, Robotic Manipulation, Model Predictive Control
 \end{IEEEkeywords}}
 
 
@@ -561,6 +548,7 @@ Deep Reinforcement Learning, Observations Models, Video Prediction, Robotic Mani
 % future work
 
 
+
 \section{Conclusion}
 The conclusion goes here.
 
@@ -568,13 +556,7 @@ The conclusion goes here.
 
 
 \appendices
-
-Appendix one text goes here.
-
-% you can choose not to have a title for an appendix
-% if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
+\input{appendix}
 
 
 % use section* for acknowledgment

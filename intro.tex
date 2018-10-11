@@ -1,9 +1,11 @@
 \IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
 
 
-Remarkably,
-%%SL.09.03: I think starting with a superlative doesn't quite set the right tone.
-humans are able to learn a range of complex yet generalizable behaviors when faced with a stream of high-dimensional sensory inputs and minimal external supervision. The reinforcement learning (RL) problem statement covers such a real-world setting. Yet, the general setting of learning from raw sensory inputs from sparse rewards in the real world is incredibly challenging. To make progress, many prior works have chosen various assumptions to make the problem more tractable. For instance, some works have been demonstrated only in settings where shaped rewards are available~\cite{todo}.
+Remarkably, humans are able to learn a range of complex yet generalizable behaviors when faced with a stream of high-dimensional sensory inputs and minimal external supervision. 
+
+The reinforcement learning (RL) problem statement covers such a real-world setting. Yet, the general setting of learning from raw sensory inputs from sparse rewards in the real world is incredibly challenging. 
+
+To make progress, many prior works have chosen various assumptions to make the problem more tractable. For instance, some works have been demonstrated only in settings where shaped rewards are available~\cite{todo}.
 %%SL.09.03: I don't think it's a good idea to start the very first paragraph with something so negative. We can discuss previous work later, the first paragraph should start on a positive note about how prediction is often considered a fundamental component of intelligence.
 Others have assumed access to a perfect or hand-engineered simulator, from which millions of roll-outs can be taken~\cite{atari,openai_hand}.
 A few works have assumed that a low-dimensional, compact state representation is accessible during training~\cite{e2e,asymmetric_ac}. Finally, many works reset the state between roll-outs to a relatively narrow distribution of initial states, leading to a task is more repeatable~\cite{atari,dsae,gps,etc}.
@@ -19,12 +21,14 @@ We consider a robotic control domain with a wide range of objects, where the alg
 %%SL.09.03: I think this is not quite capturing the point. I think it will be easier to motivate learning w/o rewards from an analogy to how humans learn, instead of by saying that assumptions of prior work are bad. Then we can talk about assumptions of prior work afterwards.
 to be learned from alone. Instead, the supervision needs to come from the observations themselves. As such, we propose to learn action-conditioned predictive models directly on raw pixel observations.
 %%SL.09.03: well, we do more than learn such models, we show that they can accomplish complex manipulation tasks on real-world robots
-Beyond the necessity of dense supervision, observation models have two additional benefits. They are goal-agnostic, which enables learning for a variety of different goals; and, by learning on top of raw observations, they are fully general in that they do not require a hand-engineered representation of the environment.
+Beyond the necessity of dense supervision, sensory prediciton models have two additional benefits. They are goal-agnostic, which enables learning for a variety of different goals; and, by learning on top of raw observations, they are fully general in that they do not require a hand-engineered representation of the environment.
 %%SL.09.03: again, let's leave the negativity for later
 
-%In addition the practicality of leveraging the only available supervision in such sparse reward environments, observation models are also goal-agnostic, which enables learning for a variety of different goals.
+%In addition the practicality of leveraging the only available supervision in such sparse reward environments, sensory prediciton models are also goal-agnostic, which enables learning for a variety of different goals.
 %% TODO - motivate why not to learn a model on top of a more abstract representation of the observations? [The supervision, inherently, comes from the same place.]
 %TODO - motivate why raw pixels rather than more compact representation (because pixels contain complete information -- can give Sergey's crossing-the-street example -- and pixels are the only thing that is readily available; also pixels contain more supervision)
+
+\todo{reference figure 1 here!}
 
 \begin{figure}[t]
 \centering
@@ -34,11 +38,11 @@ Beyond the necessity of dense supervision, observation models have two additiona
 \end{figure}
 %%SL.09.03: the figure looks awkwardly stretched, and it's not clear what the robot is actually doing
 
-Despite the benefits, a number of challenges arise when aiming to use observation models: how can we learn a model of high-dimensional observations? how should an objective or reward be determined with respect to the predicted observations? how should experience be collected? how should actions be chosen with respect to the model? We discuss each of these design decisions and propose several options, weighting the benefits and trade-offs of each.
+Despite the benefits, a number of challenges arise when aiming to use sensory prediction models: how can we learn a model of high-dimensional observations? how should an objective or reward be determined with respect to the predicted observations? how should experience be collected? how should actions be chosen with respect to the model? We discuss each of these design decisions and propose several options, weighting the benefits and trade-offs of each.
 %%SL.09.03: sounds a bit too much like a laundry list, can we pull some broader themes and dive into details later?
 Our overall approach amounts to a deep model-based reinforcement learning algorithm that leverages video prediction models to achieve a variety of pixel-based control tasks without shaped reward information.
 
-The main contributions of this work are as follows. First, we propose a general framework for deep reinforcement learning with observation models, abstracting away design decisions such as the model, the policy optimization, and the reward function.
+The main contributions of this work are as follows. First, we propose a general framework for deep reinforcement learning with sensory prediciton models, abstracting away design decisions such as the model, the policy optimization, and the reward function.
 %%SL.09.03: seems reasonable, but when we abstract away so much, we just get the classic model-based RL problem setting. Maybe this is a little bit too much abstraction.
 Second, we propose a model that can better maintain object permanence through occlusions via temporal skip connections.
 %%SL.09.03: I wouldn't put this "Second" -- maybe something more general like architectures for prediction?

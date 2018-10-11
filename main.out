@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Large-Scale, Self-Supervised Robotic Learning}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Sensory Prediction Models}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Visual Model Predictive Control}{}% 5
+\BOOKMARK [1][-]{section.4}{Video Prediction for Control}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Video Prediction via Pixel Transformations}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Skip Connection Neural Advection Model}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Planning Cost Functions}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Pixel-Distance based Cost}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Registration-based Cost}{section.5}% 11
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Test time procedure}{subsection.5.2}% 12
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Train time procedure}{subsection.5.2}% 13
+\BOOKMARK [2][-]{subsection.5.3}{Classifier-based Cost}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.4}{Which cost function is best?}{section.5}% 15
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Meta-Learning for Few-Shot Goal Inference}{subsection.5.4}% 16
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Test time procedure}{subsection.5.4}% 17
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Train time procedure}{subsection.5.4}% 18
+\BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 19
+\BOOKMARK [1][-]{section.7}{Experimental evaluation}{}% 20
+\BOOKMARK [2][-]{subsection.7.1}{Evaluating Skip-connection Neural Advection}{section.7}% 21
+\BOOKMARK [2][-]{subsection.7.2}{Evaluating Closed loop Visual MPC}{section.7}% 22
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Real-World Experiments}{subsection.7.2}% 23
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Pushing with retrying}{subsection.7.2}% 24
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Combined prehensile and non-prehensile manipulation.}{subsection.7.2}% 25
+\BOOKMARK [2][-]{subsection.7.3}{Evaluating Classifier-based cost function}{section.7}% 26
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Real-World Experiments}{subsection.7.3}% 27
+\BOOKMARK [1][-]{section.8}{discussion}{}% 28
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 29
+\BOOKMARK [1][-]{section*.17}{Appendix A: Simulated Experiments}{}% 30
+\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.17}% 31
+\BOOKMARK [1][-]{section*.19}{References}{}% 32
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 33
+\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 34
+\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 35
+\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 36
