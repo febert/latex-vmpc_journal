@@ -16,23 +16,22 @@
 \BOOKMARK [3][-]{subsubsection.5.4.1}{Meta-Learning for Few-Shot Goal Inference}{subsection.5.4}% 16
 \BOOKMARK [3][-]{subsubsection.5.4.2}{Test time procedure}{subsection.5.4}% 17
 \BOOKMARK [3][-]{subsubsection.5.4.3}{Train time procedure}{subsection.5.4}% 18
-\BOOKMARK [2][-]{subsection.5.5}{Which cost function is the best?}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.5}{When to use which cost function?}{section.5}% 19
 \BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 20
 \BOOKMARK [1][-]{section.7}{Scaling up Visual Model-Predictive Control}{}% 21
 \BOOKMARK [1][-]{section.8}{Experimental evaluation}{}% 22
 \BOOKMARK [2][-]{subsection.8.1}{Evaluating Skip-connection Neural Advection}{section.8}% 23
 \BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed loop Visual MPC}{section.8}% 24
-\BOOKMARK [3][-]{subsubsection.8.2.1}{Real-World Experiments}{subsection.8.2}% 25
-\BOOKMARK [3][-]{subsubsection.8.2.2}{Pushing with retrying}{subsection.8.2}% 26
-\BOOKMARK [3][-]{subsubsection.8.2.3}{Combined prehensile and non-prehensile manipulation.}{subsection.8.2}% 27
-\BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based cost function}{section.8}% 28
-\BOOKMARK [3][-]{subsubsection.8.3.1}{Real-World Experiments}{subsection.8.3}% 29
-\BOOKMARK [1][-]{section.9}{discussion}{}% 30
-\BOOKMARK [1][-]{section.10}{Conclusion}{}% 31
-\BOOKMARK [1][-]{section*.19}{Appendix A: Simulated Experiments}{}% 32
-\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.19}% 33
-\BOOKMARK [1][-]{section*.21}{References}{}% 34
-\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 35
-\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 36
-\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 37
-\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 38
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Pushing with retrying}{subsection.8.2}% 25
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Combined prehensile and non-prehensile manipulation.}{subsection.8.2}% 26
+\BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based cost function}{section.8}% 27
+\BOOKMARK [3][-]{subsubsection.8.3.1}{Real-World Experiments}{subsection.8.3}% 28
+\BOOKMARK [1][-]{section.9}{discussion}{}% 29
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 30
+\BOOKMARK [1][-]{section*.17}{References}{}% 31
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 32
+\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 33
+\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 34
+\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 35
+\BOOKMARK [1][-]{section*.18}{Appendix A: Simulated Experiments}{}% 36
+\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.18}% 37

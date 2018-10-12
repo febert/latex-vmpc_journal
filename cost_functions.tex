@@ -6,13 +6,19 @@ A convenient way to define a robot task is by choosing one or more pixels in the
 
 % Formally, the user specifies $P$ source pixel locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ in the initial image $I_0$, and $P$ goal locations $\goal^{(1)}, \dots, \goal^{(P)}$. The source and goal pixel locations are denoted by the coordinates $(x_d^{(i)}, y_d^{(i)})$ and $(x_g^{(i)}, y_g^{(i)})$. Given a goal, the robot plans for a sequence of actions $\action_{1:T}$ over $T$ time steps, where $T$ is the planning horizon. For this type of task definition the problem is formulated as the minimization of a cost function $c$ which depends on the predicted pixel positions $d_t^{(j)}$. The planner makes use of a learned model that predicts a distribution over the pixel position by internally predicting pixel transformations. 
  
- Given a distribution over pixel positions $P_{t_0}\in\mathbb{R}^{H\times W}$ at time $t = 0$, the model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$.  The cost per time-step $c_t$ is defined as the expected euclidean distance to the goal point $g$, which is straight-forward to calculate from $P_t$ and $g$. 
+ Given a distribution over pixel positions $P_{t_0}\in\mathbb{R}^{H\times W}$ at time $t = 0$, the model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$. One way of defining the cost per time-step $c_t$ is by using the expected euclidean distance to the goal point $g$, which is straight-forward to calculate from $P_t$ and $g$. 
  \begin{align}
 c = \sum_{t = 1, \dots, T} c_t =  \sum_{t = 1, \dots, T} \mathbb{E}_{\hat{d}_{t} \sim P_{t}} \left[\|\hat{d}_{t} - d_{g}\|_2\right] 
  \label{eq:cost}
  \end{align}
  
- The expected distance to the goal provides a smoother planning objective, enabling complex, longer-horizon tasks, since this cost function encourages movement of the designated objects into the right direction for each step of the execution, regardless of whether the goal-position can be reached within $T$ time steps or not. Also this cost makes use of the uncertainty estimates of the predictor, when computing the expected distance to the goal. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together, and optionally weighted them according to a scheme discussed in \autoref{subsec:reg_cost}.  
+ A different choice for the cost function is to evaluate $P_{t}$ at the position of the goal-point, which describing how likely the model predicts an action sequence will hit the goal \emph{exactly}, we call this method goal-point evaluation:
+ \begin{align}
+ c = \sum_{t = 1, \dots, T} P_t(g)
+ \label{eq:goal_point_eval}
+ \end{align}
+ 
+ The expected distance to the goal provides a smoother planning objective than the goal-point evaluation cost, and as our experiments show in section \ref{} enable longer-horizon tasks, since this cost function encourages movement of the designated objects into the right direction for each step of the execution, regardless of whether the goal-position can be reached within $T$ time steps or not. Also this cost makes use of the uncertainty estimates of the predictor, when computing the expected distance to the goal. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together, and optionally weighted them according to a scheme discussed in \autoref{subsec:reg_cost}.  
 
 \subsection{Registration-based Cost}
 \label{subsec:reg_cost}
@@ -35,7 +41,7 @@ Another approach is to perform a registration between predicted video frames and
 \end{figure}
 
 \subsubsection{Test time procedure}
-We will first describe the registration scheme at test time (see Figure~\ref{fig:registration_arch}(a)). We separately register the current image $I_t$ to the start image $I_0$ and to the goal image $I_g$ by passing it into the registration network $R$, implemented as a fully-convolutional neural network. Details about the archiecture are given in section \ref{subsec:training}. The registration network produces a flow map $\hat{F}_{0 \leftarrow t} \in \mathbb{R}^{H \times W \times 2}$, a vector field with the same size as the image, that describes the relative motion for every pixel between two frames:
+We will first describe the registration scheme at test time (see Figure~\ref{fig:registration_arch}(a)). We separately register the current image $I_t$ to the start image $I_0$ and to the goal image $I_g$ by passing it into the registration network $R$, implemented as a fully-convolutional neural network. Details about the archiecture are given in section \ref{subsec:training}. The registration network produces a flow map $\hat{F}_{0 \leftarrow t} \in \mathbb{R}^{H \times W \times 2}$, a vector field with the same size as the image, that describes the relative motion for every pixel between the two frames:
 \begin{align}
 \hat{F}_{0 \leftarrow t} = R(I_t, I_0) &&
 \hat{F}_{g \leftarrow t} = R(I_t, I_g)
@@ -45,7 +51,7 @@ The flow map $\hat{F}_{0 \leftarrow t}$ can be used to warp the image of the cur
 \hat{I}_0 = \hat{F}_{0 \leftarrow t} \diamond  I_t &&
 \hat{I}_g = \hat{F}_{g \leftarrow t} \diamond  I_t 
 \end{align}
-where $\diamond$ denotes the same bilinear interpolation operator that is used in the video-prediction model, see equation \ref{simple_dna}. In essence for a current image $\hat{F}_{0 \leftarrow t}$ puts $I_t$ in correspondence with $I_0$, and $\hat{F}_{g \leftarrow t}$ puts $I_t$ in correspondence with $I_g$. As one might expect, warping works better for images that are closer to each other, and sometimes fails when the entities in the image are too far apart. The motivation for registering to both $I_0$ and $I_g$ is to increase accuracy and robustness. In principle, registering to either $I_0$ or $I_g$ is sufficient.
+where $\diamond$ denotes the same bilinear interpolation operator that is used in the video-prediction model, see equation \ref{simple_dna}. In essence for a current image $\hat{F}_{0 \leftarrow t}$ puts $I_t$ in correspondence with $I_0$, and $\hat{F}_{g \leftarrow t}$ puts $I_t$ in correspondence with $I_g$. The motivation for registering to both $I_0$ and $I_g$ is to increase accuracy and robustness. In principle, registering to either $I_0$ or $I_g$ is sufficient.
 
 While the registration network is trained to perform a global registration between the images, we only evaluate it at the points $d_0$ and $d_g$ chosen by the user. This results in a cost function that ignores distractors. The flow map produced by the registration network is used to find the pixel locations corresponding to $d_0$ and $d_g$ in the current frame: 
 \begin{align}
@@ -102,14 +108,14 @@ The proposed weighting scheme can also be used with multiple designated pixels, 
 
 \subsection{Training procedure}
 \label{subsec:training}
-For registration we use a deep convolutional neural network $R$ which takes in a pair of images and finds correspondences by warping one image to the other. The network is trained on the same data as the video-prediction model, but it does not share parameters with it.\footnote{in principle sharing parameters with the video-prediction model might be beneficial, however this is left for future work} Our approach is similar to the optic flow method proposed by \cite{meister2017unflow}. However, unlike this prior work, our method computes registrations for frames that might be many time steps apart, and the goal is not to extract optic flow, but rather to determine correspondences between potentially distant images. For training, two images are sampled at random times steps $t$ and $t+h$ along the trajectory and the images are warped to each other in both directions. 
+The registration network is trained on the same data as the video-prediction model, but it does not share parameters with it.\footnote{in principle sharing parameters with the video-prediction model might be beneficial, however this is left for future work} Our approach is similar to the optic flow method proposed by \cite{meister2017unflow}. However, unlike this prior work, our method computes registrations for frames that might be many time steps apart, and the goal is not to extract optic flow, but rather to determine correspondences between potentially distant images. For training, two images are sampled at random times steps $t$ and $t+h$ along the trajectory and the images are warped to each other in both directions. 
 \begin{align}
 \hat{I}_{t} = \hat{F}_{t \leftarrow t +h} \diamond  I_{t+h} &&
 \hat{I}_{t+h} = \hat{F}_{t+h \leftarrow t} \diamond  I_{t}
 \end{align}
-The network, which outputs $\hat{F}_{t \leftarrow t +h}$ and $\hat{F}_{t+h \leftarrow t}$ (see Figure~\ref{fig:registration_arch}), is trained to minimize the photometric distance between $\hat{I}_t$ and $I_t$ and $\hat{I}_{t+h}$ and $I_{t+h}$, in addition to a smoothness regularizer that penalizes abrupt changes in the outputted flow-field. The details of this loss function follow prior work \cite{meister2017unflow}. We found that gradually increasing the temporal distance $h$ between the images during training yielded better final accuracy, as it creates a learning curriculum. The temporal distance is linearly increased from 1 step to 8 steps at 20k SGD steps. In total 60k iterations were taken.
+The network, which outputs $\hat{F}_{t \leftarrow t +h}$ and $\hat{F}_{t+h \leftarrow t}$, see Figure~\ref{fig:registration_arch} (b), is trained to minimize the photometric distance between $\hat{I}_t$ and $I_t$ and $\hat{I}_{t+h}$ and $I_{t+h}$, in addition to a smoothness regularizer that penalizes abrupt changes in the outputted flow-field. The details of this loss function follow prior work \cite{meister2017unflow}. We found that gradually increasing the temporal distance $h$ between the images during training yielded better final accuracy, as it creates a learning curriculum. The temporal distance is linearly increased from 1 step to 8 steps at 20k SGD steps. In total 60k iterations were taken.
 
-The network $R$ is implemented as a fully convolutional network taking in two images stacked together along the channel dimension. We use three convolutional layers each followed by a bilinear downsampling operation. This is passed into three layers of convolution each followed by a bilinear upsampling operation (all convolutions use stride 1). By using bilinear sampling for increasing or decreasing image sizes we avoid artifacts that are caused by strided convolutions and deconvolutions.
+The network $R$ is implemented as a fully convolutional network taking in two images stacked along the channel dimension. First the inputs are passed into three convolutional layers each followed by a bilinear downsampling operation. This is passed into three layers of convolution each followed by a bilinear upsampling operation (all convolutions use stride 1). By using bilinear sampling for increasing or decreasing image sizes we avoid artifacts that are caused by strided convolutions and deconvolutions.
 
 
 \subsection{Classifier-based Cost}
@@ -154,6 +160,13 @@ $$
 $$
 
 We optimize this objective using Adam~\cite{ADAM} on the initial parameters $\theta$. In our experiments, our classifier is represented by a convolutional neural network, consisting of three convolutional layers, each followed by layer normalization and a ReLU non-linearity. After the final convolutional layer, a spatial soft-argmax operation extracts spatial feature points, which are then passed through fully-connected layers.
+\todo{add images for classifier!}
 
-\subsection{Which cost function is the best?}
+\subsection{When to use which cost function?}
 \label{subsec:cost_discuission}
+We have introduced three different kinds of cost functions, pixel-distance based cost functions with and without registration, as well as classifier-based cost functions. Here we discuss the relative strengths and weaknesses of each of them.
+
+Pixel-distance based classifier have the advantage that they allow moving objects precisely to target locations. Adding a registration mechanism allows for robust closed-loop control. The pixel-distance based cost function also has a high degree of robustness against distractor objects and clutter -- an important feature when targeting diverse real-world environments.
+
+The classifier-based cost function allows for solving more abstract tasks where the absolute positions of an object can be irrelevant, such as position a cup in front of a plate, irrespective of where the plate is.
+
