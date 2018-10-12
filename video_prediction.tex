@@ -3,8 +3,8 @@ When using a classifier based cost function as detailed in section \ref{subsec:c
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth]{images_sna/occlusionaware/occlusion_model.pdf}
-    \caption{\small{Simplified SNA model based on \autoref{eqn:simplemodel}. The red arrow indicates where the image from the first time step $I_0$ is concatenated with the transformed images $\tilde{I}^{(i)}_t$ multiplying each channel with a separate mask to produce the predicted frame for step $t+1$. \todo{add appflow} }}      \label{fig:occlusion_model}
+    \includegraphics[width=\columnwidth]{images_sna/occlusionaware/architecture.pdf}
+    \caption{\small{Simplified SNA model based on \autoref{eqn:simplemodel}. The red arrow indicates where the image from the first time step $I_0$ is concatenated with the transformed images $\hat{F}_{t+1 \leftarrow t} \diamond  \hat{I}_t $ multiplying each channel with a separate mask to produce the predicted frame for step $t+1$.}}      \label{fig:occlusion_model}
 \end{figure}
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  12 OCT 2018 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  12 OCT 2018 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -605,13 +605,12 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 ) (./preliminaries.tex
 LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 3.
  [2 <./images_rfr/video_prediction.pdf>]) (./video_prediction.tex
-<images_sna/occlusionaware/occlusion_model.pdf, id=285, 511.31122pt x 273.45363
-pt>
-File: images_sna/occlusionaware/occlusion_model.pdf Graphic file (type pdf)
- <use images_sna/occlusionaware/occlusion_model.pdf>
-Package pdftex.def Info: images_sna/occlusionaware/occlusion_model.pdf used on 
-input line 6.
-(pdftex.def)             Requested size: 252.94499pt x 135.27858pt.
+<images_sna/occlusionaware/architecture.pdf, id=285, 597.50786pt x 369.88583pt>
+File: images_sna/occlusionaware/architecture.pdf Graphic file (type pdf)
+<use images_sna/occlusionaware/architecture.pdf>
+Package pdftex.def Info: images_sna/occlusionaware/architecture.pdf used on inp
+ut line 6.
+(pdftex.def)             Requested size: 252.94499pt x 156.58138pt.
 LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 7.
 
 <images_sna/occlusionaware/img_desigpixb0.png, id=293, 483.8075pt x 484.81125pt
@@ -631,9 +630,9 @@ Underfull \hbox (badness 1622) in paragraph at lines 48--49
 \OT1/ppl/m/n/9.53561 for-ma-tions are ap-plied only to
  []
 
-[3 <./images_sna/occlusionaware/occlusion_model.pdf> <./images_sna/occlusionawa
-re/img_desigpixb0.png>]
-<images_sna/occlusionaware/probability_curves.pdf, id=366, 569.05513pt x 284.52
+[3 <./images_sna/occlusionaware/architecture.pdf> <./images_sna/occlusionaware/
+img_desigpixb0.png>]
+<images_sna/occlusionaware/probability_curves.pdf, id=356, 569.05513pt x 284.52
 756pt>
 File: images_sna/occlusionaware/probability_curves.pdf Graphic file (type pdf)
  <use images_sna/occlusionaware/probability_curves.pdf>
@@ -641,7 +640,7 @@ Package pdftex.def Info: images_sna/occlusionaware/probability_curves.pdf used
 on input line 62.
 (pdftex.def)             Requested size: 227.64894pt x 113.82202pt.
 
-<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=369, 5
+<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=359, 5
 13.92pt x 128.48pt>
 File: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png Graph
 ic file (type png)
@@ -651,7 +650,7 @@ Package pdftex.def Info: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0
 _overtime.png used on input line 70.
 (pdftex.def)             Requested size: 227.64894pt x 56.91168pt.
 
-<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=370, 514.92375pt
+<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=360, 514.92375pt
  x 128.48pt>
 File: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png Graphic file (t
 ype png)
@@ -667,7 +666,7 @@ LaTeX Warning: Reference `' on page 4 undefined on input line 21.
 [4 <./images_sna/occlusionaware/probability_curves.pdf> <./images_sna/occlusion
 aware/cdna_1ststep_bckgd_gen_pixb0_overtime.png> <./images_sna/occlusionaware/o
 rig_dna_gen_pixb0_overtime.png>]
-<images_rfr/registration_singletime.pdf, id=396, 376.40625pt x 239.89626pt>
+<images_rfr/registration_singletime.pdf, id=386, 376.40625pt x 239.89626pt>
 File: images_rfr/registration_singletime.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_singletime.pdf>
@@ -677,7 +676,7 @@ ine 35.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 43.
 
-<images_rfr/registration_test_start.pdf, id=401, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_start.pdf, id=391, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_start.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_start.pdf>
@@ -685,7 +684,7 @@ Package pdftex.def Info: images_rfr/registration_test_start.pdf used on input l
 ine 68.
 (pdftex.def)             Requested size: 63.23624pt x 34.90822pt.
 
-<images_rfr/registration_test_goal.pdf, id=402, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_goal.pdf, id=392, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_goal.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_goal.pdf>
@@ -693,7 +692,7 @@ Package pdftex.def Info: images_rfr/registration_test_goal.pdf used on input li
 ne 69.
 (pdftex.def)             Requested size: 63.23624pt x 34.90822pt.
 
-<images_rfr/registration_train.pdf, id=403, 390.45876pt x 229.85875pt>
+<images_rfr/registration_train.pdf, id=393, 390.45876pt x 229.85875pt>
 File: images_rfr/registration_train.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_train.pdf>
@@ -701,7 +700,7 @@ Package pdftex.def Info: images_rfr/registration_train.pdf used on input line 7
 5.
 (pdftex.def)             Requested size: 139.12051pt x 75.81432pt.
 
-<images_rfr/reg_over_time.png, id=405, 1638.12pt x 308.15125pt>
+<images_rfr/reg_over_time.png, id=395, 1638.12pt x 308.15125pt>
 File: images_rfr/reg_over_time.png Graphic file (type png)
 
 <use images_rfr/reg_over_time.png>
@@ -711,14 +710,14 @@ Package pdftex.def Info: images_rfr/reg_over_time.png used on input line 88.
 .pdf> <./images_rfr/registration_test_start.pdf> <./images_rfr/registration_tes
 t_goal.pdf>] [6 <./images_rfr/reg_over_time.png>]) (./optimizer.tex) (./scaling
 _up.tex
-<images_rfr/pick_place_plush.pdf, id=513, 995.84645pt x 85.35826pt>
+<images_rfr/pick_place_plush.pdf, id=501, 995.84645pt x 85.35826pt>
 File: images_rfr/pick_place_plush.pdf Graphic file (type pdf)
 
 <use images_rfr/pick_place_plush.pdf>
 Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 4.
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
  [7]) (./experiments.tex
-<images_sna/longdistance_pushing/pushing.pdf, id=529, 301.125pt x 301.125pt>
+<images_sna/longdistance_pushing/pushing.pdf, id=518, 301.125pt x 301.125pt>
 File: images_sna/longdistance_pushing/pushing.pdf Graphic file (type pdf)
 
 <use images_sna/longdistance_pushing/pushing.pdf>
@@ -746,7 +745,7 @@ Underfull \hbox (badness 1406) in paragraph at lines 19--20
  []
 
 
-<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=540, 1280.37404pt x 
+<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=529, 1280.37404pt x 
 227.62204pt>
 File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type 
 pdf)
@@ -761,7 +760,7 @@ ng.pdf
 pdfTeX warning: /usr/bin/pdflatex (file ./images_sna/longdistance_pushing/pushi
 ng.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 
->] <images_rfr/push_correction.pdf, id=580, 995.84645pt x 85.35826pt>
+>] <images_rfr/push_correction.pdf, id=569, 995.84645pt x 85.35826pt>
 File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
 <use images_rfr/push_correction.pdf>
@@ -809,8 +808,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 663.
  ) 
 Here is how much of TeX's memory you used:
  9201 strings out of 493029
- 145070 string characters out of 6136234
- 249019 words of memory out of 5000000
+ 145055 string characters out of 6136234
+ 249013 words of memory out of 5000000
  12441 multiletter control sequences out of 15000+600000
  61135 words of font info for 152 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -832,18 +831,19 @@ fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uz
-dr.pfb>
-Output written on main.pdf (11 pages, 7979145 bytes).
+cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
+o/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+
+Output written on main.pdf (11 pages, 7986342 bytes).
 PDF statistics:
- 739 PDF objects out of 1000 (max. 8388607)
- 591 compressed objects within 6 object streams
+ 731 PDF objects out of 1000 (max. 8388607)
+ 588 compressed objects within 6 object streams
  113 named destinations out of 1000 (max. 500000)
  384 words of extra memory for PDF output out of 10000 (max. 10000000)
 
