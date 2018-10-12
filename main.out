@@ -10,27 +10,29 @@
 \BOOKMARK [2][-]{subsection.5.1}{Pixel-Distance based Cost}{section.5}% 10
 \BOOKMARK [2][-]{subsection.5.2}{Registration-based Cost}{section.5}% 11
 \BOOKMARK [3][-]{subsubsection.5.2.1}{Test time procedure}{subsection.5.2}% 12
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Train time procedure}{subsection.5.2}% 13
-\BOOKMARK [2][-]{subsection.5.3}{Classifier-based Cost}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.4}{Which cost function is best?}{section.5}% 15
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Registration-Based Pixel-Distance Cost}{subsection.5.2}% 13
+\BOOKMARK [2][-]{subsection.5.3}{Training procedure}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.4}{Classifier-based Cost}{section.5}% 15
 \BOOKMARK [3][-]{subsubsection.5.4.1}{Meta-Learning for Few-Shot Goal Inference}{subsection.5.4}% 16
 \BOOKMARK [3][-]{subsubsection.5.4.2}{Test time procedure}{subsection.5.4}% 17
 \BOOKMARK [3][-]{subsubsection.5.4.3}{Train time procedure}{subsection.5.4}% 18
-\BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 19
-\BOOKMARK [1][-]{section.7}{Experimental evaluation}{}% 20
-\BOOKMARK [2][-]{subsection.7.1}{Evaluating Skip-connection Neural Advection}{section.7}% 21
-\BOOKMARK [2][-]{subsection.7.2}{Evaluating Closed loop Visual MPC}{section.7}% 22
-\BOOKMARK [3][-]{subsubsection.7.2.1}{Real-World Experiments}{subsection.7.2}% 23
-\BOOKMARK [3][-]{subsubsection.7.2.2}{Pushing with retrying}{subsection.7.2}% 24
-\BOOKMARK [3][-]{subsubsection.7.2.3}{Combined prehensile and non-prehensile manipulation.}{subsection.7.2}% 25
-\BOOKMARK [2][-]{subsection.7.3}{Evaluating Classifier-based cost function}{section.7}% 26
-\BOOKMARK [3][-]{subsubsection.7.3.1}{Real-World Experiments}{subsection.7.3}% 27
-\BOOKMARK [1][-]{section.8}{discussion}{}% 28
-\BOOKMARK [1][-]{section.9}{Conclusion}{}% 29
-\BOOKMARK [1][-]{section*.17}{Appendix A: Simulated Experiments}{}% 30
-\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.17}% 31
-\BOOKMARK [1][-]{section*.19}{References}{}% 32
-\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 33
-\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 34
-\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 35
-\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 36
+\BOOKMARK [2][-]{subsection.5.5}{Which cost function is the best?}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 20
+\BOOKMARK [1][-]{section.7}{Scaling up Visual Model-Predictive Control}{}% 21
+\BOOKMARK [1][-]{section.8}{Experimental evaluation}{}% 22
+\BOOKMARK [2][-]{subsection.8.1}{Evaluating Skip-connection Neural Advection}{section.8}% 23
+\BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed loop Visual MPC}{section.8}% 24
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Real-World Experiments}{subsection.8.2}% 25
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Pushing with retrying}{subsection.8.2}% 26
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Combined prehensile and non-prehensile manipulation.}{subsection.8.2}% 27
+\BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based cost function}{section.8}% 28
+\BOOKMARK [3][-]{subsubsection.8.3.1}{Real-World Experiments}{subsection.8.3}% 29
+\BOOKMARK [1][-]{section.9}{discussion}{}% 30
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 31
+\BOOKMARK [1][-]{section*.19}{Appendix A: Simulated Experiments}{}% 32
+\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.19}% 33
+\BOOKMARK [1][-]{section*.21}{References}{}% 34
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 35
+\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 36
+\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 37
+\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 38

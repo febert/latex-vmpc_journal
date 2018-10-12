@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -117,45 +117,45 @@ Warning--I didn't find a database entry for "alphago"
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 31 entries,
+You've used 32 entries,
             4087 wiz_defined-function locations,
-            1487 strings with 23188 characters,
-and the built_in function-call counts, 16811 in all, are:
-= -- 1179
-> -- 541
-< -- 31
-+ -- 262
-- -- 121
-* -- 783
-:= -- 2630
-add.period$ -- 68
-call.type$ -- 31
-change.case$ -- 30
+            1493 strings with 23288 characters,
+and the built_in function-call counts, 17249 in all, are:
+= -- 1220
+> -- 545
+< -- 33
++ -- 264
+- -- 122
+* -- 803
+:= -- 2717
+add.period$ -- 70
+call.type$ -- 32
+change.case$ -- 31
 chr.to.int$ -- 78
-cite$ -- 31
-duplicate$ -- 1364
-empty$ -- 1650
-format.name$ -- 152
-if$ -- 3889
+cite$ -- 32
+duplicate$ -- 1403
+empty$ -- 1687
+format.name$ -- 153
+if$ -- 3986
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 280
-newline$ -- 118
-num.names$ -- 31
-pop$ -- 794
+int.to.str$ -- 32
+missing$ -- 287
+newline$ -- 121
+num.names$ -- 32
+pop$ -- 805
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1279
+skip$ -- 1316
 stack$ -- 0
-substring$ -- 212
-swap$ -- 829
-text.length$ -- 5
+substring$ -- 213
+swap$ -- 855
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 31
+type$ -- 32
 warning$ -- 0
-while$ -- 43
-width$ -- 33
-write$ -- 277
+while$ -- 44
+width$ -- 34
+write$ -- 287
 (There were 24 error messages)

@@ -2,76 +2,114 @@
 
 
 \subsection{Pixel-Distance based Cost}
-A convenient way to define a robot task is by choosing one or more pixels in the robot's camera view and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left. Formally, the user specifies $P$ source pixel locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ in the initial image $I_0$, and $P$ goal locations $\goal^{(1)}, \dots, \goal^{(P)}$. The source and goal pixel locations are denoted by the coordinates $(x_d^{(i)}, y_d^{(i)})$ and $(x_g^{(i)}, y_g^{(i)})$. Given a goal, the robot plans for a sequence of actions $\action_{1:T}$ over $T$ time steps, where $T$ is the planning horizon. For this type of task definition the problem is formulated as the minimization of a cost function $c$ which depends on the predicted pixel positions $d_t^{(j)}$. The planner makes use of a learned model that predicts a distribution over the pixel position by internally predicting pixel transformations. Given a distribution over pixel positions $P_{t_0, d^{(i)}}\in\mathbb{R}^{H\times W}$ at time $t = 0$, the model predicts distributions over its positions $P_{t, d^{(i)}}$ at time $t \in \{ 1, \dots, T \}$. The optimizer then finds the action sequence $a_{t_0:T}$ for which the sum of the costs $c_t$ over the time steps is minimal. $c_t$ is defined as the expected euclidean distance between to the goal point $g^{(i)}$ (which is straight-forward to calculate from $P_{t, d^{(i)}}$ and $g^{(i)}$).
+A convenient way to define a robot task is by choosing one or more pixels in the robot's camera view and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left.
 
-The expected distance to the goal provides smoother planning objective that makes used of the uncertainty estimates of the predictor enabling complex, longer-horizon tasks. This cost function encourages the movement of the designated objects in the right direction for each step of the execution, regardless of whether the $\goal$ position can be reached within $T$ time steps. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together (and optionally weighting them according to a scheme discussed in \autoref{subsec:reg_cost}).  
+% Formally, the user specifies $P$ source pixel locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ in the initial image $I_0$, and $P$ goal locations $\goal^{(1)}, \dots, \goal^{(P)}$. The source and goal pixel locations are denoted by the coordinates $(x_d^{(i)}, y_d^{(i)})$ and $(x_g^{(i)}, y_g^{(i)})$. Given a goal, the robot plans for a sequence of actions $\action_{1:T}$ over $T$ time steps, where $T$ is the planning horizon. For this type of task definition the problem is formulated as the minimization of a cost function $c$ which depends on the predicted pixel positions $d_t^{(j)}$. The planner makes use of a learned model that predicts a distribution over the pixel position by internally predicting pixel transformations. 
+ 
+ Given a distribution over pixel positions $P_{t_0}\in\mathbb{R}^{H\times W}$ at time $t = 0$, the model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$.  The cost per time-step $c_t$ is defined as the expected euclidean distance to the goal point $g$, which is straight-forward to calculate from $P_t$ and $g$. 
+ \begin{align}
+c = \sum_{t = 1, \dots, T} c_t =  \sum_{t = 1, \dots, T} \mathbb{E}_{\hat{d}_{t} \sim P_{t}} \left[\|\hat{d}_{t} - d_{g}\|_2\right] 
+ \label{eq:cost}
+ \end{align}
+ 
+ The expected distance to the goal provides a smoother planning objective, enabling complex, longer-horizon tasks, since this cost function encourages movement of the designated objects into the right direction for each step of the execution, regardless of whether the goal-position can be reached within $T$ time steps or not. Also this cost makes use of the uncertainty estimates of the predictor, when computing the expected distance to the goal. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together, and optionally weighted them according to a scheme discussed in \autoref{subsec:reg_cost}.  
 
 \subsection{Registration-based Cost}
 \label{subsec:reg_cost}
-For the type of cost function introduced in the previous section it necessary to know the initial locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ at each timesteps. However when the tobot interacts with an object, the position of that object may change in unexpected ways, and therefore it is crucial that the system can update its belief of where the target object is. Prior work on visual MPC lacked this capability. To enable the agent to ``keep retrying" indefinitely until the task is accomplished we propose to use an image-to-image registration approach to find the target object in the current frame. 
-We show that this tracking capability can be learned completely unsupervised from the data collected by the robot autonomously. As one might expect the self-supervised tracking approach works better for images that are closer to each other and sometimes fails when the entities in the image are too far apart. To increase accuracy and robustness in addition to the starting image our method can register to a goal-image. The goal image is optional and can be provided by a human or through demonstration.
+For pixel distance-based cost functions it is necessary to know the initial locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ at each time-step. To update the belief of where the target object currently is, we propose a method for registering the current image to both the start and goal image, where the designated pixels are known. Crucially, the registration method we propose is self-supervised, using the same exact data for training the video prediction model and the registration model. This allows both the predictor and registration model to continuously improve as the robot collects more data.
+
+Before further detailing our learned registration system, we discuss a two simple alternative approaches for obtaining a cost-function for video-prediction based control: One na\"{i}ve approach could be to use the pixel-wise error between a \emph{goal image} and the \emph{predicted image}. However there are a number of issues with this approach: first, when objects in the image are far from the position in the goal image (e.g., they do not overlap) there is no gradient signal with respect to changes in the actions. Second, due to the blurry predictions from a video prediction model, the pixel-wise difference between the predictions and the goal image can become meaningless. 
+
+Another approach is to perform a registration between predicted video frames and the goal image, and use the average length of the warping vectors as a cost function for ``closeness" to the goal image. However a major drawback of cost functions based on metrics computed on the complete image is that they naturally emphasize large objects (such as the robot's arm), while small objects only contribute negligible amounts to the costs. As a result, the planner only tries to match the positions of the large objects (the arm), ignoring smaller objects.
+
+
+\begin{figure}
+
+	\centering
+	\includegraphics[width=0.8\linewidth]{images_rfr/registration_singletime.pdf}
+	% \vspace{-0.1in}
+	\caption{\small{Closed loop control is achieved by registering the current image $I_t$ globally to the first frame $I_0$ and the goal image $I_g$. In this example registration to $I_0$ succeeds while registration to $I_g$ fails since the object in $I_g$ is too far away.}
+		\label{fig:reg_single}
+%		\vspace{-0.2in}
+	}
+\end{figure}
 
 \subsubsection{Test time procedure}
+We will first describe the registration scheme at test time (see Figure~\ref{fig:registration_arch}(a)). We separately register the current image $I_t$ to the start image $I_0$ and to the goal image $I_g$ by passing it into the registration network $R$, implemented as a fully-convolutional neural network. Details about the archiecture are given in section \ref{subsec:training}. The registration network produces a flow map $\hat{F}_{0 \leftarrow t} \in \mathbb{R}^{H \times W \times 2}$, a vector field with the same size as the image, that describes the relative motion for every pixel between two frames:
+\begin{align}
+\hat{F}_{0 \leftarrow t} = R(I_t, I_0) &&
+\hat{F}_{g \leftarrow t} = R(I_t, I_g)
+\end{align}
+The flow map $\hat{F}_{0 \leftarrow t}$ can be used to warp the image of the current time step $t$ to the start image $I_0$, and $\hat{F}_{g \leftarrow t}$ can be used to warp from $I_t$ to $I_g$ (see Figure \ref{fig:reg_single} for an illustration):
+\begin{align}
+\hat{I}_0 = \hat{F}_{0 \leftarrow t} \diamond  I_t &&
+\hat{I}_g = \hat{F}_{g \leftarrow t} \diamond  I_t 
+\end{align}
+where $\diamond$ denotes the same bilinear interpolation operator that is used in the video-prediction model, see equation \ref{simple_dna}. In essence for a current image $\hat{F}_{0 \leftarrow t}$ puts $I_t$ in correspondence with $I_0$, and $\hat{F}_{g \leftarrow t}$ puts $I_t$ in correspondence with $I_g$. As one might expect, warping works better for images that are closer to each other, and sometimes fails when the entities in the image are too far apart. The motivation for registering to both $I_0$ and $I_g$ is to increase accuracy and robustness. In principle, registering to either $I_0$ or $I_g$ is sufficient.
 
-We will first describe the architecture at test time (see Figure~\ref{fig:registration_arch}). The start and goal images $I_0$ and $I_g$ are passed into the registration network $R$ which returns flow maps:
+While the registration network is trained to perform a global registration between the images, we only evaluate it at the points $d_0$ and $d_g$ chosen by the user. This results in a cost function that ignores distractors. The flow map produced by the registration network is used to find the pixel locations corresponding to $d_0$ and $d_g$ in the current frame: 
 \begin{align}
-    \hat{F}_{0 \leftarrow t} = R(I_t, I_0) &&
-    \hat{F}_{g \leftarrow t} = R(I_t, I_g)
+\hat{d}_{0,t} = d_0 + \hat{F}_{0 \leftarrow t}(d_0) &&
+\hat{d}_{g,t} = d_g + \hat{F}_{g \leftarrow t}(d_g)
+\label{eqn:warped_pos}
 \end{align}
 
-The flow maps warp the image of the current time step to the start image $I_0$, and $\hat{F}_{g \leftarrow t}$ warps from $I_t$ to $I_g$ (see Figure \ref{fig:reg_single} for an illustration):
-\begin{align}
-    \hat{I}_0 = \hat{F}_{0 \leftarrow t} \diamond  I_t &&
-    \hat{I}_g = \hat{F}_{g \leftarrow t} \diamond  I_t 
-\end{align}
-Here, $\diamond$ denote a bilinear sampling operator which interpolates a position in an image bilinearly with respect to a location $(x,y)$ in the image. In addition to start and goal images, the user needs to specify one or several designated pixel positions $d_0$ in the start image and the corresponding pixels locations $d_g$ in the goal image (the goal image is optional) to define the task. While the registration network is trained to perform a global registration between the images, we only evaluate it at the points $d_0$ and $d_g$ chosen by the user. This results in a cost function that ignores distractors.  $R$ takes in a pair of images and outputs a flow-map warping points in one to the other. Thus, for a current image $I_t$, $\hat{F}_{0 \leftarrow t}$ puts it in correspondence with $I_0$, and $\hat{F}_{g \leftarrow t}$ puts it in correspondence with $I_g$. The registration network is then used to find the pixel locations corresponding to $d_0$ and $d_g$ in the current frame: 
-\begin{align}
-    \hat{d}_{0,t} = d_0 + \hat{F}_{0 \leftarrow t}(d_0) &&
-    \hat{d}_{g,t} = d_g + \hat{F}_{g \leftarrow t}(d_g)
-\end{align}
-  
-%%SL.06.12: I wonder if we can defer all the discussion of designated pixels to some other section. We can use registration even without designated pixels, and I think the technical sections would be easier to follow if we first just describe registration by itself, and then later talk about how it can actually be combined with designated pixels, which serve both to define the goal and to focus the cost function on the objects that actually matter.
 
 \begin{figure}[t!]
-    \centering
-    \begin{subfigure}[b]{0.35\columnwidth}
-        \centering
-        \includegraphics[width=\columnwidth]{images_rfr/registration_test_start.pdf}\vspace{2.5mm}
-        \includegraphics[width=\columnwidth]{images_rfr/registration_test_goal.pdf}
-        \caption{\small{Testing usage.}}
-    \end{subfigure}
-    \quad \quad
-    \begin{subfigure}[b]{0.55\columnwidth}
-        \centering
-        \includegraphics[width=\columnwidth,trim={0 3mm 0 3mm},clip]{images_rfr/registration_train.pdf}
-        \caption{\small{Training usage.}}
-        \label{fig:discrete}
-    \end{subfigure}
-    \vspace{-1mm}
-    \caption{\small{(a) At test time the registration network registers the current image $I_t$ to the start image $I_0$ (top) and goal image $I_g$ (bottom), inferring the flow-fields $\hat{F}_{0 \leftarrow t}$ and $\hat{F}_{g \leftarrow t}$. (b) The registration network is trained by warping images from randomly selected timesteps along a trajectory to each other.
-    }}
-    \label{fig:registration_arch}
+	\centering
+	\begin{subfigure}[b]{0.25\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images_rfr/registration_test_start.pdf}\vspace{2.5mm}
+		\includegraphics[width=\linewidth]{images_rfr/registration_test_goal.pdf}
+		\caption{\small{Testing usage.}}
+	\end{subfigure}
+	\quad \quad
+	\begin{subfigure}[b]{0.55\linewidth}
+		\centering
+		\includegraphics[width=\linewidth,trim={0 3mm 0 3mm},clip]{images_rfr/registration_train.pdf}
+		\caption{\small{Training usage.}}
+		\label{fig:discrete}
+	\end{subfigure}
+	\vspace{-1mm}
+	\caption{\small{(a) At test time the registration network registers the current image $I_t$ to the start image $I_0$ (top) and goal image $I_g$ (bottom), inferring the flow-fields $\hat{F}_{0 \leftarrow t}$ and $\hat{F}_{g \leftarrow t}$. (b) The registration network is trained by warping images from randomly selected timesteps along a trajectory to each other.
+	}}
+	\label{fig:registration_arch}
 \end{figure}
 
 \begin{figure*}
-    \centering
-    \vspace{-0.1in}
-    \includegraphics[width=1\linewidth]{images_rfr/registration_overtime.pdf}
-    \caption{\small{Outputs of registration network. The first row shows images from a trajectory executed by the robot, the second shows each image warped to the initial image via registration, and the third shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start (or goal). In these images, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found is marked with red and blue crosses, respectively. It can be seen that, for the registration to the start image (red cross) the object is tracked for the first 7 frames, while the registration to the goal image (blue cross) succeeds for the last 3 time steps. The numbers in red indicate the trade off factors $\lambda$ between the views and are used as weighting factors for the planning cost.}}
-    \label{fig:tracking_overtime}
-    \vspace{-0.2in}
+	\centering
+	\vspace{-0.1in}
+	\includegraphics[width=1\linewidth]{images_rfr/reg_over_time.png}
+	\caption{\small{Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda$ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}}
+	\label{fig:tracking_overtime}
+	\vspace{-0.2in}
 \end{figure*}
 
-\autoref{fig:tracking_overtime} visualizes the tracking results during a pushing task. On the left we show the start image and goal image provided by the user at the beginning of the trajectory. The first row shows the video, with the estimated location of $d_0$ marked in red and the estimated location of $d_g$ marked in blue. In this example, registration succeeds with respect to the first image succeeds for the first 7 steps but fails after that. However registration with respect to the goal image succeeds for the last 3 steps. Thus, there is enough information at each time step to determine the cost, which we discuss in detail in the next section.
+For simplicity, we describe the case with a single designated pixel. In practice, instead of a single flow vector $\hat{F}_{0 \leftarrow t}(d_0)$ and $\hat{F}_{g \leftarrow t}(d_g)$, we consider a neighborhood of flow-vectors around $d_0$ and $d_g$ and take the median in the $x$ and $y$ directions, making the registration more stable.
+\autoref{fig:tracking_overtime} visualizes an example tracking result while the gripper is moving an object.
 
+\subsubsection{Registration-Based Pixel-Distance Cost}
+\label{subsec:planning_costs}
 
-\subsubsection{Train time procedure}
-The registration network $R$ is trained to find correspondences between two images by warping one image to the other. The network is trained on the same data as the video-prediction model, but it does not share parameters with it.\footnote{in principle sharing parameters with the video-prediction model might be beneficial, however this is left for future work} This approach is similar to the optic flow method proposed by \cite{meister2017unflow}. However, unlike this prior work, our method computes registrations for frames that might be many time steps apart, and the goal is not to extract optic flow, but rather to determine correspondences between potential highly distinct images. For training, two images are sampled at random times steps $t$ and $t+h$ along the trajectory and the images are warped to each other in both directions. 
+Registration can fail when distances between objects in the images are large. During a trajectory, the registration to the first image typically becomes harder, while the registration to the goal image becomes easier. We propose a mechanism that estimates which image is registered correctly, allowing us to utilize only the successful registration for evaluating the planning cost. This mechanism gives a high weight $\lambda_i$ to pixel-distance costs $c_i$ associated with a designated pixel $\hat{d}_{i,t}$ that is tracked successfully and a low, ideally zero, weight to a designated pixel where the registration is poor. We propose to use the photometric distance between the true frame and the warped frame evaluated at $d_{0,i}$ and $d_{g,i}$ as an estimate for \emph{local} registration success. A low photometric error indicates that the registration network predicted a flow vector leading to a pixel with a similar color, thus indicating warping success. However this does not necessarily mean that the flow vector points to the correct location. For example, there could be several objects with the same color and the network could simply point to the wrong object. Letting $I_i(d_i)$ denote the pixel value in image $I_i$ for position $d_i$, and $\hat{I}_i(d_i)$ denote the corresponding pixel in the image warped by the registration function, we can define the general weighting factors $\lambda_i$ as
 \begin{align}
-     \hat{I}_{t} = \hat{F}_{t \leftarrow t +h} \diamond  I_{t+h} &&
-     \hat{I}_{t+h} = \hat{F}_{t+h \leftarrow t} \diamond  I_{t}
+\lambda_i =  \frac{||I_i(d_i) - \hat{I_i}(d_i)||_2^{-1}}{\sum^N_j ||I_j(d_j) - \hat{I}_j(d_j)||^{-1}_2}.
+\label{eqn:cost_avg}
 \end{align}
-The network, which outputs $\hat{F}_{t \leftarrow t +h}$ and $\hat{F}_{t+h \leftarrow t}$ (see Figure~\ref{fig:registration_arch}), is trained to minimize the photometric distance between $\hat{I}_t$ and $I_t$ and $\hat{I}_{t+h}$ and $I_{t+h}$, in addition to a smoothness regularizer that penalizes abrupt changes in the outputted flow-field. The details of this loss function follow prior work \cite{meister2017unflow}. We found that gradually increasing the temporal distance $h$ between the images during training yielded better final accuracy, as it created a curriculum for the model. The network $R$ is implemented as a fully convolutional network which takes in as input the two images stacked together along the channel dimension. We use three convolutional layers each followed by a bilinear downsampling operation followed by three layers of convolution each followed by a bilinear upsampling operation (all convolutions use stride 1). In this way we avoid artifacts due to strided convolutions and deconvolutions.
+where $\hat{I}_i = \hat{F}_{i \leftarrow t} \diamond I_t$. The MPC cost is computed as the average of the costs $c_i$ weighted by $\lambda_i$, where each $c_i$ is the expected distance (see equation \ref{eq:cost}) between the registered point $\hat{d}_{i,t}$ and the goal point $d_{g,i}$. Hence, the cost used for planning is $c = \sum_i \lambda_i c_i$.  In the case of the single view model and a single designated pixel, the index $i$ iterates over the start and goal image (and $N=2$).
+
+The proposed weighting scheme can also be used with multiple designated pixels, as used in multi-task settings and multi-view models, which are explained in section \ref{sec:scalingup}. The index $i$ then also loops over the views and indices of the designated pixels.
+
+\subsection{Training procedure}
+\label{subsec:training}
+For registration we use a deep convolutional neural network $R$ which takes in a pair of images and finds correspondences by warping one image to the other. The network is trained on the same data as the video-prediction model, but it does not share parameters with it.\footnote{in principle sharing parameters with the video-prediction model might be beneficial, however this is left for future work} Our approach is similar to the optic flow method proposed by \cite{meister2017unflow}. However, unlike this prior work, our method computes registrations for frames that might be many time steps apart, and the goal is not to extract optic flow, but rather to determine correspondences between potentially distant images. For training, two images are sampled at random times steps $t$ and $t+h$ along the trajectory and the images are warped to each other in both directions. 
+\begin{align}
+\hat{I}_{t} = \hat{F}_{t \leftarrow t +h} \diamond  I_{t+h} &&
+\hat{I}_{t+h} = \hat{F}_{t+h \leftarrow t} \diamond  I_{t}
+\end{align}
+The network, which outputs $\hat{F}_{t \leftarrow t +h}$ and $\hat{F}_{t+h \leftarrow t}$ (see Figure~\ref{fig:registration_arch}), is trained to minimize the photometric distance between $\hat{I}_t$ and $I_t$ and $\hat{I}_{t+h}$ and $I_{t+h}$, in addition to a smoothness regularizer that penalizes abrupt changes in the outputted flow-field. The details of this loss function follow prior work \cite{meister2017unflow}. We found that gradually increasing the temporal distance $h$ between the images during training yielded better final accuracy, as it creates a learning curriculum. The temporal distance is linearly increased from 1 step to 8 steps at 20k SGD steps. In total 60k iterations were taken.
+
+The network $R$ is implemented as a fully convolutional network taking in two images stacked together along the channel dimension. We use three convolutional layers each followed by a bilinear downsampling operation. This is passed into three layers of convolution each followed by a bilinear upsampling operation (all convolutions use stride 1). By using bilinear sampling for increasing or decreasing image sizes we avoid artifacts that are caused by strided convolutions and deconvolutions.
 
 
 \subsection{Classifier-based Cost}
@@ -87,10 +125,6 @@ An alternative way to define the cost function is with a goal classifier. This t
 \newcommand{\loss}{\mathcal{L}}
 
 Formally, we consider a goal classifier $\hat{\out} = f(\obs)$, where $\obs$ denotes the image observation, and $\hat{\out} \in [0,1]$ indicates the predicted probability of the observation being of a successful outcome of the task. Our objective is to infer a classifier for a new task $\task_j$ from a few positive examples of success, which are easy for a user to provide and encode the minimal information needed to convey a task. In other words, given a dataset $\posdata_j$ of $K$ examples of successful end states for a new task $\task_j$: $\data_j:=\{(\obs_k, 1) | k = 1...K\}_j$, our goal is to infer a classifier for task $\task_j$.
-
-\subsection{Which cost function is best?}
-adsf
-
 
 \subsubsection{Meta-Learning for Few-Shot Goal Inference}
 
@@ -120,3 +154,6 @@ $$
 $$
 
 We optimize this objective using Adam~\cite{ADAM} on the initial parameters $\theta$. In our experiments, our classifier is represented by a convolutional neural network, consisting of three convolutional layers, each followed by layer normalization and a ReLU non-linearity. After the final convolutional layer, a spatial soft-argmax operation extracts spatial feature points, which are then passed through fully-connected layers.
+
+\subsection{Which cost function is the best?}
+\label{subsec:cost_discuission}

@@ -393,7 +393,7 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %\title{Deep Reinforcement Learning with Observation Models}
-\title{Reinforcement Learning with Deep Sensory Prediction Models for diverse Real-World Environments}
+\title{RL for Real: Reinforcement Learning with Deep Sensory Prediction Models for diverse Real-World Environments}
 %% TITLE IDEAS HERE (separate from method names)
 % Learning Observation Models for Real-World Planning and Control
 % Deep Reinforcement Learning from Images with Observation Models
@@ -482,7 +482,7 @@
 \begin{abstract}
 %Deep reinforcement learning algorithms have enabled learning of complex skills and mastery of complex games. Unlike prior works that have focused on mastery of complex, specialized behaviors in limited, closed-world environments, we consider a reinforcement learning problem setting with more simple skills but with substantial diversity, raw observations, and sparse rewards. As a result, rewards are simply not enough supervision to be learned from alone. 
 
-Applying deep reinforcement learning algorithms to robotic control tasks in complex, diverse open-world environments without access to precisely hand-engineered rewards is an open problem. We take a step towards solving this problem by drawing supervision from predicting future sensory observations. Concretely we propose to learn predictive models of future observations conditioned on the agent's future actions, and a method for planning actions under this model. We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
+Applying deep reinforcement learning algorithms to robotic control tasks in complex, diverse, open-world environments without access to meticulously hand-engineered rewards still remains a challenge. We take a step towards solving this problem by drawing supervision from predicting future sensory observations. Concretely we propose to learn predictive models of future observations conditioned on the agent's future actions, and a method for planning actions under this model. We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
 \todo{Page limit is 12!!}
 \end{abstract}
 
@@ -537,6 +537,8 @@ Deep Reinforcement Learning, Sensory Prediction Models, Video Prediction, Roboti
 \input{optimizer.tex}
 % explain the cross entroy method
 % explain reusing actions
+
+\input{scaling_up}
 
 \input{experiments.tex}
 % pushing benchmark with and without tracking
