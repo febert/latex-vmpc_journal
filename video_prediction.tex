@@ -34,7 +34,7 @@ To enable effective tracking of objects through occlusions, we propose an extens
 
 To allow the model to handle occlusion during the prediction we now transform pixels not only from the previously generated image $\hat{I}_t$ but from all but from all previous images $\hat{I}_0,...\hat{I}_{t}$ including the context image $I_0$ which is a real image. 
 \begin{equation}
-\hat{I}_{t+1} =  \mathbf{M}_{0} (\hat{F}_{t+1 \leftarrow 0} \diamond I_t) +  \sum_{j=1}^{\tau} \mathbf{M}_{j} (\hat{F}_{j+1 \leftarrow j} \diamond  \hat{I}_j)
+\hat{I}_{t+1} =  \mathbf{M}_{0} (\hat{F}_{t+1 \leftarrow 0} \diamond I_t) +  \sum_{j=1}^{\tau} \mathbf{M}_{j} (\hat{F}_{t+1 \leftarrow j} \diamond  \hat{I}_j)
 \end{equation}
  We refer to this model as the \emph{skip connection neural advection model (SNA)}, since it handles occlusions by using temporal skip-connections such that when a pixel is occluded (e.g., by the robot arm or by another object) it can still reappear later in the sequence.
  
