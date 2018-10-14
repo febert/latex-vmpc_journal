@@ -1,5 +1,8 @@
 \section{Related Work}\label{sec:rel_work}
 
+\subsection{Reinforcement Learning with external reward signals}
+While reinforcement learning \emph{reinforces} good behavior our approach learns a \emph{goal-agnostic} model that can be used across a wide range of tasks, not known at training time.
+
 \subsection{Large-Scale, Self-Supervised Robotic Learning}
 
 In a number of recent works large-scale robotic data collection (often using multiple robots) has been the key factor enabling the automatic acquisition of generalizable features and skills. Several prior works have focused on autonomous data collection for individual skills, such as grasping~\cite{lerrel,google_handeye} or obstacle avoidance~\cite{greg_kahn_uncertainty,crashing}. In contrast to these methods, our approach learns predictive models that can be used to perform a variety of manipulations, and does not require a success measure or reward function during data collection. 
