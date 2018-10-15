@@ -78,30 +78,30 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Test time procedure}{5}{subsubsection.5.2.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Closed loop control is achieved by registering the current image $I_t$ globally to the first frame $I_0$ and the goal image $I_g$. In this example registration to $I_0$ succeeds while registration to $I_g$ fails since the object in $I_g$ is too far away.}  \relax }}{5}{figure.caption.6}}
 \newlabel{fig:reg_single}{{6}{5}{\small {Closed loop control is achieved by registering the current image $I_t$ globally to the first frame $I_0$ and the goal image $I_g$. In this example registration to $I_0$ succeeds while registration to $I_g$ fails since the object in $I_g$ is too far away.}  \relax }{figure.caption.6}{}}
-\newlabel{fig:discrete}{{7b}{5}{\small {Training usage.}\relax }{figure.caption.7}{}}
-\newlabel{sub@fig:discrete}{{b}{5}{\small {Training usage.}\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {(a) At test time the registration network registers the current image $I_t$ to the start image $I_0$ (top) and goal image $I_g$ (bottom), inferring the flow-fields $\mathaccentV {hat}05E{F}_{0 \leftarrow t}$ and $\mathaccentV {hat}05E{F}_{g \leftarrow t}$. (b) The registration network is trained by warping images from randomly selected timesteps along a trajectory to each other. }\relax }}{5}{figure.caption.7}}
-\newlabel{fig:registration_arch}{{7}{5}{\small {(a) At test time the registration network registers the current image $I_t$ to the start image $I_0$ (top) and goal image $I_g$ (bottom), inferring the flow-fields $\hat {F}_{0 \leftarrow t}$ and $\hat {F}_{g \leftarrow t}$. (b) The registration network is trained by warping images from randomly selected timesteps along a trajectory to each other. }\relax }{figure.caption.7}{}}
 \newlabel{eqn:warped_pos}{{9}{5}{Test time procedure}{equation.5.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Registration-Based Pixel-Distance Cost}{5}{subsubsection.5.2.2}}
+\newlabel{subsec:planning_costs}{{5.2.2}{5}{Registration-Based Pixel-Distance Cost}{subsubsection.5.2.2}{}}
 \citation{meister2017unflow}
 \citation{meister2017unflow}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda $ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}\relax }}{6}{figure.caption.8}}
-\newlabel{fig:tracking_overtime}{{8}{6}{\small {Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda $ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Registration-Based Pixel-Distance Cost}{6}{subsubsection.5.2.2}}
-\newlabel{subsec:planning_costs}{{5.2.2}{6}{Registration-Based Pixel-Distance Cost}{subsubsection.5.2.2}{}}
+\citation{maml}
+\citation{caml}
+\newlabel{fig:discrete}{{7b}{6}{\small {Training usage.}\relax }{figure.caption.7}{}}
+\newlabel{sub@fig:discrete}{{b}{6}{\small {Training usage.}\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {(a) At test time the registration network registers the current image $I_t$ to the start image $I_0$ (top) and goal image $I_g$ (bottom), inferring the flow-fields $\mathaccentV {hat}05E{F}_{0 \leftarrow t}$ and $\mathaccentV {hat}05E{F}_{g \leftarrow t}$. (b) The registration network is trained by warping images from randomly selected timesteps along a trajectory to each other. }\relax }}{6}{figure.caption.7}}
+\newlabel{fig:registration_arch}{{7}{6}{\small {(a) At test time the registration network registers the current image $I_t$ to the start image $I_0$ (top) and goal image $I_g$ (bottom), inferring the flow-fields $\hat {F}_{0 \leftarrow t}$ and $\hat {F}_{g \leftarrow t}$. (b) The registration network is trained by warping images from randomly selected timesteps along a trajectory to each other. }\relax }{figure.caption.7}{}}
 \newlabel{eqn:cost_avg}{{10}{6}{Registration-Based Pixel-Distance Cost}{equation.5.10}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Training procedure}{6}{subsection.5.3}}
 \newlabel{subsec:training}{{5.3}{6}{Training procedure}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Classifier-based Cost}{6}{subsection.5.4}}
 \newlabel{subsec:class_cost}{{5.4}{6}{Classifier-based Cost}{subsection.5.4}{}}
-\citation{maml}
-\citation{caml}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1}Meta-Learning for Few-Shot Goal Inference}{6}{subsubsection.5.4.1}}
 \citation{ADAM}
 \citation{deep_mpc}
 \citation{cem-rk-13,foresight}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda $ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}\relax }}{7}{figure.caption.8}}
+\newlabel{fig:tracking_overtime}{{8}{7}{\small {Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda $ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.\relax }}{7}{figure.caption.9}}
 \newlabel{fig:cls_fig}{{9}{7}{\small We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1}Meta-Learning for Few-Shot Goal Inference}{7}{subsubsection.5.4.1}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2}Test time procedure}{7}{subsubsection.5.4.2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.3}Train time procedure}{7}{subsubsection.5.4.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5}When to use which cost function?}{7}{subsection.5.5}}
@@ -166,6 +166,10 @@
 \bibcite{recurrentsimulators}{12}
 \bibcite{bootsetal}{13}
 \bibcite{finn_nips}{14}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE\nobreakspace  {}\cite  {finn2016deep}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }}{11}{figure.caption.17}}
+\newlabel{fig:cls_charts}{{14}{11}{\small Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE~\cite {finn2016deep}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Conclusion}{11}{section.10}}
+\@writefile{toc}{\contentsline {section}{References}{11}{section*.20}}
 \bibcite{video_pixel_networks}{15}
 \bibcite{beyond_mse}{16}
 \bibcite{convlstm}{17}
@@ -173,10 +177,6 @@
 \bibcite{prednet}{19}
 \bibcite{dynamic_filter_networks}{20}
 \bibcite{scott_reed}{21}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE\nobreakspace  {}\cite  {finn2016deep}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }}{11}{figure.caption.17}}
-\newlabel{fig:cls_charts}{{14}{11}{\small Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE~\cite {finn2016deep}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {10}Conclusion}{11}{section.10}}
-\@writefile{toc}{\contentsline {section}{References}{11}{section*.20}}
 \bibcite{se3}{22}
 \bibcite{zhou2016view}{23}
 \bibcite{meister2017unflow}{24}
@@ -197,5 +197,5 @@
 \@writefile{toc}{\contentsline {subsection}{Michael Shell}{12}{IEEEbiography.1}}
 \@writefile{toc}{\contentsline {subsection}{John Doe}{12}{IEEEbiography.2}}
 \@writefile{toc}{\contentsline {subsection}{Jane Doe}{12}{IEEEbiography.3}}
-\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Simulated Experiments}{12}{section*.21}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.1}Simulated Experiments}{12}{subsubsection.Appendix.A.0.1}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Simulated Experiments}{13}{section*.21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.1}Simulated Experiments}{13}{subsubsection.Appendix.A.0.1}}

@@ -1,9 +1,4 @@
 \section{discussion}
+A natural question concerning the presented method is whether predicting in image space or a learned latent space is better for the purpose of generalizable robotic control. While a latent space has the advantage of likely being a more compact representation, potentially being easier to predict while mostly encoding information relevant to the prediction task, it is an open problem \emph{how} to automatically extract such a latent space. Furthermore the capability to generate predictions in image space helps immensely with interpreting and debugging the system. Of course decoding a latent space prediction back to images for the purpose of interpretation would likely be feasible as well. 
 
-\begin{itemize}
-	\item why not use low-dim state rep.?
-    \item future work: 
-    \subitem move beyond random data collection!
-    \subitem long-horizon planning with time-agnostic prediction
-    
-\end{itemize}
+Another potential advantage of latent space representations could be to handle \emph{partially observed} settings, for example tasks where an object is occluded for extended periods of time. However the recurrent video-prediction model is also able to handle some cases of partial observability, through the use of temporal skip-connections and by maintaining a hidden state in the convolutinal LSTM.

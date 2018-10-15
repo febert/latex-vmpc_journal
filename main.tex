@@ -573,13 +573,13 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 
 
 \section{Conclusion}
-asdfx
-We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve an array of robotic control tasks. The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
-We also demonstrate that Visual-Model-Predictive Control is able to perform multi-object manipulation, pick\&place tasks as well as cloth-folding tasks -- all within a single framework.
+We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve an array of robotic control tasks. 
+%The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
+We demonstrate that Deep Visual-Model-Predictive Control is able to successfully perform multi-object manipulation, pushing, pick\&place tasks as well as cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for model-predictive control.
 
-The following has been identified as the most critical future working milestones:
+The following has been identified as the most critical milestones for arriving at a general-purpose robotic manipulation system:
 \begin{itemize}
-	\item \textbf{Moving away from random data collection:} For learning how to screw a cap onto a bottle -- that is, reaching a state with exceptionally low entropy -- data collection with random action is extremely unlikely to reach this state. Therefore we suggest to collection data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 
+	\item \textbf{Replacing random data collection:} For learning how to screw a cap onto a bottle -- a state that has exceptionally low probability of being reached by chance -- data collection with random action is extremely ineffective. Therefore we suggest to collect data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 
 %	Furthermore the demonstrations could be made with increasing difficulty, so as to induce a learning curriculum.
 	
 	\item \textbf{Hierarchical Planning with Time-Agnostic Prediction:} Many tasks require reasoning over extended periods of time. 
