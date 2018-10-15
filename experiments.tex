@@ -4,6 +4,7 @@ To train both our video-prediction and registration models, we collected 20,000 
 The action space consisted of Cartesian movements along the $x$, $y$, and $z$ axes, and for some parts of it we also added azimuthal rotations of the gripper. For evaluation, we selected novel objects that were never seen during training. The evaluation tasks required the robot to move objects in its environment from a starting state to a goal configuration, and performance was evaluated by measuring the distance between the final object position and goal position. \todo{how was it done for the classifier?}
 
 \subsection{Evaluating Skip-connection Neural Advection}
+\label{subsec:sna_experiments}
 \begin{wrapfigure}{r}{.37\columnwidth}
 	% \vspace{-0.25in}
 	\centering
@@ -126,24 +127,35 @@ In the setting where the gripper is enabled it is part of the task to decide whe
 
 \subsection{Evaluating Classifier-based cost function}
 
-For evaluating the performance of the proposed classifier-based cost function, we study a visual object arrangement task, where different goals correspond to different relative arrangements of a pair of objects. We evaluate our learned classifier on the predictions made by the video prediction model \todo{unclear, how exactly do you evaluate the classifier?} and derive the cost used for planning from the predicted probability of success.
+For evaluating the performance of the proposed classifier-based cost function, we study a visual object arrangement task, where different goals correspond to different relative arrangements of a pair of objects. 
+%We evaluate our learned classifier on the predictions made by the video prediction model \todo{unclear, how exactly do you evaluate the classifier?} and derive the cost used for planning from the predicted probability of success. 
 
-\subsubsection{Real-World Experiments}
+% \subsubsection{Real-World Experiments}
 
 To collect data for meta-training the classifier, we randomly select a pair of objects from our set of training objects, and position them into many different relative positions, recording the image for each configuration. One task corresponds to a particular relative positioning of two objects, e.g. the first object to the left of the second, and we construct positive and negative examples for this task by labeling the aforementioned images. We randomly position the arm in each image, as it is not a determiner of task success. A good objective should ignore the position of the arm. We also include randomly-positioned distractor objects in about a third of the collected images.
 
-We evaluate all approaches in three different experimental settings. In the first setting, the goal is to arrange two objects into a specified relative arrangement. The second setting is the same, but with distractor objects present. In the final, most challenging setting, the goal is to achieve two tasks in sequence. We provide positive examples for both tasks, infer the classifier for both task, perform MPC for the first task until completion, followed by MPC for the second task. To evaluate the ability to generalize to new goals and settings, we use novel, held-out objects for all of the task and distractor objects in our evaluation. 
+We evaluate all approaches in three different experimental settings. In the first setting, the goal is to arrange two objects into a specified relative arrangement. The second setting is the same, but with distractor objects present. In the final, most challenging setting, the goal is to achieve two tasks in sequence. We provide positive examples for both tasks, infer the classifier for both task, perform MPC for the first task until completion, followed by MPC for the second task. To evaluate the ability to generalize to new goals and settings, we use novel, held-out objects for all of the task and distractor objects in our evaluation. Code for training the few-shot goal classifier and videos of our results are available at \url{https://sites.google.com/view/few-shot-goals}.
 
-We qualitatively visualize the evaluation in Figure~\ref{fig:qual_plan}.\todo{explain how exactly you measure success} On the left, we show a subset of the five images provided to illustrate the task(s), and on the left, we show the motions performed by the robot. We see that the robot is able to execute motions which lead to a correct relative positioning of the objects.
-We quantitatively evaluate each method across 20 tasks, including $10$ unique object pairs. The results, shown in Figure~\ref{fig:planning_results}, indicate that prior methods for learning distance metrics struggle to infer the goal of the task, while our approach leads to substantially more successful behavior on average. 
+We qualitatively visualize the evaluation in Figure~\ref{fig:cls_results}.\todo{explain how exactly you measure success} On the left, we show a subset of the five images provided to illustrate the task(s), and on the left, we show the motions performed by the robot. We see that the robot is able to execute motions which lead to a correct relative positioning of the objects.
+We quantitatively evaluate each method across 20 tasks, including $10$ unique object pairs. The results, shown in Figure~\ref{fig:cls_charts}, indicate that prior methods for learning distance metrics struggle to infer the goal of the task, while our approach leads to substantially more successful behavior on average. 
 
-% \begin{wraptable}{r}{0\columnwidth}
-% \begin{tabular}{ll}
-% \hline
-% Method & Success Rate \\ \hline
-% DSAE Distance & 10\% \\
-% Pixel Distance & 20\% \\
-% Classifier-based Cost & 75\% \\ \hline
-% \end{tabular}
-% \label{tbl:classifier}
-% \end{wraptable}
+\begin{figure}
+    \centering
+    % \vspace{-0.3cm}
+    \includegraphics[width=0.48\textwidth]{images_cls/cls_charts.jpeg}
+    % \vspace{-0.3cm}
+    \caption{\small Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE~\cite{finn2016deep}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.}
+    \label{fig:cls_charts}
+    \vspace{-0.3cm}
+\end{figure}
+
+
+\begin{figure*}
+    \centering
+    % \vspace{-0.3cm}
+    \includegraphics[width=0.8\textwidth]{images_cls/cls_results.jpeg}
+    % \vspace{-0.3cm}
+    \caption{\small Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning.}
+    \label{fig:cls_results}
+    \vspace{-0.3cm}
+\end{figure*}
