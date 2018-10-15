@@ -26,11 +26,21 @@ S.~Levine, C.~Finn, T.~Darrell, and P.~Abbeel, ``End-to-end learning of deep
   visuomotor policies,'' \emph{Journal of Machine Learning Research (JMLR)},
   2016.
 
-\bibitem{dsae}
-C.~Finn, X.~Y. Tan, Y.~Duan, T.~Darrell, S.~Levine, and P.~Abbeel, ``Deep
-  spatial autoencoders for visuomotor learning,'' in \emph{Robotics and
-  Automation (ICRA), 2016 IEEE International Conference on}.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2016.
+\bibitem{foresight}
+C.~Finn and S.~Levine, ``Deep visual foresight for planning robot motion,'' in
+  \emph{International Conference on Robotics and Automation (ICRA)}, 2017.
+
+\bibitem{sna}
+\BIBentryALTinterwordspacing
+F.~Ebert, C.~Finn, A.~X. Lee, and S.~Levine, ``Self-supervised visual planning
+  with temporal skip connections,'' \emph{CoRR}, vol. abs/1710.05268, 2017.
+  [Online]. Available: \url{http://arxiv.org/abs/1710.05268}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ebert2018robustness}
+F.~Ebert, S.~Dasari, A.~X. Lee, S.~Levine, and C.~Finn, ``Robustness via
+  retrying: Closed-loop robotic manipulation with self-supervised learning,''
+  \emph{arXiv preprint arXiv:1810.03043}, 2018.
 
 \bibitem{lerrel}
 L.~Pinto and A.~Gupta, ``Supersizing self-supervision: Learning to grasp from
@@ -126,10 +136,6 @@ T.~Zhou, S.~Tulsiani, W.~Sun, J.~Malik, and A.~A. Efros, ``View synthesis by
   appearance flow,'' in \emph{European conference on computer vision}.\hskip
   1em plus 0.5em minus 0.4em\relax Springer, 2016, pp. 286--301.
 
-\bibitem{foresight}
-C.~Finn and S.~Levine, ``Deep visual foresight for planning robot motion,'' in
-  \emph{International Conference on Robotics and Automation (ICRA)}, 2017.
-
 \bibitem{meister2017unflow}
 S.~Meister, J.~Hur, and S.~Roth, ``Unflow: Unsupervised learning of optical
   flow with a bidirectional census loss,'' \emph{arXiv preprint
@@ -160,13 +166,6 @@ R.~Y. Rubinstein and D.~P. Kroese, \emph{The cross-entropy method: a unified
   approach to combinatorial optimization, Monte-Carlo simulation and machine
   learning}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Science \&
   Business Media, 2013.
-
-\bibitem{sna}
-\BIBentryALTinterwordspacing
-F.~Ebert, C.~Finn, A.~X. Lee, and S.~Levine, ``Self-supervised visual planning
-  with temporal skip connections,'' \emph{CoRR}, vol. abs/1710.05268, 2017.
-  [Online]. Available: \url{http://arxiv.org/abs/1710.05268}
-\BIBentrySTDinterwordspacing
 
 \bibitem{grasping_fetal}
 D.~Sherer, ``Fetal grasping at 16 weeks' gestation,'' \emph{Journal of
