@@ -1,5 +1,5 @@
 \section{Planning Cost Functions}
-
+\label{sec:cost}
 
 \subsection{Pixel-Distance based Cost}
 A convenient way to define a robot task is by choosing one or more pixels in the robot's camera view and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left.
@@ -84,8 +84,7 @@ While the registration network is trained to perform a global registration betwe
 
 \begin{figure*}
 	\centering
-	\vspace{-0.1in}
-	\includegraphics[width=1\linewidth]{images_rfr/reg_over_time.png}
+	\vspace{-0.1in}	\includegraphics[width=1\linewidth]{images_rfr/reg_over_time.png}
 	\caption{\small{Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda$ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}}
 	\label{fig:tracking_overtime}
 	\vspace{-0.2in}

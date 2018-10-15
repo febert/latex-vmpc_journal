@@ -177,6 +177,11 @@ B.~Babenko, M.-H. Yang, and S.~Belongie, ``Visual tracking with online multiple
   CVPR 2009. IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2009, pp. 983--990.
 
+\bibitem{jayaraman2018time}
+D.~Jayaraman, F.~Ebert, A.~A. Efros, and S.~Levine, ``Time-agnostic prediction:
+  Predicting predictable video frames,'' \emph{arXiv preprint
+  arXiv:1808.07784}, 2018.
+
 \bibitem{todorov2012mujoco}
 E.~Todorov, T.~Erez, and Y.~Tassa, ``Mujoco: A physics engine for model-based
   control,'' in \emph{Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ

@@ -10,19 +10,6 @@ We approach this problem from the standpoint of sensory prediction. Prediction i
 
 
 
-\iffalse
-The reinforcement learning (RL) problem statement covers such a real-world setting. Yet, the general setting of learning from raw sensory inputs from sparse rewards in the real world is incredibly challenging. 
-To make progress, many prior works have chosen various assumptions to make the problem more tractable. For instance, some works have been demonstrated only in settings where shaped rewards are available~\cite{todo}.
-%%SL.09.03: I don't think it's a good idea to start the very first paragraph with something so negative. We can discuss previous work later, the first paragraph should start on a positive note about how prediction is often considered a fundamental component of intelligence.
-Others have assumed access to a perfect or hand-engineered simulator, from which millions of roll-outs can be taken~\cite{atari,openai_hand}.
-A few works have assumed that a low-dimensional, compact state representation is accessible during training~\cite{e2e,asymmetric_ac}. Finally, many works reset the state between roll-outs to a relatively narrow distribution of initial states, leading to a task is more repeatable~\cite{atari,dsae,gps,etc}.
-%%SL.09.03: seems way too low-level for the first paragraph. We should also leave all the buzzwordy stuff (alphago, atari, etc) for later, it really has little to do with the main topic of the paper.
-By making such assumptions, these prior methods have demonstrated the ability to learn complex visuomotor skills~\cite{e2e}, learn Atari games from pixels~\cite{atari}, and master the game of Go~\cite{alphago}.
-%% CF: I don't like using "real-world" so much below, because we are still in a lab environment... thoughts?
-However, to move these algorithms towards achieving general behaviors in the real world, it is arguably necessary to deploy them in diverse, real-world environments.
-Unfortunately, it is challenging to deploy such methods for learning in diverse, real-world environments, where shaped rewards, resets, compact state representations, and simulations are largely unavailable without extensive human involvement.
-\fi
-
 %Instead of focusing on mastery of highly-specialized skills in closed-world environments, here we focus on \emph{generalization} in diverse environments.
 %%SL.09.03: this is an important and critical sentence, but I don't like that we from the outset present it in contrast to something so negative (those other guys fail at this, but we don't) -- just say what we do well, and then talk about alternatives. I think we can motivate the work and explain the challenge without necessarily getting so bogged down in the failure of prior work.
 To study \emph{generalization} in reinforcement learning, we consider a robotic control domain with a wide range of objects, where the algorithm has access to only raw sensor observations (i.e. pixels) and sparse rewards and has minimal control over the environment and how it can be reset. In such a setting with minimal assumptions, rewards are simply not enough supervision
