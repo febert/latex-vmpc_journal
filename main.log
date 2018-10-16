@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  16 OCT 2018 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  16 OCT 2018 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -561,39 +561,25 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 1.
-
-
-LaTeX Warning: Citation `tdgammon' on page 1 undefined on input line 5.
-
-
-LaTeX Warning: Citation `atari' on page 1 undefined on input line 5.
-
-
-LaTeX Warning: Citation `alphago' on page 1 undefined on input line 5.
-
 LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 18.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<images_general/new_overview.png, id=167, 616.3025pt x 760.8425pt>
+<images_general/new_overview.png, id=172, 616.3025pt x 760.8425pt>
 File: images_general/new_overview.png Graphic file (type png)
 
 <use images_general/new_overview.png>
 Package pdftex.def Info: images_general/new_overview.png used on input line 25.
 
 (pdftex.def)             Requested size: 202.35675pt x 253.56323pt.
-
-
-LaTeX Warning: Citation `flo' on page 2 undefined on input line 49.
-
-) (./related_work.tex) [2 <./images_general/new_overview.png>]
-(./preliminaries.tex
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 16.
+) (./related_work.tex) [2 <./images_general/new_overview.png>] (./preliminaries
+.tex
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 14.
 
 ) (./video_prediction.tex
-<images_sna/occlusionaware/architecture.pdf, id=241, 597.50786pt x 369.88583pt>
+<images_sna/occlusionaware/architecture.pdf, id=250, 597.50786pt x 369.88583pt>
 File: images_sna/occlusionaware/architecture.pdf Graphic file (type pdf)
 <use images_sna/occlusionaware/architecture.pdf>
 Package pdftex.def Info: images_sna/occlusionaware/architecture.pdf used on inp
@@ -603,7 +589,7 @@ LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 9.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 13.
  [3 <./images_sna/occlusionaware/architecture.pdf>]
-<images_sna/occlusionaware/img_desigpixb0.png, id=312, 483.8075pt x 484.81125pt
+<images_sna/occlusionaware/img_desigpixb0.png, id=321, 483.8075pt x 484.81125pt
 >
 File: images_sna/occlusionaware/img_desigpixb0.png Graphic file (type png)
  <use images_sna/occlusionaware/img_desigpixb0.png>
@@ -621,7 +607,7 @@ Underfull \hbox (badness 1622) in paragraph at lines 61--62
  []
 
 
-<images_sna/occlusionaware/probability_curves.pdf, id=320, 569.05513pt x 284.52
+<images_sna/occlusionaware/probability_curves.pdf, id=329, 569.05513pt x 284.52
 756pt>
 File: images_sna/occlusionaware/probability_curves.pdf Graphic file (type pdf)
  <use images_sna/occlusionaware/probability_curves.pdf>
@@ -629,7 +615,7 @@ Package pdftex.def Info: images_sna/occlusionaware/probability_curves.pdf used
 on input line 75.
 (pdftex.def)             Requested size: 227.64894pt x 113.82202pt.
 
-<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=323, 5
+<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=332, 5
 13.92pt x 128.48pt>
 File: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png Graph
 ic file (type png)
@@ -639,7 +625,7 @@ Package pdftex.def Info: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0
 _overtime.png used on input line 83.
 (pdftex.def)             Requested size: 227.64894pt x 56.91168pt.
 
-<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=324, 514.92375pt
+<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=333, 514.92375pt
  x 128.48pt>
 File: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png Graphic file (t
 ype png)
@@ -647,16 +633,10 @@ ype png)
 Package pdftex.def Info: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.
 png used on input line 89.
 (pdftex.def)             Requested size: 227.64894pt x 56.79994pt.
-
-
-LaTeX Warning: Citation `foresight' on page 4 undefined on input line 90.
-
-
-LaTeX Warning: Citation `foresight' on page 4 undefined on input line 90.
-
-) (./cost_functions.tex [4 <./images_sna/occlusionaware/img_desigpixb0.png> <./
-images_sna/occlusionaware/probability_curves.pdf>]
-<images_rfr/registration_singletime.pdf, id=349, 376.40625pt x 239.89626pt>
+)
+(./cost_functions.tex [4 <./images_sna/occlusionaware/img_desigpixb0.png> <./im
+ages_sna/occlusionaware/probability_curves.pdf>]
+<images_rfr/registration_singletime.pdf, id=360, 376.40625pt x 239.89626pt>
 File: images_rfr/registration_singletime.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_singletime.pdf>
@@ -668,7 +648,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
  [5 <./images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png> <./
 images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png> <./images_rfr/regist
 ration_singletime.pdf>]
-<images_rfr/registration_test_start.pdf, id=395, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_start.pdf, id=406, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_start.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_start.pdf>
@@ -676,7 +656,7 @@ Package pdftex.def Info: images_rfr/registration_test_start.pdf used on input l
 ine 76.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_test_goal.pdf, id=396, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_goal.pdf, id=407, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_goal.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_goal.pdf>
@@ -684,7 +664,7 @@ Package pdftex.def Info: images_rfr/registration_test_goal.pdf used on input li
 ne 77.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_train.pdf, id=397, 390.45876pt x 229.85875pt>
+<images_rfr/registration_train.pdf, id=408, 390.45876pt x 229.85875pt>
 File: images_rfr/registration_train.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_train.pdf>
@@ -692,7 +672,7 @@ Package pdftex.def Info: images_rfr/registration_train.pdf used on input line 8
 3.
 (pdftex.def)             Requested size: 139.12051pt x 75.81432pt.
 
-<images_rfr/reg_over_time.png, id=399, 1638.12pt x 308.15125pt>
+<images_rfr/reg_over_time.png, id=410, 1638.12pt x 308.15125pt>
 File: images_rfr/reg_over_time.png Graphic file (type png)
 
 <use images_rfr/reg_over_time.png>
@@ -700,40 +680,28 @@ Package pdftex.def Info: images_rfr/reg_over_time.png used on input line 95.
 (pdftex.def)             Requested size: 517.935pt x 97.4302pt.
  [6 <./images_rfr/registration_train.pdf> <./images_rfr/registration_test_start
 .pdf> <./images_rfr/registration_test_goal.pdf>] <images_cls/cls_fig.jpeg, id=4
-59, 810.02625pt x 331.2375pt>
+70, 810.02625pt x 331.2375pt>
 File: images_cls/cls_fig.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_fig.jpeg>
 Package pdftex.def Info: images_cls/cls_fig.jpeg used on input line 148.
 (pdftex.def)             Requested size: 248.60658pt x 101.66159pt.
  [7 <./images_rfr/reg_over_time.png> <./images_cls/cls_fig.jpeg>]) (./optimizer
-.tex
-
-LaTeX Warning: Citation `foresight' on page 8 undefined on input line 5.
-
-) (./scaling_up.tex
-<images_rfr/pick_place_plush.pdf, id=478, 995.84645pt x 85.35826pt>
+.tex) (./scaling_up.tex
+<images_rfr/pick_place_plush.pdf, id=490, 995.84645pt x 85.35826pt>
 File: images_rfr/pick_place_plush.pdf Graphic file (type pdf)
 
 <use images_rfr/pick_place_plush.pdf>
 Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 4.
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
-
-
-LaTeX Warning: Citation `foresight' on page 8 undefined on input line 17.
-
 ) (./experiments.tex [8]
-<images_sna/longdistance_pushing/pushing.pdf, id=490, 301.125pt x 301.125pt>
+<images_sna/longdistance_pushing/pushing.pdf, id=504, 301.125pt x 301.125pt>
 File: images_sna/longdistance_pushing/pushing.pdf Graphic file (type pdf)
 
 <use images_sna/longdistance_pushing/pushing.pdf>
 Package pdftex.def Info: images_sna/longdistance_pushing/pushing.pdf used on in
 put line 11.
 (pdftex.def)             Requested size: 75.88426pt x 75.88298pt.
-
-
-LaTeX Warning: Citation `foresight' on page 9 undefined on input line 18.
-
 
 Underfull \hbox (badness 3657) in paragraph at lines 18--19
 \OT1/ppl/m/n/9.53561 com-par-i-son of visual-MPC us-
@@ -750,13 +718,7 @@ Underfull \hbox (badness 1406) in paragraph at lines 20--21
  []
 
 
-LaTeX Warning: Citation `foresight' on page 9 undefined on input line 25.
-
-
-LaTeX Warning: Citation `foresight' on page 9 undefined on input line 25.
-
-
-<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=498, 1280.37404pt x 
+<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=515, 1280.37404pt x 
 227.62204pt>
 File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type 
 pdf)
@@ -765,16 +727,9 @@ Package pdftex.def Info: images_sna/multiobject_qualitative/avoid_obstacle.pdf
 used on input line 28.
 (pdftex.def)             Requested size: 517.935pt x 92.07874pt.
 
-
-LaTeX Warning: Citation `foresight' on page 9 undefined on input line 40.
-
-
 Overfull \hbox (11.55933pt too wide) in paragraph at lines 36--45
  [] 
  []
-
-
-LaTeX Warning: Citation `foresight' on page 9 undefined on input line 59.
 
 [9 <./images_rfr/pick_place_plush.pdf> <./images_sna/longdistance_pushing/pushi
 ng.pdf
@@ -782,7 +737,7 @@ ng.pdf
 pdfTeX warning: /usr/bin/pdflatex (file ./images_sna/longdistance_pushing/pushi
 ng.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 
->] <images_rfr/push_correction.pdf, id=538, 995.84645pt x 85.35826pt>
+>] <images_rfr/push_correction.pdf, id=556, 995.84645pt x 85.35826pt>
 File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
 <use images_rfr/push_correction.pdf>
@@ -790,20 +745,14 @@ Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 101.
 
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_cls/cls_charts.jpeg, id=546, 682.55pt x 297.11pt>
+<images_cls/cls_charts.jpeg, id=564, 682.55pt x 297.11pt>
 File: images_cls/cls_charts.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_charts.jpeg>
 Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 145.
 (pdftex.def)             Requested size: 248.60658pt x 108.2153pt.
 
-
-LaTeX Warning: Citation `finn2016deep' on page 10 undefined on input line 147.
-
-
-LaTeX Warning: Citation `finn2016deep' on page 10 undefined on input line 147.
-
-<images_cls/cls_results.jpeg, id=547, 1027.84pt x 391.4625pt>
+<images_cls/cls_results.jpeg, id=567, 1027.84pt x 391.4625pt>
 File: images_cls/cls_results.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_results.jpeg>
@@ -812,17 +761,17 @@ Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 156.
 ) (./discussion.tex [10 <./images_sna/multiobject_qualitative/avoid_obstacle.pd
 f>]) (./main.bbl [11 <./images_rfr/push_correction.pdf> <./images_cls/cls_chart
 s.jpeg>]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 63.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <8.03> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
 
-Underfull \hbox (badness 2856) in paragraph at lines 86--89
+Underfull \hbox (badness 2856) in paragraph at lines 106--109
 []\OT1/ppl/m/n/8.03 M. Zhang, S. Vikram, L. Smith, P. Abbeel, M. J. John-
  []
 
@@ -833,7 +782,7 @@ Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ù in font pplr7t!
 
-Underfull \hbox (badness 1590) in paragraph at lines 108--111
+Underfull \hbox (badness 1590) in paragraph at lines 128--131
 []\OT1/ppl/m/n/8.03 G. Kahn, A. Vil-laflor, V. Pong, P. Abbeel, and S. Levine,
  []
 
@@ -846,26 +795,26 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 LaTeX Warning: Reference `fig:sim_bench' on page 13 undefined on input line 8.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 700.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 699.
  [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 700.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 699.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 700.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 700.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 699.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 699.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F26DA42474CF99B7E5F627C904FB089E;2720.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 700.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 699.
  ) 
 Here is how much of TeX's memory you used:
- 9329 strings out of 493029
- 147245 string characters out of 6136234
- 251557 words of memory out of 5000000
- 12534 multiletter control sequences out of 15000+600000
- 64732 words of font info for 157 fonts, out of 8000000 for 9000
+ 9330 strings out of 493029
+ 147267 string characters out of 6136234
+ 251674 words of memory out of 5000000
+ 12532 multiletter control sequences out of 15000+600000
+ 64123 words of font info for 156 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  36i,17n,42p,1604b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -894,10 +843,10 @@ hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive
 /urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
 o/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
 
-Output written on main.pdf (13 pages, 8804897 bytes).
+Output written on main.pdf (13 pages, 8806200 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
- 131 named destinations out of 1000 (max. 500000)
+ 737 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 135 named destinations out of 1000 (max. 500000)
  399 words of extra memory for PDF output out of 10000 (max. 10000000)
 

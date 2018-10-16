@@ -7,134 +7,123 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: IEEEabrv.bib
-Database file #2: bib.bib
-Repeated entry---line 834 of file bib.bib
+Database file #1: mybib.bib
+Repeated entry---line 865 of file mybib.bib
  : @article{google_handeye
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 919 of file bib.bib
+Repeated entry---line 950 of file mybib.bib
  : @inproceedings{deep_mpc
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1025 of file bib.bib
+Repeated entry---line 1056 of file mybib.bib
  : @article{crashing
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1032 of file bib.bib
+Repeated entry---line 1063 of file mybib.bib
  : @article{greg_kahn_uncertainty
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1039 of file bib.bib
+Repeated entry---line 1070 of file mybib.bib
  : @inproceedings{vondrick
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1053 of file bib.bib
+Repeated entry---line 1084 of file mybib.bib
  : @inproceedings{convlstm
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1060 of file bib.bib
+Repeated entry---line 1091 of file mybib.bib
  : @article{beyond_mse
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1083 of file bib.bib
+Repeated entry---line 1114 of file mybib.bib
  : @article{prednet
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1126 of file bib.bib
+Repeated entry---line 1157 of file mybib.bib
  : @inproceedings{bootsetal
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1141 of file bib.bib
+Repeated entry---line 1172 of file mybib.bib
  : @article{scott_reed
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1148 of file bib.bib
+Repeated entry---line 1179 of file mybib.bib
  : @article{se3
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1155 of file bib.bib
+Repeated entry---line 1186 of file mybib.bib
  : @article{recurrentsimulators
  :                             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1162 of file bib.bib
+Repeated entry---line 1193 of file mybib.bib
  : @inproceedings{dynamic_filter_networks
  :                                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1169 of file bib.bib
- : @inproceedings{finn_nips
- :                         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1184 of file bib.bib
+Repeated entry---line 1209 of file mybib.bib
  : @inproceedings{atarioh
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1207 of file bib.bib
+Repeated entry---line 1232 of file mybib.bib
  : @article{video_pixel_networks
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1448 of file bib.bib
+Repeated entry---line 1473 of file mybib.bib
  : @article{e2e
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1475 of file bib.bib
+Repeated entry---line 1500 of file mybib.bib
  : @article{maml
  :              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1507 of file bib.bib
+Repeated entry---line 1532 of file mybib.bib
  : @article{ADAM
  :              ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "tdgammon"
-Warning--I didn't find a database entry for "atari"
-Warning--I didn't find a database entry for "alphago"
-Warning--I didn't find a database entry for "flo"
-Warning--I didn't find a database entry for "foresight"
-Warning--I didn't find a database entry for "finn2016deep"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 45 entries,
+You've used 49 entries,
             4087 wiz_defined-function locations,
-            1554 strings with 25958 characters,
-and the built_in function-call counts, 27323 in all, are:
-= -- 1977
-> -- 861
-< -- 108
-+ -- 433
-- -- 182
-* -- 1277
-:= -- 4148
-add.period$ -- 99
-call.type$ -- 45
-change.case$ -- 44
-chr.to.int$ -- 273
-cite$ -- 45
-duplicate$ -- 2129
-empty$ -- 2523
-format.name$ -- 226
-if$ -- 6354
+            1044 strings with 16409 characters,
+and the built_in function-call counts, 29815 in all, are:
+= -- 2160
+> -- 961
+< -- 117
++ -- 483
+- -- 205
+* -- 1395
+:= -- 4538
+add.period$ -- 107
+call.type$ -- 49
+change.case$ -- 48
+chr.to.int$ -- 291
+cite$ -- 49
+duplicate$ -- 2325
+empty$ -- 2721
+format.name$ -- 252
+if$ -- 6923
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 418
-newline$ -- 160
-num.names$ -- 45
-pop$ -- 1154
+int.to.str$ -- 49
+missing$ -- 460
+newline$ -- 172
+num.names$ -- 49
+pop$ -- 1263
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2072
+skip$ -- 2255
 stack$ -- 0
-substring$ -- 678
-swap$ -- 1420
-text.length$ -- 17
+substring$ -- 724
+swap$ -- 1558
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 45
+type$ -- 49
 warning$ -- 0
-while$ -- 89
-width$ -- 47
-write$ -- 401
-(There were 19 error messages)
+while$ -- 97
+width$ -- 51
+write$ -- 436
+(There were 18 error messages)
