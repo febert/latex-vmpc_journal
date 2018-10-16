@@ -393,11 +393,12 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %\title{Deep Reinforcement Learning with Observation Models}
-\title{Deep Visual MPC: \\ Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control}
+\title{Visual MPC: Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control}
 %%SL.10.14: I think the current title is a bit too aggressive -- kind of makes it seem like all the other RL is not "real." We should make sure to hit a few key words: we need to make sure the title communicates that this is based on images, that there is robotic manipulation going on, and that it is based on prediction or something like that. We should also pick a name for the method. I don't particularly like "Visual MPC" (it sounds a bit antiquated, like visual servoing), but if we go with that, we can call it
 %Visual MPC: Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control
 % we can also go with "foresight" and call it
 %Visual Foresight: Deep Reinforcement Learning via Prediction for Vision-Based Robotic Control
+%% Real-World Deep Reinforcement Learning with Sensory Prediction Models
 %% TITLE IDEAS HERE (separate from method names)
 % Learning Observation Models for Real-World Planning and Control
 % Deep Reinforcement Learning from Images with Observation Models
@@ -493,8 +494,7 @@ Deep reinforcement learning algorithms capable of learning complex skills direct
 %However, applying deep reinforcement learning algorithms to robotic control tasks in complex, diverse, open-world environments without access to meticulously hand-engineered rewards still remains a challenge.
 %%SL.10.14: It kind of feels like we're patching up a minor issue with deep RL. Somehow doesn't feel very fundamental when written like this. Can we go with something like this instead: 
 However, deep reinforcement learning for real-world robotic control has yet to achieve the kind of generalization and broad applicability demonstrated by deep learning algorithms in other domains, such as vision and natural language processing. 
-
-We present a deep reinforcement learning (Deep-RL) method that is practical for real-world robotics tasks, such as robotic manipulation, and can generalize effectively to never-before-seen tasks and objects, without requiring meticulously hand-specified reward functions and carefully engineered episodic learning setups. To that end, we opt for a self-supervised approach based on \emph{prediction}: instead of learning to directly maximize a given reward, our method is based on learning to predict the future, directly in terms of the raw sensory observations of the robot, such as camera images.
+We present a deep reinforcement learning method that is practical for real-world robotics tasks, such as robotic manipulation, and can generalize effectively to never-before-seen tasks and objects, without requiring meticulously hand-specified reward functions and carefully engineered episodic learning setups. To that end, we opt for a self-supervised approach based on \emph{prediction}: instead of learning to directly maximize a given reward, our method is based on learning to predict the future, directly in terms of the raw sensory observations of the robot, such as camera images.
 %We take a step towards solving this problem by drawing supervision from predicting future sensory observations. Concretely, we propose to learn predictive models of future observations
 %%SL.10.14: Maybe explicitly use "images" somewhere here or "raw pixels" or something?
 %conditioned on the agent's future actions, and a method for planning actions under this model.
@@ -502,7 +502,7 @@ We present a deep reinforcement learning (Deep-RL) method that is practical for 
 % 
 %This corresponds to a model-based reinforcement learning procedure, applied directly to raw image observations.
 Beyond training a visual predictive model that can make predictions that are accurate enough for real-world control, a practical implementation of this approach requires us to address the challenge of task specification. Ground truth reward signals are generally unavailable in the real world, therefore we explore three distinct methods for goal specification for visual model-based RL for robotic manipulation: designated pixels, where a user specifies desired object relocation tasks by selecting particular points in an image and corresponding goal positions, goal images, where the desired goal state is specified with an image, and tasks defined by image classifiers. Our deep predictive models are trained using data collected entirely autonomously by a robot interacting with hundreds of objects. 
-We demonstrate that Deep Visual MPC can generalize to never-before-seen objects -- both rigid and deformable -- and solve a wide range of user-defined manipulation tasks.
+We demonstrate that visual MPC can generalize to never-before-seen objects -- both rigid and deformable -- and solve a range of user-defined object manipulation tasks using the same model.
 %We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
 \todo{Page limit is 12!!}
 \end{abstract}
@@ -575,7 +575,7 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 \section{Conclusion}
 We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve an array of robotic control tasks. 
 %The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
-We demonstrate that Deep Visual-Model-Predictive Control is able to successfully perform multi-object manipulation, pushing, pick\&place tasks as well as cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for model-predictive control.
+We demonstrate that Visual-Model-Predictive Control is able to successfully perform multi-object manipulation, pushing, pick\&place tasks as well as cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for model-predictive control.
 
 The following has been identified as the most critical milestones for arriving at a general-purpose robotic manipulation system:
 \begin{itemize}
