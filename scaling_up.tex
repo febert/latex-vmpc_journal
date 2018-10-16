@@ -7,6 +7,8 @@
 	
 \end{figure*}
 
+%%SL.10.15: Have transition here and explain what this section is about. Currently, it seems like a bunch of disjointed miscallaneous stuff that didn't fit in anywhere else. This is not good. Maybe you can call this system design and describe the robot setup here first (both single view and multi-view), then details about data collection -- how actions are selected etc. (which can be merged with 7.2). Figures would help to illustrate the robot setup. 7.3 probably doesn't belong here at all, but belongs in experiments
+
 \label{sec:scalingup}
 \subsection{Multi-view Visual MPC}
 To allow disambiguating 3D-tasks, we extend visual MPC to include multiple camera views. Since tasks are defined in terms of pixel motion in 2D image space, the combination of multiple 2D tasks defines a 3D task, when cameras are oriented appropriately. In our experiments, we show that we can define 3D manipulation tasks, such as lifting an object from the table, that would be ambiguous using only a single camera view. The registration method described in the previous section is used separately per view to allow for dynamic retrying and solving temporally extended tasks. The planning costs from each view are combined using weighted averaging where the weights are provided by the registration network (see equation \ref{eqn:cost_avg}). 
