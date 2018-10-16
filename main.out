@@ -1,40 +1,37 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Related Work}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Reinforcement Learning with external reward signals}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Large-Scale, Self-Supervised Robotic Learning}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Sensory Prediction Models}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Visual Model Predictive Control}{}% 6
-\BOOKMARK [1][-]{section.4}{Video Prediction for Control}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Video Prediction via Pixel Transformations}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Skip Connection Neural Advection Model}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Planning Cost Functions}{}% 10
-\BOOKMARK [2][-]{subsection.5.1}{Pixel-Distance based Cost}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.2}{Registration-based Cost}{section.5}% 12
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Test time procedure}{subsection.5.2}% 13
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Registration-Based Pixel-Distance Cost}{subsection.5.2}% 14
-\BOOKMARK [2][-]{subsection.5.3}{Training procedure}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.4}{Classifier-based Cost}{section.5}% 16
-\BOOKMARK [3][-]{subsubsection.5.4.1}{Meta-Learning for Few-Shot Goal Inference}{subsection.5.4}% 17
-\BOOKMARK [3][-]{subsubsection.5.4.2}{Test time procedure}{subsection.5.4}% 18
-\BOOKMARK [3][-]{subsubsection.5.4.3}{Train time procedure}{subsection.5.4}% 19
-\BOOKMARK [2][-]{subsection.5.5}{When to use which cost function?}{section.5}% 20
-\BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 21
-\BOOKMARK [1][-]{section.7}{Scaling up Visual Model-Predictive Control}{}% 22
-\BOOKMARK [2][-]{subsection.7.1}{Multi-view Visual MPC}{section.7}% 23
-\BOOKMARK [2][-]{subsection.7.2}{Learning complex Pick and Place Behavior with Visual MPC}{section.7}% 24
-\BOOKMARK [2][-]{subsection.7.3}{Learning cloth Folding with Visual-MPC}{section.7}% 25
-\BOOKMARK [1][-]{section.8}{Experimental evaluation}{}% 26
-\BOOKMARK [2][-]{subsection.8.1}{Evaluating Skip-connection Neural Advection}{section.8}% 27
-\BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed loop Visual MPC}{section.8}% 28
-\BOOKMARK [3][-]{subsubsection.8.2.1}{Pushing with retrying}{subsection.8.2}% 29
-\BOOKMARK [3][-]{subsubsection.8.2.2}{Combined prehensile and non-prehensile manipulation.}{subsection.8.2}% 30
-\BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based cost function}{section.8}% 31
-\BOOKMARK [1][-]{section.9}{discussion}{}% 32
-\BOOKMARK [1][-]{section.10}{Conclusion}{}% 33
-\BOOKMARK [1][-]{section*.20}{References}{}% 34
-\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 35
-\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 36
-\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 37
-\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 38
-\BOOKMARK [1][-]{section*.21}{Appendix A: Simulated Experiments}{}% 39
-\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.21}% 40
+\BOOKMARK [1][-]{section.3}{Overview}{}% 3
+\BOOKMARK [1][-]{section.4}{Video Prediction for Control}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Video Prediction via Pixel Transformations}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Skip Connection Neural Advection Model}{section.4}% 6
+\BOOKMARK [1][-]{section.5}{Planning Cost Functions}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Pixel-Distance based Cost}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Registration-Based Cost}{section.5}% 9
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Test Time Procedure}{subsection.5.2}% 10
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Registration-Based Pixel-Distance Cost}{subsection.5.2}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Training Procedure}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.4}{Classifier-Based Cost Functions}{section.5}% 13
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Meta-Learning for Few-Shot Goal Inference}{subsection.5.4}% 14
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Test Time Procedure}{subsection.5.4}% 15
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Train time procedure}{subsection.5.4}% 16
+\BOOKMARK [2][-]{subsection.5.5}{When to use which Cost Function?}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 18
+\BOOKMARK [1][-]{section.7}{Scaling up Visual Model-Predictive Control}{}% 19
+\BOOKMARK [2][-]{subsection.7.1}{Multi-view Visual MPC}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.2}{Learning complex Pick and Place Behavior with Visual MPC}{section.7}% 21
+\BOOKMARK [2][-]{subsection.7.3}{Learning Cloth-Folding with Visual-MPC}{section.7}% 22
+\BOOKMARK [1][-]{section.8}{Experimental Evaluation}{}% 23
+\BOOKMARK [2][-]{subsection.8.1}{Evaluating Skip-connection Neural Advection}{section.8}% 24
+\BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed-loop Visual MPC}{section.8}% 25
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Pushing with Retrying}{subsection.8.2}% 26
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Combined Prehensile and Non-Prehensile Manipulation.}{subsection.8.2}% 27
+\BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based Cost Function}{section.8}% 28
+\BOOKMARK [1][-]{section.9}{discussion}{}% 29
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 30
+\BOOKMARK [1][-]{section*.20}{References}{}% 31
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 32
+\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 33
+\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 34
+\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 35
+\BOOKMARK [1][-]{section*.21}{Appendix A: Simulated Experiments}{}% 36
+\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.21}% 37

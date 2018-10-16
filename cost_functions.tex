@@ -9,7 +9,7 @@ A convenient way to define a robot task is by choosing one or more pixels in the
 
 % Formally, the user specifies $P$ source pixel locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ in the initial image $I_0$, and $P$ goal locations $\goal^{(1)}, \dots, \goal^{(P)}$. The source and goal pixel locations are denoted by the coordinates $(x_d^{(i)}, y_d^{(i)})$ and $(x_g^{(i)}, y_g^{(i)})$. Given a goal, the robot plans for a sequence of actions $\action_{1:T}$ over $T$ time steps, where $T$ is the planning horizon. For this type of task definition the problem is formulated as the minimization of a cost function $c$ which depends on the predicted pixel positions $d_t^{(j)}$. The planner makes use of a learned model that predicts a distribution over the pixel position by internally predicting pixel transformations. 
  
-Given a distribution over pixel positions $P_{t_0}\in\mathbb{R}^{H\times W}$ at time $t = 0$, the model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$. One way of defining the cost per time-step $c_t$ is by using the expected euclidean distance to the goal point $g$, which is straight-forward to calculate from $P_t$ and $g$. 
+Given a distribution over pixel positions $P_{t_0}\in\mathbb{R}^{H\times W}$ at time $t = 0$, the model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$. One way of defining the cost per time-step $c_t$ is by using the expected euclidean distance to the goal point $d_g$, which is straight-forward to calculate from $P_t$ and $g$. 
  \begin{align}
 c = \sum_{t = 1, \dots, T} c_t =  \sum_{t = 1, \dots, T} \mathbb{E}_{\hat{d}_{t} \sim P_{t}} \left[\|\hat{d}_{t} - d_{g}\|_2\right] 
  \label{eq:cost}
@@ -46,7 +46,7 @@ Another approach is to perform a registration between predicted video frames and
 	}
 \end{figure}
 
-\subsubsection{Test time procedure}
+\subsubsection{Test Time Procedure}
 %%SL.10.15: maybe use \noindent \textbf{} paragraph heading instead of subsubsection?
 
 We will first describe the registration scheme at test time (see Figure~\ref{fig:registration_arch}(a)). We separately register the current image $I_t$ to the start image $I_0$ and to the goal image $I_g$ by passing it into the registration network $R$, implemented as a fully-convolutional neural network. Details about the architecture are given in Section \ref{subsec:training}. The registration network produces a flow map $\hat{F}_{0 \leftarrow t} \in \mathbb{R}^{H \times W \times 2}$, a vector field with the same size as the image, that describes the relative motion for every pixel between the two frames:
@@ -114,7 +114,7 @@ where $\hat{I}_i = \hat{F}_{i \leftarrow t} \diamond I_t$. The MPC cost is compu
 
 The proposed weighting scheme can also be used with multiple designated pixels, as used in multi-task settings and multi-view models, which are explained in section \ref{sec:scalingup}. The index $i$ then also loops over the views and indices of the designated pixels.
 
-\subsection{Training procedure}
+\subsection{Training Procedure}
 \label{subsec:training}
 %%SL.10.15: consider using \textbf? I'm guessing you meant this to be nested under 5.2
 
@@ -159,7 +159,7 @@ To solve the above problem, we propose learning a few-shot classifier that can i
 
 To train the few-shot classifier, we build upon model-agnostic meta-learning (MAML)~\cite{maml}, which learns initial parameters $\theta$ for model $f$ that can efficiently adapt to a new task with one or a few steps of gradient descent. \cite{caml} proposed an extension of MAML, referred to as concept acquisition through meta-learning (CAML), for learning new concepts from positive examples alone. We apply CAML to the setting of acquiring goal classifiers from positive examples.
 
-\subsubsection{Test time procedure}
+\subsubsection{Test Time Procedure}
 %%SL.10.15: consider textbf?
 
 At test time, the user provides a dataset $\posdata_j$ of $K$ examples of successful end states for a new task $\task_j$: $\data_j:=\{(\obs_k, 1) | k = 1...K\}_j$, which are then used to infer a task-specific goal classifier $C_j$. In particular, the meta-learned parameters $\theta$ are updated through gradient descent to adapt to task $\task_j$:
@@ -187,7 +187,7 @@ $$
 We optimize this objective using Adam~\cite{ADAM} on the initial parameters $\theta$. In our experiments, our classifier is represented by a convolutional neural network, consisting of three convolutional layers, each followed by layer normalization and a ReLU non-linearity. After the final convolutional layer, a spatial soft-argmax operation extracts spatial feature points, which are then passed through fully-connected layers.
 %\todo{add images for classifier!}
 
-\subsection{When to use which cost function?}
+\subsection{When to use which Cost Function?}
 \label{subsec:cost_discuission}
 %%SL.10.15: Use title case
 

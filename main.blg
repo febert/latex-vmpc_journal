@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -9,148 +9,132 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: IEEEabrv.bib
 Database file #2: bib.bib
-Repeated entry---line 719 of file bib.bib
- : @inproceedings{lerrel
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 733 of file bib.bib
+Repeated entry---line 834 of file bib.bib
  : @article{google_handeye
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 754 of file bib.bib
- : @book{cem-rk-13
- :                ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 823 of file bib.bib
+Repeated entry---line 919 of file bib.bib
  : @inproceedings{deep_mpc
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 929 of file bib.bib
+Repeated entry---line 1025 of file bib.bib
  : @article{crashing
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 936 of file bib.bib
+Repeated entry---line 1032 of file bib.bib
  : @article{greg_kahn_uncertainty
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 943 of file bib.bib
+Repeated entry---line 1039 of file bib.bib
  : @inproceedings{vondrick
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 957 of file bib.bib
+Repeated entry---line 1053 of file bib.bib
  : @inproceedings{convlstm
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 964 of file bib.bib
+Repeated entry---line 1060 of file bib.bib
  : @article{beyond_mse
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 987 of file bib.bib
+Repeated entry---line 1083 of file bib.bib
  : @article{prednet
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1030 of file bib.bib
+Repeated entry---line 1126 of file bib.bib
  : @inproceedings{bootsetal
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1045 of file bib.bib
+Repeated entry---line 1141 of file bib.bib
  : @article{scott_reed
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1052 of file bib.bib
+Repeated entry---line 1148 of file bib.bib
  : @article{se3
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1059 of file bib.bib
+Repeated entry---line 1155 of file bib.bib
  : @article{recurrentsimulators
  :                             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1066 of file bib.bib
+Repeated entry---line 1162 of file bib.bib
  : @inproceedings{dynamic_filter_networks
  :                                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1073 of file bib.bib
+Repeated entry---line 1169 of file bib.bib
  : @inproceedings{finn_nips
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1088 of file bib.bib
+Repeated entry---line 1184 of file bib.bib
  : @inproceedings{atarioh
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1111 of file bib.bib
+Repeated entry---line 1207 of file bib.bib
  : @article{video_pixel_networks
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1125 of file bib.bib
- : @inproceedings{pulkit
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1132 of file bib.bib
- : @inproceedings{foresight
- :                         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1358 of file bib.bib
+Repeated entry---line 1448 of file bib.bib
  : @article{e2e
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1385 of file bib.bib
+Repeated entry---line 1475 of file bib.bib
  : @article{maml
  :              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1417 of file bib.bib
+Repeated entry---line 1507 of file bib.bib
  : @article{ADAM
  :              ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "tdgammon"
-Warning--I didn't find a database entry for "alphago"
-Warning--I didn't find a database entry for "openai_hand"
 Warning--I didn't find a database entry for "atari"
+Warning--I didn't find a database entry for "alphago"
 Warning--I didn't find a database entry for "flo"
+Warning--I didn't find a database entry for "foresight"
 Warning--I didn't find a database entry for "finn2016deep"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 33 entries,
+You've used 45 entries,
             4087 wiz_defined-function locations,
-            1496 strings with 23474 characters,
-and the built_in function-call counts, 17604 in all, are:
-= -- 1253
-> -- 558
-< -- 33
-+ -- 270
-- -- 125
-* -- 818
-:= -- 2789
-add.period$ -- 71
-call.type$ -- 33
-change.case$ -- 32
-chr.to.int$ -- 78
-cite$ -- 33
-duplicate$ -- 1436
-empty$ -- 1705
-format.name$ -- 157
-if$ -- 4059
+            1554 strings with 25958 characters,
+and the built_in function-call counts, 27323 in all, are:
+= -- 1977
+> -- 861
+< -- 108
++ -- 433
+- -- 182
+* -- 1277
+:= -- 4148
+add.period$ -- 99
+call.type$ -- 45
+change.case$ -- 44
+chr.to.int$ -- 273
+cite$ -- 45
+duplicate$ -- 2129
+empty$ -- 2523
+format.name$ -- 226
+if$ -- 6354
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 292
-newline$ -- 124
-num.names$ -- 33
-pop$ -- 819
+int.to.str$ -- 45
+missing$ -- 418
+newline$ -- 160
+num.names$ -- 45
+pop$ -- 1154
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1342
+skip$ -- 2072
 stack$ -- 0
-substring$ -- 214
-swap$ -- 874
-text.length$ -- 7
+substring$ -- 678
+swap$ -- 1420
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 33
+type$ -- 45
 warning$ -- 0
-while$ -- 45
-width$ -- 35
-write$ -- 295
-(There were 23 error messages)
+while$ -- 89
+width$ -- 47
+write$ -- 401
+(There were 19 error messages)

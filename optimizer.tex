@@ -2,7 +2,7 @@
 \label{sec:optimizer}
 
 %%SL.10.15: It's bad form to begin a technical section with prior work. Prior work belongs in the related work section.
-Prior work has also proposed to plan through learned models via differentiation, though not with visual inputs~\cite{deep_mpc}. We instead use a stochastic, sampling-based trajectory optimization method~\cite{cem-rk-13,foresight}, which we extend to handle a mixture of continuous and discrete actions.
+Prior work has also proposed to plan through learned models via differentiation, though not with visual inputs~\cite{deep_mpc}. We instead use a stochastic, sampling-based trajectory optimization method~\cite{kroese2013cross,foresight}, which we extend to handle a mixture of continuous and discrete actions. CEM consists of iteratively resampling action sequences and refitting Gaussian distributions to the actions with the best predicted cost. 
 
 The role of the optimizer is to find actions sequences $a_{1:T}$ which minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$. This is achieved via iterative sampling using the Cross-Entropy Method
 %%SL.10.15: algorithm names are not capitalized

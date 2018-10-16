@@ -1,4 +1,4 @@
-\section{Experimental evaluation}
+\section{Experimental Evaluation}
 To train both our video-prediction and registration models, we collected 20,000 trajectories of pushing motions and 15,000 trajectories with gripper control, where the robot was allowed to randomly move and pick up objects. The data collection process is fully autonomous, requiring human intervention only to replace and change out the objects in front of the robot.
 
 The action space consisted of Cartesian movements along the $x$, $y$, and $z$ axes, and for some parts of it we also added azimuthal rotations of the gripper. For evaluation, we selected novel objects that were never seen during training. The evaluation tasks required the robot to move objects in its environment from a starting state to a goal configuration, and performance was evaluated by measuring the distance between the final object position and goal position. \todo{how was it done for the classifier?}
@@ -35,11 +35,11 @@ The results in \autoref{table:res_dna_sna} show that our proposed planning cost 
     \begin{center}
     \begin{tabular}{lcc}
     	\toprule
-           &  \thead{dist. \\ mean, std.} & \thead{improvement \\ mean, std.}  \\  
+           &  \thead{dist. \\ $\pm$ std err. of mean} & \thead{improvement \\ $\pm$ std err. of mean}  \\  
            \midrule
-      DNA with cost eqn. \ref{eq:goal_point_eval}\cite{foresight}  & 24.6$\pm$10.6 & 2.1$\pm$12.4 \\
-      DNA with cost eqn. \ref{eq:cost}  & \textbf{17.5 $\pm$ 10.2} &  \textbf{8.3 $\pm$ 11.8}\\ 
-      SNA with cost eqn. \ref{eq:cost} (ours) & 18.18 $\pm$ 9.5 & 7.7 $\pm$ 10.5\\
+      DNA with cost eqn. \ref{eq:goal_point_eval}\cite{foresight}  & 24.6$\pm$2.35 & 2.1$\pm$ 2.75\\
+      DNA with cost eqn. \ref{eq:cost}  & \textbf{17.5 $\pm$ 2.37} &  \textbf{8.3 $\pm$ 2.62}\\ 
+      SNA with cost eqn. \ref{eq:cost} (ours) & 18.18 $\pm$ 2.1 & 7.7 $\pm$ 2.33\\
       \bottomrule
     \end{tabular}
     \end{center}
@@ -54,10 +54,10 @@ The results in \autoref{table:res_dna_sna} show that our proposed planning cost 
 {\footnotesize
 \begin{tabular}{lcc}
 	\toprule
-         &  \thead{moved imp. \\ mean, std.} &   \thead{stationary imp. \\ mean, std.}  \\
+         &  \thead{moved imp. \\ $\pm$ std err. of mean} &   \thead{stationary imp. \\ $\pm$ std err. of mean}  \\
          \midrule
-  DNA \cite{foresight} & 0.83 $\pm$1.13 &  -1.1 $\pm$ 0.9\\ 
-  SNA & \textbf{10.6 $\pm$ 3.7} & \textbf{-1.5 $\pm$ 0.9} \\
+  DNA \cite{foresight} & 0.83 $\pm$0.25 &  -1.1 $\pm$ 0.2\\ 
+  SNA & \textbf{10.6 $\pm$ 0.82} & \textbf{-1.5 $\pm$ 0.2} \\
   \bottomrule
 \end{tabular}
 }
@@ -72,7 +72,7 @@ To examine how well each approach can handle occlusions, we devised a second tas
 
 We used four different object arrangements, with two training objects and two objects that were unseen during training. We found that, in most of the cases, the SNA model was able to find a valid trajectory, while the DNA model, that is not able to handle occlusion, was mostly unable to find a solution. \autoref{fig:goingaroundocclusion} shows an example of the SNA model successfully predicting the position of the obstacle through an occlusion and finding a trajectory that avoids the obstacle. These findings are reflected by our quantitative results shown in \autoref{table:mult_obj}, indicating the importance of temporal skip connections.
 
-\subsection{Evaluating Closed loop Visual MPC}
+\subsection{Evaluating Closed-loop Visual MPC}
 
 \begin{table}
 	{\footnotesize
@@ -89,13 +89,13 @@ We used four different object arrangements, with two training objects and two ob
 			\end{tabular}
 		\end{center}
 	}
-	\caption{\small Success rate for long-distance pushing benchmark with 20 different object/goal configurations and short-distance benchmark with 15 object/goal configurations. Success is defined as bringing the object closer than 15 pixels to the goal, where the complete image has size 48x64.}
+	\caption{\small Success rate for long-distance pushing benchmark with 20 different object/goal configurations and short-distance benchmark with 15 object/goal configurations. Success is defined as bringing the object closer than 15 pixels to the goal, which corresponds to around $7.5cm$.}
 	\label{table:res_long_short}
 \end{table}
 
 Videos and visualizations for closed-loop visual MPC can be found on this webpage: \url{https://sites.google.com/view/robustness-via-retrying}. We compare visual-MPC that uses a pixel-distance based cost based on our proposed self-supervised registration with visual-MPC using an off-the-shelf tracker, the ``multiple instance learning tracker'' MIL \cite{babenko2009visual} from OpenCV. Note that all methods do not have any prior knowledge of objects -- it is only provided with the position of one designed pixel in the initial and goal images, and must use the learned model to infer that this pixel belongs to an object that can be moved by the robot. Finally we also compare to visual MPC without registration method proposed by \cite{sna}, which does not track the object explicitly, but relies on the flow-based video prediction model to keep track of the designated pixel, which we call ``predictor propagation.'' 
 
-\subsubsection{Pushing with retrying}
+\subsubsection{Pushing with Retrying}
 \begin{figure*}
     \centering
     \includegraphics[width=1.0\textwidth]{images_rfr/push_correction.pdf}
@@ -120,12 +120,12 @@ For the first experiment, we disable the gripper control, which requires the rob
 %	\label{fig:push_bench_short}
 %\end{figure}
 
-\subsubsection{Combined prehensile and non-prehensile manipulation.}
+\subsubsection{Combined Prehensile and Non-Prehensile Manipulation.}
 
 
 In the setting where the gripper is enabled it is part of the task to decide whether to solve a task by grasping or pushing the object to the goal. Similarly to the pushing setting we perform a benchmark where we define a set of 20 object relocation tasks and measure the final distance between the object and the target at the end of the episode. Interestingly we observe that in the majority of the cases the agent decides to grasp the object, as can be seen in the supplementary video.
 
-\subsection{Evaluating Classifier-based cost function}
+\subsection{Evaluating Classifier-based Cost Function}
 
 For evaluating the performance of the proposed classifier-based cost function, we study a visual object arrangement task, where different goals correspond to different relative arrangements of a pair of objects. 
 %We evaluate our learned classifier on the predictions made by the video prediction model \todo{unclear, how exactly do you evaluate the classifier?} and derive the cost used for planning from the predicted probability of success. 

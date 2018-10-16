@@ -18,6 +18,6 @@ In prior work on video-prediction-based robotic manipulation \cite{sna, foresigh
 
 We first discuss picking and placing of objects. One of the main challenges with random exploration is that it is unlikely to pick up objects a sufficiently large fraction of the time to allow the model to learn grasping skills. To alleviate this issue, we incorporate a simple ``reflex'' during data collection, where the gripper automatically closes when the height of the wrist above the table is lower than a small threshold. This reflex is inspired by the palmar reflex observed in infants~\cite{grasping_fetal}. With this primitive, about 20\% of training trajectories included some sort of grasp on an object. It is worth noting that, other than this reflex, no grasping-specific engineering was applied to the policy allowing a joint pushing and grasping policy to emerge, see figure \ref{fig:push_grasp}. In our experiments, we evaluate our method using data obtained both with and without the grasping reflex, evaluating both purely non-prehensile and combined prehensile and non-prehensile manipulation.
 
-\subsection{Learning cloth Folding with Visual-MPC}
+\subsection{Learning Cloth-Folding with Visual-MPC}
  a major impediment is that when executing random actions clothes can become tangled pu
 
