@@ -20,18 +20,21 @@
 \BOOKMARK [2][-]{subsection.5.5}{When to use which cost function?}{section.5}% 20
 \BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 21
 \BOOKMARK [1][-]{section.7}{Scaling up Visual Model-Predictive Control}{}% 22
-\BOOKMARK [1][-]{section.8}{Experimental evaluation}{}% 23
-\BOOKMARK [2][-]{subsection.8.1}{Evaluating Skip-connection Neural Advection}{section.8}% 24
-\BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed loop Visual MPC}{section.8}% 25
-\BOOKMARK [3][-]{subsubsection.8.2.1}{Pushing with retrying}{subsection.8.2}% 26
-\BOOKMARK [3][-]{subsubsection.8.2.2}{Combined prehensile and non-prehensile manipulation.}{subsection.8.2}% 27
-\BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based cost function}{section.8}% 28
-\BOOKMARK [1][-]{section.9}{discussion}{}% 29
-\BOOKMARK [1][-]{section.10}{Conclusion}{}% 30
-\BOOKMARK [1][-]{section*.20}{References}{}% 31
-\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 32
-\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 33
-\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 34
-\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 35
-\BOOKMARK [1][-]{section*.21}{Appendix A: Simulated Experiments}{}% 36
-\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.21}% 37
+\BOOKMARK [2][-]{subsection.7.1}{Multi-view Visual MPC}{section.7}% 23
+\BOOKMARK [2][-]{subsection.7.2}{Learning complex Pick and Place Behavior with Visual MPC}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.3}{Learning cloth Folding with Visual-MPC}{section.7}% 25
+\BOOKMARK [1][-]{section.8}{Experimental evaluation}{}% 26
+\BOOKMARK [2][-]{subsection.8.1}{Evaluating Skip-connection Neural Advection}{section.8}% 27
+\BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed loop Visual MPC}{section.8}% 28
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Pushing with retrying}{subsection.8.2}% 29
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Combined prehensile and non-prehensile manipulation.}{subsection.8.2}% 30
+\BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based cost function}{section.8}% 31
+\BOOKMARK [1][-]{section.9}{discussion}{}% 32
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 33
+\BOOKMARK [1][-]{section*.20}{References}{}% 34
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 35
+\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 36
+\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 37
+\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 38
+\BOOKMARK [1][-]{section*.21}{Appendix A: Simulated Experiments}{}% 39
+\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.21}% 40

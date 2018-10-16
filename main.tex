@@ -393,7 +393,7 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %\title{Deep Reinforcement Learning with Observation Models}
-\title{RL for Real: Reinforcement Learning with Deep Sensory Prediction Models for diverse Real-World Environments}
+\title{Deep Visual MPC: \\ Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control}
 %%SL.10.14: I think the current title is a bit too aggressive -- kind of makes it seem like all the other RL is not "real." We should make sure to hit a few key words: we need to make sure the title communicates that this is based on images, that there is robotic manipulation going on, and that it is based on prediction or something like that. We should also pick a name for the method. I don't particularly like "Visual MPC" (it sounds a bit antiquated, like visual servoing), but if we go with that, we can call it
 %Visual MPC: Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control
 % we can also go with "foresight" and call it
@@ -489,15 +489,21 @@
 %Deep reinforcement learning algorithms have enabled learning of complex skills and mastery of complex games. Unlike prior works that have focused on mastery of complex, specialized behaviors in limited, closed-world environments, we consider a reinforcement learning problem setting with more simple skills but with substantial diversity, raw observations, and sparse rewards. As a result, rewards are simply not enough supervision to be learned from alone. 
 
 %%SL.10.14: Feels like we need to start with some more up-beat sentence, like:
-% Deep reinforcement learning algorithms capable of learning complex skills directly from raw sensory inputs have the potential to automate both perception and control for autonomous systems, such as robots and vehicle. However, applying...
-Applying deep reinforcement learning algorithms to robotic control tasks in complex, diverse, open-world environments without access to meticulously hand-engineered rewards still remains a challenge.
-%%SL.10.14: It kind of feels like we're patching up a minor issue with deep RL. Somehow doesn't feel very fundamental when written like this. Can we go with something like this instead: However, deep reinforcement learning for real-world robotic control has yet to achieve the kind of impressive generalization and broad applicability demonstrated by deep learning algorithms in other domains, such as vision and NLP. In this paper, we study how we can develop deep reinforcement learning methods that are practical for real-world robotics tasks, such as robotic manipulation, and can generalize effectively to unseen scenes and objects, without requiring meticulously hand-specified reward functions and carefully engineered episodic learning setups. To that end, we opt for a self-supervised approach based on prediction: instead of learning to directly maximize a given reward, our method is based on learning to predict the future, directly in terms of the raw sensory observations of the robot, such as camera images.
-We take a step towards solving this problem by drawing supervision from predicting future sensory observations. Concretely, we propose to learn predictive models of future observations
+Deep reinforcement learning algorithms capable of learning complex skills directly from raw sensory inputs have the potential to allieviate the need for hand-designing features and control laws for autnomomous systems such as robot manipulators and or self-driving vehicles.
+%However, applying deep reinforcement learning algorithms to robotic control tasks in complex, diverse, open-world environments without access to meticulously hand-engineered rewards still remains a challenge.
+%%SL.10.14: It kind of feels like we're patching up a minor issue with deep RL. Somehow doesn't feel very fundamental when written like this. Can we go with something like this instead: 
+However, deep reinforcement learning for real-world robotic control has yet to achieve the kind of generalization and broad applicability demonstrated by deep learning algorithms in other domains, such as vision and natural language processing. 
+
+We present a deep reinforcement learning (Deep-RL) method that is practical for real-world robotics tasks, such as robotic manipulation, and can generalize effectively to never-before-seen tasks and objects, without requiring meticulously hand-specified reward functions and carefully engineered episodic learning setups. To that end, we opt for a self-supervised approach based on \emph{prediction}: instead of learning to directly maximize a given reward, our method is based on learning to predict the future, directly in terms of the raw sensory observations of the robot, such as camera images.
+%We take a step towards solving this problem by drawing supervision from predicting future sensory observations. Concretely, we propose to learn predictive models of future observations
 %%SL.10.14: Maybe explicitly use "images" somewhere here or "raw pixels" or something?
-conditioned on the agent's future actions, and a method for planning actions under this model.
+%conditioned on the agent's future actions, and a method for planning actions under this model.
 %%SL.10.14: Seems like we should probably expand on this a bit. May be add something like this:
-% This corresponds to a model-based reinforcement learning procedure, applied directly to raw image observations. Beyond training an effective predictive model that can make predictions that are accurate enough for real-world control, a practical implementation of this approach requires us to address the challenge of task specification. Ground truth reward signals are generally unavailable in the real world, and we explore three distinct methods for goal specification for visual model-based RL for robotic manipulation: designated pixels, where a user specifies desired object relocation tasks by selecting particular points in an image to move, goal images, and tasks defined by image classifiers. Our deep predictive models are trained using data collected entirely autonomously by the robot. We demonstrate these models can generalize to never-before-seen objects, new goals that are provided only at test-time, and both rigid and deformable object manipulation tasks.
-We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
+% 
+%This corresponds to a model-based reinforcement learning procedure, applied directly to raw image observations.
+Beyond training a visual predictive model that can make predictions that are accurate enough for real-world control, a practical implementation of this approach requires us to address the challenge of task specification. Ground truth reward signals are generally unavailable in the real world, therefore we explore three distinct methods for goal specification for visual model-based RL for robotic manipulation: designated pixels, where a user specifies desired object relocation tasks by selecting particular points in an image and corresponding goal positions, goal images, where the desired goal state is specified with an image, and tasks defined by image classifiers. Our deep predictive models are trained using data collected entirely autonomously by a robot interacting with hundreds of objects. 
+We demonstrate that Deep Visual MPC can generalize to never-before-seen objects -- both rigid and deformable -- and solve a wide range of user-defined manipulation tasks.
+%We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
 \todo{Page limit is 12!!}
 \end{abstract}
 
@@ -567,20 +573,19 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 
 
 \section{Conclusion}
-We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve an array of robotic control tasks. The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
-We also demonstrate that Visual-Model-Predictive Control is able to perform multi-object manipulation, pick\&place tasks as well as cloth-folding tasks -- all within a single framework.
+We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve an array of robotic control tasks. 
+%The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
+We demonstrate that Deep Visual-Model-Predictive Control is able to successfully perform multi-object manipulation, pushing, pick\&place tasks as well as cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for model-predictive control.
 
-The following has been identified as the most critical future working milestones:
+The following has been identified as the most critical milestones for arriving at a general-purpose robotic manipulation system:
 \begin{itemize}
-	\item \textbf{Moving away from random data collection:} For learning how to screw a cap onto a bottle -- that is, reaching a state with exceptionally low entropy -- data collection with random action is extremely unlikely to reach this state. Therefore we suggest to collection data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 
+	\item \textbf{Replacing random data collection:} For learning how to screw a cap onto a bottle -- a state that has exceptionally low probability of being reached by chance -- data collection with random action is extremely ineffective. Therefore we suggest to collect data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 
 %	Furthermore the demonstrations could be made with increasing difficulty, so as to induce a learning curriculum.
 	
 	\item \textbf{Hierarchical Planning with Time-Agnostic Prediction:} Many tasks require reasoning over extended periods of time. 
 %	Consider the task of packing a box with various objects, first the box needs to be opened, then objects need to be place inside and finally the box has to closed. Some of the steps have to occur before other, and therefore the tasks \emph{requires} planning across \emph{many} time steps. 
 	A sampling based planning method would become prohibitively expensive for very long action sequences and also the prediction errors made by the model would accumulate, invalidating the plan. We therefore to add an additional long-horizon planning layer, that proposes subgoals which are within reach of visual MPC. We are currently exploring the use of a \emph{Time-Agnostic Predictor} \cite{jayaraman2018time}, a mechanism which instead of predicting states at fixed time-steps, predicts states at certain "bottleneck-state" which are easier to predict.
-	\item \textbf{Policy Distillation and Action Proposals:} 
-	
-	
+	\item \textbf{Policy Distillation and Action Proposals:} In high dimensional action spaces, with long planning horizons or non-smooth cost functions finding a trajectory that achieves low cost with CEM becomes increasingly harder. Furthermore limits on computational resources and timing requirements restrict the number of samples that can be taken in each planning step. One promising solution to this problem is learning the parameters of a distribution from which actions can be sampled more efficiently. Such an action proposal distribution could be learned for example by distilling the actions taken by visual MPC into a policy via supervised learning.
 \end{itemize}
 
 

@@ -2,7 +2,7 @@
 
 \subsection{Reinforcement Learning with external reward signals}
 While traditional reinforcement learning assumes access to an external reward signal, effectively \emph{reinforcing} good behavior, our approach learns a \emph{goal-agnostic} model without any external rewards and uses this for planning. 
-A wide range of tasks can be solved by defining appropriate \emph{internal} cost functions. These internal costs are computed based on roll-outs of the sensory prediction model, this is further detailed in section \ref{sec:cost}
+A wide range of tasks can be solved by defining appropriate \emph{internal} cost functions. These internal costs are computed based on roll-outs of the sensory prediction model, this is further detailed in section \ref{sec:cost}. Thus our method is reminiscent of model-predictive control (MPC), but instead of an analytical, hand-designed model, we employ a deep sensory prediction model.
 
 \subsection{Large-Scale, Self-Supervised Robotic Learning}
 
