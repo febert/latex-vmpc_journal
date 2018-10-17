@@ -22,12 +22,12 @@
 \BOOKMARK [2][-]{subsection.7.3}{Learning Cloth-Folding with Visual-MPC}{section.7}% 22
 \BOOKMARK [1][-]{section.8}{Experimental Evaluation}{}% 23
 \BOOKMARK [2][-]{subsection.8.1}{Evaluating Skip-connection Neural Advection}{section.8}% 24
-\BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed-loop Visual MPC}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.2}{Evaluating Closed-Loop Visual MPC}{section.8}% 25
 \BOOKMARK [3][-]{subsubsection.8.2.1}{Pushing with Retrying}{subsection.8.2}% 26
 \BOOKMARK [3][-]{subsubsection.8.2.2}{Combined Prehensile and Non-Prehensile Manipulation.}{subsection.8.2}% 27
 \BOOKMARK [2][-]{subsection.8.3}{Evaluating Classifier-based Cost Function}{section.8}% 28
-\BOOKMARK [1][-]{section.9}{discussion}{}% 29
-\BOOKMARK [1][-]{section.10}{Conclusion}{}% 30
+\BOOKMARK [1][-]{section.9}{Discussion}{}% 29
+\BOOKMARK [1][-]{section.10}{Discussion and Future Work}{}% 30
 \BOOKMARK [1][-]{section*.21}{References}{}% 31
 \BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 32
 \BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 33

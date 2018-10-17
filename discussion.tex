@@ -1,6 +1,12 @@
-\section{discussion}
-\textbf{Image-space vs. latent space prediction}: A natural question concerning the presented method is whether predicting in image space or a learned latent space is better for the purpose of generalizable robotic control. While a latent space has the advantage of likely being a more compact representation, potentially being easier to predict while mostly encoding information relevant to the prediction task, it is an open problem \emph{how} to automatically extract such a latent space. Furthermore the capability to generate predictions in image space helps immensely with interpreting and debugging the system. Of course decoding a latent space prediction back to images for the purpose of interpretation would likely be feasible as well. 
+\section{Discussion}
 
-Another potential advantage of latent space representations could be to handle \emph{partially observed} settings, for example tasks where an object is occluded for extended periods of time. However the recurrent video-prediction model is also able to handle some cases of partial observability, through the use of temporal skip-connections and by maintaining a hidden state in the convolutinal LSTM.
 
+\todo{can cut from here:}
 \textbf{Gradient-free vs. gradient based trajectory optimization} Prior work has also proposed to plan through learned models via differentiation, though not with visual inputs~\cite{deep_mpc}. This can have the disadvantage of getting stuck in local minima. Also with gradient-based methods it is harder to ensure that the actions are within the distribution of actions sampled during data collection. This is crucial to ensure that the model can make predictions based on a sufficient number of supporting data-points.
+
+
+Instead using a model that predicts in pixel space, one could think of using a model making predictions in latent space. One potential advantage of latent space representations could be to handle \emph{partially observed} settings, for example tasks where an object is occluded for extended periods of time.
+%%SL.10.16: I would suggest just cutting this section. It's completely out of place and has nothing to do with what's in the paper. You could perhaps condense it into 2-3 sentences in the Discussion and Future Work Section
+
+%%SL.10.16: But more importantly, you *really* need to discuss the conclusions to be drawn from the experiments!
+

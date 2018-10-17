@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  17 OCT 2018 09:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  17 OCT 2018 09:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -710,20 +710,20 @@ File: images_sna/longdistance_pushing/pushing.pdf Graphic file (type pdf)
 
 <use images_sna/longdistance_pushing/pushing.pdf>
 Package pdftex.def Info: images_sna/longdistance_pushing/pushing.pdf used on in
-put line 11.
+put line 15.
 (pdftex.def)             Requested size: 75.88426pt x 75.88298pt.
 
-Underfull \hbox (badness 3657) in paragraph at lines 18--19
+Underfull \hbox (badness 3657) in paragraph at lines 22--26
 \OT1/ppl/m/n/9.53561 com-par-i-son of visual-MPC us-
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 18--19
+Underfull \hbox (badness 2351) in paragraph at lines 22--26
 \OT1/ppl/m/n/9.53561 visual-MPC us-ing the dy-namic
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 20--21
+Underfull \hbox (badness 1406) in paragraph at lines 27--30
 \OT1/ppl/m/n/9.53561 multi-objective tasks where one
  []
 
@@ -734,10 +734,10 @@ File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type
 pdf)
  <use images_sna/multiobject_qualitative/avoid_obstacle.pdf>
 Package pdftex.def Info: images_sna/multiobject_qualitative/avoid_obstacle.pdf 
-used on input line 28.
+used on input line 42.
 (pdftex.def)             Requested size: 517.935pt x 92.07874pt.
 
-Overfull \hbox (11.55933pt too wide) in paragraph at lines 36--45
+Overfull \hbox (11.55933pt too wide) in paragraph at lines 50--59
  [] 
  []
 
@@ -751,7 +751,7 @@ ng.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
 <use images_rfr/push_correction.pdf>
-Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 101.
+Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 127.
 
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
  [10 <./images_sna/multiobject_qualitative/avoid_obstacle.pdf>] <images_cls/cls
@@ -759,17 +759,19 @@ _charts.jpeg, id=583, 682.55pt x 297.11pt>
 File: images_cls/cls_charts.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_charts.jpeg>
-Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 145.
+Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 183.
 (pdftex.def)             Requested size: 248.60658pt x 108.2153pt.
 
 <images_cls/cls_results.jpeg, id=586, 1027.84pt x 391.4625pt>
 File: images_cls/cls_results.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_results.jpeg>
-Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 156.
+Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 194.
 (pdftex.def)             Requested size: 414.34956pt x 157.8127pt.
 ) (./discussion.tex) [11 <./images_rfr/push_correction.pdf> <./images_cls/cls_c
 harts.jpeg>] (./main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
@@ -779,11 +781,12 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <8.03> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
- [12 <./images_cls/cls_results.jpeg>]
+
 Underfull \hbox (badness 2856) in paragraph at lines 106--109
 []\OT1/ppl/m/n/8.03 M. Zhang, S. Vikram, L. Smith, P. Abbeel, M. J. John-
  []
 
+[12 <./images_cls/cls_results.jpeg>]
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no œ in font pplr7t!
@@ -804,26 +807,26 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 LaTeX Warning: Reference `fig:sim_bench' on page 13 undefined on input line 8.
 
 [13])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 699.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 703.
  [14
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 699.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 703.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 699.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 699.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 703.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 703.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A2436A36A2AC2D7FFAB86E6EC8E69781;2720.
+(rerunfilecheck)             Checksum: 1D7A08CDDD69E932A1D28F0F79DD20B3;2736.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 699.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 703.
  ) 
 Here is how much of TeX's memory you used:
  9335 strings out of 493029
  147371 string characters out of 6136234
- 254969 words of memory out of 5000000
+ 253969 words of memory out of 5000000
  12536 multiletter control sequences out of 15000+600000
  64123 words of font info for 156 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -854,7 +857,7 @@ hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive
 /urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
 o/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
 
-Output written on main.pdf (14 pages, 8809386 bytes).
+Output written on main.pdf (14 pages, 8808733 bytes).
 PDF statistics:
  746 PDF objects out of 1000 (max. 8388607)
  619 compressed objects within 7 object streams

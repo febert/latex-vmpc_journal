@@ -574,11 +574,15 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 
 
 
-\section{Conclusion}
-We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve an array of robotic control tasks. 
+\section{Discussion and Future Work}
+We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve a variety of robotic control tasks. 
 %The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
-We demonstrate that Visual-Model-Predictive Control is able to successfully perform multi-object manipulation, pushing, pick\&place tasks as well as cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for model-predictive control.
+We demonstrate that Visual Model-Predictive Control
+%%SL.10.16: algorithm names are not capitalized
+is able to successfully perform multi-object manipulation, pushing, picking and placing, and cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for model-predictive control.
 
+%%SL.10.16: I think the discussion below is not quite a good fit for future work. It's important to understand what the *purpose* of the future work section is. Contrary to what the name might imply, the purpose of future work is *not* to actually discuss future work. The purpose of future work is to inspire the reader that your work has lots of potential to lead to new and exciting research. You should *not* usually talk about immediate next steps you plan to take, but rather all the awesome stuff *enabled* by your work.
+%%SL.10.16: What I would recommend is to have one paragraph on limitations (which is actually future work in disguise), and then a future work paragraph meant to inspire the reader about all the great stuff you could do with this method, ending on a very high note in the end about the generality of entirely self-supervised robotic deep model-based RL algorithms.
 The following has been identified as the most critical milestones for arriving at a general-purpose robotic manipulation system:
 \begin{itemize}
 	\item \textbf{Replacing random data collection:} For learning how to screw a cap onto a bottle -- a state that has exceptionally low probability of being reached by chance -- data collection with random action is extremely ineffective. Therefore we suggest to collect data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 

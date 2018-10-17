@@ -240,6 +240,11 @@ E.~Grant, C.~Finn, J.~Peterson, J.~Abbott, S.~Levine, T.~Griffiths, and
 D.~P. Kingma and J.~Ba, ``Adam: {A} method for stochastic optimization,''
   \emph{CoRR}, vol. abs/1412.6980, 2014.
 
+\bibitem{deep_mpc}
+I.~Lenz and A.~Saxena, ``Deepmpc: Learning deep latent features for model
+  predictive control,'' in \emph{In RSS}.\hskip 1em plus 0.5em minus
+  0.4em\relax Citeseer, 2015.
+
 \bibitem{kroese2013cross}
 D.~P. Kroese, R.~Y. Rubinstein, I.~Cohen, S.~Porotsky, and T.~Taimre,
   ``Cross-entropy method,'' in \emph{Encyclopedia of Operations Research and
@@ -255,11 +260,6 @@ B.~Babenko, M.-H. Yang, and S.~Belongie, ``Visual tracking with online multiple
   instance learning,'' in \emph{Computer Vision and Pattern Recognition, 2009.
   CVPR 2009. IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2009, pp. 983--990.
-
-\bibitem{deep_mpc}
-I.~Lenz and A.~Saxena, ``Deepmpc: Learning deep latent features for model
-  predictive control,'' in \emph{In RSS}.\hskip 1em plus 0.5em minus
-  0.4em\relax Citeseer, 2015.
 
 \bibitem{jayaraman2018time}
 D.~Jayaraman, F.~Ebert, A.~A. Efros, and S.~Levine, ``Time-agnostic prediction:
