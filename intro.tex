@@ -1,12 +1,19 @@
 \IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
 
-
 Humans are faced with a stream of high-dimensional sensory inputs and minimal external supervision, and yet, remarkably, are able to learn a range of complex yet generalizable concepts and behaviors.
 While there has been significant progress in developing deep reinforcement learning algorithms that learn complex skills and scale to high-dimensional observation spaces, such as pixels~\cite{tdgammon,atari,e2e,alphago}, learning behaviors that \emph{generalize} to new objects, goals, or scenes remains an open problem.
 The key to generalization is diversity. When deployed in a narrow, closed-world environment, a reinforcement learning algorithm will recover skills that are successful only in a narrow range of settings. 
 Learning skills in diverse, open-world environments, such as the real world, presents a number of significant challenges: external reward feedback is extremely sparse or non-existent, and the agent has only indirect access to the state of the world through its senses which, in the case of a robot, might correspond to cameras and joint encoders.
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=.8\columnwidth,trim={3.2mm 0 0 0},clip]{images_general/new_overview.png}
+	\caption{\small{\todo{Example Trajectories for different tasks, solved by Visual MPC}}}
+	\label{fig:example_traj}
+\end{figure}
+
 We approach the problem of learning generalizable behavior in the real world from the standpoint of sensory prediction. Prediction is often considered a fundamental component of intelligence, and, crucially, prediction of raw sensory observations does not make any assumptions about the availability of state information or extrinsic reward feedback. Learning via prediction is possible directly from a stream of raw sensory observations, such as images from a camera. These observations are both information-rich and high-dimensional, presenting both an opportunity and a challenge. Future observations provide a substantial amount of supervisory information for a machine learning algorithm. However, the predictive model must have the capacity to predict these high-dimensional observations, and the control algorithm must be able to use such a model to effectively select actions to accomplish user-specified goals.
+
 
 
 %Instead of focusing on mastery of highly-specialized skills in closed-world environments, here we focus on \emph{generalization} in diverse environments.
