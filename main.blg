@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -85,45 +85,45 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 49 entries,
+You've used 48 entries,
             4087 wiz_defined-function locations,
-            1044 strings with 16409 characters,
-and the built_in function-call counts, 29815 in all, are:
-= -- 2160
-> -- 961
-< -- 117
-+ -- 483
-- -- 205
-* -- 1395
-:= -- 4538
-add.period$ -- 107
-call.type$ -- 49
-change.case$ -- 48
-chr.to.int$ -- 291
-cite$ -- 49
-duplicate$ -- 2325
-empty$ -- 2721
-format.name$ -- 252
-if$ -- 6923
+            1039 strings with 16212 characters,
+and the built_in function-call counts, 28831 in all, are:
+= -- 2088
+> -- 932
+< -- 108
++ -- 467
+- -- 200
+* -- 1348
+:= -- 4409
+add.period$ -- 104
+call.type$ -- 48
+change.case$ -- 47
+chr.to.int$ -- 267
+cite$ -- 48
+duplicate$ -- 2258
+empty$ -- 2635
+format.name$ -- 246
+if$ -- 6688
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 460
-newline$ -- 172
-num.names$ -- 49
-pop$ -- 1263
+int.to.str$ -- 48
+missing$ -- 449
+newline$ -- 169
+num.names$ -- 48
+pop$ -- 1231
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2255
+skip$ -- 2180
 stack$ -- 0
-substring$ -- 724
-swap$ -- 1558
-text.length$ -- 20
+substring$ -- 667
+swap$ -- 1502
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 49
+type$ -- 48
 warning$ -- 0
-while$ -- 97
-width$ -- 51
-write$ -- 436
+while$ -- 92
+width$ -- 50
+write$ -- 427
 (There were 18 error messages)

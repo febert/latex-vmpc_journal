@@ -10,7 +10,7 @@
 
 In this section we explain our robot setup and several critical system design choices and details about the data collection process.
 
-\textbf{Learning complex Pick and Place Behavior with Visual MPC:}
+\textbf{Learning complex Pick and Place Behavior:}
 When collecting data by sampling from simple distributions, such as multivariate Gaussian, the skills that emerged were found to be generally restricted to pushing and dragging objects. This is because with simple distributions, it is very unlikely to visit states like picking up and placing of objects or folding cloth. Not only would the model be imprecise for these kinds of states, but also during planning it would be unlikely to \emph{find} action sequences that grasp an object or fold. 
 We therefore explore how the sampling distribution used both for data collection and sampling-based planning can be changed to visit these, otherwise unlikely, states more frequently, allowing more complex behavior to emerge. 
 
@@ -21,8 +21,7 @@ We first discuss picking and placing of objects. To allow picking up and placing
 
 The visual MPC algorithm as described so far is only able to solve manipulation tasks specified in 2D, like rearranging objects on the table, however a task such as lifting an object to a particular position in 3D cannot be fully specified with a single view, since it would be ambiguous. 
 
-
-\textbf{Multi-view visual MPC:} Therefore we use a combination of multiple views, taken with multiple cameras arranged appropriately, to jointly define a 3D task. Figure \ref{fig:robot_setup} shows the robot setup, including 2 standard webcams observing the workspace from different angles. The registration method described in the previous section is used separately per view to allow for dynamic retrying and solving temporally extended tasks. The planning costs from each view are combined using weighted averaging where the weights are provided by the registration network (see equation \ref{eqn:cost_avg}).  \todo{Figure XX shows an example lifting task, which specified in two views.}
+\textbf{Multi-view visual MPC:} We use a combination of multiple views, taken with multiple cameras arranged appropriately, to jointly define a 3D task. Figure \ref{fig:robot_setup} shows the robot setup, including 2 standard webcams observing the workspace from different angles. The registration method described in the previous section is used separately per view to allow for dynamic retrying and solving temporally extended tasks. The planning costs from each view are combined using weighted averaging where the weights are provided by the registration network (see equation \ref{eqn:cost_avg}).  \todo{Figure XX shows an example lifting task, which specified in two views.}
 
 The classifier-based cost is also used in the multiview-setup, an example trajectory of cloth folding is shown \todo{in figure}. 
 

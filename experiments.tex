@@ -1,21 +1,29 @@
 \section{Experimental Evaluation}
 \label{sec:experiments}
+In this section we present both qualitative and quantitative  performance evaluations of visual MPC on various manipulation tasks, comparing different prediction models and cost functions.
+The evaluation tasks require the robot to move objects in its environment from a starting state to a goal configuration, and performance was evaluated by measuring the distance between the final object position and goal position. 
 
-Our experimental evaluation consists of three parts, each answering one of the following three questions:
-\begin{itemize}
-	\item How does a smooth cost function 
-	\item How does the skip-connection neural advection model compare to 
-\end{itemize}
+Our experimental evaluation consists of six parts, each answering one of the following questions:
+\begin{enumerate}
+	\item How does using a smooth cost function vs. a non-smooth cost function
+	\item How do temporal skip-connections introduced used in the SNA-model affect performance compared to the DNA model without skip-connections? How is performance affected for a multi-object rearrangement task?
+	\item How is performance affected by using a registration-based cost function?
+	\item Can visual MPC be used together with a classifier-based cost function to solve relative object rearrangement tasks?
+	\item Can deformable objects, such as towels and cloth be handled with visual-MPC? 
+\end{enumerate}
 
-
-%%SL.10.16: It would help to add a transition here. Discuss the goals of the experiments and provide a short overview for the reader, so that none of the experiment subsections come as a surprise.
+For the points 1), 2) and 3) for measuring success we use a distance based evaluation where a human annotates the positions of the objects after pushing allowing us to compute the remaining distance to the goal. 
 
 %%SL.10.16: Put all these boring details into some subsection titled something like Experimental Setup. However, a lot of this is actually supposed to be covered in Section 7 above -- it's a bit weird to have a bunch more experimental setup now in this section. Maybe try to collect it all in one place?
-To train both our video-prediction and registration models, we collected 20,000 trajectories of pushing motions and 15,000 trajectories with gripper control, where the robot was allowed to randomly move and pick up objects. The data collection process is fully autonomous, requiring human intervention only to replace and change out the objects in front of the robot.
 
-The action space consisted of Cartesian movements along the $x$, $y$, and $z$ axes, and for some parts of it we also added azimuthal rotations of the gripper. For evaluation, we selected novel objects that were never seen during training. The evaluation tasks required the robot to move objects in its environment from a starting state to a goal configuration, and performance was evaluated by measuring the distance between the final object position and goal position. \todo{how was it done for the classifier?}
+\subsection{Experimental Setup}
+To train both our video-prediction and registration models, we collected 20,000 trajectories of pushing motions and 15,000 trajectories with gripper control, where the robot was allowed to randomly move and pick up objects. The data collection process is fully autonomous, requiring human intervention only to change out the objects in front of the robot.
 
-\subsection{Evaluating Skip-connection Neural Advection}
+The action space consisted of Cartesian movements along the $x$, $y$, and $z$ axes, and for some parts of it we also added azimuthal rotations of the gripper and a grasping action. For evaluation, we selected novel objects that were never seen during training. 
+
+\todo{how was it done for the classifier?}
+
+\subsection{Evaluating }
 \label{subsec:sna_experiments}
 \begin{wrapfigure}{r}{.37\columnwidth}
 	% \vspace{-0.25in}
@@ -187,7 +195,6 @@ We qualitatively visualize the evaluation in Figure~\ref{fig:cls_results}.\todo{
 We quantitatively evaluate each method across 20 tasks, including $10$ unique object pairs. The results, shown in Figure~\ref{fig:cls_charts}, indicate that prior methods for learning distance metrics
 %%SL.10.16: you mean the method *in this paper*?
 struggle to infer the goal of the task, while our approach leads to substantially more successful behavior on average. 
-
 %%SL.10.16: what is the conclusion from all this? how do the different methods of specifying costs stack up?
 
 %%SL.10.16: where are qualitative results and discussion of cloth?
