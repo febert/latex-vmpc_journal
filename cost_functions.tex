@@ -133,9 +133,7 @@ Formally, we consider a goal classifier $\hat{\out} = f(\obs)$, where $\obs$ den
 
 \begin{figure}
     \centering
-    % \vspace{-0.3cm}
     \includegraphics[width=0.48\textwidth]{images_cls/cls_fig.jpeg}
-    % \vspace{-0.3cm}
     \caption{\small We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.}
     \label{fig:cls_fig}
     \vspace{-0.3cm}
@@ -169,7 +167,6 @@ $$
 $$
 
 We optimize this objective using Adam~\cite{ADAM} on the initial parameters $\theta$. In our experiments, our classifier is represented by a convolutional neural network, consisting of three convolutional layers, each followed by layer normalization and a ReLU non-linearity. After the final convolutional layer, a spatial soft-argmax operation extracts spatial feature points, which are then passed through fully-connected layers.
-%\todo{add images for classifier!}
 
 \subsection{When to use which Cost Function?}
 \label{subsec:cost_discuission}
