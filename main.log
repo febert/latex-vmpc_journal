@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 OCT 2018 09:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 OCT 2018 09:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -711,7 +711,7 @@ LaTeX Warning: Reference `sec:scalingup' on page 7 undefined on input line 107.
 File: images_cls/cls_fig.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_fig.jpeg>
-Package pdftex.def Info: images_cls/cls_fig.jpeg used on input line 137.
+Package pdftex.def Info: images_cls/cls_fig.jpeg used on input line 136.
 (pdftex.def)             Requested size: 248.60658pt x 101.66159pt.
  [7 <./images_rfr/registration_train.pdf> <./images_rfr/registration_test_start
 .pdf> <./images_rfr/registration_test_goal.pdf>])
@@ -733,20 +733,20 @@ File: images_sna/longdistance_pushing/pushing.pdf Graphic file (type pdf)
 
 <use images_sna/longdistance_pushing/pushing.pdf>
 Package pdftex.def Info: images_sna/longdistance_pushing/pushing.pdf used on in
-put line 31.
+put line 32.
 (pdftex.def)             Requested size: 75.88426pt x 75.88298pt.
 
-Underfull \hbox (badness 3657) in paragraph at lines 38--42
+Underfull \hbox (badness 3657) in paragraph at lines 39--43
 \OT1/ppl/m/n/9.53561 com-par-i-son of visual-MPC us-
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 38--42
+Underfull \hbox (badness 2351) in paragraph at lines 39--43
 \OT1/ppl/m/n/9.53561 visual-MPC us-ing the dy-namic
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 43--46
+Underfull \hbox (badness 1406) in paragraph at lines 44--47
 \OT1/ppl/m/n/9.53561 multi-objective tasks where one
  []
 
@@ -757,22 +757,22 @@ File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type
 pdf)
  <use images_sna/multiobject_qualitative/avoid_obstacle.pdf>
 Package pdftex.def Info: images_sna/multiobject_qualitative/avoid_obstacle.pdf 
-used on input line 58.
+used on input line 59.
 (pdftex.def)             Requested size: 517.935pt x 92.07874pt.
 
-Overfull \hbox (11.55933pt too wide) in paragraph at lines 66--75
+Overfull \hbox (11.55933pt too wide) in paragraph at lines 67--76
  [] 
  []
 
 [10 <./images_sna/longdistance_pushing/pushing.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 138.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 139.
 
 <images_rfr/push_correction.pdf, id=522, 995.84645pt x 85.35826pt>
 File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
 <use images_rfr/push_correction.pdf>
-Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 143.
+Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 144.
 
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
@@ -780,7 +780,7 @@ Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 143.
 File: images_rfr/pick_place_plush.pdf Graphic file (type pdf)
 
 <use images_rfr/pick_place_plush.pdf>
-Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 170
+Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 171
 .
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
  [11 <./images_sna/multiobject_qualitative/avoid_obstacle.pdf>]
@@ -795,7 +795,7 @@ Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 205.
 File: images_cls/cls_results.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_results.jpeg>
-Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 216.
+Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 214.
 (pdftex.def)             Requested size: 414.34956pt x 157.8127pt.
 ) (./discussion.tex) [12 <./images_rfr/push_correction.pdf> <./images_rfr/pick_
 place_plush.pdf
@@ -886,7 +886,7 @@ hvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (14 pages, 9059261 bytes).
+Output written on main.pdf (14 pages, 9059182 bytes).
 PDF statistics:
  718 PDF objects out of 1000 (max. 8388607)
  591 compressed objects within 6 object streams
