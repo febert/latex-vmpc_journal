@@ -1,18 +1,14 @@
 \section{Trajectory Optimizer}
 \label{sec:optimizer}
-The role of the optimizer is to find actions sequences $a_{1:T}$ which minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$ by sampling a large number of actions sequences and ranking of each video-prediction rollouts using a cost function.
-
-We use a stochastic, sampling-based trajectory optimization method~\cite{kroese2013cross}, which we extend to handle a mixture of continuous and discrete actions. The motivation for using a gradient-free, sampling-based optimizer is that in this way we can easily ensure that actions stay within the distribution of actions the model has encountered during training. This is crucial to ensure that the model does not receive out-of-distribution inputs and makes valid predictions. 
+The role of the optimizer is to find actions sequences $a_{1:T}$ which minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$ by sampling a large number of actions sequences and ranking of each video-prediction rollout using a cost function.
 
 To render the planning process more efficient, we use the cross-entropy method (CEM), a gradient-free optimization procedure.
 CEM consists of iteratively resampling action sequences and refitting Gaussian distributions to the actions with the best predicted cost. 
+We extend CEM to handle a mixture of continuous and discrete actions.
 
-%%SL.10.15: algorithm names are not capitalized
-
+The motivation for using a gradient-free, sampling-based optimizer is that in this way we can easily ensure that actions stay within the distribution of actions the model has encountered during training. This is crucial to ensure that the model does not receive out-of-distribution inputs and makes valid predictions. 
 
 In the model-predictive control setting, the action sequences found by the optimizer can be very different between execution real-world times steps. For example at one time step the optimizer might find a pushing action leading towards the goal and in the next time step it determines a grasping action to be optimal to reach the goal. Na\"{i}ve replanning at every time step can then result in alternating between a pushing and a grasping attempt indefinitely causing the agent to get stuck and not making any progress towards to goal. 
 
 %%SL.10.15: It's not clear whether this is done in every experiment or just some experiments.
-We can resolve this problem by modifying the sampling distribution of the first iteration of CEM so that the optimizer commits to the plan found in the previous time step. In prior work \cite{sna}
-%%SL.10.15: that's not really prior work for this paper...
-the sampling distribution at first iteration of CEM is chosen to be a Gaussian with diagonal covariance matrix and zero mean. We instead use the best action sequence found in the optimization of the \emph{previous} real-world time step as the mean for sampling new actions in the \emph{current} real-world time-step. Since this action sequence is optimized for the previous time step we only use the values $a_{2:T}$ and omit the first action. To sample actions close to the action sequence from the previous time step we reduce the entries of the diagonal covariance matrix for the first $T-1$ time steps. It is crucial that the last entry of the covariance matrix at the end of the horizon is not reduced otherwise no exploration could happen for the last time step causing poor performance at later time steps.
+We can resolve this problem by modifying the sampling distribution of the first iteration of CEM so that the optimizer commits to the plan found in the previous time step. In the simplest version of CEM the sampling distribution at first iteration of CEM is chosen to be a Gaussian with diagonal covariance matrix and zero mean. We instead use the best action sequence found in the optimization of the \emph{previous} real-world time step as the mean for sampling new actions in the \emph{current} real-world time-step. Since this action sequence is optimized for the previous time step we only use the values $a_{2:T}$ and omit the first action. To sample actions close to the action sequence from the previous time step we reduce the entries of the diagonal covariance matrix for the first $T-1$ time steps. It is crucial that the last entry of the covariance matrix at the end of the horizon is not reduced otherwise no exploration could happen for the last time step causing poor performance at later time steps.

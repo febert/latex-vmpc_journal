@@ -1,4 +1,12 @@
 \section{Experimental Evaluation}
+\label{sec:experiments}
+
+Our experimental evaluation consists of three parts, each answering one of the following three questions:
+\begin{itemize}
+	\item How does a smooth cost function 
+	\item How does the skip-connection neural advection model compare to 
+\end{itemize}
+
 
 %%SL.10.16: It would help to add a transition here. Discuss the goals of the experiments and provide a short overview for the reader, so that none of the experiment subsections come as a surprise.
 
@@ -149,6 +157,13 @@ We evaluate our method on 20 long-distance and 15 short-distance pushing tasks. 
 %\end{figure}
 
 \subsubsection{Combined Prehensile and Non-Prehensile Manipulation.}
+\begin{figure*}
+	\centering
+	\includegraphics[width=1.0\textwidth]{images_rfr/pick_place_plush.pdf}
+	\caption{\small{Retrying behavior of our method combining prehensile and non-prehensile manipulation. In the first 4 time instants shown the robot pushes the object. It then loses the object, and decides to grasp it pulling it all the way to the goal. Retrying is enabled by applying the learned registration to both camera views (here we only show the front view).}}
+	\label{fig:push_grasp}
+	
+\end{figure*}
 %%SL.10.16: what is this evaluating?
 
 In the setting where the gripper is enabled it is part of the task to decide whether to solve a task by grasping or pushing the object to the goal. Similarly to the pushing setting we perform a benchmark where we define a set of 20 object relocation tasks and measure the final distance between the object and the target at the end of the episode. Interestingly we observe that in the majority of the cases the agent decides to grasp the object, as can be seen in the supplementary video.
@@ -197,3 +212,7 @@ struggle to infer the goal of the task, while our approach leads to substantiall
     \label{fig:cls_results}
     \vspace{-0.3cm}
 \end{figure*}
+
+\subsection{Learning Cloth-Folding with Visual-MPC}
+\label{subsec:cloth_folding_data}
+a major impediment is that when executing random actions clothes can become tangled pu
