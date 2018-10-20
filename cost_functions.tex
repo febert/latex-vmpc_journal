@@ -16,13 +16,13 @@ Given a distribution over pixel positions $P_0$ at time $t = 0$, the model predi
 c = \sum_{t = 1, \dots, T} c_t =  \sum_{t = 1, \dots, T} \mathbb{E}_{\hat{d}_{t} \sim P_{t}} \left[\|\hat{d}_{t} - d_{g}\|_2\right] 
  \label{eq:cost}
  \end{align}
-The per time-step costs $c_t$ are summed together giving the overall planing objective $c$. An alternative choice for the cost function is to evaluate $P_{t}$ at the position of the goal-point, which describes as how likely the model predicts an action sequence will hit the goal \emph{exactly}, we call this method \emph{goal-point evaluation}:
- \begin{align}
- c = \sum_{t = 1, \dots, T} P_t(g)
- \label{eq:goal_point_eval}
- \end{align}
- 
-The expected distance to the goal provides a smoother planning objective than the goal-point evaluation cost and enables longer-horizon tasks, since this cost function encourages movement of the designated objects into the right direction for each step of the execution, regardless of whether the goal-position can be reached within $T$ time steps or not. This cost also makes use of the uncertainty estimates of the predictor, when computing the expected distance to the goal. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together, and optionally weighted according to a scheme discussed in \autoref{subsec:reg_cost}.  
+The per time-step costs $c_t$ are summed together giving the overall planing objective $c$. 
+%An alternative choice for the cost function is to evaluate $P_{t}$ at the position of the goal-point, which describes as how likely the model predicts an action sequence will hit the goal \emph{exactly}, we call this method \emph{goal-point evaluation}:
+% \begin{align}
+% c = \sum_{t = 1, \dots, T} P_t(g)
+% \label{eq:goal_point_eval}
+% \end{align}
+The expected distance to the goal provides a smooth planning objective and enables longer-horizon tasks, since this cost function encourages movement of the designated objects into the right direction for each step of the execution, regardless of whether the goal-position can be reached within $T$ time steps or not. This cost also makes use of the uncertainty estimates of the predictor, when computing the expected distance to the goal. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together, and optionally weighted according to a scheme discussed in \autoref{subsec:reg_cost}.  
 
 \subsection{Registration-Based Cost}
 \label{subsec:reg_cost}

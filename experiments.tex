@@ -1,15 +1,25 @@
 \section{Experimental Evaluation}
 \label{sec:experiments}
 In this section we present both qualitative and quantitative  performance evaluations of visual MPC on various manipulation tasks, comparing different prediction models and cost functions.
-The evaluation tasks require the robot to move objects in its environment from a starting state to a goal configuration, and performance was evaluated by measuring the distance between the final object position and goal position. 
+
+\textbf{Qualitative Evaluation}
+We conduct a series of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks:
+\begin{enumerate}
+	\item Multiple-object relocation tasks through pushing
+	\item Combined obstacle avoidance and object relocation tasks in the presence of occlusion
+	\item Object relocation through combined pushing and grasping
+	\item Object relocation task with external perturbations of the object position
+	\item Relative object relative rearrangment tasks, including multiple object rearrangement
+	\item Handling of deformable objects, such as towel folding and cloth folding
+\end{enumerate}
+
+\textbf{Quantitative Evaluation} We define a set of tasks where the robot is required to move objects in its environment from a starting state to a goal configuration, and performance was evaluated by measuring the distance between the final object position and goal position. 
 
 Our experimental evaluation consists of six parts, each answering one of the following questions:
 \begin{enumerate}
-	\item How does using a smooth cost function vs. a non-smooth cost function
-	\item How do temporal skip-connections introduced used in the SNA-model affect performance compared to the DNA model without skip-connections? How is performance affected for a multi-object rearrangement task?
-	\item How is performance affected by using a registration-based cost function?
-	\item Can visual MPC be used together with a classifier-based cost function to solve relative object rearrangement tasks?
-	\item Can deformable objects, such as towels and cloth be handled with visual-MPC? 
+	\item [\ref{subsec:sna_experiments}] How important is the model's ability to handle occlusion? How do temporal skip-connections introduced in the SNA-model affect performance compared to the DNA model without skip-connections?
+	\item [\ref{susbsec:reg_cost_exp}] How important is the system's ability to update the belief of \emph{where} the object is? How is performance affected by using a registration-based cost function, and how does closed-loop visual MPC compare to open-loop visual MPC?  How does closed-loop control with registration compare to visual MPC with off-the-shelf tracking?
+	\item How does visual MPC with a classifier-based cost function compare to visual MPC with pixel MSE-based cost function on relative object rearrangement tasks?
 \end{enumerate}
 
 For the points 1), 2) and 3) for measuring success we use a distance based evaluation where a human annotates the positions of the objects after pushing allowing us to compute the remaining distance to the goal. 
@@ -17,14 +27,9 @@ For the points 1), 2) and 3) for measuring success we use a distance based evalu
 %%SL.10.16: Put all these boring details into some subsection titled something like Experimental Setup. However, a lot of this is actually supposed to be covered in Section 7 above -- it's a bit weird to have a bunch more experimental setup now in this section. Maybe try to collect it all in one place?
 
 \subsection{Experimental Setup}
-To train both our video-prediction and registration models, we collected 20,000 trajectories of pushing motions and 15,000 trajectories with gripper control, where the robot was allowed to randomly move and pick up objects. The data collection process is fully autonomous, requiring human intervention only to change out the objects in front of the robot.
+To train both our video-prediction and registration models, we collected 20,000 trajectories of pushing motions and 15,000 trajectories with gripper control, where the robot was allowed to randomly move and pick up objects. The data collection process is fully autonomous, requiring human intervention only to change out the objects in front of the robot. The action space consisted of Cartesian movements along the $x$, $y$, and $z$ axes, and for some parts of it we also added azimuthal rotations of the gripper and a grasping action.
 
-The action space consisted of Cartesian movements along the $x$, $y$, and $z$ axes, and for some parts of it we also added azimuthal rotations of the gripper and a grasping action. For evaluation, we selected novel objects that were never seen during training. 
-
-
-\todo{how was it done for the classifier?}
-
-\subsection{Evaluating }
+\subsection{Comparing different Video-Prediction Architectures}
 \label{subsec:sna_experiments}
 \begin{wrapfigure}{r}{.37\columnwidth}
 	% \vspace{-0.25in}
@@ -35,25 +40,21 @@ The action space consisted of Cartesian movements along the $x$, $y$, and $z$ ax
 		\label{fig:long_distance_task}
 	}
 \end{wrapfigure}
+We first perform a quantitative comparison of visual-MPC using the occlusion-aware SNA video prediction model \emph{with} temporal skip connections with dynamic neural advection model (DNA)\cite{foresight} \emph{without} temporal skip-connections.
+We evaluate on multi-objective tasks where one object must be pushed without disturbing another.
 
-We first perform a quantitative comparison of visual-MPC using the proposed
-%%SL.10.16: Let's just say that this section is comparing different video prediction models, instead of saying that it's evaluating "our" proposed model
-occlusion-aware SNA video prediction model and the expected distance cost with visual-MPC using the dynamic neural advection model (DNA)\cite{foresight} with both the goal-point evaluation cost \ref{eq:goal_point_eval} and the expected distance cost \ref{eq:cost}.
-%%SL.10.16: again, just say we're comparing different cost specification methods from Section whatever
+	%%SL.10.16: This sounds really disappointing. Presumably we do lots of other cool stuff too? What about classifier, towels, rearrangement and placing tasks?
+	
+	%%SL.10.16: do we use the same test procedure in other subsections too? If so, let's have a separate subsection to describe the experiment, and then separate subsections for results, otherwise there will be a lot of duplication. Don't just staple the experiment sections from different papers together...
+	%\todo{\autoref{fig:long_distance_task} shows an example task for the pushing benchmark.}
+	%%SL.10.16: I think these "bare bones" pictures with no distractors are really boring. Can we mostly show interesting tasks with lots of distractors, and contain the simple pushing tasks in one subsection? If we have lots of pictures of the simple tasks, people will conclude that the method only works with one object in the scene.
+	%We collected 20 trajectories with 3 novel objects and 1 training object. \autoref{table:res_dna_sna} shows the results for the pushing benchmark. The column \textit{distance} refers to the mean distance between the goal pixel and the designated pixel at the final time-step. The column \textit{improvement} indicates how much the designated pixel of the objects was moved closer to their goal (or further away for negative values) compared to the starting location. The true locations of the designated pixels after pushing were annotated by a human labeler.
+	
+	%The results in \autoref{table:res_dna_sna} show that our proposed planning cost in \autoref{eq:cost}
+	%%SL.10.16: wait, what? I thought this section was evaluating models, not costs? Can we separate these out, first evaluate models, then costs, to reflect the organization in the paper?
+	%substantially outperforms the planning cost used in prior work~\cite{foresight}. The performance of the SNA model in these experiments is comparable to the DNA model~\cite{foresight} when both use the expected-distance planning cost, since this task does not involve any occlusions.
+	%%SL.10.16: Hmm... OK, perhaps if we're going to evaluate costs and models simultaneously like this, we need to organize the sections more clearly. Maybe it would really help in that case to separate out experiment setup (how the methods care compared) from the results (how they stack up). And for each section, ask yourself: what is the question these experiments are trying to answer? It should be obvious from the writing. Right now, I feel like the experiments section looks too much like experiments sections from different papers stapled together. They need to more integrated and focused on achieving the paper's aims: state the research questions, and explain how each experiment subsection answers one or more of those questions
 
-We evaluate long pushes and multi-objective tasks where one object must be pushed without disturbing another.
-%%SL.10.16: This sounds really disappointing. Presumably we do lots of other cool stuff too? What about classifier, towels, rearrangement and placing tasks?
-The supplementary video and links to the code and data are available at \url{https://sites.google.com/view/sna-visual-mpc}
-
-%%SL.10.16: do we use the same test procedure in other subsections too? If so, let's have a separate subsection to describe the experiment, and then separate subsections for results, otherwise there will be a lot of duplication. Don't just staple the experiment sections from different papers together...
-\autoref{fig:long_distance_task} shows an example task for the pushing benchmark.
-%%SL.10.16: I think these "bare bones" pictures with no distractors are really boring. Can we mostly show interesting tasks with lots of distractors, and contain the simple pushing tasks in one subsection? If we have lots of pictures of the simple tasks, people will conclude that the method only works with one object in the scene.
-We collected 20 trajectories with 3 novel objects and 1 training object. \autoref{table:res_dna_sna} shows the results for the pushing benchmark. The column \textit{distance} refers to the mean distance between the goal pixel and the designated pixel at the final time-step. The column \textit{improvement} indicates how much the designated pixel of the objects was moved closer to their goal (or further away for negative values) compared to the starting location. The true locations of the designated pixels after pushing were annotated by a human labeler.
-
-The results in \autoref{table:res_dna_sna} show that our proposed planning cost in \autoref{eq:cost}
-%%SL.10.16: wait, what? I thought this section was evaluating models, not costs? Can we separate these out, first evaluate models, then costs, to reflect the organization in the paper?
-substantially outperforms the planning cost used in prior work~\cite{foresight}. The performance of the SNA model in these experiments is comparable to the DNA model~\cite{foresight} when both use the expected-distance planning cost, since this task does not involve any occlusions.
-%%SL.10.16: Hmm... OK, perhaps if we're going to evaluate costs and models simultaneously like this, we need to organize the sections more clearly. Maybe it would really help in that case to separate out experiment setup (how the methods care compared) from the results (how they stack up). And for each section, ask yourself: what is the question these experiments are trying to answer? It should be obvious from the writing. Right now, I feel like the experiments section looks too much like experiments sections from different papers stapled together. They need to more integrated and focused on achieving the paper's aims: state the research questions, and explain how each experiment subsection answers one or more of those questions
 \begin{figure*}
 \centering
 \includegraphics[width=1\linewidth]{images_sna/multiobject_qualitative/avoid_obstacle.pdf}
@@ -61,23 +62,23 @@ substantially outperforms the planning cost used in prior work~\cite{foresight}.
 \label{fig:goingaroundocclusion}}
 \end{figure*}
 
-\begin{table}
-{\footnotesize
-    \begin{center}
-    \begin{tabular}{lcc}
-    	\toprule
-           &  \thead{dist. \\ $\pm$ std err. of mean} & \thead{improvement \\ $\pm$ std err. of mean}  \\  
-           \midrule
-      DNA with cost eqn. \ref{eq:goal_point_eval}\cite{foresight}  & 24.6$\pm$2.35 & 2.1$\pm$ 2.75\\
-      DNA with cost eqn. \ref{eq:cost}  & \textbf{17.5 $\pm$ 2.37} &  \textbf{8.3 $\pm$ 2.62}\\ 
-      SNA with cost eqn. \ref{eq:cost} (ours) & 18.18 $\pm$ 2.1 & 7.7 $\pm$ 2.33\\
-      \bottomrule
-    \end{tabular}
-    \end{center}
-    }
-    \caption{Results of the pushing benchmark on 20 different object/goal configurations. Units are pixels in the 64x64 images.}
-    \label{table:res_dna_sna}
-\end{table}
+%\begin{table}
+%{\footnotesize
+%    \begin{center}
+%    \begin{tabular}{lcc}
+%    	\toprule
+%           &  \thead{dist. \\ $\pm$ std err. of mean} & \thead{improvement \\ $\pm$ std err. of mean}  \\  
+%           \midrule
+%      DNA with cost eqn. \ref{eq:goal_point_eval}\cite{foresight}  & 24.6$\pm$2.35 & 2.1$\pm$ 2.75\\
+%      DNA with cost eqn. \ref{eq:cost}  & \textbf{17.5 $\pm$ 2.37} &  \textbf{8.3 $\pm$ 2.62}\\ 
+%      SNA with cost eqn. \ref{eq:cost} (ours) & 18.18 $\pm$ 2.1 & 7.7 $\pm$ 2.33\\
+%      \bottomrule
+%    \end{tabular}
+%    \end{center}
+%    }
+%    \caption{Results of the pushing benchmark on 20 different object/goal configurations. Units are pixels in the 64x64 images.}
+%    \label{table:res_dna_sna}
+%\end{table}
 
 
 \begin{table}
@@ -92,19 +93,19 @@ substantially outperforms the planning cost used in prior work~\cite{foresight}.
   \bottomrule
 \end{tabular}
 }
-
 \caption{Results for multi-objective pushing on 8 object/goal configurations with 2 seen and 2 novel objects. Values indicate improvement in distance from starting position, higher is better. Units are pixels in the 64x64 images.} 
 \label{table:mult_obj}
-
 \end{table}
 
-%The pushing task evaluates the ability of each method to push an object across the table, but does not explicitly study the effect of occlusions. 
-To examine how well each approach can handle occlusions, we devised a second task that requires the robot to push one object, while keeping another object stationary. When the stationary object is in the way, the robot must move the goal object around it, as shown in \autoref{fig:goingaroundocclusion} on the left. While doing this, the gripper may occlude the stationary object, and the task can only be performed successfully if the model can make accurate predictions through this occlusion. These tasks are specified by picking one pixel on the target object, and one on the obstacle. The obstacle is commanded to remain stationary, by choosing the target position to be at the same location as the initial position. For the target object the destination is chosen on the other side of the obstacle.
+To examine how whether our skip-connection model (SNA) helps with handling occlusions, we devised a task that requires the robot to push one object, while keeping another object stationary. When the stationary object is in the way, the robot must move the goal object around it, as shown in \autoref{fig:goingaroundocclusion} on the left. While doing this, the gripper may occlude the stationary object, and the task can only be performed successfully if the model can make accurate predictions through this occlusion. These tasks are specified by picking one pixel on the target object, and one on the obstacle. The obstacle is commanded to remain stationary, by choosing the target position to be at the same location as the initial position. For the target object the destination is chosen on the other side of the obstacle.
 
-We used four different object arrangements, with two training objects and two objects that were unseen during training. We found that, in most of the cases, the SNA model was able to find a valid trajectory, while the DNA model, that is not able to handle occlusion, was mostly unable to find a solution. \autoref{fig:goingaroundocclusion} shows an example of the SNA model successfully predicting the position of the obstacle through an occlusion and finding a trajectory that avoids the obstacle. These findings are reflected by our quantitative results shown in \autoref{table:mult_obj}, indicating the importance of temporal skip connections.
+We used four different object arrangements, with two training objects and two objects that were not seen during training. We found that, in most of the cases, the SNA model was able to find a valid trajectory, while the DNA model, that is not able to handle occlusion, and was mostly unable to find a solution. \autoref{fig:goingaroundocclusion} \todo{change this}shows an example of the SNA model successfully predicting the position of the obstacle through an occlusion and finding a trajectory that avoids the obstacle. 
+
+The results of our quantitative comparisons are shown in \autoref{table:mult_obj}. We showed that temporal skip-connections indeed help to with handling occlusion in combined pushing and objstacle avoidance tasks.
 %%SL.10.16: It would help if the experimental conclusion at the end of this section is an answer to  question posed earlier in the experiments. I also think it makes too big of a deal out of the SNA thing -- this is not the SNA paper, we don't need to push on this so hard!
 
-\subsection{Evaluating Closed-Loop Visual MPC}
+\subsection{Evaluating Registration-based Cost Function}
+\label{susbsec:reg_cost_exp}
 %%SL.10.16: This is very misleading, all of the experiments are closed-loop!
 
 \begin{table}
@@ -126,17 +127,13 @@ We used four different object arrangements, with two training objects and two ob
 	\label{table:res_long_short}
 \end{table}
 
-%%SL.10.16: Before talking about videos, explain what this experiment section is actually studying! What is the question? What are you evaluating? Why?
-Videos and visualizations for closed-loop visual MPC can be found on this webpage: \url{https://sites.google.com/view/robustness-via-retrying}.
-%%SL.10.16: Let's not have multiple different websites. This just confuses the reader. Let's have only one website with results for the journal paper. This is not three papers stapled together, it's a single journal paper, and should be presented as such.
-We compare visual-MPC that uses a pixel-distance based cost based on our proposed self-supervised registration with visual-MPC using an off-the-shelf tracker, the ``multiple instance learning tracker'' MIL \cite{babenko2009visual} from OpenCV. Note that all methods do not have any prior knowledge of objects -- it is only provided with the position of one designed pixel in the initial and goal images, and must use the learned model to infer that this pixel belongs to an object that can be moved by the robot.
-%%SL.10.16: This is a very strange palce to put this sentence -- doesn't this apply to all experiments?
-Finally we also compare to visual MPC without registration method proposed by \cite{sna},
-%%SL.10.16: that's this paper!
-which does not track the object explicitly, but relies on the flow-based video prediction model to keep track of the designated pixel, which we call ``predictor propagation.'' 
-%%SL.10.16: again, that's this paper!
+\todo{put in example explaining push with perturbation, why is this worth studying?}
 
-\subsubsection{Pushing with Retrying}
+In this section we study quantitatively \emph{how important} it is to update the model's belief of where the objects that shall be moved are currently located. In this experiment, we disable the gripper control, which requires the robot to push objects to the target.
+Therefore we compare two variants of updating the positions of the designated pixel when using a pixel-distance based cost function. We compare a cost function that uses a registration-based method, trained fully-self-supervised method, with a cost function using off-the shelf tracking from OpenCV \cite{babenko2009visual}. Additionally we compare to visual-MPC that uses the video-prediction model's own predictions as the current positions of the designated pixel, rather than tracking the object.
+
+%SL.10.16: Before talking about videos, explain what this experiment section is actually studying! What is the question? What are you evaluating? Why?
+
 %%SL.10.16: again, not entirely clear what question this is trying to answer
 
 \begin{figure*}
@@ -146,7 +143,6 @@ which does not track the object explicitly, but relies on the flow-based video p
     \label{fig:push_retry}
 \end{figure*}
 
-
 %\begin{figure}
 %	\centering
 %	\includegraphics[width=0.8\columnwidth]{images_rfr/pushlong_bench_same_range.pdf}
@@ -154,9 +150,7 @@ which does not track the object explicitly, but relies on the flow-based video p
 %	\label{fig:push_bench_long}
 %\end{figure}
 
-For the first experiment, we disable the gripper control, which requires the robot to push objects to the target.
-%%SL.10.16: is this not true in the previous section? can we somehow be a bit more systematic about explaining the experiment setup?
-We evaluate our method on 20 long-distance and 15 short-distance pushing tasks. For long-distance tasks the distance between the object and its goal-position is $30cm$ while for short-distance tasks it is $15cm$. Table \ref{table:res_long_short} lists quantitative comparisons showing that on the long-distance benchmark visual-MPC using the proposed registrations approach not only outperforms prior work \cite{sna}, but also outperforms the hand-designed, supervised object tracker \cite{babenko2009visual}. By contrast for the short distance benchmark, all methods perform comparably. Thus theses results indicate the importance of closed loop control in long-horizon tasks. Using our learned registration, the robot is more frequently able to successfully recover after mispredictions or occlusions, an example is shown in \autoref{fig:push_retry}.
+We evaluate our method on 20 long-distance and 15 short-distance pushing tasks. For long-distance tasks the distance between the object and its goal-position is $30cm$ while for short-distance tasks it is $15cm$. Table \ref{table:res_long_short} lists quantitative comparisons showing that on the long-distance benchmark visual-MPC using the registration-based cost not only outperforms prior work \cite{sna}, but also outperforms the hand-designed, supervised object tracker \cite{babenko2009visual}. By contrast for the short distance benchmark, all methods perform comparably. Thus theses results indicate the importance of closed loop control in \emph{long-horizon tasks}. In fact with our learned registration, the robot is more frequently able to successfully recover after mispredictions or occlusions, an example is shown in \autoref{fig:push_retry}.
 
 %\begin{figure}
 %	\centering
@@ -173,12 +167,11 @@ We evaluate our method on 20 long-distance and 15 short-distance pushing tasks. 
 	\label{fig:push_grasp}
 	
 \end{figure*}
+
+\todo{show and explain quantiative push grasp examples!}
 %%SL.10.16: what is this evaluating?
-
-In the setting where the gripper is enabled it is part of the task to decide whether to solve a task by grasping or pushing the object to the goal. Similarly to the pushing setting we perform a benchmark where we define a set of 20 object relocation tasks and measure the final distance between the object and the target at the end of the episode. Interestingly we observe that in the majority of the cases the agent decides to grasp the object, as can be seen in the supplementary video.
+%In the setting where the gripper is enabled it is part of the task to decide whether to solve a task by grasping or pushing the object to the goal. Similarly to the pushing setting we perform a benchmark where we define a set of 20 object relocation tasks and measure the final distance between the object and the target at the end of the episode. Interestingly we observe that in the majority of the cases the agent decides to grasp the object, as can be seen in the supplementary video.
 %%SL.10.16: did you mean to reference some table or figure here?
-
-%%SL.10.16: Is there some conclusion to be drawn from all this about different cost functions?
 
 \subsection{Evaluating Classifier-based Cost Function}
 
@@ -187,23 +180,24 @@ For evaluating the performance of the proposed classifier-based cost function, w
 
 To collect data for meta-training the classifier, we randomly select a pair of objects from our set of training objects, and position them into many different relative positions, recording the image for each configuration. One task corresponds to a particular relative positioning of two objects, e.g. the first object to the left of the second, and we construct positive and negative examples for this task by labeling the aforementioned images. We randomly position the arm in each image, as it is not a determiner of task success. A good objective should ignore the position of the arm. We also include randomly-positioned distractor objects in about a third of the collected images.
 
-We evaluate all approaches in three different experimental settings. In the first setting, the goal is to arrange two objects into a specified relative arrangement. The second setting is the same, but with distractor objects present. In the final, most challenging setting, the goal is to achieve two tasks in sequence. We provide positive examples for both tasks, infer the classifier for both task, perform MPC for the first task until completion, followed by MPC for the second task. To evaluate the ability to generalize to new goals and settings, we use novel, held-out objects for all of the task and distractor objects in our evaluation. Code for training the few-shot goal classifier and videos of our results are available at \url{https://sites.google.com/view/few-shot-goals}.
-%%SL.10.16: we should have one website!
+We evaluate all approaches in three different experimental settings. In the first setting, the goal is to arrange two objects into a specified relative arrangement. The second setting is the same, but with distractor objects present. In the final, most challenging setting, the goal is to achieve two tasks in sequence. We provide positive examples for both tasks, infer the classifier for both task, perform MPC for the first task until completion, followed by MPC for the second task. To evaluate the ability to generalize to new goals and settings, we use novel, held-out objects for all of the task and distractor objects in our evaluation. 
 
 We qualitatively visualize the evaluation in Figure~\ref{fig:cls_results}.
-%\todo{explain how exactly you measure success} 
+
 On the left, we show a subset of the five images provided to illustrate the task(s), and on the left, we show the motions performed by the robot. We see that the robot is able to execute motions which lead to a correct relative positioning of the objects.
 We quantitatively evaluate each method across 20 tasks, including $10$ unique object pairs. The results, shown in Figure~\ref{fig:cls_charts}, indicate that prior methods for learning distance metrics
 %%SL.10.16: you mean the method *in this paper*?
 struggle to infer the goal of the task, while our approach leads to substantially more successful behavior on average. 
+\todo{explain how exactly you measure success} 
 %%SL.10.16: what is the conclusion from all this? how do the different methods of specifying costs stack up?
 
 %%SL.10.16: where are qualitative results and discussion of cloth?
 
+
 \begin{figure}
     \centering
     \includegraphics[width=0.48\textwidth]{images_cls/cls_charts.jpeg}
-    \caption{\small Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE~\cite{finn_nips}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.}
+    \caption{\small Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE~\cite{finn_nips} \todo{what is DSAE?}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.}
     \label{fig:cls_charts}
     \vspace{-0.3cm}
 \end{figure}

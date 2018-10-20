@@ -8,21 +8,21 @@
 \BOOKMARK [2][-]{subsection.5.3}{Classifier-Based Cost Functions}{section.5}% 8
 \BOOKMARK [2][-]{subsection.5.4}{When to use which Cost Function?}{section.5}% 9
 \BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 10
-\BOOKMARK [1][-]{section.7}{System Design}{}% 11
-\BOOKMARK [1][-]{section.8}{Experimental Evaluation}{}% 12
-\BOOKMARK [2][-]{subsection.8.1}{Experimental Setup}{section.8}% 13
-\BOOKMARK [2][-]{subsection.8.2}{Evaluating }{section.8}% 14
-\BOOKMARK [2][-]{subsection.8.3}{Evaluating Closed-Loop Visual MPC}{section.8}% 15
-\BOOKMARK [3][-]{subsubsection.8.3.1}{Pushing with Retrying}{subsection.8.3}% 16
-\BOOKMARK [3][-]{subsubsection.8.3.2}{Combined Prehensile and Non-Prehensile Manipulation.}{subsection.8.3}% 17
-\BOOKMARK [2][-]{subsection.8.4}{Evaluating Classifier-based Cost Function}{section.8}% 18
-\BOOKMARK [2][-]{subsection.8.5}{Learning Cloth-Folding with Visual-MPC}{section.8}% 19
-\BOOKMARK [1][-]{section.9}{Discussion}{}% 20
-\BOOKMARK [1][-]{section.10}{Discussion and Future Work}{}% 21
-\BOOKMARK [1][-]{section*.23}{References}{}% 22
+\BOOKMARK [1][-]{section.7}{Complex Behavior through custom Action Sampling Distributions}{}% 11
+\BOOKMARK [1][-]{section.8}{Multi-View Visual MPC}{}% 12
+\BOOKMARK [1][-]{section.9}{Experimental Evaluation}{}% 13
+\BOOKMARK [2][-]{subsection.9.1}{Experimental Setup}{section.9}% 14
+\BOOKMARK [2][-]{subsection.9.2}{Comparing different Video-Prediction Architectures}{section.9}% 15
+\BOOKMARK [2][-]{subsection.9.3}{Evaluating Registration-based Cost Function}{section.9}% 16
+\BOOKMARK [3][-]{subsubsection.9.3.1}{Combined Prehensile and Non-Prehensile Manipulation.}{subsection.9.3}% 17
+\BOOKMARK [2][-]{subsection.9.4}{Evaluating Classifier-based Cost Function}{section.9}% 18
+\BOOKMARK [2][-]{subsection.9.5}{Learning Cloth-Folding with Visual-MPC}{section.9}% 19
+\BOOKMARK [1][-]{section.10}{Discussion}{}% 20
+\BOOKMARK [1][-]{section.11}{Discussion and Future Work}{}% 21
+\BOOKMARK [1][-]{section*.22}{References}{}% 22
 \BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 23
 \BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 24
 \BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 25
 \BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 26
-\BOOKMARK [1][-]{section*.24}{Appendix A: Simulated Experiments}{}% 27
-\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.24}% 28
+\BOOKMARK [1][-]{section*.23}{Appendix A: Simulated Experiments}{}% 27
+\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.23}% 28
