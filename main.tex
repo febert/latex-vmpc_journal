@@ -395,7 +395,7 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %\title{Deep Reinforcement Learning with Observation Models}
-\title{Visual MPC: Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control}
+\title{Visual Foresight: Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control}
 %14: I think the current title is a bit too aggressive -- kind of makes it seem like all the other RL is not "real." We should make sure to hit a few key words: we need to make sure the title communicates that this is based on images, that there is robotic manipulation going on, and that it is based on prediction or something like that. We should also pick a name for the method. I don't particularly like "Visual MPC" (it sounds a bit antiquated, like visual servoing), but if we go with that, we can call it
 %Visual MPC: Model-Based Deep Reinforcement Learning for Vision-Based Robotic Control
 % we can also go with "foresight" and call it
@@ -506,7 +506,7 @@ We present a deep reinforcement learning method that is practical for real-world
 Beyond training a visual predictive model that can make predictions that are accurate enough for real-world control, a practical implementation of this approach requires us to address the challenge of task specification. Ground truth reward signals are generally unavailable in the real world, therefore we explore three distinct methods for goal specification for visual model-based RL for robotic manipulation: designated pixels, where a user specifies desired object manipulation tasks by selecting particular pixels in an image and corresponding goal positions, goal images, where the desired goal state is specified with an image, and image classifiers, which define spaces of goal states. Our deep predictive models are trained using data collected autonomously by a robot interacting with hundreds of objects. 
 We demonstrate that visual MPC can generalize to never-before-seen objects---both rigid and deformable---and solve a range of user-defined object manipulation tasks using the same model.
 %We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
-\todo{Page limit is 12!!}
+\todo{Page limit is 12 including refernces and bios!!!}
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -573,8 +573,7 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 % future work
 
 
-
-\section{Discussion and Future Work}
+\section{Future Work and Conclusion}
 We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve a variety of robotic control tasks. 
 %The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
 We demonstrate that Visual Model-Predictive Control
@@ -584,6 +583,9 @@ is able to successfully perform multi-object manipulation, pushing, picking and 
 %%SL.10.16: I think the discussion below is not quite a good fit for future work. It's important to understand what the *purpose* of the future work section is. Contrary to what the name might imply, the purpose of future work is *not* to actually discuss future work. The purpose of future work is to inspire the reader that your work has lots of potential to lead to new and exciting research. You should *not* usually talk about immediate next steps you plan to take, but rather all the awesome stuff *enabled* by your work.
 %%SL.10.16: What I would recommend is to have one paragraph on limitations (which is actually future work in disguise), and then a future work paragraph meant to inspire the reader about all the great stuff you could do with this method, ending on a very high note in the end about the generality of entirely self-supervised robotic deep model-based RL algorithms.
 The following has been identified as the most critical milestones for arriving at a general-purpose robotic manipulation system:
+
+\textbf{Gradient-free vs. gradient based trajectory optimization} Prior work has also proposed to plan through learned models via differentiation, though not with visual inputs~\cite{deep_mpc}. This can have the disadvantage of getting stuck in local minima. Also with gradient-based methods it is harder to ensure that the actions are within the distribution of actions sampled during data collection. This is crucial to ensure that the model can make predictions based on a sufficient number of supporting data-points.
+Instead using a model that predicts in pixel space, one could think of using a model making predictions in latent space. One potential advantage of latent space representations could be to handle \emph{partially observed} settings, for example tasks where an object is occluded for extended periods of time.
 \begin{itemize}
 	\item \textbf{Replacing random data collection:} For learning how to screw a cap onto a bottle -- a state that has exceptionally low probability of being reached by chance -- data collection with random action is extremely ineffective. Therefore we suggest to collect data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 
 %	Furthermore the demonstrations could be made with increasing difficulty, so as to induce a learning curriculum.

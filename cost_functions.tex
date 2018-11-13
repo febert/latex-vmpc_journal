@@ -43,7 +43,7 @@ Another approach is to perform a registration between predicted video frames and
 	}
 \end{figure}
 
-\textbf{Test Time Procedure}
+\noindent \textbf{Test Time Procedure}
 We will first describe the registration scheme at test time (see Figure~\ref{fig:registration_arch}(a)). We separately register the current image $I_t$ to the start image $I_0$ and to the goal image $I_g$ by passing it into the registration network $R$, implemented as a fully-convolutional neural network. The registration network produces a flow map $\hat{F}_{0 \leftarrow t} \in \mathbb{R}^{H \times W \times 2}$, a vector field with the same size as the image, that describes the relative motion for every pixel between the two frames.
 \begin{align}
 \hat{F}_{0 \leftarrow t} = R(I_t, I_0) &&
@@ -96,7 +96,7 @@ While the registration network is trained to perform a global registration betwe
 For simplicity, we describe the case with a single designated pixel. In practice, instead of a single flow vector $\hat{F}_{0 \leftarrow t}(d_0)$ and $\hat{F}_{g \leftarrow t}(d_g)$, we consider a neighborhood of flow-vectors around $d_0$ and $d_g$ and take the median in the $x$ and $y$ directions, making the registration more stable.
 \autoref{fig:tracking_overtime} visualizes an example tracking result while the gripper is moving an object.
 
-\textbf{Registration-Based Pixel-Distance Cost}
+\noindent \textbf{Registration-Based Pixel-Distance Cost}
 Registration can fail when distances between objects in the images are large. During a trajectory, the registration to the first image typically becomes harder, while the registration to the goal image becomes easier. We propose a mechanism that estimates which image is registered correctly, allowing us to utilize only the successful registration for evaluating the planning cost. This mechanism gives a high weight $\lambda_i$ to pixel-distance costs $c_i$ associated with a designated pixel $\hat{d}_{i,t}$ that is tracked successfully and a low, ideally zero, weight to a designated pixel where the registration is poor. We propose to use the photometric distance between the true frame and the warped frame evaluated at $d_{0,i}$ and $d_{g,i}$ as an estimate for \emph{local} registration success. A low photometric error indicates that the registration network predicted a flow vector leading to a pixel with a similar color, thus indicating warping success. However this does not necessarily mean that the flow vector points to the correct location. For example, there could be several objects with the same color and the network could simply point to the wrong object. Letting $I_i(d_i)$ denote the pixel value in image $I_i$ for position $d_i$, and $\hat{I}_i(d_i)$ denote the corresponding pixel in the image warped by the registration function, we can define the general weighting factors $\lambda_i$ as:
 \begin{align}
 \lambda_i =  \frac{||I_i(d_i) - \hat{I_i}(d_i)||_2^{-1}}{\sum^N_j ||I_j(d_j) - \hat{I}_j(d_j)||^{-1}_2}.
@@ -104,9 +104,9 @@ Registration can fail when distances between objects in the images are large. Du
 \end{align}
 where $\hat{I}_i = \hat{F}_{i \leftarrow t} \diamond I_t$. The MPC cost is computed as the average of the costs $c_i$ weighted by $\lambda_i$, where each $c_i$ is the expected distance (see equation \ref{eq:cost}) between the registered point $\hat{d}_{i,t}$ and the goal point $d_{g,i}$. Hence, the cost used for planning is $c = \sum_i \lambda_i c_i$.  In the case of the single view model and a single designated pixel, the index $i$ iterates over the start and goal image (and $N=2$).
 
-The proposed weighting scheme can also be used with multiple designated pixels, as used in multi-task settings and multi-view models, which are explained in section \ref{sec:scalingup}. The index $i$ then also loops over the views and indices of the designated pixels.
+The proposed weighting scheme can also be used with multiple designated pixels, as used in multi-task settings and multi-view models, which are explained in section \ref{sec:multiview}. The index $i$ then also loops over the views and indices of the designated pixels.
 
-\textbf{Training Procedure}
+\noindent \textbf{Training Procedure}
 The registration network is trained on the same data as the video-prediction model, but it does not share parameters with it.\footnote{in principle sharing parameters with the video-prediction model might be beneficial, however this is left for future work} Our approach is similar to the optic flow method proposed by \cite{meister2017unflow}. However, unlike this prior work, our method computes registrations for frames that might be many time steps apart, and the goal is not to extract optic flow, but rather to determine correspondences between potentially distant images. For training, two images are sampled at random times steps $t$ and $t+h$ along the trajectory and the images are warped to each other in both directions. 
 \begin{align}
 \hat{I}_{t} = \hat{F}_{t \leftarrow t +h} \diamond  I_{t+h} &&
@@ -139,13 +139,13 @@ Formally, we consider a goal classifier $\hat{\out} = f(\obs)$, where $\obs$ den
     \vspace{-0.3cm}
 \end{figure}
 
-\textbf{Meta-Learning for Few-Shot Goal Inference}
+\noindent \textbf{Meta-Learning for Few-Shot Goal Inference}
 
 To solve the above problem, we propose learning a few-shot classifier that can infer the goal of a new task from a small set of goal examples, allowing the user to define a task from goal images alone. Our approach is illustrated in Figure~\ref{fig:cls_fig}.
 
 To train the few-shot classifier, we build upon model-agnostic meta-learning (MAML)~\cite{maml}, which learns initial parameters $\theta$ for model $f$ that can efficiently adapt to a new task with one or a few steps of gradient descent. \cite{caml} proposed an extension of MAML, referred to as concept acquisition through meta-learning (CAML), for learning new concepts from positive examples alone. We apply CAML to the setting of acquiring goal classifiers from positive examples.
 
-\textbf{Test Time Procedure}
+\noindent \textbf{Test Time Procedure}
 At test time, the user provides a dataset $\posdata_j$ of $K$ examples of successful end states for a new task $\task_j$: $\data_j:=\{(\obs_k, 1) | k = 1...K\}_j$, which are then used to infer a task-specific goal classifier $C_j$. In particular, the meta-learned parameters $\theta$ are updated through gradient descent to adapt to task $\task_j$:
 
 $$
@@ -159,7 +159,7 @@ where $\loss$ is the cross-entropy loss function, $\alpha$ is the step size, and
 During planning, the learned classifier $C_j$ takes as input an image generated by the video-prediction model and outputs the predicted probability of the goal being achieved for the task specified by the few examples of success. To convert this into a cost function, we treat the probability of success as the planning cost for that observation. To reduce the effect of false positives and mis-calibrated predictions, we use the classifier conservatively by thresholding the predictions so that reward is only given for confident successes. Below this threshold, we give a reward of 0 and above this threshold, we provide the predicted probability as the reward. %The threshold is chosen via cross-validation on a set of validation tasks.
 
 
-\textbf{Train time procedure}
+\noindent \textbf{Train time procedure}
 During meta-training, we explicitly train for the ability to infer goal classifiers for the set of training tasks, $\{ \task_i \}$. We assume a small dataset $\data_i$ for each task $\task_i$, consisting of both positive and negative examples: $\data_i:= \{(\obs_n,\out_n) | n=1...N \}_i$. To learn the initial parameters $\theta$, we optimize the following objective:
 
 $$

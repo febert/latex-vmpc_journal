@@ -2,8 +2,9 @@
 \label{sec:experiments}
 In this section we present both qualitative and quantitative  performance evaluations of visual MPC on various manipulation tasks, comparing different prediction models and cost functions.
 
-\textbf{Qualitative Evaluation}
-We conduct a series of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks:
+\noindent \textbf{Qualitative Evaluation}
+In figure \todo{add figure} we show a series of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks:
+\todo{adapt these points}
 \begin{enumerate}
 	\item Multiple-object relocation tasks through pushing
 	\item Combined obstacle avoidance and object relocation tasks in the presence of occlusion
@@ -13,13 +14,14 @@ We conduct a series of qualitative experiments showing that visual MPC trained f
 	\item Handling of deformable objects, such as towel folding and cloth folding
 \end{enumerate}
 
-\textbf{Quantitative Evaluation} We define a set of tasks where the robot is required to move objects in its environment from a starting state to a goal configuration, and performance was evaluated by measuring the distance between the final object position and goal position. 
+\noindent \textbf{Quantitative Evaluation} We define a set of tasks where the robot is required to move objects in its environment from a starting state to a goal configuration, and performance is evaluated by measuring the distance between the final object position and goal position. 
 
 Our experimental evaluation consists of six parts, each answering one of the following questions:
 \begin{enumerate}
 	\item [\ref{subsec:sna_experiments}] How important is the model's ability to handle occlusion? How do temporal skip-connections introduced in the SNA-model affect performance compared to the DNA model without skip-connections?
 	\item [\ref{susbsec:reg_cost_exp}] How important is the system's ability to update the belief of \emph{where} the object is? How is performance affected by using a registration-based cost function, and how does closed-loop visual MPC compare to open-loop visual MPC?  How does closed-loop control with registration compare to visual MPC with off-the-shelf tracking?
-	\item How does visual MPC with a classifier-based cost function compare to visual MPC with pixel MSE-based cost function on relative object rearrangement tasks?
+	\item [\ref{subsec:eval_classifier}] How does visual MPC with a classifier-based cost function compare to visual MPC with pixel MSE-based cost function on relative object rearrangement tasks?
+	\item [\ref{subsec:multi_task_bench}]
 \end{enumerate}
 
 For the points 1), 2) and 3) for measuring success we use a distance based evaluation where a human annotates the positions of the objects after pushing allowing us to compute the remaining distance to the goal. 
@@ -174,6 +176,7 @@ We evaluate our method on 20 long-distance and 15 short-distance pushing tasks. 
 %%SL.10.16: did you mean to reference some table or figure here?
 
 \subsection{Evaluating Classifier-based Cost Function}
+\label{subsec:eval_classifier}
 
 For evaluating the performance of the proposed classifier-based cost function, we study a visual object arrangement task, where different goals correspond to different relative arrangements of a pair of objects. 
 %We evaluate our learned classifier on the predictions made by the video prediction model \todo{unclear, how exactly do you evaluate the classifier?} and derive the cost used for planning from the predicted probability of success. 
@@ -206,12 +209,17 @@ struggle to infer the goal of the task, while our approach leads to substantiall
 \begin{figure*}
     \centering
     \includegraphics[width=0.8\textwidth]{images_cls/cls_results.jpeg}
-    \caption{\small Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning.}
+    \caption{\small Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning. \todo{can go to appendix! classifier example wi}}
     \label{fig:cls_results}
     \vspace{-0.3cm}
 \end{figure*}
 
-\subsection{Learning Cloth-Folding with Visual-MPC}
+\subsection{Multi-Task Benchmark}
+\label{subsec:multi_task_bench}
+\todo{explain motivation: we wan to assess the ability of our algorithm to handle a wide range of tasks without problem-specific parameter tuning.}
+\todo{put in example trajecotries!}
+
+
 \label{subsec:cloth_folding_data}
 \begin{table}
 \centering
