@@ -24,29 +24,30 @@
 \newlabel{fig:example_traj}{{1}{1}{\small {\todo {Example Trajectories for different tasks, solved by Visual MPC}}\relax }{figure.caption.1}{}}
 \citation{foresight,sna,ebert2018robustness,flo}
 \citation{lillicrap2015continuous,sutton1998reinforcement}
+\citation{chentanez2005intrinsically,pathak2017curiosity}
+\citation{andrychowicz2017hindsight}
 \citation{chua2018deep,deisenroth2013survey}
 \citation{deisenroth2011pilco}
 \citation{nagabandi2017neural}
 \citation{watter2015embed}
-\citation{ha2018world}
+\citation{alexey,ha2018world,atarioh}
 \citation{zhang2018solar}
-\citation{mottaghi2016happens,lerrel,google_handeye}
+\citation{agrawal2016learning,nair2017combining,ropes}
+\citation{mottaghi2016happens,lerrel,google_handeye,calandra2017feeling,pinto2016curious}
 \citation{greg_kahn_uncertainty,crashing}
-\citation{agrawal2016learning}
-\citation{nair2017combining}
-\citation{pinto2016curious}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {{\relax \fontsize  {8bp}{9bp}\selectfont  \leavevmode {\color  {red}TO-DO: Overview of visual MPC concept}}}\relax }}{2}{figure.caption.2}}
 \newlabel{fig:overview}{{2}{2}{\small {\todo {Overview of visual MPC concept}}\relax }{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}}
 \newlabel{sec:rel_work}{{2}{2}{Related Work}{section.2}{}}
-\citation{kurutach2018learning}
 \citation{atarioh,recurrentsimulators}
 \citation{bootsetal,finn_nips,video_pixel_networks}
+\citation{beyond_mse,finn_nips,video_pixel_networks}
+\citation{zhang2018solar,kurutach2018learning}
 \citation{beyond_mse,convlstm,vondrick}
 \citation{prednet,dynamic_filter_networks}
+\citation{se3}
 \citation{video_pixel_networks,scott_reed}
 \citation{finn_nips,dynamic_filter_networks}
-\citation{se3}
 \citation{finn_nips}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Overview}{3}{section.3}}
 \newlabel{sec:prelim}{{3}{3}{Overview}{section.3}{}}
@@ -61,22 +62,22 @@
 \newlabel{simple_dna}{{2}{4}{Video Prediction for Control}{equation.4.2}{}}
 \newlabel{subsec:pixel_trafo}{{4}{4}{Video Prediction for Control}{figure.caption.4}{}}
 \newlabel{eqn:prob_forward}{{3}{4}{Video Prediction for Control}{equation.4.3}{}}
+\newlabel{eqn:simplemodel}{{5}{4}{Video Prediction for Control}{equation.4.5}{}}
 \citation{finn_nips}
 \citation{foresight}
 \citation{foresight}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Predicted probability $P_{d^{(0)}}(t)$ of the designated pixel being at the location of the blue dot indicated in \autoref  {fig:desig_pix_bluedot} for the DNA model (left) and the SNA model (right). {\relax \fontsize  {8bp}{9bp}\selectfont  \leavevmode {\color  {red}TO-DO: can cut if no more space!}}\relax }}{5}{figure.caption.6}}
 \newlabel{fig:pix_reqppear_graph}{{6}{5}{Predicted probability $P_{d^{(0)}}(t)$ of the designated pixel being at the location of the blue dot indicated in \autoref {fig:desig_pix_bluedot} for the DNA model (left) and the SNA model (right). \todo {can cut if no more space!}\relax }{figure.caption.6}{}}
-\newlabel{eqn:simplemodel}{{5}{5}{Video Prediction for Control}{equation.4.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The blue dot indicates the designated pixel\relax }}{5}{figure.caption.5}}
 \newlabel{fig:desig_pix_bluedot}{{5}{5}{The blue dot indicates the designated pixel\relax }{figure.caption.5}{}}
-\newlabel{fig:Ng1}{{7a}{5}{Skip connection neural advection (SNA) does not erase or move objects in the background\relax }{figure.caption.7}{}}
-\newlabel{sub@fig:Ng1}{{a}{5}{Skip connection neural advection (SNA) does not erase or move objects in the background\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Top rows: Predicted images of arm moving \textit  {in front of} green object with designated pixel (as indicated in \autoref  {fig:desig_pix_bluedot}). Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.\relax }}{5}{figure.caption.7}}
-\newlabel{fig:pix_reappear}{{7}{5}{Top rows: Predicted images of arm moving \textit {in front of} green object with designated pixel (as indicated in \autoref {fig:desig_pix_bluedot}). Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Planning Cost Functions}{5}{section.5}}
 \newlabel{sec:cost}{{5}{5}{Planning Cost Functions}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Pixel-Distance based Cost}{5}{subsection.5.1}}
 \newlabel{subsec:pixel_dist_cost}{{5.1}{5}{Pixel-Distance based Cost}{subsection.5.1}{}}
+\newlabel{fig:Ng1}{{7a}{5}{Skip connection neural advection (SNA) does not erase or move objects in the background\relax }{figure.caption.7}{}}
+\newlabel{sub@fig:Ng1}{{a}{5}{Skip connection neural advection (SNA) does not erase or move objects in the background\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Top rows: Predicted images of arm moving \textit  {in front of} green object with designated pixel (as indicated in \autoref  {fig:desig_pix_bluedot}). Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.\relax }}{5}{figure.caption.7}}
+\newlabel{fig:pix_reappear}{{7}{5}{Top rows: Predicted images of arm moving \textit {in front of} green object with designated pixel (as indicated in \autoref {fig:desig_pix_bluedot}). Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.\relax }{figure.caption.7}{}}
 \newlabel{eq:cost}{{6}{5}{Pixel-Distance based Cost}{equation.5.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Registration-Based Cost}{5}{subsection.5.2}}
 \newlabel{subsec:reg_cost}{{5.2}{5}{Registration-Based Cost}{subsection.5.2}{}}
@@ -89,16 +90,16 @@
 \newlabel{eqn:warped_pos}{{9}{6}{Registration-Based Cost}{equation.5.9}{}}
 \citation{meister2017unflow}
 \citation{meister2017unflow}
-\citation{maml}
-\citation{caml}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda $ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}\relax }}{7}{figure.caption.10}}
 \newlabel{fig:tracking_overtime}{{10}{7}{\small {Outputs of registration network. The first row shows the timesteps from left to right of a robot picking and moving a red bowl, the second row shows each image warped to the initial image via registration, and the third row shows the same for the goal image. A successful registration in this visualization would result in images that closely resemble the start- or goal image. In the first row, the locations where the designated pixel of the start image $d_0$ and the goal image $d_g$ are found are marked with red and blue crosses, respectively. It can be seen that the registration to the start image (red cross) is failing in the second to last time step, while the registration to the goal image (blue cross) succeeds for all time steps. The numbers in red, in the upper left corners indicate the trade off factors $\lambda $ between the views and are used as weighting factors for the planning cost. (Best viewed in PDF)}\relax }{figure.caption.10}{}}
 \newlabel{eqn:cost_avg}{{10}{7}{Registration-Based Cost}{equation.5.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.\relax }}{7}{figure.caption.11}}
+\newlabel{fig:cls_fig}{{11}{7}{\small We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.\relax }{figure.caption.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Classifier-Based Cost Functions}{7}{subsection.5.3}}
 \newlabel{subsec:class_cost}{{5.3}{7}{Classifier-Based Cost Functions}{subsection.5.3}{}}
+\citation{maml}
+\citation{caml}
 \citation{ADAM}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.\relax }}{8}{figure.caption.11}}
-\newlabel{fig:cls_fig}{{11}{8}{\small We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.\relax }{figure.caption.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}When to use which Cost Function?}{8}{subsection.5.4}}
 \newlabel{subsec:cost_discuission}{{5.4}{8}{When to use which Cost Function?}{subsection.5.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Trajectory Optimizer}{8}{section.6}}
@@ -116,13 +117,13 @@
 \citation{babenko2009visual}
 \citation{sna}
 \citation{babenko2009visual}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Results for multi-objective pushing on 8 object/goal configurations with 2 seen and 2 novel objects. Values indicate improvement in distance from starting position, higher is better. Units are pixels in the 64x64 images.\relax }}{10}{table.caption.15}}
+\newlabel{table:mult_obj}{{1}{10}{Results for multi-objective pushing on 8 object/goal configurations with 2 seen and 2 novel objects. Values indicate improvement in distance from starting position, higher is better. Units are pixels in the 64x64 images.\relax }{table.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Experimental Setup}{10}{subsection.9.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Comparing different Video-Prediction Architectures}{10}{subsection.9.2}}
 \newlabel{subsec:sna_experiments}{{9.2}{10}{Comparing different Video-Prediction Architectures}{subsection.9.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces  Pushing task. The designated pixel (red diamond) needs to be pushed to the green circle.  \relax }}{10}{figure.caption.13}}
 \newlabel{fig:long_distance_task}{{13}{10}{Pushing task. The designated pixel (red diamond) needs to be pushed to the green circle.  \relax }{figure.caption.13}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Results for multi-objective pushing on 8 object/goal configurations with 2 seen and 2 novel objects. Values indicate improvement in distance from starting position, higher is better. Units are pixels in the 64x64 images.\relax }}{10}{table.caption.15}}
-\newlabel{table:mult_obj}{{1}{10}{Results for multi-objective pushing on 8 object/goal configurations with 2 seen and 2 novel objects. Values indicate improvement in distance from starting position, higher is better. Units are pixels in the 64x64 images.\relax }{table.caption.15}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Success rate for long-distance pushing benchmark with 20 different object/goal configurations and short-distance benchmark with 15 object/goal configurations. Success is defined as bringing the object closer than 15 pixels to the goal, which corresponds to around $7.5cm$.\relax }}{10}{table.caption.16}}
 \newlabel{table:res_long_short}{{2}{10}{\small Success rate for long-distance pushing benchmark with 20 different object/goal configurations and short-distance benchmark with 15 object/goal configurations. Success is defined as bringing the object closer than 15 pixels to the goal, which corresponds to around $7.5cm$.\relax }{table.caption.16}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Evaluating Registration-based Cost Function}{10}{subsection.9.3}}
@@ -136,6 +137,8 @@
 \newlabel{fig:push_retry}{{15}{11}{\small {Applying our method to a pushing task. In the first 3 time instants the object behaves unexpectedly, moving down. The tracking then allows the robot to retry, allowing it to eventually bring the object to the goal.}\relax }{figure.caption.17}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.1}Combined Prehensile and Non-Prehensile Manipulation.}{11}{subsubsection.9.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Evaluating Classifier-based Cost Function}{11}{subsection.9.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Results for a combined benchmark of 10 hard object pushing and grasping tasks, along with 6 cloth folding tasks. Values indicate the percentage of trials which ended with the object closer than a threshold distance (measured in pixels) to the designated goal. Higher is better.\relax }}{11}{table.caption.21}}
+\newlabel{table:cloth_folding}{{3}{11}{Results for a combined benchmark of 10 hard object pushing and grasping tasks, along with 6 cloth folding tasks. Values indicate the percentage of trials which ended with the object closer than a threshold distance (measured in pixels) to the designated goal. Higher is better.\relax }{table.caption.21}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Learning Cloth-Folding with Visual-MPC}{11}{subsection.9.5}}
 \newlabel{subsec:cloth_folding_data}{{9.5}{11}{Learning Cloth-Folding with Visual-MPC}{subsection.9.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {10}Discussion}{11}{section.10}}
@@ -155,54 +158,60 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE\nobreakspace  {}\cite  {finn_nips} {\relax \fontsize  {8bp}{9bp}\selectfont  \leavevmode {\color  {red}TO-DO: what is DSAE?}}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }}{12}{figure.caption.19}}
 \newlabel{fig:cls_charts}{{17}{12}{\small Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE~\cite {finn_nips} \todo {what is DSAE?}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }{figure.caption.19}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {11}Discussion and Future Work}{12}{section.11}}
-\@writefile{toc}{\contentsline {section}{References}{12}{section*.22}}
+\@writefile{toc}{\contentsline {section}{References}{12}{section*.23}}
 \bibcite{lillicrap2015continuous}{9}
 \bibcite{sutton1998reinforcement}{10}
-\bibcite{chua2018deep}{11}
-\bibcite{deisenroth2013survey}{12}
-\bibcite{deisenroth2011pilco}{13}
-\bibcite{nagabandi2017neural}{14}
-\bibcite{watter2015embed}{15}
-\bibcite{ha2018world}{16}
-\bibcite{zhang2018solar}{17}
-\bibcite{mottaghi2016happens}{18}
-\bibcite{lerrel}{19}
-\bibcite{google_handeye}{20}
-\bibcite{greg_kahn_uncertainty}{21}
-\bibcite{crashing}{22}
-\bibcite{agrawal2016learning}{23}
-\bibcite{nair2017combining}{24}
-\bibcite{pinto2016curious}{25}
-\bibcite{kurutach2018learning}{26}
-\bibcite{atarioh}{27}
-\bibcite{recurrentsimulators}{28}
-\bibcite{bootsetal}{29}
-\bibcite{finn_nips}{30}
-\bibcite{video_pixel_networks}{31}
-\bibcite{beyond_mse}{32}
-\bibcite{convlstm}{33}
-\bibcite{vondrick}{34}
-\bibcite{prednet}{35}
-\bibcite{dynamic_filter_networks}{36}
-\bibcite{scott_reed}{37}
-\bibcite{se3}{38}
-\bibcite{zhou2016view}{39}
-\bibcite{meister2017unflow}{40}
-\bibcite{maml}{41}
-\bibcite{caml}{42}
+\bibcite{chentanez2005intrinsically}{11}
+\bibcite{pathak2017curiosity}{12}
+\bibcite{andrychowicz2017hindsight}{13}
+\bibcite{chua2018deep}{14}
+\bibcite{deisenroth2013survey}{15}
+\bibcite{deisenroth2011pilco}{16}
+\bibcite{nagabandi2017neural}{17}
+\bibcite{watter2015embed}{18}
+\bibcite{ha2018world}{19}
+\bibcite{atarioh}{20}
+\bibcite{zhang2018solar}{21}
+\bibcite{mottaghi2016happens}{22}
+\bibcite{lerrel}{23}
+\bibcite{google_handeye}{24}
+\bibcite{calandra2017feeling}{25}
+\bibcite{greg_kahn_uncertainty}{26}
+\bibcite{crashing}{27}
+\bibcite{alexey}{28}
+\bibcite{agrawal2016learning}{29}
+\bibcite{nair2017combining}{30}
+\bibcite{ropes}{31}
+\bibcite{pinto2016curious}{32}
+\bibcite{kurutach2018learning}{33}
+\bibcite{recurrentsimulators}{34}
+\bibcite{bootsetal}{35}
+\bibcite{finn_nips}{36}
+\bibcite{video_pixel_networks}{37}
+\bibcite{beyond_mse}{38}
+\bibcite{convlstm}{39}
 \@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning.\relax }}{13}{figure.caption.20}}
 \newlabel{fig:cls_results}{{18}{13}{\small Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning.\relax }{figure.caption.20}{}}
-\bibcite{ADAM}{43}
-\bibcite{grasping_fetal}{44}
-\bibcite{babenko2009visual}{45}
-\bibcite{deep_mpc}{46}
-\bibcite{jayaraman2018time}{47}
-\bibcite{todorov2012mujoco}{48}
+\bibcite{vondrick}{40}
+\bibcite{prednet}{41}
+\bibcite{dynamic_filter_networks}{42}
+\bibcite{scott_reed}{43}
+\bibcite{se3}{44}
+\bibcite{zhou2016view}{45}
+\bibcite{meister2017unflow}{46}
+\bibcite{maml}{47}
+\bibcite{caml}{48}
+\bibcite{ADAM}{49}
+\bibcite{grasping_fetal}{50}
+\bibcite{babenko2009visual}{51}
+\bibcite{deep_mpc}{52}
+\bibcite{jayaraman2018time}{53}
+\bibcite{todorov2012mujoco}{54}
 \citation{todorov2012mujoco}
 \citation{sna}
 \@writefile{toc}{\contentsline {section}{Biographies}{14}{IEEEbiography.0}}
 \@writefile{toc}{\contentsline {subsection}{Michael Shell}{14}{IEEEbiography.1}}
 \@writefile{toc}{\contentsline {subsection}{John Doe}{14}{IEEEbiography.2}}
 \@writefile{toc}{\contentsline {subsection}{Jane Doe}{14}{IEEEbiography.3}}
-\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Simulated Experiments}{14}{section*.23}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Simulated Experiments}{14}{section*.24}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {A.0.1}Simulated Experiments}{14}{subsubsection.Appendix.A.0.1}}

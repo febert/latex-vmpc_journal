@@ -213,4 +213,19 @@ struggle to infer the goal of the task, while our approach leads to substantiall
 
 \subsection{Learning Cloth-Folding with Visual-MPC}
 \label{subsec:cloth_folding_data}
+\begin{table}
+\centering
+{\footnotesize
+\begin{tabular}{lcc}
+	\toprule
+         &  \thead{\% of Trials with \\ Final Pixel Distance $< 15$}   \\
+         \midrule
+  Visual MPC & \textbf{75\%} \\ 
+  Calibrated Camera Baseline & 18.75 \% \\
+  \bottomrule
+\end{tabular}
+}
+\caption{Results for a combined benchmark of 10 hard object pushing and grasping tasks, along with 6 cloth folding tasks. Values indicate the percentage of trials which ended with the object closer than a threshold distance (measured in pixels) to the designated goal. Higher is better.} 
+\label{table:cloth_folding}
+\end{table}
 a major impediment is that when executing random actions clothes can become tangled pu
