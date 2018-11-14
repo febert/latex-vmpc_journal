@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 NOV 2018 10:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 NOV 2018 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -589,13 +589,12 @@ ine 36.
 
 Underfull \vbox (badness 1824) has occurred while \output is active []
 
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 53.
+
 )
 (./related_work.tex [2 <./images_general/overview_roughdraft.png>])
-(./preliminaries.tex
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 16.
-
-) (./video_prediction.tex
-<images_general/prediction_model.pdf, id=249, 483.69685pt x 426.79132pt>
+(./preliminaries.tex) (./video_prediction.tex
+<images_general/prediction_model.pdf, id=251, 483.69685pt x 426.79132pt>
 File: images_general/prediction_model.pdf Graphic file (type pdf)
 
 <use images_general/prediction_model.pdf>
@@ -609,14 +608,14 @@ Underfull \hbox (badness 1796) in paragraph at lines 11--12
  []
 
 [3 <./images_general/prediction_model.pdf>]
-<images_sna/occlusionaware/architecture.pdf, id=297, 597.50786pt x 369.88583pt>
+<images_sna/occlusionaware/architecture.pdf, id=298, 597.50786pt x 369.88583pt>
 File: images_sna/occlusionaware/architecture.pdf Graphic file (type pdf)
 <use images_sna/occlusionaware/architecture.pdf>
 Package pdftex.def Info: images_sna/occlusionaware/architecture.pdf used on inp
 ut line 23.
 (pdftex.def)             Requested size: 252.94499pt x 156.58138pt.
  [4 <./images_sna/occlusionaware/architecture.pdf>]
-<images_sna/occlusionaware/img_desigpixb0.png, id=347, 483.8075pt x 484.81125pt
+<images_sna/occlusionaware/img_desigpixb0.png, id=349, 483.8075pt x 484.81125pt
 >
 File: images_sna/occlusionaware/img_desigpixb0.png Graphic file (type png)
  <use images_sna/occlusionaware/img_desigpixb0.png>
@@ -624,7 +623,7 @@ Package pdftex.def Info: images_sna/occlusionaware/img_desigpixb0.png used on i
 nput line 61.
 (pdftex.def)             Requested size: 93.58841pt x 93.77956pt.
 
-<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=352, 5
+<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=354, 5
 13.92pt x 128.48pt>
 File: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png Graph
 ic file (type png)
@@ -634,7 +633,7 @@ Package pdftex.def Info: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0
 _overtime.png used on input line 81.
 (pdftex.def)             Requested size: 227.64894pt x 56.91168pt.
 
-<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=353, 514.92375pt
+<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=355, 514.92375pt
  x 128.48pt>
 File: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png Graphic file (t
 ype png)
@@ -647,7 +646,7 @@ png used on input line 87.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 7.
 
-<images_rfr/registration_singletime.pdf, id=360, 376.40625pt x 239.89626pt>
+<images_rfr/registration_singletime.pdf, id=362, 376.40625pt x 239.89626pt>
 File: images_rfr/registration_singletime.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_singletime.pdf>
@@ -690,7 +689,7 @@ Package pdftex.def Info: images_rfr/reg_over_time.png used on input line 87.
  [6 <./images_rfr/registration_train.pdf> <./images_rfr/registration_singletime
 .pdf> <./images_rfr/registration_test_start.pdf> <./images_rfr/registration_tes
 t_goal.pdf>]
-<images_cls/cls_fig.jpeg, id=473, 810.02625pt x 331.2375pt>
+<images_cls/cls_fig.jpeg, id=475, 810.02625pt x 331.2375pt>
 File: images_cls/cls_fig.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_fig.jpeg>
@@ -698,7 +697,7 @@ Package pdftex.def Info: images_cls/cls_fig.jpeg used on input line 133.
 (pdftex.def)             Requested size: 248.60658pt x 101.66159pt.
  [7 <./images_rfr/reg_over_time.png> <./images_cls/cls_fig.jpeg>]) (./optimizer
 .tex) (./scaling_up.tex
-<images_general/robot_setup.jpg, id=489, 3667.7025pt x 3033.3325pt>
+<images_general/robot_setup.jpg, id=491, 3667.7025pt x 3033.3325pt>
 File: images_general/robot_setup.jpg Graphic file (type jpg)
 
 <use images_general/robot_setup.jpg>
@@ -721,7 +720,7 @@ Underfull \hbox (badness 4595) in paragraph at lines 32--32
  \OT1/phv/b/n/9.53561 9.1 Com-par-ing dif-fer-ent Video-Prediction Ar-chi-tec-
  []
 
-[9] <images_rfr/push_correction.pdf, id=522, 995.84645pt x 85.35826pt>
+[9] <images_rfr/push_correction.pdf, id=524, 995.84645pt x 85.35826pt>
 File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
 <use images_rfr/push_correction.pdf>
@@ -729,7 +728,7 @@ Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 107.
 
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_rfr/pick_place_plush.pdf, id=527, 995.84645pt x 85.35826pt>
+<images_rfr/pick_place_plush.pdf, id=529, 995.84645pt x 85.35826pt>
 File: images_rfr/pick_place_plush.pdf Graphic file (type pdf)
 
 <use images_rfr/pick_place_plush.pdf>
@@ -737,7 +736,7 @@ Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 123
 .
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_cls/cls_charts.jpeg, id=530, 682.55pt x 297.11pt>
+<images_cls/cls_charts.jpeg, id=532, 682.55pt x 297.11pt>
 File: images_cls/cls_charts.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_charts.jpeg>
@@ -775,7 +774,7 @@ Underfull \hbox (badness 1590) in paragraph at lines 154--157
  []
 
 [12]) (./appendix.tex
-<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=581, 1280.37404pt x 
+<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=583, 1280.37404pt x 
 227.62204pt>
 File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type 
 pdf)
@@ -784,7 +783,7 @@ Package pdftex.def Info: images_sna/multiobject_qualitative/avoid_obstacle.pdf
 used on input line 13.
 (pdftex.def)             Requested size: 517.935pt x 92.07874pt.
 
-<images_cls/cls_results.jpeg, id=582, 1027.84pt x 391.4625pt>
+<images_cls/cls_results.jpeg, id=584, 1027.84pt x 391.4625pt>
 File: images_cls/cls_results.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_results.jpeg>
@@ -847,10 +846,10 @@ ro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (14 pages, 19413073 bytes).
+Output written on main.pdf (14 pages, 19413330 bytes).
 PDF statistics:
- 731 PDF objects out of 1000 (max. 8388607)
- 606 compressed objects within 7 object streams
+ 733 PDF objects out of 1000 (max. 8388607)
+ 608 compressed objects within 7 object streams
  144 named destinations out of 1000 (max. 500000)
  370 words of extra memory for PDF output out of 10000 (max. 10000000)
 
