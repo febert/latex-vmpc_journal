@@ -11,18 +11,22 @@
 \BOOKMARK [1][-]{section.7}{Complex Behavior through custom Action Sampling Distributions}{}% 11
 \BOOKMARK [1][-]{section.8}{Multi-View Visual MPC}{}% 12
 \BOOKMARK [1][-]{section.9}{Experimental Evaluation}{}% 13
-\BOOKMARK [2][-]{subsection.9.1}{Experimental Setup}{section.9}% 14
-\BOOKMARK [2][-]{subsection.9.2}{Comparing different Video-Prediction Architectures}{section.9}% 15
-\BOOKMARK [2][-]{subsection.9.3}{Evaluating Registration-based Cost Function}{section.9}% 16
-\BOOKMARK [3][-]{subsubsection.9.3.1}{Combined Prehensile and Non-Prehensile Manipulation.}{subsection.9.3}% 17
-\BOOKMARK [2][-]{subsection.9.4}{Evaluating Classifier-based Cost Function}{section.9}% 18
-\BOOKMARK [2][-]{subsection.9.5}{Learning Cloth-Folding with Visual-MPC}{section.9}% 19
-\BOOKMARK [1][-]{section.10}{Discussion}{}% 20
-\BOOKMARK [1][-]{section.11}{Discussion and Future Work}{}% 21
-\BOOKMARK [1][-]{section*.23}{References}{}% 22
-\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 23
-\BOOKMARK [2][-]{IEEEbiography.1}{Michael Shell}{IEEEbiography.0}% 24
-\BOOKMARK [2][-]{IEEEbiography.2}{John Doe}{IEEEbiography.0}% 25
-\BOOKMARK [2][-]{IEEEbiography.3}{Jane Doe}{IEEEbiography.0}% 26
-\BOOKMARK [1][-]{section*.24}{Appendix A: Simulated Experiments}{}% 27
-\BOOKMARK [2][-]{subsubsection.Appendix.A.0.1}{Simulated Experiments}{section*.24}% 28
+\BOOKMARK [2][-]{subsection.9.1}{Comparing different Video-Prediction Architectures}{section.9}% 14
+\BOOKMARK [2][-]{subsection.9.2}{Evaluating Registration-based Cost Function}{section.9}% 15
+\BOOKMARK [2][-]{subsection.9.3}{Evaluating Classifier-based Cost Function}{section.9}% 16
+\BOOKMARK [2][-]{subsection.9.4}{Multi-Task Benchmark}{section.9}% 17
+\BOOKMARK [1][-]{section.10}{Discussion}{}% 18
+\BOOKMARK [1][-]{section.11}{Conclusion}{}% 19
+\BOOKMARK [1][-]{section*.19}{References}{}% 20
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 21
+\BOOKMARK [2][-]{IEEEbiography.1}{Frederik Ebert}{IEEEbiography.0}% 22
+\BOOKMARK [2][-]{IEEEbiography.2}{Chelsea Finn}{IEEEbiography.0}% 23
+\BOOKMARK [2][-]{IEEEbiography.3}{Annie Xie}{IEEEbiography.0}% 24
+\BOOKMARK [2][-]{IEEEbiography.4}{Sudeep Dasari}{IEEEbiography.0}% 25
+\BOOKMARK [2][-]{IEEEbiography.5}{Alex Lee}{IEEEbiography.0}% 26
+\BOOKMARK [2][-]{IEEEbiography.6}{Sergey Levine}{IEEEbiography.0}% 27
+\BOOKMARK [1][-]{section*.20}{Appendix A: Experimental Setup}{}% 28
+\BOOKMARK [1][-]{section*.21}{Appendix B: Experimental Evaluation}{}% 29
+\BOOKMARK [2][-]{subsection.Appendix.B.1}{Experiments with multiple-objects rearrangement with occlusion}{section*.21}% 30
+\BOOKMARK [2][-]{subsection.Appendix.B.2}{Experiments with classifier-based cost function}{section*.21}% 31
+\BOOKMARK [1][-]{section*.24}{Appendix C: Simulated Experiments}{}% 32

@@ -65,14 +65,14 @@ Here, we make the assumption that occluded objects are static throughout the pre
 
 We provide an example of the model recovering from occlusion in \autoref{fig:pix_reappear}. In this figure, the arm is predicted to move in front of the designated pixel, marked in blue in \autoref{fig:desig_pix_bluedot}. The predictions of the DNA model, shown in figure \autoref{fig:pix_reappear}(b), contain incorrect motion of the marked object, as shown in the heatmaps visualizing $\hat{P}_t$, although the arm actually passes in front of it. This is because the DNA model cannot recover information about an object that it has `overwritten' during its predictions, causing the model to predict that the pixel \emph{moves with the arm}. We identified this as one of the major causes of planning failure using the DNA model. By contrast our SNA model predicts that the occluded object will not move, shown in figure  \autoref{fig:pix_reappear}(a).
 
-\todo{can cut from here:}
-Next, we show another illustration comparing the occlusion handling of DNA and the proposed SNA model. The graphs in \autoref{fig:pix_reqppear_graph} show the predicted probability evaluated at the position of the designated pixel, shown in figure \ref{fig:desig_pix_bluedot}, which is stationary during the entire motion. Precisely when the arm occludes the designated pixel, the probability at this point decreases. This indicates that the model is `unsure' where this pixel is. When the arm unoccludes the designated pixel, it should become visible again, and the probability of the designated pixel being at its original position should go up. In the case of the DNA model and its variants~\cite{finn_nips}, the probability mass does not increase after the object reappears. 
- 
- \begin{figure}[t]
- 	\centering
- 	\includegraphics[width=0.9\columnwidth]{images_sna/occlusionaware/probability_curves.pdf}
- 	\caption{Predicted probability $P_{d^{(0)}}(t)$ of the designated pixel being at the location of the blue dot indicated in \autoref{fig:desig_pix_bluedot} for the DNA model (left) and the SNA model (right). \todo{can cut if no more space!}}      \label{fig:pix_reqppear_graph}
- \end{figure}
+%\todo{can cut from here:}
+%Next, we show another illustration comparing the occlusion handling of DNA and the proposed SNA model. The graphs in \autoref{fig:pix_reqppear_graph} show the predicted probability evaluated at the position of the designated pixel, shown in figure \ref{fig:desig_pix_bluedot}, which is stationary during the entire motion. Precisely when the arm occludes the designated pixel, the probability at this point decreases. This indicates that the model is `unsure' where this pixel is. When the arm unoccludes the designated pixel, it should become visible again, and the probability of the designated pixel being at its original position should go up. In the case of the DNA model and its variants~\cite{finn_nips}, the probability mass does not increase after the object reappears. 
+% 
+% \begin{figure}[t]
+% 	\centering
+% 	\includegraphics[width=0.9\columnwidth]{images_sna/occlusionaware/probability_curves.pdf}
+% 	\caption{Predicted probability $P_{d^{(0)}}(t)$ of the designated pixel being at the location of the blue dot indicated in \autoref{fig:desig_pix_bluedot} for the DNA model (left) and the SNA model (right). \todo{can cut if no more space!}}      \label{fig:pix_reqppear_graph}
+% \end{figure}
 
 \begin{figure}
     \centering

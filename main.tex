@@ -489,23 +489,11 @@
 % in the abstract or keywords.
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-%Deep reinforcement learning algorithms have enabled learning of complex skills and mastery of complex games. Unlike prior works that have focused on mastery of complex, specialized behaviors in limited, closed-world environments, we consider a reinforcement learning problem setting with more simple skills but with substantial diversity, raw observations, and sparse rewards. As a result, rewards are simply not enough supervision to be learned from alone. 
-
-%%SL.10.14: Feels like we need to start with some more up-beat sentence, like:
 Deep reinforcement learning algorithms capable of learning complex skills directly from raw sensory inputs have the potential to allieviate the need for hand-designing features and control laws for autnomomous systems such as robot manipulators and or self-driving vehicles.
-%However, applying deep reinforcement learning algorithms to robotic control tasks in complex, diverse, open-world environments without access to meticulously hand-engineered rewards still remains a challenge.
-%%SL.10.14: It kind of feels like we're patching up a minor issue with deep RL. Somehow doesn't feel very fundamental when written like this. Can we go with something like this instead: 
 However, deep reinforcement learning for real-world robotic control has yet to achieve the kind of generalization and broad applicability demonstrated by deep learning algorithms in other domains, such as vision and natural language processing. 
 We present a deep reinforcement learning method that is practical for real-world robotics tasks, such as robotic manipulation, and can generalize effectively to never-before-seen tasks and objects, without requiring meticulously hand-specified reward functions and carefully engineered episodic learning setups. To that end, we opt for a self-supervised approach based on \emph{prediction}: instead of learning to directly maximize a given reward, our method is based on learning to predict the future, directly in terms of the raw sensory observations of the robot, such as camera images.
-%We take a step towards solving this problem by drawing supervision from predicting future sensory observations. Concretely, we propose to learn predictive models of future observations
-%%SL.10.14: Maybe explicitly use "images" somewhere here or "raw pixels" or something?
-%conditioned on the agent's future actions, and a method for planning actions under this model.
-%%SL.10.14: Seems like we should probably expand on this a bit. May be add something like this:
-% 
-%This corresponds to a model-based reinforcement learning procedure, applied directly to raw image observations.
 Beyond training a visual predictive model that can make predictions that are accurate enough for real-world control, a practical implementation of this approach requires us to address the challenge of task specification. Ground truth reward signals are generally unavailable in the real world, therefore we explore three distinct methods for goal specification for visual model-based RL for robotic manipulation: designated pixels, where a user specifies desired object manipulation tasks by selecting particular pixels in an image and corresponding goal positions, goal images, where the desired goal state is specified with an image, and image classifiers, which define spaces of goal states. Our deep predictive models are trained using data collected autonomously by a robot interacting with hundreds of objects. 
 We demonstrate that visual MPC can generalize to never-before-seen objects---both rigid and deformable---and solve a range of user-defined object manipulation tasks using the same model.
-%We show that we can learn sensory prediction models effectively from real videos of a robot's experience, demonstrating that such models can handle diverse datasets with hundreds of objects, and that they enable the robot to accomplish a wide range of user-defined object manipulation goals, even when faced with novel objects.
 \todo{Page limit is 12 including refernces and bios!!!}
 \end{abstract}
 
@@ -573,28 +561,32 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 % future work
 
 
-\section{Future Work and Conclusion}
-We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve a variety of robotic control tasks. 
-%The control tasks involve complex contact dynamics, as well as handling deformable objects, such as cloth.
-We demonstrate that Visual Model-Predictive Control
-%%SL.10.16: algorithm names are not capitalized
-is able to successfully perform multi-object manipulation, pushing, picking and placing, and cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for model-predictive control.
+\section{Conclusion}
+We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve a variety of robotic control tasks. We demonstrate that visual model-predictive control is able to successfully perform multi-object manipulation, pushing, picking and placing, and cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for control.
 
 %%SL.10.16: I think the discussion below is not quite a good fit for future work. It's important to understand what the *purpose* of the future work section is. Contrary to what the name might imply, the purpose of future work is *not* to actually discuss future work. The purpose of future work is to inspire the reader that your work has lots of potential to lead to new and exciting research. You should *not* usually talk about immediate next steps you plan to take, but rather all the awesome stuff *enabled* by your work.
-%%SL.10.16: What I would recommend is to have one paragraph on limitations (which is actually future work in disguise), and then a future work paragraph meant to inspire the reader about all the great stuff you could do with this method, ending on a very high note in the end about the generality of entirely self-supervised robotic deep model-based RL algorithms.
-The following has been identified as the most critical milestones for arriving at a general-purpose robotic manipulation system:
 
-\textbf{Gradient-free vs. gradient based trajectory optimization} Prior work has also proposed to plan through learned models via differentiation, though not with visual inputs~\cite{deep_mpc}. This can have the disadvantage of getting stuck in local minima. Also with gradient-based methods it is harder to ensure that the actions are within the distribution of actions sampled during data collection. This is crucial to ensure that the model can make predictions based on a sufficient number of supporting data-points.
-Instead using a model that predicts in pixel space, one could think of using a model making predictions in latent space. One potential advantage of latent space representations could be to handle \emph{partially observed} settings, for example tasks where an object is occluded for extended periods of time.
-\begin{itemize}
-	\item \textbf{Replacing random data collection:} For learning how to screw a cap onto a bottle -- a state that has exceptionally low probability of being reached by chance -- data collection with random action is extremely ineffective. Therefore we suggest to collect data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 
-%	Furthermore the demonstrations could be made with increasing difficulty, so as to induce a learning curriculum.
-	
-	\item \textbf{Hierarchical Planning with Time-Agnostic Prediction:} Many tasks require reasoning over extended periods of time. 
-%	Consider the task of packing a box with various objects, first the box needs to be opened, then objects need to be place inside and finally the box has to closed. Some of the steps have to occur before other, and therefore the tasks \emph{requires} planning across \emph{many} time steps. 
-	A sampling based planning method would become prohibitively expensive for very long action sequences and also the prediction errors made by the model would accumulate, invalidating the plan. We therefore to add an additional long-horizon planning layer, that proposes subgoals which are within reach of visual MPC. We are currently exploring the use of a \emph{Time-Agnostic Predictor} \cite{jayaraman2018time}, a mechanism which instead of predicting states at fixed time-steps, predicts states at certain "bottleneck-state" which are easier to predict.
-	\item \textbf{Policy Distillation and Action Proposals:} In high dimensional action spaces, with long planning horizons or non-smooth cost functions finding a trajectory that achieves low cost with CEM becomes increasingly harder. Furthermore limits on computational resources and timing requirements restrict the number of samples that can be taken in each planning step. One promising solution to this problem is learning the parameters of a distribution from which actions can be sampled more efficiently. Such an action proposal distribution could be learned for example by distilling the actions taken by visual MPC into a policy via supervised learning.
-\end{itemize}
+%%SL.10.16: What I would recommend is to have one paragraph on limitations (which is actually future work in disguise), and then a future work paragraph meant to inspire the reader about all the great stuff you could do with this method, ending on a very high note in the end about the generality of entirely self-supervised robotic deep model-based RL algorithms.
+
+\noindent \textbf{Limitations}
+The main limitations of the presented framework are that all target objects need to be visible at all times during execution, it is currently not possible to handle partially observed domains. This is especially important for tasks that require objects to be brought into occlusion (or taken out of occlusion), for example putting an object in a box and closing it. Another limitation is that the tasks are still only medium durations and usually only touch one or two objects. More long-term planning still remains an open problem. Lastly the fidelity of object positioning is still significantly below what humans can achieve.
+
+\noindent \textbf{Possible future directions}
+The key advantage of a model-based deep-reinforcement learning algorithm like visual MPC is that it \emph{generalizes} to tasks it has never encountered before. This makes visual MPC an ideal building block for future robotic manipulation systems that will be to able solve an even wider range of complex tasks with much longer horizons. 
+
+%The following has been identified as the most critical milestones for arriving at a general-purpose robotic manipulation system:
+%
+%\textbf{Gradient-free vs. gradient based trajectory optimization} Prior work has also proposed to plan through learned models via differentiation, though not with visual inputs~\cite{deep_mpc}. This can have the disadvantage of getting stuck in local minima. Also with gradient-based methods it is harder to ensure that the actions are within the distribution of actions sampled during data collection. This is crucial to ensure that the model can make predictions based on a sufficient number of supporting data-points.
+%Instead using a model that predicts in pixel space, one could think of using a model making predictions in latent space. One potential advantage of latent space representations could be to handle \emph{partially observed} settings, for example tasks where an object is occluded for extended periods of time.
+%\begin{itemize}
+%	\item \textbf{Replacing random data collection:} For learning how to screw a cap onto a bottle -- a state that has exceptionally low probability of being reached by chance -- data collection with random action is extremely ineffective. Therefore we suggest to collect data \emph{on policy}, i.e. while executing Visual MPC targeting a specific goal. A promising way to define goals for data collection is by using human demonstrations, and since all attempts of reaching a goal, successful or not, contribute to the dataset, only small number of demonstrations would be needed. 
+%%	Furthermore the demonstrations could be made with increasing difficulty, so as to induce a learning curriculum.
+%	
+%	\item \textbf{Hierarchical Planning with Time-Agnostic Prediction:} Many tasks require reasoning over extended periods of time. 
+%%	Consider the task of packing a box with various objects, first the box needs to be opened, then objects need to be place inside and finally the box has to closed. Some of the steps have to occur before other, and therefore the tasks \emph{requires} planning across \emph{many} time steps. 
+%	A sampling based planning method would become prohibitively expensive for very long action sequences and also the prediction errors made by the model would accumulate, invalidating the plan. We therefore to add an additional long-horizon planning layer, that proposes subgoals which are within reach of visual MPC. We are currently exploring the use of a \emph{Time-Agnostic Predictor} \cite{jayaraman2018time}, a mechanism which instead of predicting states at fixed time-steps, predicts states at certain "bottleneck-state" which are easier to predict.
+%	\item \textbf{Policy Distillation and Action Proposals:} In high dimensional action spaces, with long planning horizons or non-smooth cost functions finding a trajectory that achieves low cost with CEM becomes increasingly harder. Furthermore limits on computational resources and timing requirements restrict the number of samples that can be taken in each planning step. One promising solution to this problem is learning the parameters of a distribution from which actions can be sampled more efficiently. Such an action proposal distribution could be learned for example by distilling the actions taken by visual MPC into a policy via supervised learning.
+%\end{itemize}
 
 
 
@@ -612,7 +604,7 @@ Instead using a model that predicts in pixel space, one could think of using a m
 \fi
 
 
-The authors would like to thank...
+The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...
 
 
 % Can use something like this to put references on a page
@@ -666,12 +658,12 @@ The authors would like to thank...
 %\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
 % or if you just want to reserve a space for a photo:
 
-\begin{IEEEbiography}{Michael Shell}
+\begin{IEEEbiographynophoto}{Frederik Ebert}
 Biography text here.
-\end{IEEEbiography}
+\end{IEEEbiographynophoto}
 
 % if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{John Doe}
+\begin{IEEEbiographynophoto}{Chelsea Finn}
 Biography text here.
 \end{IEEEbiographynophoto}
 
@@ -679,8 +671,20 @@ Biography text here.
 % biographies
 %\newpage
 
-\begin{IEEEbiographynophoto}{Jane Doe}
+\begin{IEEEbiographynophoto}{Annie Xie}
 Biography text here.
+\end{IEEEbiographynophoto}
+
+\begin{IEEEbiographynophoto}{Sudeep Dasari}
+	Biography text here.
+\end{IEEEbiographynophoto}
+
+\begin{IEEEbiographynophoto}{Alex Lee}
+	Biography text here.
+\end{IEEEbiographynophoto}
+
+\begin{IEEEbiographynophoto}{Sergey Levine}
+Sergey Levine received a BS and MS in Computer Science from Stanford University in 2009, and a Ph.D. in Computer Science from Stanford University in 2014. He joined the faculty of the Department of Electrical Engineering and Computer Sciences at UC Berkeley in fall 2016. His work focuses on machine learning for decision making and control, with an emphasis on deep learning and reinforcement learning algorithms.
 \end{IEEEbiographynophoto}
 
 % You can push biographies down or up by placing
