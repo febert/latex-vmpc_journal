@@ -5,16 +5,16 @@ In this section we present both qualitative and quantitative  performance evalua
 
 
 \noindent \textbf{Qualitative Evaluation}
-In figure \todo{add figure} we show a series of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks:
+In figure \todo{add figure} we present a series of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks:
 \todo{adapt these points}
-\begin{enumerate}
-	\item Multiple-object relocation tasks through pushing
-	\item Combined obstacle avoidance and object relocation tasks in the presence of occlusion
-	\item Object relocation through combined pushing and grasping
-	\item Object relocation task with external perturbations of the object position
-	\item Relative object rearrangment tasks, including multiple object rearrangement
-	\item Handling of deformable objects, such as towel folding and cloth folding
-\end{enumerate}
+%\begin{enumerate}
+%	\item Multiple-object relocation tasks through pushing
+%	\item Combined obstacle avoidance and object relocation tasks in the presence of occlusion
+%	\item Object relocation through combined pushing and grasping
+%	\item Object relocation task with external perturbations of the object position
+%	\item Relative object rearrangment tasks, including multiple object rearrangement
+%	\item Handling of deformable objects, such as towel folding and cloth folding
+%\end{enumerate}
 Videos for the qualitative examples are provided on the following webpage: \url{https://sites.google.com/view/visualforesight/}
 
 \noindent \textbf{Quantitative Evaluation} We define a set of benchmark tasks where the robot is required to move objects in its environment from a starting state to a goal configuration. For measuring success, we use a distance based evaluation where a human annotates the positions of the objects after pushing allowing us to compute the remaining distance to the goal.
@@ -96,7 +96,7 @@ We used four different object arrangements, with two training objects and two ob
 
 \todo{put in example explaining push with perturbation, why is this worth studying?}
 
-In this section we are concerned with: \emph{How important} quantitatively is it to update the model's belief of where the target objects currently are? How much does this matter for short versus horizon tasks?
+In this section we are concerned with: \emph{How important} quantitatively is it to update the model's belief of where the target objects currently are? How much does this matter for short horizon versus long horizon tasks?
 In this experiment, we disable the gripper control, which requires the robot to push objects to the target. We compare two variants of updating the positions of the designated pixel when using a pixel-distance based cost function. The first one is a cost function that uses a registration-based method, trained in a fully-self-supervised fashion an the second one is with a cost function that uses off-the shelf tracking from OpenCV \cite{babenko2009visual}. Additionally we compare to visual-MPC that uses the video-prediction model's own predictions as the current positions of the designated pixel, rather than tracking the object.
 
 %SL.10.16: Before talking about videos, explain what this experiment section is actually studying! What is the question? What are you evaluating? Why?
