@@ -489,11 +489,13 @@
 % in the abstract or keywords.
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-Deep reinforcement learning algorithms capable of learning complex skills directly from raw sensory inputs have the potential to allieviate the need for hand-designing features and control laws for autnomomous systems such as robot manipulators and or self-driving vehicles.
-However, deep reinforcement learning for real-world robotic control has yet to achieve the kind of generalization and broad applicability demonstrated by deep learning algorithms in other domains, such as vision and natural language processing. 
-We present a deep reinforcement learning method that is practical for real-world robotics tasks, such as robotic manipulation, and can generalize effectively to never-before-seen tasks and objects, without requiring meticulously hand-specified reward functions and carefully engineered episodic learning setups. To that end, we opt for a self-supervised approach based on \emph{prediction}: instead of learning to directly maximize a given reward, our method is based on learning to predict the future, directly in terms of the raw sensory observations of the robot, such as camera images.
-Beyond training a visual predictive model that can make predictions that are accurate enough for real-world control, a practical implementation of this approach requires us to address the challenge of task specification. Ground truth reward signals are generally unavailable in the real world, therefore we explore three distinct methods for goal specification for visual model-based RL for robotic manipulation: designated pixels, where a user specifies desired object manipulation tasks by selecting particular pixels in an image and corresponding goal positions, goal images, where the desired goal state is specified with an image, and image classifiers, which define spaces of goal states. Our deep predictive models are trained using data collected autonomously by a robot interacting with hundreds of objects. 
-We demonstrate that visual MPC can generalize to never-before-seen objects---both rigid and deformable---and solve a range of user-defined object manipulation tasks using the same model.
+Deep reinforcement learning (RL) algorithms can learn complex robotic skills from raw sensory inputs, but have yet to achieve the kind of broad generalization and applicability demonstrated by deep learning methods in supervised domains. We present a deep RL method that is practical for real-world robotics tasks, such as robotic manipulation, and generalizes effectively to never-before-seen tasks and objects. In these settings, ground truth reward signals are typically unavailable, and we therefore propose a self-supervised model-based approach, where a predictive model learns to directly predict the future from raw sensory readings, such as camera images. At test time, we explore three distinct goal specification methods: designated pixels, where a user specifies desired object manipulation tasks by selecting particular pixels in an image and corresponding goal positions, goal images, where the desired goal state is specified with an image, and image classifiers, which define spaces of goal states. Our deep predictive models are trained using data collected autonomously and continuously by a robot interacting with hundreds of objects, without human supervision. We demonstrate that visual MPC can generalize to never-before-seen objects---both rigid and deformable---and solve a range of user-defined object manipulation tasks using the same model.
+
+%Deep reinforcement learning algorithms capable of learning complex skills directly from raw sensory inputs have the potential to allieviate the need for hand-designing features and control laws for autnomomous systems such as robot manipulators and or self-driving vehicles.
+%However, deep reinforcement learning for real-world robotic control has yet to achieve the kind of generalization and broad applicability demonstrated by deep learning algorithms in other domains, such as vision and natural language processing. 
+%We present a deep reinforcement learning method that is practical for real-world robotics tasks, such as robotic manipulation, and can generalize effectively to never-before-seen tasks and objects, without requiring meticulously hand-specified reward functions and carefully engineered episodic learning setups. To that end, we opt for a self-supervised approach based on \emph{prediction}: instead of learning to directly maximize a given reward, our method is based on learning to predict the future, directly in terms of the raw sensory observations of the robot, such as camera images.
+%Beyond training a visual predictive model that can make predictions that are accurate enough for real-world control, a practical implementation of this approach requires us to address the challenge of task specification. Ground truth reward signals are generally unavailable in the real world, therefore we explore three distinct methods for goal specification for visual model-based RL for robotic manipulation: designated pixels, where a user specifies desired object manipulation tasks by selecting particular pixels in an image and corresponding goal positions, goal images, where the desired goal state is specified with an image, and image classifiers, which define spaces of goal states. Our deep predictive models are trained using data collected autonomously by a robot interacting with hundreds of objects. 
+%We demonstrate that visual MPC can generalize to never-before-seen objects---both rigid and deformable---and solve a range of user-defined object manipulation tasks using the same model.
 \todo{Page limit is 12 including refernces and bios!!!}
 \end{abstract}
 
@@ -676,17 +678,17 @@ Chelsea Finn is currently a research scientist at Google Brain and a post-doctor
 
 \begin{IEEEbiographynophoto}{Annie Xie}
 % Biography text here.
-Annie Xie is pursuing a B.S. degree in Electrical Engineering and Computer Science at UC Berkeley. Her research interests are in computer vision and control for robotic learning.
+Annie Xie is pursuing a B.S. degree in Electrical Engineering and Computer Science at UC Berkeley. Her research interests are in the areas of computer vision and robot learning.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Sudeep Dasari}
-	Biography text here.
+	Sudeep Dasari is a 4th year student at UC Berkeley pursuing a B.S in Electrical Engineering and Computer Science. His primary research interests are computer vision, machine learning, and robotic control.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Alex Lee}
-	Biography text here.
+	Alex Lee received a BS in Electrical Engineering and Computer Science from UC Berkeley in 2013, and he is currently pursuing a PhD in Computer Science from UC Berkeley. His work focuses on algorithms that can enable robots to learn complex sensorimotor skills.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
