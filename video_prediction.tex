@@ -17,10 +17,9 @@ In visual-MPC we use a transformation-based video-prediction architecture, first
 \end{align}
 
 Here bilinear sampling operator $\diamond$ interpolates the pixel values bilinearly with respect to a location $(x,y)$ and its four neighbouring pixels in the image, similar to \cite{zhou2016view}. Note that as shown in figure \ref{fig:prediction_model}, at the first time-step the real image is transformed, whereas at later timesteps previously generated images are transformed. The model is trained by standard backpropagtion-through time by performing gradient descent on a mean-squared error type image reconstruction loss, denoted by $\mathcal{L}$ in figure \ref{fig:prediction_model}.
-
 \begin{figure}[t]
     \centering
-ist    \includegraphics[width=\columnwidth]{images_sna/occlusionaware/architecture.pdf}
+    \includegraphics[width=\columnwidth]{images_sna/occlusionaware/architecture.pdf}
     \caption{\small{Forward pass through the recurrent SNA model based on \autoref{eqn:simplemodel}. The red arrow indicates where the image from the first time step $I_0$ is concatenated with the transformed images $\hat{F}_{t+1 \leftarrow t} \diamond  \hat{I}_t $ multiplying each channel with a separate mask to produce the predicted frame for step $t+1$.}}      \label{fig:occlusion_model}
 \end{figure}
 
