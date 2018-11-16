@@ -22,28 +22,17 @@ We approach the problem of learning generalizable behavior in the real world fro
 We study control via prediction in the context of robotic manipulation, formulating a model-based reinforcement learning approach centered around prediction of raw sensory observations. One of the biggest challenges in learning-based robotic manipulation is generalization: how can we learn models that are useful not just for a narrow range of tasks seen during training, but that can be used to perform new tasks with new objects that were not seen previously?
 Collecting a training dataset that is sufficiently rich and diverse is often challenging in highly-structured robotics experiments, which depend on human intervention for reward signals, resets, and safety. We instead set up a minimally structured robotic control domain, where data is collected by the robot via unsupervised interaction with a wide range of objects, making it practical to collect large amounts of interaction data. The robot collects a stream of raw sensory observations (image pixels), without any reward signal at training time, and without the ability to reset the environment between episodes. This setting is both realistic and necessary for studying RL in diverse real-world environments, as it enables automated and unattended collection of diverse interaction experience. Since the training setting affords no readily accessible reward signal, learning by prediction presents an appealing option: the supervision signal for prediction is always available even in the stream of unsupervised experience.
 We therefore propose to learn action-conditioned predictive models directly on raw pixel observations, and show that they can be used to accomplish a range of pixel-based manipulation tasks on a real robot in the physical world at test-time. 
+
 %%CF.11.04: Deleted the below since it seemed repetitive
 %Sensory prediction models are goal-agnostic, which enables learning for a variety of different goals at the same time. 
 %By learning from raw sensor readings, they are also fully general, in that they do not require access to any other state representation beyond the observations. %%CF: This above sentence is repetitive 
 %Our overall approach amounts to a deep model-based reinforcement learning algorithm that leverages video prediction models to perform a variety of pixel-based control tasks.
-
 %In addition the practicality of leveraging the only available supervision in such sparse reward environments, sensory prediciton models are also goal-agnostic, which enables learning for a variety of different goals.
 %% TODO - motivate why not to learn a model on top of a more abstract representation of the observations? [The supervision, inherently, comes from the same place.]
 %TODO - motivate why raw pixels rather than more compact representation (because pixels contain complete information -- can give Sergey's crossing-the-street example -- and pixels are the only thing that is readily available; also pixels contain more supervision)
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth,trim={0mm 0 0 0},clip]{images_general/overview_roughdraft.png}
-\caption{\small{Overview of visual MPC. At training time (top) interaction data is collected autonomously and used to train a video-prediction model. At test time (bottom) this model is used for samnpling-based planning. In this work we discuss three different choices for the planning objective.}}
-\label{fig:overview}
-\end{figure}
-%%SL.10.15: It doesn't appear that this figure is referenced anywhere or used.
-
 %Despite the benefits, a number of challenges arise when aiming to use sensory prediction models: how can we learn a model of high-dimensional observations, and how should an objective or reward be determined with respect to the predicted observations? %how should experience be collected? %how should actions be chosen with respect to the model?
 %We discuss each of these design decisions and propose several options, weighting the benefits and trade-offs of each.
-%%SL.09.03: sounds a bit too much like a laundry list, can we pull some broader themes and dive into details later?
 %Our overall approach amounts to a deep model-based reinforcement learning algorithm that leverages video prediction models to achieve a variety of pixel-based control tasks without shaped reward information.
-
 The main contributions of this work are as follows. We present \emph{visual MPC}, a general framework for deep reinforcement learning with sensory prediction models that is suitable for learning behaviors in diverse, open-world environments (see figure~\ref{fig:overview}).
 We describe deep network architectures that are effective for predicting pixel-level observations amid occlusions and with novel objects. Unlike low-dimensional representations of state, specifying and evaluating the reward from pixel predictions at test-time is nontrivial: we present several practical methods for specifying and evaluating progress towards the goal---including distances to goal pixel positions, registration to goal images, and image classifiers---and compare their effectiveness and use-cases.
 %, abstracting away the model architecture %, the policy optimization, 
@@ -52,6 +41,13 @@ Finally, our evaluation shows how these components can be combined to enable a r
 
 This article combines and extends material from several prior conference papers~\cite{foresight,sna,ebert2018robustness,flo}, presenting them in the context of a unified system. We include additional experiments, including cloth manipulation and placing tasks, a quantitative \emph{multi-task benchmark} assessing the performance of our method on a wide range of tasks, as well as a comprehensive, open-sourced simulation environment to facilitate future research and better reproducibility. The code and videos can be found on the following webpage: \url{https://sites.google.com/view/visualforesight}.
 %%SL.10.15: make sure we actually have all this :)
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth,trim={0mm 0 0 0},clip]{images_general/overview_roughdraft.png}
+\caption{\small{Overview of visual MPC. At training time (top) interaction data is collected autonomously and used to train a video-prediction model. At test time (bottom) this model is used for samnpling-based planning. In this work we discuss three different choices for the planning objective.}}
+\label{fig:overview}
+\end{figure}
 
 
 
