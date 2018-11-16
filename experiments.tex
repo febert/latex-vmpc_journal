@@ -1,12 +1,9 @@
 \section{Experimental Evaluation}
 \label{sec:experiments}
-In this section we present both qualitative and quantitative  performance evaluations of visual MPC on various manipulation tasks, comparing different prediction models and cost functions.
-
-
+In this section we present both qualitative and quantitative  performance evaluations of visual MPC on various manipulation tasks, demonstrating the high the degree of generalization and comparing different prediction models and cost functions and with a hand-crafted baseline.
 
 \noindent \textbf{Qualitative Evaluation}
-In figure \todo{add figure} we present a series of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks:
-\todo{adapt these points}
+In figure \ref{fig:example_traj} and \ref{fig:tile_2} we present a set of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks:
 %\begin{enumerate}
 %	\item Multiple-object relocation tasks through pushing
 %	\item Combined obstacle avoidance and object relocation tasks in the presence of occlusion
@@ -17,17 +14,13 @@ In figure \todo{add figure} we present a series of qualitative experiments showi
 %\end{enumerate}
 Videos for the qualitative examples are provided on the following webpage: \url{https://sites.google.com/view/visualforesight/}
 
-\noindent \textbf{Quantitative Evaluation} We define a set of benchmark tasks where the robot is required to move objects in its environment from a starting state to a goal configuration. For measuring success, we use a distance based evaluation where a human annotates the positions of the objects after pushing allowing us to compute the remaining distance to the goal.
+\noindent \textbf{Quantitative Evaluation} In order to perform quantitative comparisons, we define a set of benchmark tasks where the robot is required to move objects from a starting state to a goal configuration. For measuring success, we use a distance-based evaluation where a human annotates the positions of the objects after pushing allowing us to compute the remaining distance to the goal.
 %\begin{enumerate}
 %	\item [\ref{subsec:sna_experiments}] How important is the model's ability to handle occlusion? How do temporal skip-connections introduced in the SNA-model affect performance compared to the DNA model without skip-connections?
 %	\item [\ref{susbsec:reg_cost_exp}] How important is the system's ability to update the belief of \emph{where} the object is? How is performance affected by using a registration-based cost function, and how does closed-loop visual MPC compare to closed-loop visual MPC and visual MPC with off-the-shelf tracking?
 %	\item [\ref{subsec:eval_classifier}] How does visual MPC with a classifier-based cost function compare to visual MPC with pixel MSE-based cost function on relative object rearrangement tasks?
 %	\item [\ref{subsec:multi_task_bench}] How does visual MPC compare to a hand-engineered controller that relies on a calibrated camera on a large set of diverse tasks?
 %\end{enumerate}
-
-%%SL.10.16: Put all these boring details into some subsection titled something like Experimental Setup. However, a lot of this is actually supposed to be covered in Section 7 above -- it's a bit weird to have a bunch more experimental setup now in this section. Maybe try to collect it all in one place?
-
-
 
 \subsection{Comparing different Video-Prediction Architectures}
 \label{subsec:sna_experiments}
@@ -93,10 +86,7 @@ We used four different object arrangements, with two training objects and two ob
 	\caption{\small Success rate for long-distance pushing benchmark with 20 different object/goal configurations and short-distance benchmark with 15 object/goal configurations. Success is defined as bringing the object closer than 15 pixels to the goal, which corresponds to around $7.5cm$.}
 	\label{table:res_long_short}
 \end{table}
-
-\todo{put in example explaining push with perturbation, why is this worth studying?}
-
-In this section we are concerned with: \emph{How important} quantitatively is it to update the model's belief of where the target objects currently are? How much does this matter for short horizon versus long horizon tasks?
+In this section we ask: \emph{How important} quantitatively is it to update the model's belief of where the target objects currently are? We first provide two qualitative examples in example (1) in figure \ref{fig:example_traj} and in figure \ref{fig:push_retry}. The former shows that visual MPC is able to naturally perform a new grasp attempt after the object is knocked out of the gripper by a human disturber. The second example shows the system recovering from an initial failure in a pushing task. The next question we investigate is: How much does this matter for short horizon versus long horizon tasks?
 In this experiment, we disable the gripper control, which requires the robot to push objects to the target. We compare two variants of updating the positions of the designated pixel when using a pixel-distance based cost function. The first one is a cost function that uses a registration-based method, trained in a fully-self-supervised fashion an the second one is with a cost function that uses off-the shelf tracking from OpenCV \cite{babenko2009visual}. Additionally we compare to visual-MPC that uses the video-prediction model's own predictions as the current positions of the designated pixel, rather than tracking the object.
 
 %SL.10.16: Before talking about videos, explain what this experiment section is actually studying! What is the question? What are you evaluating? Why?
@@ -118,14 +108,6 @@ In this experiment, we disable the gripper control, which requires the robot to 
 
 We evaluate our method on 20 long-distance and 15 short-distance pushing tasks. For long-distance tasks the distance between the object and its goal-position is $30cm$ while for short-distance tasks it is $15cm$. Table \ref{table:res_long_short} lists quantitative comparisons showing that on the long-distance benchmark visual-MPC using the registration-based cost not only outperforms prior work \cite{sna}, but also outperforms the hand-designed, supervised object tracker \cite{babenko2009visual}. By contrast for the short distance benchmark, all methods perform comparably. Thus theses results demonstrate the importance of closed loop control for \emph{long-horizon tasks}, while for short-horizon tasks object tracking appears to be irrelevant. Furthermore using the learned registration, the robot is more frequently able to successfully recover after erroneous predictions or occlusions, an example is shown in \autoref{fig:push_retry}.
 
-\begin{figure*}
-	\centering
-	\includegraphics[width=1.0\textwidth]{images_rfr/pick_place_plush.pdf}
-	\caption{\small{Retrying behavior of our method combining prehensile and non-prehensile manipulation. In the first 4 time instants shown the robot pushes the object. It then loses the object, and decides to grasp it pulling it all the way to the goal. Retrying is enabled by applying the learned registration to both camera views (here we only show the front view).}}
-	\label{fig:push_grasp}
-	
-\end{figure*}
-
 \subsection{Evaluating Classifier-based Cost Function}
 \label{subsec:eval_classifier}
 
@@ -139,7 +121,7 @@ We evaluate all approaches in three different experimental settings. In the firs
 
 We qualitatively visualize the benchmark tasks in Figure~\ref{fig:cls_results} in the appendix.
 
-On the left, we show a subset of the five images provided to illustrate the task(s), and on the left, we show the motions performed by the robot. We see that the robot is able to execute motions which lead to a correct relative positioning of the objects. \todo{refrence exmaple trajectories}
+On the left, we show a subset of the five images provided to illustrate the task(s), and on the left, we show the motions performed by the robot. We see that the robot is able to execute motions which lead to a correct relative positioning of the objects.
 
 We quantitatively evaluate each method across 20 tasks, including $10$ unique object pairs. The results, shown in Figure~\ref{fig:cls_charts}, indicate that prior methods for learning distance metrics
 %%SL.10.16: you mean the method *in this paper*?
@@ -159,20 +141,15 @@ struggle to infer the goal of the task, while our approach leads to substantiall
 \end{figure}
 
 
-\subsection{Multi-Task Benchmark}
+\subsection{Evaluating Multi-Task Performance}
 \label{subsec:multi_task_bench}
-In this benchmark we  assess the capability of visual MPC to handle a \emph{wide range of tasks} without problem-specific parameter tuning. We seek to answer the question: How does visual MPC compare to a hand-engineered baseline on a large number of diverse tasks? 
-%The following types of tasks were included in the benchmark.
-%\begin{itemize}
-%\item picking up an object and placing into container
-%\item folding cloths, i.e. shirts and shorts
-%\item picking up and object and bringing it into a desired 3D configuration
-%\item pushing an object to a desired location
-%\item wrap a towel around an object
-%\item rotate a piece of cloth around the vertical axis
-%\end{itemize}
-Alltogether 16 tasks were selected, figure \todo{ref figure with examples} shows the execution of visual MPC on these tasks. 
+One of the key motivations for visual MPC is to build a system that can solve \emph{wide variety} of different tasks. We demonstrate this in set of qualitative examples shown in figure \ref{fig:example_traj} and \ref{fig:tile_2}. We will first discuss some of the qualitative examples before presenting a quantitative analysis. 
 
+The generality of visual MPC mainly stems from two components --- the generality of the visual dynamics model and the generality of the task definition.
+We found that the dynamics model often generalizes well to objects outside of the training set, if they have similar properties to the objects it was trained with. For example trajectory (4) in figure \ref{fig:tile_2} shows the model predicting a pair of shorts being folded, although the model never encountered shorts during training, it only saw towels and shirts were the cloths that were part of the training set. It is worth noting that in all qualitative examples the predictions are performed by the same model for objects not part of the training set.
+The second component allowing for generality is the high degree of flexibility for task definition. Using designated pixels object positioning tasks can be defined in 3D space, as shown examples (1) and (2) in figure and examples (3)-(5) in figure \ref{fig:tile_2}, when adding a goal-image the positioning accuracy can be improved as thanks to the presented registration scheme. 
+
+Next a benchmark is presented quantitatively assessing the capability of visual MPC to handle a \emph{wide range of tasks}. Concretely we seek to answer the question: How does visual MPC compare to a hand-engineered baseline on a large number of diverse tasks? Alltogether 16 tasks were selected, some of them being identical to the qualitative examples shown in figure \ref{fig:example_traj} and \ref{fig:tile_2}. 
 \noindent \textbf{Hand-crafted Baseline} A simple trajectory generator was engineered to perform a grasp at the location of the initial designated pixel, lift the arm and bring it to the position of the goal-pixel. A camera calibration was performed to carry out the necessary conversions between image-space and robot work-space coordinates. For simplicity, the baseline controller executes open-loop. Therefore to allow for a fair comparison visual-MPC is also executed open-loop, i.e. no registration or tracking is used.
 
 The results of the benchmark, shown in table \ref{table:cloth_folding}, indicate that visual MPC clearly outperforms the baseline. 
