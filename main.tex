@@ -71,6 +71,10 @@
 \usepackage{booktabs}
 \usepackage{makecell}
 
+%for algorithm
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
 \usepackage{etex}
 
 \input{defs.tex}
@@ -528,36 +532,33 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 % grasping
 % experiments with stochastic models, optimistic/pessimistic planning
 
-\input{discussion.tex}
-% discussion 
-% future work
 
 
 \section{Conclusion}
-We presented an algorithm that leverages supervision from visual prediction to learn a deep dynamics model, and show how it can be embedded into a  planning framework to solve a variety of robotic control tasks. We demonstrate that visual model-predictive control is able to successfully perform multi-object manipulation, pushing, picking and placing, and cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for control.
+We presented an algorithm that leverages self-supervision from visual prediction to learn a deep dynamics model on images, and show how it can be embedded into a  planning framework to solve a variety of robotic control tasks. We demonstrate that visual model-predictive control is able to successfully perform multi-object manipulation, pushing, picking and placing, and cloth-folding tasks -- all within a single framework. These tasks involve complex contact dynamics as well as deformable objects, indicating that the same sensory prediction model can be used to capture a wide variety of environment dynamics with enough accuracy to allow for control.
 
 %%SL.10.16: I think the discussion below is not quite a good fit for future work. It's important to understand what the *purpose* of the future work section is. Contrary to what the name might imply, the purpose of future work is *not* to actually discuss future work. The purpose of future work is to inspire the reader that your work has lots of potential to lead to new and exciting research. You should *not* usually talk about immediate next steps you plan to take, but rather all the awesome stuff *enabled* by your work.
 
 %%SL.10.16: What I would recommend is to have one paragraph on limitations (which is actually future work in disguise), and then a future work paragraph meant to inspire the reader about all the great stuff you could do with this method, ending on a very high note in the end about the generality of entirely self-supervised robotic deep model-based RL algorithms.
 
 \noindent \textbf{Limitations}
-The main limitations of the presented framework are that all target objects need to be visible at all times during execution, it is currently not possible to handle partially observed domains. This is especially important for tasks that require objects to be brought into occlusion (or taken out of occlusion), for example putting an object in a box and closing it. Another limitation is that the tasks are still only medium durations and usually only touch one or two objects. More long-term planning still remains an open problem. Lastly the fidelity of object positioning is still significantly below what humans can achieve.
+The main limitations of the presented framework are that all target objects need to be visible throughout execution, it is currently not possible to handle partially observed domains. This is especially important for tasks that require objects to be brought into occlusion (or taken out of occlusion), for example putting an object in a box and closing it. Another limitation is that the tasks are still of only medium duration and usually only touch one or two objects. Longer-term planning remains an open problem. Lastly, the fidelity of object positioning is still significantly below what humans can achieve.
 
 \noindent \textbf{Possible future directions}
-The key advantage of a model-based deep-reinforcement learning algorithm like visual MPC is that it \emph{generalizes} to tasks it has never encountered before. This makes visual MPC a good candidate for a building block for future robotic manipulation systems that will be able solve an even wider range of complex tasks with much longer horizons. 
+The key advantage of a model-based deep-reinforcement learning algorithm like visual MPC is that it \emph{generalizes} to tasks it has never encountered before. This makes visual MPC a good candidate for a building block of future robotic manipulation systems that will be able solve an even wider range of complex tasks with much longer horizons. 
 
 
 % use section* for acknowledgment
 \ifCLASSOPTIONcompsoc
   % The Computer Society usually uses the plural form
-  \section*{Acknowledgments}
+%  \section*{Acknowledgments}
 \else
   % regular IEEE prefers the singular form
-  \section*{Acknowledgment}
+%  \section*{Acknowledgment}
 \fi
 
 
-The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...
+%The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...
 
 
 % Can use something like this to put references on a page
@@ -613,13 +614,13 @@ The authors would like to thank...The authors would like to thank...The authors 
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Frederik Ebert}
-Frederik Ebert received a BS in mechatronics and information technology as well a MS in "Robotics, Cognition, Intelligence (RCI)" from the Technical University of Munich (TUM). He is currently a PhD student at the Berkeley Artifical Intelligence Research (BAIR) institute where he focuses on developing algorithms for robotic manipulation combining ideas from computer vision, machine learning and control.
+Frederik Ebert received a BS in Mechatronics and Information Technology as well a MS in "Robotics, Cognition, Intelligence (RCI)" from the Technical University of Munich (TUM). He is currently a PhD student at Berkeley Artifical Intelligence Research (BAIR). % institute where he focuses on developing algorithms for robotic manipulation combining ideas from computer vision, machine learning and control.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
 % if you will not have a photo at all:
 \begin{IEEEbiographynophoto}{Chelsea Finn}
-Chelsea Finn is currently a research scientist at Google Brain and a post-doctoral scholar at UC Berkeley, and will join the Computer Science faculty at Stanford University in 2019. Her research focuses on algorithms that can enable agents to autonomously learn a range of complex skills. She received a BS in Electrical Engineering and Computer Science from MIT and a PhD in Computer Science from UC Berkeley.
+Chelsea Finn is currently a research scientist at Google Brain and a post-doctoral scholar at UC Berkeley, and will join the Computer Science faculty at Stanford University in 2019. %Her research focuses on algorithms that can enable agents to autonomously learn a range of complex skills. She received a BS in Electrical Engineering and Computer Science from MIT and a PhD in Computer Science from UC Berkeley.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
@@ -629,22 +630,22 @@ Chelsea Finn is currently a research scientist at Google Brain and a post-doctor
 
 \begin{IEEEbiographynophoto}{Annie Xie}
 % Biography text here.
-Annie Xie is pursuing a B.S. degree in Electrical Engineering and Computer Science at UC Berkeley. Her research interests are in the areas of computer vision and robot learning.
+Annie Xie is pursuing a B.S. degree in Electrical Engineering and Computer Science at UC Berkeley. %Her research interests are in the areas of computer vision and robot learning.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Sudeep Dasari}
-	Sudeep Dasari is a 4th year student at UC Berkeley pursuing a B.S in Electrical Engineering and Computer Science. His primary research interests are computer vision, machine learning, and robotic control.
+	Sudeep Dasari is a 4th year student at UC Berkeley pursuing a B.S in Electrical Engineering and Computer Science. %His primary research interests are computer vision, machine learning, and robotic control.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Alex Lee}
-	Alex Lee received a BS in Electrical Engineering and Computer Science from UC Berkeley in 2013, and he is currently pursuing a PhD in Computer Science from UC Berkeley. His work focuses on algorithms that can enable robots to learn complex sensorimotor skills.
+	Alex Lee received a BS in Electrical Engineering and Computer Science from UC Berkeley in 2013, and he is currently pursuing a PhD in Computer Science from UC Berkeley. %His work focuses on algorithms that can enable robots to learn complex sensorimotor skills.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Sergey Levine}
-Sergey Levine received a BS and MS in Computer Science from Stanford University in 2009, and a Ph.D. in Computer Science from Stanford University in 2014. He joined the faculty of the Department of Electrical Engineering and Computer Sciences at UC Berkeley in fall 2016. His work focuses on machine learning for decision making and control, with an emphasis on deep learning and reinforcement learning algorithms.
+Sergey Levine received a BS and MS in Computer Science from Stanford University in 2009, and a Ph.D. in Computer Science from Stanford University in 2014. He joined the faculty of the Department of Electrical Engineering and Computer Sciences at UC Berkeley in fall 2016. %His work focuses on machine learning for decision making and control, with an emphasis on deep learning and reinforcement learning algorithms.
 \end{IEEEbiographynophoto}
 
 % You can push biographies down or up by placing

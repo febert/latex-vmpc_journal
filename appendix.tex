@@ -12,6 +12,12 @@ To train both our video-prediction and registration models, we collected 20,000 
 \section{Experimental Evaluation}
 
 \begin{figure*}
+    \centering    \includegraphics[width=1.0\textwidth]{images_rfr/push_correction.pdf}
+    \caption{\small{Applying our method to a pushing task. In the first 3 time instants the object behaves unexpectedly, moving down. The tracking then allows the robot to retry, allowing it to eventually bring the object to the goal.}}
+    \label{fig:push_retry}
+\end{figure*}
+
+\begin{figure*}
 	\centering
 	\includegraphics[width=1.0\textwidth]{images_rfr/pick_place_plush.pdf}
 	\caption{\small{Retrying behavior of our method combining prehensile and non-prehensile manipulation. In the first 4 time instants shown the robot pushes the object. It then loses the object, and decides to grasp it pulling it all the way to the goal. Retrying is enabled by applying the learned registration to both camera views (here we only show the front view).}}
@@ -29,15 +35,6 @@ To train both our video-prediction and registration models, we collected 20,000 
 		\label{fig:goingaroundocclusion}}
 \end{figure*}
 
-
-\subsection{Experiments with classifier-based cost function}
-\begin{figure*}
-	\centering
-	\includegraphics[width=0.8\textwidth]{images_cls/cls_results.jpeg}
-	\caption{\small Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning. \todo{can go to appendix! classifier example wi}}
-	\label{fig:cls_results}
-	\vspace{-0.3cm}
-\end{figure*}
 
 \section{Simulated Experiments}
 %\todo{shorten if necessary}

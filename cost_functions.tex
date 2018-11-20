@@ -116,7 +116,9 @@ The network $R$ is implemented as a fully convolutional network taking in two im
 
 \subsection{Classifier-Based Cost Functions}
 \label{subsec:class_cost}
-An alternative way to define the cost function is with a goal classifier. This type of cost function is particularly well-suited for tasks that can be completed in multiple ways. For example, for a task of rearranging a pair objects into relative positions, i.e. pushing the first object to the left of the second object, the absolute positions of the objects do not matter. A classifier-based cost function allows the planner to discover any of the possible goal states.
+An alternative way to define the cost function is with a goal classifier. This type of cost function is particularly well-suited for tasks that can be completed in multiple ways. For example, for a task of rearranging a pair objects into relative positions, i.e. pushing the first object to the left of the second object, the absolute positions of the objects do not matter nor does the arm position. A classifier-based cost function allows the planner to discover any of the possible goal states. 
+
+Unfortunately, a typical image classifier will require a large amount of labeled examples to learn, and we don't want to collect large datasets for each and every task. Instead, we aim to learn a goal classifier from only a few positive examples, using a meta-learning approach. A few positive examples of success are easy for people to provide and are the minimal information needed to convey a goal.
 
 \newcommand{\task}{\mathcal{T}}
 \newcommand{\data}{\mathcal{D}}
@@ -126,23 +128,23 @@ An alternative way to define the cost function is with a goal classifier. This t
 \newcommand{\testdata}{\data^\text{test}}
 \newcommand{\loss}{\mathcal{L}}
 
-Formally, we consider a goal classifier $\hat{\out} = f(\obs)$, where $\obs$ denotes the image observation, and $\hat{\out} \in [0,1]$ indicates the predicted probability of the observation being of a successful outcome of the task. Our objective is to infer a classifier for a new task $\task_j$ from a few positive examples of success, which are easy for a user to provide and encode the minimal information needed to convey a task. In other words, given a dataset $\posdata_j$ of $K$ examples of successful end states for a new task $\task_j$: $\data_j:=\{(\obs_k, 1) | k = 1...K\}_j$, our goal is to infer a classifier for task $\task_j$.
+Formally, we consider a goal classifier $\hat{\out} = f(\obs)$, where $\obs$ denotes the image observation, and $\hat{\out} \in [0,1]$ indicates the predicted probability of the observation being of a successful outcome of the task. Our objective is to infer a classifier for a new task $\task_j$ from a few positive examples of success, which are easy for a user to provide and encode the minimal information needed to convey a task. In other words, given a dataset $\posdata_j$ of $K$ examples of successful end states for a new task $\task_j$: $\data_j:=\{(\obs_k, 1) | k = 1...K\}_j$, our goal is to infer a classifier for task $\task_j$. 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.48\textwidth]{images_cls/cls_fig.jpeg}
-    \caption{\small We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not. At meta-test time, this classifier can learn goals for new tasks from a couple of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with Visual MPC.}
+    \caption{\small We propose a framework for quickly specifying visual goals. Our goal classifier is meta-trained with positive and negative examples for diverse tasks (left), which allows it to meta-learn that some factors matter for goals (e.g., relative positions of objects), while some do not (e.g. position of the arm). At meta-test time, this classifier can learn goals for new tasks from a few of examples of success (right - the goal is to place the fork to the right of the plate). The cost can be derived from the learned goal classifier for use with visual MPC.}
     \label{fig:cls_fig}
     \vspace{-0.3cm}
 \end{figure}
 
-\noindent \textbf{Meta-Learning for Few-Shot Goal Inference}
+\noindent \textbf{Meta-Learning for Few-Shot Goal Inference:}
+To solve the above problem, we propose learning a few-shot classifier that can infer the goal of a new task from a small set of goal examples, allowing the user to define a task from a few examples of success. To train the few-shot classifier, we first collect a dataset of both positive and negative examples for a wide range of tasks. We then use this data to learn how to learn goal classifiers from a few positive examples.
+Our approach is illustrated in Figure~\ref{fig:cls_fig}.
 
-To solve the above problem, we propose learning a few-shot classifier that can infer the goal of a new task from a small set of goal examples, allowing the user to define a task from goal images alone. Our approach is illustrated in Figure~\ref{fig:cls_fig}.
+We build upon model-agnostic meta-learning (MAML)~\cite{maml}, which learns initial parameters $\theta$ for model $f$ that can efficiently adapt to a new task with one or a few steps of gradient descent. Grant et al. \cite{caml} proposed an extension of MAML, referred to as concept acquisition through meta-learning (CAML), for learning to learn new concepts from positive examples alone. We apply CAML to the setting of acquiring goal classifiers from positive examples, using a meta-training data with both positive and negative examples. The result of the meta-training procedure is an initial set of parameters that can be used to learn new goal classifiers at test time.
 
-To train the few-shot classifier, we build upon model-agnostic meta-learning (MAML)~\cite{maml}, which learns initial parameters $\theta$ for model $f$ that can efficiently adapt to a new task with one or a few steps of gradient descent. \cite{caml} proposed an extension of MAML, referred to as concept acquisition through meta-learning (CAML), for learning new concepts from positive examples alone. We apply CAML to the setting of acquiring goal classifiers from positive examples.
-
-\noindent \textbf{Test Time Procedure}
+\noindent \textbf{Test Time Procedure:}
 At test time, the user provides a dataset $\posdata_j$ of $K$ examples of successful end states for a new task $\task_j$: $\data_j:=\{(\obs_k, 1) | k = 1...K\}_j$, which are then used to infer a task-specific goal classifier $C_j$. In particular, the meta-learned parameters $\theta$ are updated through gradient descent to adapt to task $\task_j$:
 
 $$
@@ -153,7 +155,7 @@ $$
 
 where $\loss$ is the cross-entropy loss function, $\alpha$ is the step size, and $\theta'$ denotes the parameters updated through gradient descent on task $\task_j$.
 
-During planning, the learned classifier $C_j$ takes as input an image generated by the video-prediction model and outputs the predicted probability of the goal being achieved for the task specified by the few examples of success. To convert this into a cost function, we treat the probability of success as the planning cost for that observation. To reduce the effect of false positives and mis-calibrated predictions, we use the classifier conservatively by thresholding the predictions so that reward is only given for confident successes. Below this threshold, we give a reward of 0 and above this threshold, we provide the predicted probability as the reward. %The threshold is chosen via cross-validation on a set of validation tasks.
+During planning, the learned classifier $C_j$ takes as input an image generated by the video-prediction model and outputs the predicted probability of the goal being achieved for the task specified by the few examples of success. To convert this into a cost function, we treat the probability of success as the planning cost for that observation. To reduce the effect of false positives and mis-calibrated predictions, we use the classifier conservatively by thresholding the predictions so that reward is only given for confident successes. Below this threshold, we give a reward of 0 and above this threshold, we provide the predicted probability as the reward.
 
 
 \noindent \textbf{Train time procedure}
@@ -170,7 +172,10 @@ We optimize this objective using Adam~\cite{ADAM} on the initial parameters $\th
 
 We have introduced three different kinds of cost functions, pixel-distance based cost functions with and without registration, as well as classifier-based cost functions. Here we discuss the relative strengths and weaknesses of each of them.
 
-Pixel-distance based classifier have the advantage that they allow moving objects precisely to target locations. Adding a registration mechanism allows for robust closed-loop control. The pixel-distance based cost function also has a high degree of robustness against distractor objects and clutter -- an important feature when targeting diverse real-world environments.
+Pixel-distance based cost functions have the advantage that they allow moving objects precisely to target locations. Further, they do not the user to provide an image of the goal, creating a simple and easy interface for specifying goals. The pixel-distance based cost function also has a high degree of robustness against distractor objects and clutter since the optimizer can ignore the values of other pixels; this is an important feature when targeting diverse real-world environments.
+By incorporating an image of the goal, we can add a registration mechanism to allow for more robust closed-loop control, at the cost of a more significant burden on the user.
 
-The classifier-based cost function allows for solving more abstract tasks where the absolute positions of an object can be irrelevant, such as position a cup in front of a plate, irrespective of where the plate is.
+The classifier-based cost function allows for solving more abstract tasks where the absolute positions of an object can be irrelevant, such as position a cup in front of a plate, irrespective of where the plate is.  Providing a few example images takes more effort than specifying pixel locations but allows a broader range of goal sets to be specified.
+
 %%SL.10.15: This is rather... terse. Maybe that's OK not to be too verbose, but the section somehow feels a bit unfinished.
+%%CF.11.20: I agree. I made a bunch of changes to make it less terse.

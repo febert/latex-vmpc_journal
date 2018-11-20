@@ -1,4 +1,22 @@
 \section{Trajectory Optimizer}
+
+\begin{algorithm}[ht]
+\caption{Trajecotry Optimization in Visual MPC}
+\label{sarsalambdafa}
+\begin{algorithmic}[1]
+\State Initialize $\bm w$ arbitrarily as an array of size $\#actions \cdot \#tiles$
+\For{each episode}
+\State $E \leftarrow E + \bm x(S,A)$
+\While{$S$ is not terminal}
+\State Take action $A$, observe $R$, $S'$
+\State $S \leftarrow S', A \leftarrow A'$
+\EndWhile
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+
+
 \label{sec:optimizer}
 The role of the optimizer is to find actions sequences $a_{1:T}$ which minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$ by sampling a large number of actions sequences and ranking of each video-prediction rollout using a cost function.
 
