@@ -55,14 +55,6 @@ Transforming from all previous images comes with increased computational cost, s
 \end{equation}
 Here, we make the assumption that occluded objects are static throughout the prediction horizon. This assumption allows us to dispense the intermediate transformations and only provide a skip connection from the very first image in the sequence $I_0$, which is also the only real image, since all of the subsequent images are predicted by the model. Hence, this model only needs to output 2 masks. 
 
- \begin{wrapfigure}{r}{.37\columnwidth}
-	\centering
-	\includegraphics[width=0.37\columnwidth]{images_sna/occlusionaware/img_desigpixb0.png}
-	\caption{The blue dot indicates the designated pixel}
-	\label{fig:desig_pix_bluedot}
-\end{wrapfigure}
-
-We provide an example of the model recovering from occlusion in \autoref{fig:pix_reappear}. In this figure, the arm is predicted to move in front of the designated pixel, marked in blue in \autoref{fig:desig_pix_bluedot}. The predictions of the DNA model, shown in figure \autoref{fig:pix_reappear}(b), contain incorrect motion of the marked object, as shown in the heatmaps visualizing $\hat{P}_t$, although the arm actually passes in front of it. This is because the DNA model cannot recover information about an object that it has `overwritten' during its predictions, causing the model to predict that the pixel \emph{moves with the arm}. We identified this as one of the major causes of planning failure using the DNA model. By contrast our SNA model predicts that the occluded object will not move, shown in figure  \autoref{fig:pix_reappear}(a).
 
 %\todo{can cut from here:}
 %Next, we show another illustration comparing the occlusion handling of DNA and the proposed SNA model. The graphs in \autoref{fig:pix_reqppear_graph} show the predicted probability evaluated at the position of the designated pixel, shown in figure \ref{fig:desig_pix_bluedot}, which is stationary during the entire motion. Precisely when the arm occludes the designated pixel, the probability at this point decreases. This indicates that the model is `unsure' where this pixel is. When the arm unoccludes the designated pixel, it should become visible again, and the probability of the designated pixel being at its original position should go up. In the case of the DNA model and its variants~\cite{finn_nips}, the probability mass does not increase after the object reappears. 
@@ -73,23 +65,3 @@ We provide an example of the model recovering from occlusion in \autoref{fig:pix
 % 	\caption{Predicted probability $P_{d^{(0)}}(t)$ of the designated pixel being at the location of the blue dot indicated in \autoref{fig:desig_pix_bluedot} for the DNA model (left) and the SNA model (right). \todo{can cut if no more space!}}      \label{fig:pix_reqppear_graph}
 % \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{subfigure}{0.9\columnwidth}
-    \centering
-        \includegraphics[width=1.\linewidth]{images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png}
-        \caption{Skip connection neural advection (SNA) does not erase or move objects in the background}
-        \label{fig:Ng1}
-    \end{subfigure}
-    \begin{subfigure}{0.9\columnwidth}
-    \centering
-        \includegraphics[width=1.0\linewidth]{images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png}
-        \caption{Standard DNA \cite{foresight} exhibits undesirable movement of the distribution $P_{d}(t)$ and erases the background}
-    \end{subfigure}
-    \caption{
-    %\protect\subref{fig:Ng1} 
-    Top rows: Predicted images of arm moving \textit{in front of} green object with designated pixel (as indicated in \autoref{fig:desig_pix_bluedot}). 
-    %(\protect\subref{fig:Ng2}) 
-    Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.}
-    \label{fig:pix_reappear}
-\end{figure}
