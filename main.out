@@ -8,26 +8,24 @@
 \BOOKMARK [2][-]{subsection.5.3}{Classifier-Based Cost Functions}{section.5}% 8
 \BOOKMARK [2][-]{subsection.5.4}{When to use which Cost Function?}{section.5}% 9
 \BOOKMARK [1][-]{section.6}{Trajectory Optimizer}{}% 10
-\BOOKMARK [1][-]{section.7}{Complex Behavior through custom Action Sampling Distributions}{}% 11
+\BOOKMARK [1][-]{section.7}{Custom Action Sampling Distributions}{}% 11
 \BOOKMARK [1][-]{section.8}{Multi-View Visual MPC}{}% 12
 \BOOKMARK [1][-]{section.9}{Experimental Evaluation}{}% 13
-\BOOKMARK [2][-]{subsection.9.1}{Comparing different Video-Prediction Architectures}{section.9}% 14
-\BOOKMARK [2][-]{subsection.9.2}{Evaluating Registration-based Cost Function}{section.9}% 15
+\BOOKMARK [2][-]{subsection.9.1}{Comparing Video Prediction Architectures}{section.9}% 14
+\BOOKMARK [2][-]{subsection.9.2}{Evaluating Registration-based Cost Functions}{section.9}% 15
 \BOOKMARK [2][-]{subsection.9.3}{Evaluating Classifier-based Cost Function}{section.9}% 16
 \BOOKMARK [2][-]{subsection.9.4}{Evaluating Multi-Task Performance}{section.9}% 17
-\BOOKMARK [1][-]{section.10}{Discussion}{}% 18
-\BOOKMARK [1][-]{section.11}{Conclusion}{}% 19
-\BOOKMARK [1][-]{section*.19}{References}{}% 20
-\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 21
-\BOOKMARK [2][-]{IEEEbiography.1}{Frederik Ebert}{IEEEbiography.0}% 22
-\BOOKMARK [2][-]{IEEEbiography.2}{Chelsea Finn}{IEEEbiography.0}% 23
-\BOOKMARK [2][-]{IEEEbiography.3}{Annie Xie}{IEEEbiography.0}% 24
-\BOOKMARK [2][-]{IEEEbiography.4}{Sudeep Dasari}{IEEEbiography.0}% 25
-\BOOKMARK [2][-]{IEEEbiography.5}{Alex Lee}{IEEEbiography.0}% 26
-\BOOKMARK [2][-]{IEEEbiography.6}{Sergey Levine}{IEEEbiography.0}% 27
-\BOOKMARK [1][-]{section*.20}{Appendix A: Improvements of the CEM-Optimizer}{}% 28
-\BOOKMARK [1][-]{section*.21}{Appendix B: Experimental Setup}{}% 29
-\BOOKMARK [1][-]{section*.22}{Appendix C: Experimental Evaluation}{}% 30
-\BOOKMARK [2][-]{subsection.Appendix.C.1}{Experiments with multiple-objects rearrangement with occlusion}{section*.22}% 31
-\BOOKMARK [2][-]{subsection.Appendix.C.2}{Experiments with classifier-based cost function}{section*.22}% 32
-\BOOKMARK [1][-]{section*.26}{Appendix D: Simulated Experiments}{}% 33
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 18
+\BOOKMARK [1][-]{section*.18}{References}{}% 19
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 20
+\BOOKMARK [2][-]{IEEEbiography.1}{Frederik Ebert}{IEEEbiography.0}% 21
+\BOOKMARK [2][-]{IEEEbiography.2}{Chelsea Finn}{IEEEbiography.0}% 22
+\BOOKMARK [2][-]{IEEEbiography.3}{Annie Xie}{IEEEbiography.0}% 23
+\BOOKMARK [2][-]{IEEEbiography.4}{Sudeep Dasari}{IEEEbiography.0}% 24
+\BOOKMARK [2][-]{IEEEbiography.5}{Alex Lee}{IEEEbiography.0}% 25
+\BOOKMARK [2][-]{IEEEbiography.6}{Sergey Levine}{IEEEbiography.0}% 26
+\BOOKMARK [1][-]{section*.19}{Appendix A: Improvements of the CEM-Optimizer}{}% 27
+\BOOKMARK [1][-]{section*.20}{Appendix B: Experimental Setup}{}% 28
+\BOOKMARK [1][-]{section*.21}{Appendix C: Experimental Evaluation}{}% 29
+\BOOKMARK [2][-]{subsection.Appendix.C.1}{Experiments with multiple-objects rearrangement with occlusion}{section*.21}% 30
+\BOOKMARK [1][-]{section*.25}{Appendix D: Simulated Experiments}{}% 31

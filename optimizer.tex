@@ -4,17 +4,33 @@
 \caption{Trajecotry Optimization in Visual MPC}
 \label{sarsalambdafa}
 \begin{algorithmic}[1]
-\State Initialize $\bm w$ arbitrarily as an array of size $\#actions \cdot \#tiles$
-\For{each episode}
-\State $E \leftarrow E + \bm x(S,A)$
-\While{$S$ is not terminal}
-\State Take action $A$, observe $R$, $S'$
-\State $S \leftarrow S', A \leftarrow A'$
-\EndWhile
+\State \textbf{Inputs:} Predictive Model $g$, task definition i.e. designated-pixel goal-pixel pair or goal-image
+\For{$t~=~0...T-1$}
+
+\For{$i~=~0...n_{iter}-1$}
+\If{$i==0$}
+\State \begin{varwidth}[t]{\linewidth}
+	Sample $M$ action sequences $\{a^{(m)}_{t:t+H-1}\}$ from \par $\mathcal N(0, I)$ or
+	custom sampling distribution
+\end{varwidth}
+\Else
+\State \begin{varwidth}[t]{\linewidth}
+	Sample $M$ action sequences ${a^{(m)}_{t:t+H-1}}$ from \par 
+	$\mathcal N(\mu^{(i)}, \Sigma^{(i)})$
+\end{varwidth}
+\EndIf
+\State  \begin{varwidth}[t]{\linewidth}
+	Use model $g$ to predict future sequences of images $\hat{I}_{t:t+H-1}$ and probability distributions $\hat{P}_{t:t+H-1}$
+\end{varwidth}
+\State Rank the action sequences using a cost function $c$
+\State  \begin{varwidth}[t]{\linewidth}
+	Fit a Gaussian to the $k$ best action samples \par 
+	yielding $\mu^{(i)}, \Sigma^{(i)}$
+\end{varwidth}
+\EndFor
 \EndFor
 \end{algorithmic}
 \end{algorithm}
-
 
 
 \label{sec:optimizer}

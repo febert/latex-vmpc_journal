@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 NOV 2018 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 NOV 2018 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,9 +350,53 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \c@nlinenum=\count113
 \TeXr@lab=\toks18
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count114
+\float@exts=\toks19
+\float@box=\box29
+\@float@everytoks=\toks20
+\@floatcapt=\box30
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks21
+\c@algorithm=\count115
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count116
+\c@ALG@rem=\count117
+\c@ALG@nested=\count118
+\ALG@tlm=\skip47
+\ALG@thistlm=\skip48
+\c@ALG@Lnr=\count119
+\c@ALG@blocknr=\count120
+\c@ALG@storecount=\count121
+\c@ALG@tmpcounter=\count122
+\ALG@tmplength=\skip49
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box31
+\sift@deathcycles=\count123
+\@vwid@loff=\dimen157
+\@vwid@roff=\dimen158
+)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
-\et@xins=\count114
+\et@xins=\count124
 ) (./defs.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
@@ -361,7 +405,7 @@ Package: cite 2015/02/27  v 5.5
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/11/05 v2.16a AMS math features
-\@mathmargin=\skip47
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -369,51 +413,51 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
-\ex@=\dimen157
+\@emptytoks=\toks22
+\ex@=\dimen159
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen158
+\pmbraise@=\dimen160
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count115
+\inf@bad=\count125
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count116
-\leftroot@=\count117
+\uproot@=\count126
+\leftroot@=\count127
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count118
-\DOTSCASE@=\count119
+\classnum@=\count128
+\DOTSCASE@=\count129
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box29
-\strutbox@=\box30
-\big@size=\dimen159
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen161
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count120
-\c@MaxMatrixCols=\count121
+\macc@depth=\count130
+\c@MaxMatrixCols=\count131
 \dotsspace@=\muskip11
-\c@parentequation=\count122
-\dspbrk@lvl=\count123
-\tag@help=\toks20
-\row@=\count124
-\column@=\count125
-\maxfields@=\count126
-\andhelp@=\toks21
-\eqnshift@=\dimen160
-\alignsep@=\dimen161
-\tagshift@=\dimen162
-\tagwidth@=\dimen163
-\totwidth@=\dimen164
-\lineht@=\dimen165
-\@envbody=\toks22
-\multlinegap=\skip48
-\multlinetaggap=\skip49
-\mathdisplay@stack=\toks23
+\c@parentequation=\count132
+\dspbrk@lvl=\count133
+\tag@help=\toks23
+\row@=\count134
+\column@=\count135
+\maxfields@=\count136
+\andhelp@=\toks24
+\eqnshift@=\dimen162
+\alignsep@=\dimen163
+\tagshift@=\dimen164
+\tagwidth@=\dimen165
+\totwidth@=\dimen166
+\lineht@=\dimen167
+\@envbody=\toks25
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
@@ -429,16 +473,16 @@ Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count127
-\calc@Bcount=\count128
-\calc@Adimen=\dimen166
-\calc@Bdimen=\dimen167
-\calc@Askip=\skip50
-\calc@Bskip=\skip51
+\calc@Acount=\count137
+\calc@Bcount=\count138
+\calc@Adimen=\dimen168
+\calc@Bdimen=\dimen169
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count129
-\calc@Cskip=\skip52
+\calc@Ccount=\count139
+\calc@Cskip=\skip55
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
@@ -447,48 +491,48 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count130
-\l_MT_multwidth_dim=\dimen168
-\origjot=\skip53
-\l_MT_shortvdotswithinadjustabove_dim=\dimen169
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen170
-\l_MT_above_intertext_sep=\dimen171
-\l_MT_below_intertext_sep=\dimen172
-\l_MT_above_shortintertext_sep=\dimen173
-\l_MT_below_shortintertext_sep=\dimen174
+\g_MT_multlinerow_int=\count140
+\l_MT_multwidth_dim=\dimen170
+\origjot=\skip56
+\l_MT_shortvdotswithinadjustabove_dim=\dimen171
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen172
+\l_MT_above_intertext_sep=\dimen173
+\l_MT_below_intertext_sep=\dimen174
+\l_MT_above_shortintertext_sep=\dimen175
+\l_MT_below_shortintertext_sep=\dimen176
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 366.
-LaTeX Font Info:    ... okay on input line 366.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 366.
-LaTeX Font Info:    ... okay on input line 366.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 366.
-LaTeX Font Info:    ... okay on input line 366.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 366.
-LaTeX Font Info:    ... okay on input line 366.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 366.
-LaTeX Font Info:    ... okay on input line 366.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 366.
-LaTeX Font Info:    ... okay on input line 366.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 366.
-LaTeX Font Info:    ... okay on input line 366.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 371.
+LaTeX Font Info:    ... okay on input line 371.
 
 -- Lines per column: 61 (exact).
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count131
-\scratchdimen=\dimen175
-\scratchbox=\box31
-\nofMPsegments=\count132
-\nofMParguments=\count133
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count134
-\MPscratchDim=\dimen176
-\MPnumerator=\count135
-\makeMPintoPDFobject=\count136
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count141
+\scratchdimen=\dimen177
+\scratchbox=\box34
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen178
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -507,11 +551,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 366.
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 371.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -519,42 +564,42 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count137
+\c@section@level=\count147
 )
-LaTeX Info: Redefining \ref on input line 366.
-LaTeX Info: Redefining \pageref on input line 366.
-LaTeX Info: Redefining \nameref on input line 366.
+LaTeX Info: Redefining \ref on input line 371.
+LaTeX Info: Redefining \pageref on input line 371.
+LaTeX Info: Redefining \nameref on input line 371.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 480.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 485.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 480.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 485.
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 48
-0.
-LaTeX Font Info:    Try loading font information for U+msa on input line 480.
+5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 485.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 480.
+LaTeX Font Info:    Try loading font information for U+msb on input line 485.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+pzd on input line 480.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 485.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 480.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 485.
  (./intro.tex
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
@@ -562,13 +607,16 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 1.
 
-<images_general/tile_rough.png, id=140, 1050.324pt x 582.0144pt>
+<images_general/tile_rough.png, id=132, 1078.9911pt x 582.0144pt>
 File: images_general/tile_rough.png Graphic file (type png)
 
 <use images_general/tile_rough.png>
 Package pdftex.def Info: images_general/tile_rough.png used on input line 9.
-(pdftex.def)             Requested size: 252.94499pt x 140.15698pt.
-LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 20.
+(pdftex.def)             Requested size: 252.94499pt x 136.43593pt.
+
+Underfull \vbox (badness 2990) has occurred while \output is active []
+
+LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 23.
 
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -577,17 +625,17 @@ LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 20.
 LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 40.
 
 
-<images_general/overview_roughdraft.png, id=169, 3035.34pt x 2396.955pt>
+<images_general/overview_roughdraft.png, id=161, 4534.9425pt x 2842.62pt>
 File: images_general/overview_roughdraft.png Graphic file (type png)
 
 <use images_general/overview_roughdraft.png>
 Package pdftex.def Info: images_general/overview_roughdraft.png used on input l
 ine 45.
-(pdftex.def)             Requested size: 252.94499pt x 199.73357pt.
+(pdftex.def)             Requested size: 252.94499pt x 158.535pt.
 ) (./related_work.tex [2 <./images_general/overview_roughdraft.png>]) (./prelim
 inaries.tex)
 (./video_prediction.tex
-<images_general/prediction_model.pdf, id=254, 483.69685pt x 512.1496pt>
+<images_general/prediction_model.pdf, id=249, 483.69685pt x 512.1496pt>
 File: images_general/prediction_model.pdf Graphic file (type pdf)
 
 <use images_general/prediction_model.pdf>
@@ -601,14 +649,14 @@ Underfull \hbox (badness 1796) in paragraph at lines 11--12
  []
 
 [3 <./images_general/prediction_model.pdf>]
-<images_sna/occlusionaware/architecture.pdf, id=308, 597.50786pt x 369.88583pt>
+<images_sna/occlusionaware/architecture.pdf, id=302, 597.50786pt x 369.88583pt>
 File: images_sna/occlusionaware/architecture.pdf Graphic file (type pdf)
 <use images_sna/occlusionaware/architecture.pdf>
 Package pdftex.def Info: images_sna/occlusionaware/architecture.pdf used on inp
 ut line 22.
 (pdftex.def)             Requested size: 252.94499pt x 156.58138pt.
  [4 <./images_sna/occlusionaware/architecture.pdf>]
-<images_sna/occlusionaware/img_desigpixb0.png, id=359, 483.8075pt x 484.81125pt
+<images_sna/occlusionaware/img_desigpixb0.png, id=352, 483.8075pt x 484.81125pt
 >
 File: images_sna/occlusionaware/img_desigpixb0.png Graphic file (type png)
  <use images_sna/occlusionaware/img_desigpixb0.png>
@@ -616,7 +664,7 @@ Package pdftex.def Info: images_sna/occlusionaware/img_desigpixb0.png used on i
 nput line 60.
 (pdftex.def)             Requested size: 93.58841pt x 93.77956pt.
 
-<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=364, 5
+<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=357, 5
 13.92pt x 128.48pt>
 File: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png Graph
 ic file (type png)
@@ -626,7 +674,7 @@ Package pdftex.def Info: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0
 _overtime.png used on input line 80.
 (pdftex.def)             Requested size: 227.64894pt x 56.91168pt.
 
-<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=365, 514.92375pt
+<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=358, 514.92375pt
  x 128.48pt>
 File: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png Graphic file (t
 ype png)
@@ -639,7 +687,7 @@ png used on input line 86.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 7.
 
-<images_rfr/registration_singletime.pdf, id=372, 376.40625pt x 239.89626pt>
+<images_rfr/registration_singletime.pdf, id=365, 376.40625pt x 239.89626pt>
 File: images_rfr/registration_singletime.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_singletime.pdf>
@@ -649,7 +697,7 @@ ine 37.
  [5 <./images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png> <./
 images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png> <./images_sna/occlus
 ionaware/img_desigpixb0.png>]
-<images_rfr/registration_test_start.pdf, id=392, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_start.pdf, id=388, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_start.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_start.pdf>
@@ -657,7 +705,7 @@ Package pdftex.def Info: images_rfr/registration_test_start.pdf used on input l
 ine 68.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_test_goal.pdf, id=393, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_goal.pdf, id=389, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_goal.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_goal.pdf>
@@ -665,7 +713,7 @@ Package pdftex.def Info: images_rfr/registration_test_goal.pdf used on input li
 ne 69.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_train.pdf, id=394, 390.45876pt x 229.85875pt>
+<images_rfr/registration_train.pdf, id=390, 390.45876pt x 229.85875pt>
 File: images_rfr/registration_train.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_train.pdf>
@@ -673,7 +721,7 @@ Package pdftex.def Info: images_rfr/registration_train.pdf used on input line 7
 5.
 (pdftex.def)             Requested size: 139.12051pt x 75.81432pt.
 
-<images_rfr/reg_over_time.png, id=396, 1638.12pt x 308.15125pt>
+<images_rfr/reg_over_time.png, id=392, 1638.12pt x 308.15125pt>
 File: images_rfr/reg_over_time.png Graphic file (type png)
 
 <use images_rfr/reg_over_time.png>
@@ -682,50 +730,81 @@ Package pdftex.def Info: images_rfr/reg_over_time.png used on input line 87.
  [6 <./images_rfr/registration_train.pdf> <./images_rfr/registration_singletime
 .pdf> <./images_rfr/registration_test_start.pdf> <./images_rfr/registration_tes
 t_goal.pdf>]
-<images_cls/cls_fig.jpeg, id=484, 810.02625pt x 331.2375pt>
+<images_cls/cls_fig.jpeg, id=478, 810.02625pt x 331.2375pt>
 File: images_cls/cls_fig.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_fig.jpeg>
-Package pdftex.def Info: images_cls/cls_fig.jpeg used on input line 133.
+Package pdftex.def Info: images_cls/cls_fig.jpeg used on input line 135.
 (pdftex.def)             Requested size: 248.60658pt x 101.66159pt.
- [7 <./images_rfr/reg_over_time.png> <./images_cls/cls_fig.jpeg>]) (./optimizer
-.tex) (./scaling_up.tex
-<images_general/robot_setup.jpg, id=502, 3667.7025pt x 3033.3325pt>
-File: images_general/robot_setup.jpg Graphic file (type jpg)
 
-<use images_general/robot_setup.jpg>
-Package pdftex.def Info: images_general/robot_setup.jpg used on input line 4.
-(pdftex.def)             Requested size: 177.06071pt x 146.39903pt.
- [8 <./images_general/robot_setup.jpg>])
-(./experiments.tex
-Underfull \hbox (badness 4595) in paragraph at lines 25--25
- \OT1/phv/b/n/9.53561 9.1 Com-par-ing dif-fer-ent Video-Prediction Ar-chi-tec-
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+[]\OT1/ppl/m/n/9.53561 We build upon model-agnostic meta-learning
  []
 
-[9] <images_rfr/push_correction.pdf, id=536, 995.84645pt x 85.35826pt>
-File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
-<use images_rfr/push_correction.pdf>
-Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 97.
-(pdftex.def)             Requested size: 517.935pt x 44.39566pt.
+Underfull \hbox (badness 2617) in paragraph at lines 145--146
+\OT1/ppl/m/n/9.53561 (MAML) [[]47[]], which learns ini-tial pa-ram-e-ters $\OML
+/cmm/m/it/10 ^^R$ \OT1/ppl/m/n/9.53561 for
+ []
 
-<images_cls/cls_charts.jpeg, id=543, 682.55pt x 297.11pt>
+[7 <./images_rfr/reg_over_time.png> <./images_cls/cls_fig.jpeg>])
+(./optimizer.tex
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 4.
+
+Underfull \hbox (badness 5667) in paragraph at lines 7--8
+[]\OT1/ppl/b/n/9.53561 In-puts: \OT1/ppl/m/n/9.53561 Pre-dic-tive Model $\OML/c
+mm/m/it/10 g$\OT1/ppl/m/n/9.53561 , task def-i-ni-tion i.e.
+ []
+
+
+Overfull \hbox (6.19992pt too wide) in paragraph at lines 22--25
+[] [] 
+ []
+
+) (./scaling_up.tex
+<images_general/robot_setup_scheme.pdf, id=495, 1027.84pt x 770.88pt>
+File: images_general/robot_setup_scheme.pdf Graphic file (type pdf)
+
+<use images_general/robot_setup_scheme.pdf>
+Package pdftex.def Info: images_general/robot_setup_scheme.pdf used on input li
+ne 5.
+(pdftex.def)             Requested size: 113.82446pt x 85.36166pt.
+
+Underfull \hbox (badness 2503) in paragraph at lines 6--6
+\OT1/ppl/m/n/9.03374 2 stan-dard web-cams ar-
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 10--12
+\OT1/ppl/m/n/9.53561 tions, such as a mul-ti-vari-
+ []
+
+[8 <./images_general/robot_setup_scheme.pdf>]) (./experiments.tex [9]
+<images_cls/cls_results.jpeg, id=544, 1027.84pt x 391.4625pt>
+File: images_cls/cls_results.jpeg Graphic file (type jpg)
+
+<use images_cls/cls_results.jpeg>
+Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 115.
+(pdftex.def)             Requested size: 252.94499pt x 96.33623pt.
+
+<images_cls/cls_charts.jpeg, id=548, 682.55pt x 297.11pt>
 File: images_cls/cls_charts.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_charts.jpeg>
-Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 137.
+Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 145.
 (pdftex.def)             Requested size: 248.60658pt x 108.2153pt.
-
-<images_general/tile_2.png, id=553, 1052.9739pt x 582.0144pt>
+ [10 <./images_cls/cls_results.jpeg>]
+<images_general/tile_2.png, id=568, 1079.7138pt x 582.0144pt>
 File: images_general/tile_2.png Graphic file (type png)
 
 <use images_general/tile_2.png>
-Package pdftex.def Info: images_general/tile_2.png used on input line 160.
-(pdftex.def)             Requested size: 252.94499pt x 139.81064pt.
-) (./discussion.tex [10]) (./main.bbl [11 <./images_rfr/push_correction.pdf> <.
-/images_cls/cls_charts.jpeg> <./images_general/tile_2.png>]
+Package pdftex.def Info: images_general/tile_2.png used on input line 170.
+(pdftex.def)             Requested size: 252.94499pt x 136.34712pt.
+) [11 <./images_cls/cls_charts.jpeg> <./images_general/tile_2.png>] (./main.bbl
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 99.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <8.03> not available
@@ -733,7 +812,7 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <8.03> not available
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
 
-Underfull \hbox (badness 2856) in paragraph at lines 127--130
+Underfull \hbox (badness 2856) in paragraph at lines 131--134
 []\OT1/ppl/m/n/8.03 M. Zhang, S. Vikram, L. Smith, P. Abbeel, M. J. John-
  []
 
@@ -744,71 +823,77 @@ Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ù in font pplr7t!
 
-Underfull \hbox (badness 1590) in paragraph at lines 154--157
+Underfull \hbox (badness 1590) in paragraph at lines 181--184
 []\OT1/ppl/m/n/8.03 G. Kahn, A. Vil-laflor, V. Pong, P. Abbeel, and S. Levine,
  []
 
-[12]) (./appendix.tex
-<images_rfr/pick_place_plush.pdf, id=587, 995.84645pt x 85.35826pt>
+
+Underfull \vbox (badness 1603) has occurred while \output is active []
+
+ [12])
+(./appendix.tex
+<images_rfr/push_correction.pdf, id=584, 995.84645pt x 85.35826pt>
+File: images_rfr/push_correction.pdf Graphic file (type pdf)
+
+<use images_rfr/push_correction.pdf>
+Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 15.
+(pdftex.def)             Requested size: 517.935pt x 44.39566pt.
+
+<images_rfr/pick_place_plush.pdf, id=585, 995.84645pt x 85.35826pt>
 File: images_rfr/pick_place_plush.pdf Graphic file (type pdf)
 
 <use images_rfr/pick_place_plush.pdf>
-Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 16.
+Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 22.
 
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=589, 1280.37404pt x 
+<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=587, 1280.37404pt x 
 227.62204pt>
 File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type 
 pdf)
  <use images_sna/multiobject_qualitative/avoid_obstacle.pdf>
 Package pdftex.def Info: images_sna/multiobject_qualitative/avoid_obstacle.pdf 
-used on input line 27.
+used on input line 33.
 (pdftex.def)             Requested size: 517.935pt x 92.07874pt.
 
-<images_cls/cls_results.jpeg, id=590, 1027.84pt x 391.4625pt>
-File: images_cls/cls_results.jpeg Graphic file (type jpg)
 
-<use images_cls/cls_results.jpeg>
-Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 36.
-(pdftex.def)             Requested size: 414.34956pt x 157.8127pt.
-
-
-LaTeX Warning: Reference `fig:sim_bench' on page 13 undefined on input line 47.
+LaTeX Warning: Reference `fig:sim_bench' on page 13 undefined on input line 44.
 
 
 [13])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 669.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 671.
+ [14
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ <./images_rfr/push_correction.pdf> <./images_rfr/pick_place_plush.pdf
 
- [14 <./images_rfr/pick_place_plush.pdf> <./images_sna/multiobject_qualitative/
-avoid_obstacle.pdf
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images_rfr/pick_place_plus
+h.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./images_sna/multiobject_qualitative/avoid_obstacle.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images_sna/multiobject_qua
 litative/avoid_obstacle.pdf): PDF inclusion: multiple pdfs with page group incl
 uded in a single page
-> <./images_cls/cls_results.jpeg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 669.
+>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 671.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 669.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 669.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 671.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 671.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 39A793C0B0EDEC60F359D539F2F574A3;2333.
+(rerunfilecheck)             Checksum: 6094779237D4C76513E8FFFD8BA88586;2144.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 669.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 671.
  ) 
 Here is how much of TeX's memory you used:
- 9373 strings out of 492995
- 148712 string characters out of 6132704
- 258704 words of memory out of 5000000
- 12585 multiletter control sequences out of 15000+600000
+ 10041 strings out of 492995
+ 158476 string characters out of 6132704
+ 268395 words of memory out of 5000000
+ 13237 multiletter control sequences out of 15000+600000
  60351 words of font info for 152 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 36i,17n,42p,1475b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,17n,42p,1475b,511s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
@@ -836,10 +921,10 @@ tic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/upl
 b8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (14 pages, 25588848 bytes).
+Output written on main.pdf (14 pages, 20968864 bytes).
 PDF statistics:
- 748 PDF objects out of 1000 (max. 8388607)
- 620 compressed objects within 7 object streams
- 142 named destinations out of 1000 (max. 500000)
- 383 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 752 PDF objects out of 1000 (max. 8388607)
+ 621 compressed objects within 7 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 367 words of extra memory for PDF output out of 10000 (max. 10000000)
 

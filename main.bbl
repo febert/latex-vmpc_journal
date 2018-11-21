@@ -114,6 +114,10 @@ M.~Watter, J.~Springenberg, J.~Boedecker, and M.~Riedmiller, ``Embed to
   images,'' in \emph{Advances in neural information processing systems}, 2015,
   pp. 2746--2754.
 
+\bibitem{alexey}
+A.~Dosovitskiy and V.~Koltun, ``Learning to act by predicting the future,''
+  \emph{International Conference on Learning Representations (ICLR)}, 2017.
+
 \bibitem{ha2018world}
 D.~Ha and J.~Schmidhuber, ``World models,'' \emph{arXiv preprint
   arXiv:1803.10122}, 2018.
@@ -127,6 +131,23 @@ J.~Oh, X.~Guo, H.~Lee, R.~L. Lewis, and S.~Singh, ``Action-conditional video
 M.~Zhang, S.~Vikram, L.~Smith, P.~Abbeel, M.~J. Johnson, and S.~Levine,
   ``Solar: Deep structured latent representations for model-based reinforcement
   learning,'' \emph{arXiv preprint arXiv:1808.09105}, 2018.
+
+\bibitem{agrawal2016learning}
+P.~Agrawal, A.~V. Nair, P.~Abbeel, J.~Malik, and S.~Levine, ``Learning to poke
+  by poking: Experiential learning of intuitive physics,'' in \emph{Advances in
+  Neural Information Processing Systems}, 2016, pp. 5074--5082.
+
+\bibitem{nair2017combining}
+A.~Nair, D.~Chen, P.~Agrawal, P.~Isola, P.~Abbeel, J.~Malik, and S.~Levine,
+  ``Combining self-supervised learning and imitation for vision-based rope
+  manipulation,'' in \emph{Robotics and Automation (ICRA), 2017 IEEE
+  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2017, pp. 2146--2153.
+
+\bibitem{ropes}
+A.~Nair, P.~Agarwal, D.~Chen, P.~Isola, P.~Abbeel, and S.~Levine, ``Combining
+  self-supervised learning and imitation for vision-based rope manipulation,''
+  \emph{International Conference on Robotics and Automation (ICRA)}, 2017.
 
 \bibitem{mottaghi2016happens}
 R.~Mottaghi, M.~Rastegari, A.~Gupta, and A.~Farhadi, ``“what happens if...”
@@ -150,6 +171,12 @@ R.~Calandra, A.~Owens, M.~Upadhyaya, W.~Yuan, J.~Lin, E.~H. Adelson, and
   S.~Levine, ``The feeling of success: Does touch sensing help predict grasp
   outcomes?'' \emph{arXiv preprint arXiv:1710.05512}, 2017.
 
+\bibitem{pinto2016curious}
+L.~Pinto, D.~Gandhi, Y.~Han, Y.-L. Park, and A.~Gupta, ``The curious robot:
+  Learning visual representations via physical interactions,'' in
+  \emph{European Conference on Computer Vision}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2016, pp. 3--18.
+
 \bibitem{greg_kahn_uncertainty}
 G.~Kahn, A.~Villaflor, V.~Pong, P.~Abbeel, and S.~Levine, ``Uncertainty-aware
   reinforcement learning for collision avoidance,'' \emph{arXiv preprint
@@ -158,38 +185,6 @@ G.~Kahn, A.~Villaflor, V.~Pong, P.~Abbeel, and S.~Levine, ``Uncertainty-aware
 \bibitem{crashing}
 D.~Gandhi, L.~Pinto, and A.~Gupta, ``Learning to fly by crashing,'' \emph{arXiv
   preprint arXiv:1704.05588}, 2017.
-
-\bibitem{alexey}
-A.~Dosovitskiy and V.~Koltun, ``Learning to act by predicting the future,''
-  \emph{International Conference on Learning Representations (ICLR)}, 2017.
-
-\bibitem{agrawal2016learning}
-P.~Agrawal, A.~V. Nair, P.~Abbeel, J.~Malik, and S.~Levine, ``Learning to poke
-  by poking: Experiential learning of intuitive physics,'' in \emph{Advances in
-  Neural Information Processing Systems}, 2016, pp. 5074--5082.
-
-\bibitem{nair2017combining}
-A.~Nair, D.~Chen, P.~Agrawal, P.~Isola, P.~Abbeel, J.~Malik, and S.~Levine,
-  ``Combining self-supervised learning and imitation for vision-based rope
-  manipulation,'' in \emph{Robotics and Automation (ICRA), 2017 IEEE
-  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2017, pp. 2146--2153.
-
-\bibitem{ropes}
-A.~Nair, P.~Agarwal, D.~Chen, P.~Isola, P.~Abbeel, and S.~Levine, ``Combining
-  self-supervised learning and imitation for vision-based rope manipulation,''
-  \emph{International Conference on Robotics and Automation (ICRA)}, 2017.
-
-\bibitem{pinto2016curious}
-L.~Pinto, D.~Gandhi, Y.~Han, Y.-L. Park, and A.~Gupta, ``The curious robot:
-  Learning visual representations via physical interactions,'' in
-  \emph{European Conference on Computer Vision}.\hskip 1em plus 0.5em minus
-  0.4em\relax Springer, 2016, pp. 3--18.
-
-\bibitem{kurutach2018learning}
-T.~Kurutach, A.~Tamar, G.~Yang, S.~Russell, and P.~Abbeel, ``Learning plannable
-  representations with causal infogan,'' \emph{arXiv preprint
-  arXiv:1807.09341}, 2018.
 
 \bibitem{recurrentsimulators}
 S.~Chiappa, S.~Racaniere, D.~Wierstra, and S.~Mohamed, ``Recurrent environment
@@ -216,6 +211,11 @@ M.~Mathieu, C.~Couprie, and Y.~LeCun, ``Deep multi-scale video prediction
   beyond mean square error,'' \emph{International Conference on Learning
   Representations (ICLR)}, 2016.
 
+\bibitem{kurutach2018learning}
+T.~Kurutach, A.~Tamar, G.~Yang, S.~Russell, and P.~Abbeel, ``Learning plannable
+  representations with causal infogan,'' \emph{arXiv preprint
+  arXiv:1807.09341}, 2018.
+
 \bibitem{convlstm}
 S.~Xingjian, Z.~Chen, H.~Wang, D.-Y. Yeung, W.-K. Wong, and W.-c. Woo,
   ``Convolutional lstm network: A machine learning approach for precipitation
@@ -236,14 +236,14 @@ W.~Lotter, G.~Kreiman, and D.~Cox, ``Deep predictive coding networks for video
 B.~De~Brabandere, X.~Jia, T.~Tuytelaars, and L.~Van~Gool, ``Dynamic filter
   networks,'' in \emph{Neural Information Processing Systems (NIPS)}, 2016.
 
+\bibitem{se3}
+A.~Byravan and D.~Fox, ``Se3-nets: Learning rigid body motion using deep neural
+  networks,'' \emph{arXiv preprint arXiv:1606.02378}, 2016.
+
 \bibitem{scott_reed}
 S.~Reed, A.~v.~d. Oord, N.~Kalchbrenner, S.~G. Colmenarejo, Z.~Wang, D.~Belov,
   and N.~de~Freitas, ``Parallel multiscale autoregressive density estimation,''
   \emph{arXiv preprint arXiv:1703.03664}, 2017.
-
-\bibitem{se3}
-A.~Byravan and D.~Fox, ``Se3-nets: Learning rigid body motion using deep neural
-  networks,'' \emph{arXiv preprint arXiv:1606.02378}, 2016.
 
 \bibitem{zhou2016view}
 T.~Zhou, S.~Tulsiani, W.~Sun, J.~Malik, and A.~A. Efros, ``View synthesis by
@@ -280,15 +280,10 @@ B.~Babenko, M.-H. Yang, and S.~Belongie, ``Visual tracking with online multiple
   CVPR 2009. IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2009, pp. 983--990.
 
-\bibitem{deep_mpc}
-I.~Lenz and A.~Saxena, ``Deepmpc: Learning deep latent features for model
-  predictive control,'' in \emph{In RSS}.\hskip 1em plus 0.5em minus
-  0.4em\relax Citeseer, 2015.
-
-\bibitem{jayaraman2018time}
-D.~Jayaraman, F.~Ebert, A.~A. Efros, and S.~Levine, ``Time-agnostic prediction:
-  Predicting predictable video frames,'' \emph{arXiv preprint
-  arXiv:1808.07784}, 2018.
+\bibitem{dsae}
+C.~Finn, X.~Y. Tan, Y.~Duan, T.~Darrell, S.~Levine, and P.~Abbeel, ``Deep
+  spatial autoencoders for visuomotor learning,'' in \emph{International
+  Conference on Robotics and Automation (ICRA)}, 2016.
 
 \bibitem{todorov2012mujoco}
 E.~Todorov, T.~Erez, and Y.~Tassa, ``Mujoco: A physics engine for model-based

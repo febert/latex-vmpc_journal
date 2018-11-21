@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -8,83 +8,87 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mybib.bib
-Repeated entry---line 897 of file mybib.bib
+Repeated entry---line 295 of file mybib.bib
+ : @inproceedings{dsae
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 904 of file mybib.bib
  : @article{google_handeye
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 904 of file mybib.bib
+Repeated entry---line 911 of file mybib.bib
  : @article{alexey
  :                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 982 of file mybib.bib
- : @inproceedings{deep_mpc
- :                        ,
+Repeated entry---line 927 of file mybib.bib
+ : @inproceedings{dsae
+ :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1088 of file mybib.bib
+Repeated entry---line 1095 of file mybib.bib
  : @article{crashing
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1095 of file mybib.bib
+Repeated entry---line 1102 of file mybib.bib
  : @article{greg_kahn_uncertainty
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1102 of file mybib.bib
+Repeated entry---line 1109 of file mybib.bib
  : @inproceedings{vondrick
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1116 of file mybib.bib
+Repeated entry---line 1123 of file mybib.bib
  : @inproceedings{convlstm
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1123 of file mybib.bib
+Repeated entry---line 1130 of file mybib.bib
  : @article{beyond_mse
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1146 of file mybib.bib
+Repeated entry---line 1153 of file mybib.bib
  : @article{prednet
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1189 of file mybib.bib
+Repeated entry---line 1196 of file mybib.bib
  : @inproceedings{bootsetal
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1204 of file mybib.bib
+Repeated entry---line 1211 of file mybib.bib
  : @article{scott_reed
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1211 of file mybib.bib
+Repeated entry---line 1218 of file mybib.bib
  : @article{se3
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1218 of file mybib.bib
+Repeated entry---line 1225 of file mybib.bib
  : @article{recurrentsimulators
  :                             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1225 of file mybib.bib
+Repeated entry---line 1232 of file mybib.bib
  : @inproceedings{dynamic_filter_networks
  :                                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1241 of file mybib.bib
+Repeated entry---line 1248 of file mybib.bib
  : @inproceedings{atarioh
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1264 of file mybib.bib
+Repeated entry---line 1271 of file mybib.bib
  : @article{video_pixel_networks
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1505 of file mybib.bib
+Repeated entry---line 1512 of file mybib.bib
  : @article{e2e
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1518 of file mybib.bib
+Repeated entry---line 1525 of file mybib.bib
  : @article{ropes
  :               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1532 of file mybib.bib
+Repeated entry---line 1539 of file mybib.bib
  : @article{maml
  :              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1564 of file mybib.bib
+Repeated entry---line 1571 of file mybib.bib
  : @article{ADAM
  :              ,
 I'm skipping whatever remains of this entry
@@ -93,45 +97,45 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 54 entries,
+You've used 53 entries,
             4087 wiz_defined-function locations,
-            1061 strings with 17291 characters,
-and the built_in function-call counts, 33130 in all, are:
-= -- 2394
-> -- 1086
+            1055 strings with 17141 characters,
+and the built_in function-call counts, 32796 in all, are:
+= -- 2364
+> -- 1085
 < -- 131
 + -- 547
 - -- 232
-* -- 1549
-:= -- 5017
-add.period$ -- 116
-call.type$ -- 54
-change.case$ -- 53
+* -- 1536
+:= -- 4949
+add.period$ -- 113
+call.type$ -- 53
+change.case$ -- 52
 chr.to.int$ -- 327
-cite$ -- 54
-duplicate$ -- 2577
-empty$ -- 3011
-format.name$ -- 284
-if$ -- 7699
+cite$ -- 53
+duplicate$ -- 2544
+empty$ -- 2976
+format.name$ -- 283
+if$ -- 7625
 int.to.chr$ -- 0
-int.to.str$ -- 54
-missing$ -- 514
-newline$ -- 187
-num.names$ -- 54
-pop$ -- 1410
+int.to.str$ -- 53
+missing$ -- 510
+newline$ -- 184
+num.names$ -- 53
+pop$ -- 1399
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2509
+skip$ -- 2484
 stack$ -- 0
-substring$ -- 813
-swap$ -- 1734
+substring$ -- 812
+swap$ -- 1718
 text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 54
+type$ -- 53
 warning$ -- 0
-while$ -- 106
-width$ -- 56
-write$ -- 478
-(There were 20 error messages)
+while$ -- 105
+width$ -- 55
+write$ -- 470
+(There were 21 error messages)
