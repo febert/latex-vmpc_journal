@@ -122,8 +122,6 @@ We evaluate our method on 20 long-distance and 15 short-distance pushing tasks. 
 
 The goal of the classifier-based cost function is to provide an easy way to compute an objective for new tasks from a few observations of success for that task, so we compare our approach to alternative and prior methods for doing so under the same assumptions: pixel distance and latent space distance. In the latter, we measure the distance between the current and goal observations in a learned latent space, obtained by training an autoencoder (DSAE) \cite{dsae} on the same data used for our classifier. Because we are considering a different form of task specification, we do not compare the classifier-based cost function to costs based on user-designated pixels or registration.
 
-%We evaluate our learned classifier on the predictions made by the video prediction model \todo{unclear, how exactly do you evaluate the classifier?} and derive the cost used for planning from the predicted probability of success. 
-
 To collect data for meta-training the classifier, we randomly select a pair of objects from our set of training objects, and position them into many different relative positions, recording the image for each configuration. One task corresponds to a particular relative positioning of two objects, e.g. the first object to the left of the second, and we construct positive and negative examples for this task by labeling the aforementioned images. We randomly position the arm in each image, as it is not a determiner of task success. A good objective should ignore the position of the arm. We also include randomly-positioned distractor objects in about a third of the collected images.
 
 We evaluate the classifier-based cost function in three different experimental settings. In the first setting, the goal is to arrange two objects into a specified relative arrangement. The second setting is the same, but with distractor objects present. In the final, most challenging setting, the goal is to achieve two tasks in sequence. We provide positive examples for both tasks, infer the classifier for both task, perform MPC for the first task until completion, followed by MPC for the second task. To evaluate the ability to generalize to new goals and settings, we use novel, held-out objects for all of the task and distractor objects in our evaluation. 
@@ -131,13 +129,19 @@ We evaluate the classifier-based cost function in three different experimental s
 We qualitatively visualize the benchmark tasks in Figure~\ref{fig:cls_results}.
 On the left, we show a subset of the five images provided to illustrate the task(s), and on the left, we show the motions performed by the robot. We see that the robot is able to execute motions which lead to a correct relative positioning of the objects.
 
-We quantitatively evaluate each method across 20 tasks, including $10$ unique object pairs. The results, shown in Figure~\ref{fig:cls_charts}, indicate that the distance-based metrics
-%%SL.10.16: you mean the method *in this paper*?
-struggle to infer the goal of the task, while our approach leads to substantially more successful behavior on average.
-\todo{explain how exactly you measure success} 
+We quantitatively evaluate each method across 20 tasks, including $10$ unique object pairs. The results, shown in Figure~\ref{fig:cls_charts}, indicate that the distance-based metrics struggle to infer the goal of the task, while our approach leads to substantially more successful behavior on average.
+% \todo{explain how exactly you measure success} 
+% The arrangements were chosen among the eight principal directions (N, NE, E, SE, etc.), and success 
+
+
+
 %%SL.10.16: what is the conclusion from all this? how do the different methods of specifying costs stack up?
 
 %%SL.10.16: where are qualitative results and discussion of cloth?
+
+%%addressed comments
+%%SL.10.16: you mean the method *in this paper*?
+
 
 
 \begin{figure}
