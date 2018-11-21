@@ -1,5 +1,11 @@
 \section{Custom Action Sampling Distributions}
 
+\begin{wrapfigure}{r}{.45\columnwidth}
+	\centering
+	\includegraphics[width=0.45\columnwidth]{images_general/robot_setup_scheme.pdf}
+\caption{\small{Robot setup, with 2 standard web-cams arranged at different viewing angles.}}	\label{fig:robot_setup}
+\end{wrapfigure}
+
 \label{sec:system}
 When collecting data by sampling from simple distributions, such as a multivariate Gaussian, the skills that emerged were found to be generally restricted to pushing and dragging objects. This is because with simple distributions, it is very unlikely to visit states like picking up and placing of objects or folding cloth. Not only would the model be imprecise for these kinds of states, but also during planning it would be unlikely to \emph{find} action sequences that grasp an object or fold a piece of cloth. 
 We therefore explore how the sampling distribution used both in data collection and sampling-based planning can be changed to visit these, otherwise unlikely, states more frequently, allowing more complex behavior to emerge. 
