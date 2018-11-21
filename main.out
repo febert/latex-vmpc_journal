@@ -16,7 +16,7 @@
 \BOOKMARK [2][-]{subsection.9.3}{Evaluating Classifier-based Cost Function}{section.9}% 16
 \BOOKMARK [2][-]{subsection.9.4}{Evaluating Multi-Task Performance}{section.9}% 17
 \BOOKMARK [1][-]{section.10}{Conclusion}{}% 18
-\BOOKMARK [1][-]{section*.18}{References}{}% 19
+\BOOKMARK [1][-]{section*.16}{References}{}% 19
 \BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 20
 \BOOKMARK [2][-]{IEEEbiography.1}{Frederik Ebert}{IEEEbiography.0}% 21
 \BOOKMARK [2][-]{IEEEbiography.2}{Chelsea Finn}{IEEEbiography.0}% 22
@@ -24,8 +24,9 @@
 \BOOKMARK [2][-]{IEEEbiography.4}{Sudeep Dasari}{IEEEbiography.0}% 24
 \BOOKMARK [2][-]{IEEEbiography.5}{Alex Lee}{IEEEbiography.0}% 25
 \BOOKMARK [2][-]{IEEEbiography.6}{Sergey Levine}{IEEEbiography.0}% 26
-\BOOKMARK [1][-]{section*.19}{Appendix A: Improvements of the CEM-Optimizer}{}% 27
-\BOOKMARK [1][-]{section*.20}{Appendix B: Experimental Setup}{}% 28
-\BOOKMARK [1][-]{section*.21}{Appendix C: Experimental Evaluation}{}% 29
-\BOOKMARK [2][-]{subsection.Appendix.C.1}{Experiments with multiple-objects rearrangement with occlusion}{section*.21}% 30
-\BOOKMARK [1][-]{section*.25}{Appendix D: Simulated Experiments}{}% 31
+\BOOKMARK [1][-]{section*.17}{Appendix A: Improvements of the CEM-Optimizer}{}% 27
+\BOOKMARK [1][-]{section*.18}{Appendix B: Illustration of SNA-Model}{}% 28
+\BOOKMARK [1][-]{section*.21}{Appendix C: Experimental Setup}{}% 29
+\BOOKMARK [1][-]{section*.22}{Appendix D: Experimental Evaluation}{}% 30
+\BOOKMARK [2][-]{subsection.Appendix.D.1}{Experiments with multiple-objects rearrangement with occlusion}{section*.22}% 31
+\BOOKMARK [1][-]{section*.26}{Appendix E: Simulated Experiments}{}% 32
