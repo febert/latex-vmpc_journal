@@ -607,14 +607,14 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 1.
 
-<images_general/tile_rough.png, id=136, 1078.9911pt x 582.0144pt>
+<images_general/tile_rough.png, id=136, 1080.035pt x 523.9575pt>
 File: images_general/tile_rough.png Graphic file (type png)
 
 <use images_general/tile_rough.png>
 Package pdftex.def Info: images_general/tile_rough.png used on input line 9.
-(pdftex.def)             Requested size: 252.94499pt x 136.43593pt.
+(pdftex.def)             Requested size: 252.94499pt x 122.7063pt.
 
-Underfull \vbox (badness 2990) has occurred while \output is active []
+Underfull \vbox (badness 2460) has occurred while \output is active []
 
 LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 23.
 
@@ -649,13 +649,14 @@ Underfull \hbox (badness 1796) in paragraph at lines 11--12
  []
 
 [3 <./images_general/prediction_model.pdf>]
-<images_sna/occlusionaware/architecture.pdf, id=305, 597.50786pt x 369.88583pt>
+<images_sna/occlusionaware/architecture.pdf, id=306, 597.50786pt x 369.88583pt>
 File: images_sna/occlusionaware/architecture.pdf Graphic file (type pdf)
 <use images_sna/occlusionaware/architecture.pdf>
 Package pdftex.def Info: images_sna/occlusionaware/architecture.pdf used on inp
 ut line 22.
 (pdftex.def)             Requested size: 252.94499pt x 156.58138pt.
- [4 <./images_sna/occlusionaware/architecture.pdf>]) (./cost_functions.tex
+) (./cost_functions.tex
+[4 <./images_sna/occlusionaware/architecture.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 7.
 
@@ -716,11 +717,8 @@ Underfull \hbox (badness 2617) in paragraph at lines 145--146
 /cmm/m/it/10 ^^R$ \OT1/ppl/m/n/9.53561 for
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7 <./images_rfr/reg_over_time.png> <./images_cls/cls_fig.jpeg>]) (./optimizer
-.tex
+[7 <./images_rfr/reg_over_time.png> <./images_cls/cls_fig.jpeg>])
+(./optimizer.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 4.
 
@@ -764,15 +762,15 @@ Package pdftex.def Info: images_cls/cls_results.jpeg used on input line 115.
 File: images_cls/cls_charts.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_charts.jpeg>
-Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 145.
+Package pdftex.def Info: images_cls/cls_charts.jpeg used on input line 149.
 (pdftex.def)             Requested size: 248.60658pt x 108.2153pt.
  [10 <./images_cls/cls_results.jpeg> <./images_cls/cls_charts.jpeg>]
-<images_general/tile_2.png, id=555, 1079.7138pt x 582.0144pt>
+<images_general/tile_2.png, id=555, 1087.06125pt x 523.9575pt>
 File: images_general/tile_2.png Graphic file (type png)
 
 <use images_general/tile_2.png>
-Package pdftex.def Info: images_general/tile_2.png used on input line 170.
-(pdftex.def)             Requested size: 252.94499pt x 136.34712pt.
+Package pdftex.def Info: images_general/tile_2.png used on input line 174.
+(pdftex.def)             Requested size: 252.94499pt x 121.9148pt.
 ) (./main.bbl [11 <./images_general/tile_2.png>]
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 99.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
@@ -890,7 +888,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 671.
 Here is how much of TeX's memory you used:
  10044 strings out of 492995
  158519 string characters out of 6132704
- 270393 words of memory out of 5000000
+ 269393 words of memory out of 5000000
  13238 multiletter control sequences out of 15000+600000
  60351 words of font info for 152 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -922,7 +920,7 @@ tic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/upl
 b8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (14 pages, 20981571 bytes).
+Output written on main.pdf (14 pages, 11329548 bytes).
 PDF statistics:
  756 PDF objects out of 1000 (max. 8388607)
  625 compressed objects within 7 object streams
