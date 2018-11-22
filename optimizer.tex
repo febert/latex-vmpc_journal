@@ -1,10 +1,10 @@
 \section{Trajectory Optimizer}
 
 \begin{algorithm}[ht]
-\caption{Trajecotry Optimization in Visual MPC}
-\label{sarsalambdafa}
+\caption{Planning in Visual MPC}
+\label{alg:opt}
 \begin{algorithmic}[1]
-\State \textbf{Inputs:} Predictive Model $g$, task definition i.e. designated-pixel goal-pixel pair or goal-image
+\State \textbf{Inputs:} Predictive Model $g$, task definition i.e. designated-pixel goal pixel pair or goal image
 \For{$t~=~0...T-1$}
 
 \For{$i~=~0...n_{iter}-1$}
@@ -35,12 +35,8 @@
 
 
 \label{sec:optimizer}
-The role of the optimizer is to find actions sequences $a_{1:T}$ which minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$ by sampling a large number of actions sequences and ranking of each video-prediction rollout using a cost function.
+The role of the optimizer is to find actions sequences $a_{1:T}$ that minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$. We use a simple stochastic optimization procedure for this, based on the cross-entropy method (CEM), a gradient-free optimization procedure.
+CEM consists of iteratively resampling action sequences and refitting Gaussian distributions to the actions with the best predicted cost. Algorithm \ref{alg:opt} illustrates this process.
 
-To render the planning process more efficient, we use the cross-entropy method (CEM), a gradient-free optimization procedure.
-CEM consists of iteratively resampling action sequences and refitting Gaussian distributions to the actions with the best predicted cost. 
-We extend CEM to handle a mixture of continuous and discrete actions.
-
-The motivation for using a gradient-free, sampling-based optimizer is that in this way we can easily ensure that actions stay within the distribution of actions the model has encountered during training. This is crucial to ensure that the model does not receive out-of-distribution inputs and makes valid predictions. 
-
-In the appendix \ref{sec:cem_improv} we explain a few improvements we made to the CEM-optimizer.
+Although a variety of trajectory optimization methods may be suitable, this gradient-free, stochastic optimization procedure allows us to easily ensure that actions stay within the distribution of actions the model has encountered during training. This is crucial to ensure that the model does not receive out-of-distribution inputs and makes valid predictions. In the appendix \ref{sec:cem_improv} we present a few improvements we made to the CEM optimizer for visual MPC.
+%%SL.11.21: This paragraph confuses me. How does gradient-free stochastic optimization constrain the optimizer to stay within the distribution of training states? Without any explanation of a mechanism, this paragraph is not very convincing. My suggestion would be to either list different reasons for using CEM, or provide a more convincing justification.
