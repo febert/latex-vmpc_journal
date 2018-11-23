@@ -1,5 +1,5 @@
 \section{Skip Connection Neural Advection Model}
-
+\label{sec:skipcon}
 \begin{wrapfigure}{r}{.37\columnwidth}
 	\centering
 	\includegraphics[width=0.37\columnwidth]{images_sna/occlusionaware/img_desigpixb0.png}
@@ -7,7 +7,7 @@
 	\label{fig:desig_pix_bluedot}
 \end{wrapfigure}
 
-We provide an example of the model recovering from occlusion in \autoref{fig:pix_reappear}. In this figure, the arm is predicted to move in front of the designated pixel, marked in blue in \autoref{fig:desig_pix_bluedot}. The predictions of the DNA model, shown in figure \autoref{fig:pix_reappear}(b), contain incorrect motion of the marked object, as shown in the heatmaps visualizing $\hat{P}_t$, although the arm actually passes in front of it. This is because the DNA model cannot recover information about an object that it has `overwritten' during its predictions, causing the model to predict that the pixel \emph{moves with the arm}. We identified this as one of the major causes of planning failure using the DNA model. By contrast our SNA model predicts that the occluded object will not move, shown in figure  \autoref{fig:pix_reappear}(a).
+We provide an example of the skip connection neural advection (SNA) model recovering from occlusion in \autoref{fig:pix_reappear}. In this figure, the arm is predicted to move in front of the designated pixel, marked in blue in \autoref{fig:desig_pix_bluedot}. The predictions of the DNA model, shown in figure \autoref{fig:pix_reappear}(b), contain incorrect motion of the marked object, as shown in the heatmaps visualizing $\hat{P}_t$, although the arm actually passes in front of it. This is because the DNA model cannot recover information about an object that it has `overwritten' during its predictions, causing the model to predict that the pixel \emph{moves with the arm}. We identified this as one of the major causes of planning failure using the DNA model. By contrast our SNA model predicts that the occluded object will not move, shown in figure  \autoref{fig:pix_reappear}(a).
 
 \begin{figure}
 	\centering
@@ -29,6 +29,13 @@ We provide an example of the model recovering from occlusion in \autoref{fig:pix
 		Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.}
 	\label{fig:pix_reappear}
 \end{figure}
+
+
+\edit{
+\section{Improved Action Sampling Distributions for Data Collection}
+\label{sec:folding_sampling}
+In order to collect meaningful interaction data for learning folding of deformable objects such as towels and cloth, we found that the grasping primitive can be slightly adapted to increase the likelihood of encountering states where cloths are actually folded. When using actions sampled from a simple distribution or the previously-described distribution, clothing would become tangled up. To improve the efficiency of folding cloths we use an action primitive similar to the grasping primitive, but additionally we reduce lateral motion of the end-effector when the gripper is close to the table, thus reducing events where cloths become tangled up.
+}
 
 \section{Improvements of the CEM-Optimizer}
 \label{sec:cem_improv}
@@ -58,7 +65,7 @@ To train both our video-prediction and registration models, we collected 20,000 
 
 \subsection{Experiments with multiple-objects rearrangement with occlusion}
 
-. \autoref{fig:goingaroundocclusion} \todo{change this}shows an example of the SNA model successfully predicting the position of the obstacle through an occlusion and finding a trajectory that avoids the obstacle. 
+\autoref{fig:goingaroundocclusion} shows an example of the SNA model successfully predicting the position of the obstacle through an occlusion and finding a trajectory that avoids the obstacle. 
 
 \begin{figure*}
 	\centering

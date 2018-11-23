@@ -28,6 +28,8 @@
 
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
+
+
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
@@ -80,7 +82,10 @@
 
 \input{defs.tex}
 
+\usepackage{xcolor}  % for colored text
 \providecommand\todo[1]{\textcolor{Red}{#1}}
+\providecommand\edit[1]{\textcolor{blue}{#1}}
+
 
 
 % *** CITATION PACKAGES ***
@@ -296,10 +301,9 @@
 % Instead, use Morten Hogholm'a dblfloatfix which combines the features
 % of both fixltx2e and stfloats:
 %
-% \usepackage{dblfloatfix}
+\usepackage{dblfloatfix}
 % The latest version can be found at:
 % http://www.ctan.org/pkg/dblfloatfix
-
 
 
 
@@ -408,7 +412,7 @@
         
 \IEEEcompsocitemizethanks{
 \IEEEcompsocthanksitem  The first two authors contributed equally.}% <-this % stops an unwanted space
-\thanks{Manuscript received xx.xx.xxx}}
+\thanks{Manuscript received 11/22/2018}}
 
 % note the % following the last \IEEEmembership and also \thanks - 
 % these prevent an unwanted space from occurring between the last author name
@@ -462,8 +466,6 @@
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
 
-
-
 % for Computer Society papers, we must declare the abstract and index terms
 % PRIOR to the title within the \IEEEtitleabstractindextext IEEEtran
 % command as these need to go into the title area created by \maketitle.
@@ -479,10 +481,8 @@ Deep reinforcement learning (RL) algorithms can learn complex robotic skills fro
 Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predictive Control
 \end{IEEEkeywords}}
 
-
 % make the title area
 \maketitle
-
 
 % To allow for easy dual compilation without having to reenter the
 % abstract/keywords data, the \IEEEtitleabstractindextext text will
@@ -621,7 +621,8 @@ Frederik Ebert received a BS in Mechatronics and Information Technology as well 
 
 % if you will not have a photo at all:
 \begin{IEEEbiographynophoto}{Chelsea Finn}
-Chelsea Finn is currently a research scientist at Google Brain and a post-doctoral scholar at UC Berkeley, and will join the Computer Science faculty at Stanford University in 2019. %Her research focuses on algorithms that can enable agents to autonomously learn a range of complex skills. She received a BS in Electrical Engineering and Computer Science from MIT and a PhD in Computer Science from UC Berkeley.
+Chelsea Finn is currently a research scientist at Google Brain and a post-doctoral scholar at UC Berkeley. %, and will join the Computer Science faculty at Stanford in 2019. %Her research focuses on algorithms that can enable agents to autonomously learn a range of complex skills. 
+She received a BS in Electrical Engineering and Computer Science from MIT and a PhD in Computer Science from UC Berkeley.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
@@ -641,12 +642,12 @@ Annie Xie is pursuing a B.S. degree in Electrical Engineering and Computer Scien
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Alex Lee}
-	Alex Lee received a BS in Electrical Engineering and Computer Science from UC Berkeley in 2013, and he is currently pursuing a PhD in Computer Science from UC Berkeley. %His work focuses on algorithms that can enable robots to learn complex sensorimotor skills.
+	Alex Lee received a BS in Electrical Engineering and Computer Science from UC Berkeley and is currently pursuing a PhD in Computer Science from UC Berkeley. %His work focuses on algorithms that can enable robots to learn complex sensorimotor skills.
 \end{IEEEbiographynophoto}
 \vskip -13mm
 
 \begin{IEEEbiographynophoto}{Sergey Levine}
-Sergey Levine received a BS and MS in Computer Science from Stanford University in 2009, and a Ph.D. in Computer Science from Stanford University in 2014. He joined the faculty of the Department of Electrical Engineering and Computer Sciences at UC Berkeley in fall 2016. %His work focuses on machine learning for decision making and control, with an emphasis on deep learning and reinforcement learning algorithms.
+Sergey Levine received a BS and MS in Computer Science from Stanford, and a Ph.D. in Computer Science from Stanford. He is currently on the faculty of the Department of Electrical Engineering and Computer Sciences at UC Berkeley. %His work focuses on machine learning for decision making and control, with an emphasis on deep learning and reinforcement learning algorithms.
 \end{IEEEbiographynophoto}
 
 % You can push biographies down or up by placing
