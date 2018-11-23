@@ -30,6 +30,13 @@ We provide an example of the skip connection neural advection (SNA) model recove
 	\label{fig:pix_reappear}
 \end{figure}
 
+
+\edit{
+\section{Improved Action Sampling Distributions for Data Collection}
+\label{sec:folding_sampling}
+In order to collect meaningful interaction data for learning folding of deformable objects such as towels and cloth, we found that the grasping primitive can be slightly adapted to increase the likelihood of encountering states where cloths are actually folded. When using actions sampled from a simple distribution or the previously-described distribution, clothing would become tangled up. To improve the efficiency of folding cloths we use an action primitive similar to the grasping primitive, but additionally we reduce lateral motion of the end-effector when the gripper is close to the table, thus reducing events where cloths become tangled up.
+}
+
 \section{Improvements of the CEM-Optimizer}
 \label{sec:cem_improv}
 In the model-predictive control setting, the action sequences found by the optimizer can be very different between execution real-world times steps. For example at one time step the optimizer might find a pushing action leading towards the goal and in the next time step it determines a grasping action to be optimal to reach the goal. Na\"{i}ve replanning at every time step can then result in alternating between a pushing and a grasping attempt indefinitely causing the agent to get stuck and not making any progress towards to goal. 
