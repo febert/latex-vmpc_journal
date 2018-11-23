@@ -1,7 +1,7 @@
 \section{Experimental Evaluation}
 \label{sec:experiments}
 In this section we present both qualitative and quantitative  performance evaluations of visual MPC on various manipulation tasks assessing the degree of generalization and comparing different prediction models and cost functions and with a hand-crafted baseline.
-In figures \ref{fig:example_traj} and \ref{fig:tile_2} we present a set of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks.
+In Figures \ref{fig:example_traj} and \ref{fig:tile_2} we present a set of qualitative experiments showing that visual MPC trained fully self-supervised is capable of solving a wide range of complex tasks.
 Videos for the qualitative examples are at the following webpage\footnote{https://sites.google.com/view/visualforesight/}.
 %%SL.11.21: make sure this URL is correct and consistent throughout the paper
 In order to perform quantitative comparisons, we define a set of tasks where the robot is required to move object(s) into a goal configuration. For measuring success, we use a distance-based evaluation where a human annotates the positions of the objects after pushing allowing us to compute the remaining distance to the goal.
@@ -67,7 +67,7 @@ We use four different object arrangements with two training objects and two obje
 	\label{table:res_long_short}
 \end{table}
 In this section we ask: How important  is it to update the model's belief of where the target objects currently are? 
-We first provide two qualitative examples: In example (1) of figure \ref{fig:example_traj}
+We first provide two qualitative examples: In example (1) of Figure \ref{fig:example_traj}
 %%SL.11.21: capitalize "figure" (because Figure 1 is the "name" of the figure)
 the task is to bring the stuffed animal to a particular location in 3D-space on the other side of the arena. To test the system's reaction to perturbations that could be encountered in open-world settings, during execution a person knocks the object out of the robot's hand. The experiment shows that visual MPC is able to naturally perform a new grasp attempt and bring the object to the goal.
 %%SL.11.21: I'm not sure how to interpret this -- where is it shown that visual MPC can perform a new grasp? the figure certainly doesn't show it. Is it shown in the video? if so reference the video
@@ -105,7 +105,7 @@ all methods perform comparably. Thus, theses results demonstrate the importance 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\columnwidth]{images_cls/cls_results.jpeg}
+	\includegraphics[width=1.0\columnwidth]{images_cls/cls_results_2.jpeg}
 	\caption{\small Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning.}
 	\label{fig:cls_results}
 	\vspace{-0.3cm}
@@ -123,18 +123,7 @@ We qualitatively visualize the tasks in Figure~\ref{fig:cls_results}. On the lef
 
 We quantitatively evaluate the three cost functions across 20 tasks, including $10$ unique object pairs. A task was considered successfully completed if more than half of the object was correctly positioned relative to the other. The results, shown in Figure~\ref{fig:cls_charts}, indicate that the distance-based metrics struggle to infer the goal of the task, while our approach leads to substantially more successful behavior on average.
 
-
 %%SL.10.16: what is the conclusion from all this? how do the different methods of specifying costs stack up?
-
-%%SL.10.16: where are qualitative results and discussion of cloth?
-
-%%addressed comments
-%%SL.10.16: you mean the method *in this paper*?
-
-% \todo{explain how exactly you measure success} 
-
-
-
 
 \begin{figure}
     \centering
@@ -147,20 +136,20 @@ We quantitatively evaluate the three cost functions across 20 tasks, including $
 
 \subsection{Evaluating Multi-Task Performance}
 \label{subsec:multi_task_bench}
-One of the key motivations for visual MPC is to build a system that can solve a \emph{wide variety} of different tasks, involving completely different objects, physics and semantics.
-%%SL.11.21: I don't think semantics is quite the right term here. Maybe say "objects, physical properties, and smenatic objectives" or something? Still non-ideal though, if you can find a way to avoid "semantic" altogether, that would be better. Stylistically, I also prefer having an Oxford comma (you can omit it if you prefer, but I do think it makes writing clearer in English).
-Examples for tasks that can be solved with visual MPC are shown in figure \ref{fig:example_traj}
+One of the key motivations for visual MPC is to build a system that can solve a \emph{wide variety} of different tasks, involving completely different objects, physics and, objectives.
+%%SL.11.21: I don't think semantics is quite the right term here. Maybe say "objects, physical properties, and smenatic objectives" or something? Still non-ideal though, if you can find a way to avoid "semantic" altogether, that would be better. 
+Examples for tasks that can be solved with visual MPC are shown in Figure \ref{fig:example_traj}
 %%SL.11.21: The word "figure" should be capitalized, Figure 1 is the "name" of the figure with the number 1, hence it is uppercase. Also, it's a bit awkward to reference a figure on the first page, but I guess there is nothing we can do about it here?
-and \ref{fig:tile_2}. Task 1 in Figure~\ref{fig:example_traj} shows a ``placing task" where an object needs to be grasped and placed onto a plate while not displacing the plate. Task 2 is an object rearrangement tasks. In Task 3, a towel needs to be wrapped around an object while keeping the object stationary. The example shown in Task 4 and all examples in Figure \ref{fig:cls_results} show relative object rearrangement tasks. Examples 5 and 6 show the same 3D object positioning tasks from different views. In Task 7, the goal is to move the black object to the goal location while avoiding the obstacle in the middle which is marked with a designated- and goal pixel. Task 8 requires folding a pair of shorts.
-%%SL.11.21: The pictures don't really convey what is going on very well, maybe you can add something like: For a full illustration of each of these tasks, we encourage the reader to watch the supplementary video. [or put in the URL or whatever]
+and \ref{fig:tile_2}. Task 1 in Figure~\ref{fig:example_traj} shows a ``placing task" where an object needs to be grasped and placed onto a plate while not displacing the plate. Task 2 is an object rearrangement tasks. The example shown in Task 4 and all examples in Figure \ref{fig:cls_results} show relative object rearrangement tasks. Examples 5 and 6 show the same 3D object positioning tasks from different views. In Task 7, the goal is to move the black object to the goal location while avoiding the obstacle in the middle which is marked with a designated- and goal pixel. 
+
+\edit{We also demonstrate that visual MPC -- without modifications to the algorithm -- solves tasks involving deformable objects such as a task where a towel needs to be wrapped around an object (Task 3), or folding a pair of shorts (Task 8). To the best of our knowledge this is the first algorithm for robotic manipulation handling both rigid and deformable objects.
+
+For a full illustration of each of these tasks, we encourage the reader to watch the supplementary video.}
 
 The generality of visual MPC mainly stems from two components --- the generality of the visual dynamics model and the generality of the task definition.
-We found that the dynamics model often generalizes well to objects outside of the training set, if they have similar properties to the objects it was trained with. For example, Task 4 in figure \ref{fig:tile_2} shows the model predicting a pair of shorts being folded. The model never seen shorts during training, towels and shirts were the only clothing items that were part of the training set. In all of these qualitative examples, the predictions are performed by the same model, and the objects are always new objects that were not seen in the training set.
-%%SL.11.21: I revised the above sentence, can you check if this is correct?
-The other source of flexibility for our method is the ability to specific tasks in multiple different ways. Using designated pixels, object positioning tasks can be defined in 3D space, as shown in Task 1 and 2 in Figure~\ref{fig:example_traj} and Tasks 3-5 in Figure~\ref{fig:tile_2}. When adding a goal image, the positioning accuracy can be improved by utilizing the registration scheme discussed in Section X.
-%%SL.11.21: Fill in section number.
-For tasks where we care about \emph{relative} rather than absolute positioning, a meta-learned classifier can be used, as discussed in Section Y.
-%%SL.11.21: Fill in section number
+We found that the dynamics model often generalizes well to objects outside of the training set, if they have similar properties to the objects it was trained with. For example, Task 8 in Figure \ref{fig:tile_2} shows the model predicting a pair of shorts being folded. The model has never seen shorts during training, towels and shirts were the only clothing items that were part of the training set. In all of these qualitative examples, the predictions are performed by the same model, and the objects are always new objects that were not seen in the training set.
+The other source of flexibility for our method is the ability to specify tasks in multiple different ways. Using designated pixels, object positioning tasks can be defined in 3D space, as shown in Task 1 and 2 in Figure~\ref{fig:example_traj} and task 5-6 in Figure~\ref{fig:tile_2}. When adding a goal image, the positioning accuracy can be improved by utilizing the registration scheme discussed in Section \ref{subsec:reg_cost}.
+For tasks where we care about \emph{relative} rather than absolute positioning, a meta-learned classifier can be used, as discussed in Section \ref{subsec:class_cost}.
 
 Next, we present a quantitative evaluation to answer the following question: How does visual MPC compare to a hand-engineered baseline on a large number of diverse tasks?
 

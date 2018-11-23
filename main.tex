@@ -28,6 +28,8 @@
 
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
+
+
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
@@ -80,7 +82,10 @@
 
 \input{defs.tex}
 
+\usepackage{xcolor}  % for colored text
 \providecommand\todo[1]{\textcolor{Red}{#1}}
+\providecommand\edit[1]{\textcolor{blue}{#1}}
+
 
 
 % *** CITATION PACKAGES ***
@@ -296,10 +301,9 @@
 % Instead, use Morten Hogholm'a dblfloatfix which combines the features
 % of both fixltx2e and stfloats:
 %
-% \usepackage{dblfloatfix}
+\usepackage{dblfloatfix}
 % The latest version can be found at:
 % http://www.ctan.org/pkg/dblfloatfix
-
 
 
 
@@ -462,8 +466,6 @@
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
 
-
-
 % for Computer Society papers, we must declare the abstract and index terms
 % PRIOR to the title within the \IEEEtitleabstractindextext IEEEtran
 % command as these need to go into the title area created by \maketitle.
@@ -479,10 +481,8 @@ Deep reinforcement learning (RL) algorithms can learn complex robotic skills fro
 Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predictive Control
 \end{IEEEkeywords}}
 
-
 % make the title area
 \maketitle
-
 
 % To allow for easy dual compilation without having to reenter the
 % abstract/keywords data, the \IEEEtitleabstractindextext text will

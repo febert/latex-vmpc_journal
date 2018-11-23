@@ -5,7 +5,6 @@
 %the above paragraph should have some citations -- what's the point of having a related work paragraph that doesn't actually summarize any related work?
 %%CF.11.15: This above paragraph doesn't really do anything to discuss how our work is distinct from the cited works on intrinsic motivation... Why is our method better. I also don't think these references are the best choices for reward-free learning. Pathak et al. is conflicted. 
 
-%%SL.10.15: We need a paragraph about model-based RL somewhere here. Maybe something like this:
 \noindent \textbf{Model-based reinforcement learning.} Learning a model to predict the future, and then using this model to act, falls under the general umbrella of model-based reinforcement learning. Model-based RL algorithms are generally known to be more efficient than model-free methods~\cite{deisenroth2013survey}, and have been used with both low-dimensional~\cite{deisenroth2011pilco} and high-dimensional~\cite{deep_mpc} model classes. However, model-based RL methods that directly operate on raw image frames have not been studied as extensively. Several algorithms have been proposed for simple, synthetic images~\cite{watter2015embed} and video game environments~\cite{alexey, ha2018world, atarioh}, but have not been evaluated on generalization or in the real world, while other work has also studied model-based RL for individual robotic skills~\cite{dsae,zhang2018solar}. In contrast to these works, we place special emphasis on \emph{generalization}, studying how predictive models can enable a real robot to manipulate previously unseen objects and solve new tasks.
 Several prior works have also sought to learn inverse models that map from pairs of observations to actions, which can then be used greedily to carry out short-horizon tasks~\cite{agrawal2016learning,nair2017combining}. However, such methods do not directly construct longer-term plans, relying instead on greedy execution. In contrast, our method learns a forward model, which can be used to plan out a sequence of actions to achieve a user-specified goal.
 
@@ -18,7 +17,7 @@ Several prior works have also sought to learn inverse models that map from pairs
 %%SL.11.11: cut the above, moved to sensory prediction (it's not a robot learning paper, because there is no robot learning)
 
 \noindent \textbf{Self-supervised robotic learning.}
-A number of recent works have studied self-supervised robotic learning, where large-scale unattended data collection is used to learn individual skills such as grasping~\cite{mottaghi2016happens, lerrel,google_handeye, calandra2017feeling,pinto2016curious} or obstacle avoidance~\cite{greg_kahn_uncertainty,crashing}. 
+A number of recent works have studied self-supervised robotic learning, where large-scale unattended data collection is used to learn individual skills such as grasping~\cite{mottaghi2016happens, lerrel,google_handeye, calandra2017feeling,pinto2016curious}, push-grasp synergies~\cite{zeng2018learning}, or obstacle avoidance~\cite{greg_kahn_uncertainty,crashing}. 
 In contrast to these methods, our approach learns predictive models that can be used to perform a variety of manipulation skills, and does not require a success measure, event indicator, or reward function during data collection.
 
 \noindent \textbf{Sensory prediction models.}
