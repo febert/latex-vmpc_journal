@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -8,87 +8,87 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mybib.bib
-Repeated entry---line 295 of file mybib.bib
+Repeated entry---line 302 of file mybib.bib
  : @inproceedings{dsae
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 904 of file mybib.bib
+Repeated entry---line 911 of file mybib.bib
  : @article{google_handeye
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 911 of file mybib.bib
+Repeated entry---line 918 of file mybib.bib
  : @article{alexey
  :                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 927 of file mybib.bib
+Repeated entry---line 934 of file mybib.bib
  : @inproceedings{dsae
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1095 of file mybib.bib
+Repeated entry---line 996 of file mybib.bib
+ : @inproceedings{deep_mpc
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1102 of file mybib.bib
  : @article{crashing
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1102 of file mybib.bib
+Repeated entry---line 1109 of file mybib.bib
  : @article{greg_kahn_uncertainty
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1109 of file mybib.bib
+Repeated entry---line 1116 of file mybib.bib
  : @inproceedings{vondrick
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1123 of file mybib.bib
+Repeated entry---line 1130 of file mybib.bib
  : @inproceedings{convlstm
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1130 of file mybib.bib
+Repeated entry---line 1137 of file mybib.bib
  : @article{beyond_mse
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1153 of file mybib.bib
+Repeated entry---line 1160 of file mybib.bib
  : @article{prednet
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1196 of file mybib.bib
+Repeated entry---line 1203 of file mybib.bib
  : @inproceedings{bootsetal
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1211 of file mybib.bib
+Repeated entry---line 1218 of file mybib.bib
  : @article{scott_reed
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1218 of file mybib.bib
+Repeated entry---line 1225 of file mybib.bib
  : @article{se3
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1225 of file mybib.bib
+Repeated entry---line 1232 of file mybib.bib
  : @article{recurrentsimulators
  :                             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1232 of file mybib.bib
+Repeated entry---line 1239 of file mybib.bib
  : @inproceedings{dynamic_filter_networks
  :                                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1248 of file mybib.bib
+Repeated entry---line 1255 of file mybib.bib
  : @inproceedings{atarioh
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1271 of file mybib.bib
+Repeated entry---line 1278 of file mybib.bib
  : @article{video_pixel_networks
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1512 of file mybib.bib
+Repeated entry---line 1519 of file mybib.bib
  : @article{e2e
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1525 of file mybib.bib
- : @article{ropes
- :               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1539 of file mybib.bib
+Repeated entry---line 1546 of file mybib.bib
  : @article{maml
  :              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1571 of file mybib.bib
+Repeated entry---line 1578 of file mybib.bib
  : @article{ADAM
  :              ,
 I'm skipping whatever remains of this entry
@@ -97,45 +97,45 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 53 entries,
+You've used 47 entries,
             4087 wiz_defined-function locations,
-            1055 strings with 17141 characters,
-and the built_in function-call counts, 32796 in all, are:
-= -- 2364
-> -- 1085
-< -- 131
-+ -- 547
-- -- 232
-* -- 1536
-:= -- 4949
-add.period$ -- 113
-call.type$ -- 53
-change.case$ -- 52
-chr.to.int$ -- 327
-cite$ -- 53
-duplicate$ -- 2544
-empty$ -- 2976
-format.name$ -- 283
-if$ -- 7625
+            1032 strings with 15944 characters,
+and the built_in function-call counts, 28485 in all, are:
+= -- 2062
+> -- 920
+< -- 108
++ -- 461
+- -- 197
+* -- 1334
+:= -- 4345
+add.period$ -- 102
+call.type$ -- 47
+change.case$ -- 47
+chr.to.int$ -- 267
+cite$ -- 47
+duplicate$ -- 2229
+empty$ -- 2604
+format.name$ -- 242
+if$ -- 6611
 int.to.chr$ -- 0
-int.to.str$ -- 53
-missing$ -- 510
-newline$ -- 184
-num.names$ -- 53
-pop$ -- 1399
+int.to.str$ -- 47
+missing$ -- 444
+newline$ -- 166
+num.names$ -- 47
+pop$ -- 1215
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2484
+skip$ -- 2157
 stack$ -- 0
-substring$ -- 812
-swap$ -- 1718
-text.length$ -- 22
+substring$ -- 667
+swap$ -- 1485
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 53
+type$ -- 47
 warning$ -- 0
-while$ -- 105
-width$ -- 55
-write$ -- 470
+while$ -- 91
+width$ -- 49
+write$ -- 420
 (There were 21 error messages)
