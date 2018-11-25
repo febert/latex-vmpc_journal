@@ -1,41 +1,25 @@
 \section{Planning Cost Functions}
 \label{sec:cost}
-In this section we present three different kinds of goal specification mechanisms that may be used with visual MPC, and discuss their tradeoffs.
+In this section we present three different kinds of goal specification mechanisms and cost functions that may be used for planning with visual MPC, and discuss their tradeoffs.
 
-%%SL.10.15: Don't leave dangling sections like this without any text. Add a transition here to explain what this section is for and what comes next.
+\edit{
+One na\"{i}ve approach for the cost function could be to use the pixel-wise error, such as MSE, between a \emph{goal image} and the \emph{predicted image}. However there is a severe issue with this approach: Large objects in the image such as the arm would dominate the cost, therefore a common failure mode is that the planner matches the position of the arm with the position in the goal image, ignoring the smaller objects.}
 
 \subsection{Pixel-Distance Cost}
 \label{subsec:pixel_dist_cost}
-A convenient way to define a robot task is by choosing one or more pixels in the robot's camera view and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left. The advantage of this type of task definition is that success can be measured quantitatively in a straight-forward way, as detailed in section \ref{sec:experiments}.
-%%SL.10.15: I think this needs more justification and motivation.
-%%SL.11.21: I still think this needs more motivation -- saying we do this just b/c it's easy to evaluate is rather unsatisfying. Maybe we can say something like: This type of objective is general, in that it can specify any object relocation task, and very easy for a person to specify.
-
-% Formally, the user specifies $P$ source pixel locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ in the initial image $I_0$, and $P$ goal locations $\goal^{(1)}, \dots, \goal^{(P)}$. The source and goal pixel locations are denoted by the coordinates $(x_d^{(i)}, y_d^{(i)})$ and $(x_g^{(i)}, y_g^{(i)})$. Given a goal, the robot plans for a sequence of actions $\action_{1:T}$ over $T$ time steps, where $T$ is the planning horizon. For this type of task definition the problem is formulated as the minimization of a cost function $c$ which depends on the predicted pixel positions $d_t^{(j)}$. The planner makes use of a learned model that predicts a distribution over the pixel position by internally predicting pixel transformations. 
+A convenient way to define a robot task is by choosing one or more pixels in the robot's camera view and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left. \edit{This type of objective is general, in that it can define any object relocation task, while being easy to specify by  the user through clicks. Also success can be measured quantitatively in a straight-forward way, as detailed in section \ref{sec:experiments}.}
  
-Given a distribution over pixel positions $P_0$ at time $t = 0$, our model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$. One way of defining the cost per time-step $c_t$ is by using the expected euclidean
-%%SL.11.21: euclidean should be capitalized
-distance to the goal point $d_g$, which is straight-forward to calculate from $P_t$ and $g$, as follows:
+Given a distribution over pixel positions $P_0$ at time $t = 0$, our model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$. One way of defining the cost per time-step $c_t$ is by using the expected Euclidean distance to the goal point $d_g$, which is straight-forward to calculate from $P_t$ and $g$, as follows:
  \begin{align}
 c = \sum_{t = 1, \dots, T} c_t =  \sum_{t = 1, \dots, T} \mathbb{E}_{\hat{d}_{t} \sim P_{t}} \left[\|\hat{d}_{t} - d_{g}\|_2\right] 
  \label{eq:cost}
  \end{align}
-The per time-step costs $c_t$ are summed together giving the overall planing objective $c$. 
-%An alternative choice for the cost function is to evaluate $P_{t}$ at the position of the goal-point, which describes as how likely the model predicts an action sequence will hit the goal \emph{exactly}, we call this method \emph{goal-point evaluation}:
-% \begin{align}
-% c = \sum_{t = 1, \dots, T} P_t(g)
-% \label{eq:goal_point_eval}
-% \end{align}
-The expected distance to the goal provides a smooth planning objective and enables longer-horizon tasks, since this cost function encourages movement of the designated objects into the right direction for each step of the execution, regardless of whether the goal-position can be reached within $T$ time steps or not. This cost also makes use of the uncertainty estimates of the predictor, when computing the expected distance to the goal. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together, and optionally weighted according to a scheme discussed in \autoref{subsec:reg_cost}.  
+The per time-step costs $c_t$ are summed together giving the overall planing objective $c$. The expected distance to the goal provides a smooth planning objective and enables longer-horizon tasks, since this cost function encourages movement of the designated objects into the right direction for each step of the execution, regardless of whether the goal-position can be reached within $T$ time steps or not. This cost also makes use of the uncertainty estimates of the predictor, when computing the expected distance to the goal. For multi-objective tasks with multiple designated pixels $d^{(i)}$ the costs are summed to together, and optionally weighted according to a scheme discussed in \autoref{subsec:reg_cost}.  
 
 \subsection{Registration-Based Cost}
 \label{subsec:reg_cost}
-When using pixel distance-based cost functions it is necessary to know the initial locations $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ at each time-step.
-%%SL.11.21: This is a bit confusing -- you say initial location at each time step. Initial relative to what? I think what you are implying is that you need to know the position at the beginning of each planning stage, but this is not at all clear since the reader won't be thinking about MPC at this point. Maybe just say you need to know the current location?
-To update the belief of where the target object currently is, we register the current image to the start and optionally also to a \emph{goal image}, where the designated pixels are marked by the user. Adding a goal-image can make visual MPC
-more precise, since when the target object is close to the goal position, registration to the goal-image greatly improves the position estimate of the designated pixel. Crucially, the registration method we introduce is self-supervised, using the same exact data for training the video prediction model and the registration model. This allows both the predictor and registration model to continuously improve as the robot collects more data.
-
-Before further detailing our learned registration system, we discuss a simple alternative approach for obtaining a cost-function for video-prediction based control: One na\"{i}ve approach could be to use the pixel-wise error, such as MSE, between a \emph{goal image} and the \emph{predicted image}. However there is a severe issue with this approach: When objects in the image are far from the position in the goal image (e.g., they do not overlap) there is no gradient signal with respect to changes in the actions, therefore optimization becomes impractical. 
-%%SL.11.21: This is a good discussion to have, but it feels really out of place here. And it's kind of floating in a vacuum without context. What I might suggest is to shorten it, and maybe move it somewhere else (earlier?)
+\edit{When using pixel distance-based cost functions it is necessary to know the \emph{current} location of the object,  $\pixel_0^{(1)}, \dots, \pixel_0^{(P)}$ at each time-step, so that the model can predict the positions of this particular pixel from the current step forward.}
+To update the belief of where the target object currently is, we register the current image to the start and optionally also to a \emph{goal image}, where the designated pixels are marked by the user. Adding a goal-image can make visual MPC more precise, since when the target object is close to the goal position, registration to the goal-image greatly improves the position estimate of the designated pixel. Crucially, the registration method we introduce is self-supervised, using the same exact data for training the video prediction model and the registration model. This allows both the predictor and registration model to continuously improve as the robot collects more data.
 
 \begin{figure}
 	\centering
@@ -183,5 +167,3 @@ By incorporating an image of the goal, we can also add a registration mechanism 
 
 The classifier-based cost function allows for solving more abstract tasks where the absolute positions of an object is not relevant, such as positioning a cup in front of a plate, irrespective of where the plate is.  Providing a few example images takes more effort than specifying pixel locations but allows a broader range of goal sets to be specified.
 
-%%SL.10.15: This is rather... terse. Maybe that's OK not to be too verbose, but the section somehow feels a bit unfinished.
-%%CF.11.20: I agree. I made a bunch of changes to make it less terse.

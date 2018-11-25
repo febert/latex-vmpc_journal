@@ -301,7 +301,7 @@
 % Instead, use Morten Hogholm'a dblfloatfix which combines the features
 % of both fixltx2e and stfloats:
 %
-\usepackage{dblfloatfix}
+% \usepackage{dblfloatfix}
 % The latest version can be found at:
 % http://www.ctan.org/pkg/dblfloatfix
 
@@ -357,7 +357,8 @@
 % http://www.ctan.org/pkg/url
 % Basically, \url{my_url_here}.
 
-
+\usepackage{babel}
+\usepackage{cuted}
 
 
 
@@ -407,7 +408,7 @@
 % Sensory Prediction Models for Real-World Reinforcement Learning
 % Sensory Prediction Models for Real-World Deep Reinforcement Learning
 
-\author{Frederik Ebert*, Chelsea Finn*, Annie Xie, Sudeep Dasari, Alex Lee, Sergey Levine
+\author{Frederik Ebert*, Chelsea Finn*, Sudeep Dasari, Annie Xie, Alex Lee, Sergey Levine
 %Frederik Ebert, Chelsea Finn, Alex Lee, Annie Xie, Sudeep Dasari, Sergey Levine
         
 \IEEEcompsocitemizethanks{
@@ -483,6 +484,16 @@ Deep Reinforcement Learning, Video Prediction, Robotic Manipulation, Model Predi
 
 % make the title area
 \maketitle
+\begin{strip}
+     \centering\noindent
+     \includegraphics[width=2\columnwidth]{images_general/tile_row.png}
+	\captionof{figure}{Our approach trains a single model that generalizes to a wide range of tasks and objects, while allowing flexibility in goal specification and both rigid and deformable objects not seen during training. Each row shows an example trajectory. From left to right, we show the task definition, the video predictions for the planned actions, and the actual executions. 
+	Tasks can be defined as moving pixels corresponding to objects, providing a goal image, or providing a few example goals.
+	%Here a task is defined by moving an object marked by a designated pixel, shown by a red dot to a goal position shown by a green dot. A goal-image with the desired goal-configuration can be provided both in combination with a designated pixel or instead of it.
+	Best viewed in PDF. \\ \\}
+	\label{fig:example_traj}
+\end{strip}
+\vspace{10mm}
 
 % To allow for easy dual compilation without having to reenter the
 % abstract/keywords data, the \IEEEtitleabstractindextext text will
