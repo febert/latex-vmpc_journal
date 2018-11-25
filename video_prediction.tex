@@ -19,7 +19,7 @@ Here, the bilinear sampling operator $\diamond$ interpolates the pixel values bi
 by performing gradient descent on a mean-squared error image reconstruction loss, denoted by $\mathcal{L}$ in figure \ref{fig:prediction_model}.
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth]{images_sna/occlusionaware/architecture.pdf}
+    \includegraphics[width=\columnwidth]{images_sna/occlusionaware/architecture_2.pdf}
     \caption{\small{Forward pass through the recurrent SNA model. The red arrow indicates where the image from the first time step $I_0$ is concatenated with the transformed images $\hat{F}_{t+1 \leftarrow t} \diamond  \hat{I}_t $ multiplying each channel with a separate mask to produce the predicted frame for step $t+1$.}}      \label{fig:occlusion_model}
 \end{figure}
 

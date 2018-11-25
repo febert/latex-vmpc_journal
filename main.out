@@ -17,7 +17,7 @@
 \BOOKMARK [2][-]{subsection.9.4}{Evaluating Multi-Task Performance}{section.9}% 17
 \BOOKMARK [2][-]{subsection.9.5}{Discussion of Experimental Results}{section.9}% 18
 \BOOKMARK [1][-]{section.10}{Conclusion}{}% 19
-\BOOKMARK [1][-]{section*.16}{References}{}% 20
+\BOOKMARK [1][-]{section*.15}{References}{}% 20
 \BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 21
 \BOOKMARK [2][-]{IEEEbiography.1}{Frederik Ebert}{IEEEbiography.0}% 22
 \BOOKMARK [2][-]{IEEEbiography.2}{Chelsea Finn}{IEEEbiography.0}% 23
@@ -25,10 +25,10 @@
 \BOOKMARK [2][-]{IEEEbiography.4}{Sudeep Dasari}{IEEEbiography.0}% 25
 \BOOKMARK [2][-]{IEEEbiography.5}{Alex Lee}{IEEEbiography.0}% 26
 \BOOKMARK [2][-]{IEEEbiography.6}{Sergey Levine}{IEEEbiography.0}% 27
-\BOOKMARK [1][-]{section*.17}{Appendix A: Skip Connection Neural Advection Model}{}% 28
-\BOOKMARK [1][-]{section*.20}{Appendix B: Improved Action Sampling Distributions for Data Collection}{}% 29
-\BOOKMARK [1][-]{section*.21}{Appendix C: Improvements of the CEM-Optimizer}{}% 30
-\BOOKMARK [1][-]{section*.22}{Appendix D: Experimental Setup}{}% 31
-\BOOKMARK [1][-]{section*.23}{Appendix E: Experimental Evaluation}{}% 32
-\BOOKMARK [2][-]{subsection.Appendix.E.1}{Experiments with multiple-objects rearrangement with occlusion}{section*.23}% 33
-\BOOKMARK [1][-]{section*.27}{Appendix F: Simulated Experiments}{}% 34
+\BOOKMARK [1][-]{section*.16}{Appendix A: Skip Connection Neural Advection Model}{}% 28
+\BOOKMARK [1][-]{section*.19}{Appendix B: Improved Action Sampling Distributions for Data Collection}{}% 29
+\BOOKMARK [1][-]{section*.20}{Appendix C: Improvements of the CEM-Optimizer}{}% 30
+\BOOKMARK [1][-]{section*.21}{Appendix D: Experimental Setup}{}% 31
+\BOOKMARK [1][-]{section*.22}{Appendix E: Experimental Evaluation}{}% 32
+\BOOKMARK [2][-]{subsection.Appendix.E.1}{Experiments with multiple-objects rearrangement with occlusion}{section*.22}% 33
+\BOOKMARK [1][-]{section*.26}{Appendix F: Simulated Experiments}{}% 34
