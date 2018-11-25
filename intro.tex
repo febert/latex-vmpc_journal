@@ -1,14 +1,6 @@
 \IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
   
-\begin{figure*}
-	\centering
-	\includegraphics[width=2\columnwidth,trim={0mm 0 0 0},clip]{images_general/tile_row.png}
-	\caption{Our approach trains a single model that generalizes to a wide range of tasks and objects, while allowing flexibility in goal specification and both rigid and deformable objects not seen during training. Each row shows an example trajectory. From left to right, we show the task definition, the video predictions for the planned actions, and the actual executions. 
-	Tasks can be defined as moving pixels corresponding to objects, providing a goal image, or providing a few example goals.
-	%Here a task is defined by moving an object marked by a designated pixel, shown by a red dot to a goal position shown by a green dot. A goal-image with the desired goal-configuration can be provided both in combination with a designated pixel or instead of it.
-	Best viewed in PDF.}
-	\label{fig:example_traj}
-\end{figure*}
+
 Humans are faced with a stream of high-dimensional sensory inputs and minimal external supervision, and yet, are able to learn a range of complex, generalizable skills and behaviors.
 While there has been significant progress in developing deep reinforcement learning algorithms that learn complex skills and scale to high-dimensional observation spaces, such as pixels~\cite{tdgammon,atari,e2e,alphago}, learning behaviors that \emph{generalize} to new tasks and objects remains an open problem.
 The key to generalization is diversity. When deployed in a narrow, closed-world environment, a reinforcement learning algorithm will recover skills that are successful only in a narrow range of settings. 

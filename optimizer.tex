@@ -19,6 +19,11 @@
 	$\mathcal N(\mu^{(i)}, \Sigma^{(i)})$
 \end{varwidth}
 \EndIf
+\State 
+\begin{varwidth}[t]{\linewidth}
+Check if sampled actions are within \par
+admissible range, otherwise resample
+\end{varwidth}
 \State  \begin{varwidth}[t]{\linewidth}
 	Use model $g$ to predict future sequences of images $\hat{I}_{t:t+H-1}$ and probability distributions $\hat{P}_{t:t+H-1}$
 \end{varwidth}
@@ -35,8 +40,10 @@
 
 
 \label{sec:optimizer}
-The role of the optimizer is to find actions sequences $a_{1:T}$ that minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$. We use a simple stochastic optimization procedure for this, based on the cross-entropy method (CEM), a gradient-free optimization procedure.
-CEM consists of iteratively resampling action sequences and refitting Gaussian distributions to the actions with the best predicted cost. Algorithm \ref{alg:opt} illustrates this process.
+The role of the optimizer is to find actions sequences $a_{1:T}$ that minimize the sum of the costs $c_{1:T}$ along the planning horizon $T$. We use a simple stochastic optimization procedure for this, based on the cross-entropy method (CEM), a gradient-free optimization procedure. CEM consists of iteratively resampling action sequences and refitting Gaussian distributions to the actions with the best predicted cost.
 
-Although a variety of trajectory optimization methods may be suitable, this gradient-free, stochastic optimization procedure allows us to easily ensure that actions stay within the distribution of actions the model has encountered during training. This is crucial to ensure that the model does not receive out-of-distribution inputs and makes valid predictions. In the appendix \ref{sec:cem_improv} we present a few improvements we made to the CEM optimizer for visual MPC.
+\edit{
+Although a variety of trajectory optimization methods may be suitable, one advantage of the stochastic optimization procedure is that it allows us to easily ensure that actions stay within the distribution of actions the model encountered during training. In practice this is achieved by defining admissible ranges for each dimension of the action vector and rejecting a sample if it is outside of the admissible range This is crucial to ensure that the model does not receive out-of-distribution inputs and makes valid predictions.  Algorithm \ref{alg:opt} illustrates the planning process.
+
+In the appendix \ref{sec:cem_improv} we present a few improvements we made to the CEM optimizer for visual MPC.}
 %%SL.11.21: This paragraph confuses me. How does gradient-free stochastic optimization constrain the optimizer to stay within the distribution of training states? Without any explanation of a mechanism, this paragraph is not very convincing. My suggestion would be to either list different reasons for using CEM, or provide a more convincing justification.
