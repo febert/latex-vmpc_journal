@@ -59,17 +59,16 @@
 \citation{sna}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Forward pass through the recurrent SNA model. The red arrow indicates where the image from the first time step $I_0$ is concatenated with the transformed images $\mathaccentV {hat}05E{F}_{t+1 \leftarrow t} \diamond \mathaccentV {hat}05E{I}_t $ multiplying each channel with a separate mask to produce the predicted frame for step $t+1$.}\relax }}{4}{figure.caption.3}}
 \newlabel{fig:occlusion_model}{{4}{4}{\small {Forward pass through the recurrent SNA model. The red arrow indicates where the image from the first time step $I_0$ is concatenated with the transformed images $\hat {F}_{t+1 \leftarrow t} \diamond \hat {I}_t $ multiplying each channel with a separate mask to produce the predicted frame for step $t+1$.}\relax }{figure.caption.3}{}}
-\newlabel{subsec:pixel_trafo}{{4}{4}{Video Prediction for Control}{figure.caption.3}{}}
 \newlabel{eqn:prob_forward}{{3}{4}{Video Prediction for Control}{equation.4.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Planning Cost Functions}{4}{section.5}}
 \newlabel{sec:cost}{{5}{4}{Planning Cost Functions}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Pixel-Distance Cost}{4}{subsection.5.1}}
 \newlabel{subsec:pixel_dist_cost}{{5.1}{4}{Pixel-Distance Cost}{subsection.5.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Closed loop control is achieved by registering the current image $I_t$ globally to the first frame $I_0$ and the goal image $I_g$. In this example registration to $I_0$ succeeds while registration to $I_g$ fails since the object in $I_g$ is too far away.}  \relax }}{5}{figure.caption.4}}
+\newlabel{fig:reg_single}{{5}{5}{\small {Closed loop control is achieved by registering the current image $I_t$ globally to the first frame $I_0$ and the goal image $I_g$. In this example registration to $I_0$ succeeds while registration to $I_g$ fails since the object in $I_g$ is too far away.}  \relax }{figure.caption.4}{}}
 \newlabel{eq:cost}{{5}{5}{Pixel-Distance Cost}{equation.5.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Registration-Based Cost}{5}{subsection.5.2}}
 \newlabel{subsec:reg_cost}{{5.2}{5}{Registration-Based Cost}{subsection.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Closed loop control is achieved by registering the current image $I_t$ globally to the first frame $I_0$ and the goal image $I_g$. In this example registration to $I_0$ succeeds while registration to $I_g$ fails since the object in $I_g$ is too far away.}  \relax }}{5}{figure.caption.4}}
-\newlabel{fig:reg_single}{{5}{5}{\small {Closed loop control is achieved by registering the current image $I_t$ globally to the first frame $I_0$ and the goal image $I_g$. In this example registration to $I_0$ succeeds while registration to $I_g$ fails since the object in $I_g$ is too far away.}  \relax }{figure.caption.4}{}}
 \newlabel{fig:discrete}{{6b}{5}{\small {Training usage.}\relax }{figure.caption.5}{}}
 \newlabel{sub@fig:discrete}{{b}{5}{\small {Training usage.}\relax }{figure.caption.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {(a) At test time the registration network registers the current image $I_t$ to the start image $I_0$ (top) and goal image $I_g$ (bottom), inferring the flow-fields $\mathaccentV {hat}05E{F}_{0 \leftarrow t}$ and $\mathaccentV {hat}05E{F}_{g \leftarrow t}$. (b) The registration network is trained by warping images from randomly selected timesteps along a trajectory to each other. }\relax }}{5}{figure.caption.5}}
@@ -93,6 +92,7 @@
 \newlabel{sec:optimizer}{{6}{7}{Trajectory Optimizer}{algorithm.1}{}}
 \citation{grasping_fetal}
 \citation{foresight}
+\citation{foresight}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Planning in Visual MPC\relax }}{8}{algorithm.1}}
 \newlabel{alg:opt}{{1}{8}{Planning in Visual MPC\relax }{algorithm.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Custom Action Sampling Distributions}{8}{section.7}}
@@ -103,7 +103,8 @@
 \newlabel{fig:robot_setup}{{9}{8}{\small {Robot setup, with 2 standard web-cams arranged at different viewing angles.}\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {9}Experimental Evaluation}{8}{section.9}}
 \newlabel{sec:experiments}{{9}{8}{Experimental Evaluation}{section.9}{}}
-\citation{foresight}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Comparing Video Prediction Architectures}{8}{subsection.9.1}}
+\newlabel{subsec:sna_experiments}{{9.1}{8}{Comparing Video Prediction Architectures}{subsection.9.1}{}}
 \citation{babenko2009visual}
 \citation{sna}
 \citation{babenko2009visual}
@@ -112,8 +113,6 @@
 \newlabel{table:mult_obj}{{1}{9}{Results for multi-objective pushing on 8 object/goal configurations with 2 seen and 2 novel objects. Values indicate improvement in distance from starting position, higher is better. Units are pixels in the 64x64 images.\relax }{table.caption.9}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Success rate for long-distance pushing experiment with 20 different object/goal configurations and short-distance experiment with 15 object/goal configurations. Success is defined as bringing the object closer than 15 pixels to the goal, which corresponds to around $7.5cm$.\relax }}{9}{table.caption.10}}
 \newlabel{table:res_long_short}{{2}{9}{\small Success rate for long-distance pushing experiment with 20 different object/goal configurations and short-distance experiment with 15 object/goal configurations. Success is defined as bringing the object closer than 15 pixels to the goal, which corresponds to around $7.5cm$.\relax }{table.caption.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Comparing Video Prediction Architectures}{9}{subsection.9.1}}
-\newlabel{subsec:sna_experiments}{{9.1}{9}{Comparing Video Prediction Architectures}{subsection.9.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Evaluating Registration-Based Cost Functions}{9}{subsection.9.2}}
 \newlabel{susbsec:reg_cost_exp}{{9.2}{9}{Evaluating Registration-Based Cost Functions}{subsection.9.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Object arrangement performance of our goal classifier with distractor objects and with two tasks. The left shows a subset of the 5 positive examples that are provided for inferring the goal classifier(s), while the right shows the robot executing the specified task(s) via visual planning.\relax }}{9}{figure.caption.11}}
@@ -122,10 +121,10 @@
 \newlabel{subsec:eval_classifier}{{9.3}{9}{Evaluating Classifier-Based Cost Function}{subsection.9.3}{}}
 \citation{dsae}
 \citation{dsae}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Evaluating Multi-Task Performance}{10}{subsection.9.4}}
-\newlabel{subsec:multi_task_bench}{{9.4}{10}{Evaluating Multi-Task Performance}{subsection.9.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE\nobreakspace  {}\cite  {dsae}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }}{10}{figure.caption.12}}
 \newlabel{fig:cls_charts}{{11}{10}{\small Quantitative performance of visual planning for object rearrangement tasks across different goal specification methods: our meta-learned classifier, DSAE~\cite {dsae}, and pixel error. Where possible, we include break down the cause of failures into errors caused by inaccurate prediction or planning and those caused by an inaccurate goal classifier.\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Evaluating Multi-Task Performance}{10}{subsection.9.4}}
+\newlabel{subsec:multi_task_bench}{{9.4}{10}{Evaluating Multi-Task Performance}{subsection.9.4}{}}
 \bibstyle{IEEEtran}
 \bibdata{mybib}
 \bibcite{tdgammon}{1}
@@ -146,15 +145,15 @@
 \bibcite{dsae}{16}
 \bibcite{zhang2018solar}{17}
 \bibcite{agrawal2016learning}{18}
+\bibcite{nair2017combining}{19}
+\bibcite{mottaghi2016happens}{20}
+\bibcite{lerrel}{21}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Results for a multi-task experiment of 10 hard object pushing and grasping tasks, along with 6 cloth folding tasks, evaluating using a single model. Values indicate the percentage of trials that ended with the object pixel closer than 15 pixels to the designated goal. Higher is better.\relax }}{11}{table.caption.14}}
 \newlabel{table:cloth_folding}{{3}{11}{Results for a multi-task experiment of 10 hard object pushing and grasping tasks, along with 6 cloth folding tasks, evaluating using a single model. Values indicate the percentage of trials that ended with the object pixel closer than 15 pixels to the designated goal. Higher is better.\relax }{table.caption.14}{}}
 \newlabel{subsec:cloth_folding_data}{{9.4}{11}{Evaluating Multi-Task Performance}{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Discussion of Experimental Results}{11}{subsection.9.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {10}Conclusion}{11}{section.10}}
 \@writefile{toc}{\contentsline {section}{References}{11}{section*.15}}
-\bibcite{nair2017combining}{19}
-\bibcite{mottaghi2016happens}{20}
-\bibcite{lerrel}{21}
 \bibcite{google_handeye}{22}
 \bibcite{calandra2017feeling}{23}
 \bibcite{pinto2016curious}{24}
@@ -183,19 +182,21 @@
 \bibcite{todorov2012mujoco}{47}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Visual MPC successfully solves a wide variety of tasks including multi-objective tasks, such as placing an object on a plate (row 5 and 6), object positioning with obstacle avoidance (row 7) and folding shorts (row 8). \relax }}{12}{figure.caption.13}}
 \newlabel{fig:tile_2}{{12}{12}{Visual MPC successfully solves a wide variety of tasks including multi-objective tasks, such as placing an object on a plate (row 5 and 6), object positioning with obstacle avoidance (row 7) and folding shorts (row 8). \relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{Biographies}{12}{IEEEbiography.0}}
+\@writefile{toc}{\contentsline {subsection}{Frederik Ebert}{12}{IEEEbiography.1}}
+\@writefile{toc}{\contentsline {subsection}{Chelsea Finn}{12}{IEEEbiography.2}}
+\@writefile{toc}{\contentsline {subsection}{Annie Xie}{12}{IEEEbiography.3}}
+\@writefile{toc}{\contentsline {subsection}{Sudeep Dasari}{12}{IEEEbiography.4}}
+\@writefile{toc}{\contentsline {subsection}{Alex Lee}{12}{IEEEbiography.5}}
+\@writefile{toc}{\contentsline {subsection}{Sergey Levine}{12}{IEEEbiography.6}}
 \citation{foresight}
 \citation{foresight}
+\citation{todorov2012mujoco}
+\citation{sna}
 \newlabel{fig:Ng1}{{14a}{13}{Skip connection neural advection (SNA) does not erase or move objects in the background\relax }{figure.caption.18}{}}
 \newlabel{sub@fig:Ng1}{{a}{13}{Skip connection neural advection (SNA) does not erase or move objects in the background\relax }{figure.caption.18}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces  Top rows: Predicted images of arm moving \textit  {in front of} green object with designated pixel (as indicated in \autoref  {fig:desig_pix_bluedot}). Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.\relax }}{13}{figure.caption.18}}
 \newlabel{fig:pix_reappear}{{14}{13}{Top rows: Predicted images of arm moving \textit {in front of} green object with designated pixel (as indicated in \autoref {fig:desig_pix_bluedot}). Bottom rows: Predicted probability distributions $P_{d}(t)$ of designated pixel obtained by repeatedly applying transformations.\relax }{figure.caption.18}{}}
-\@writefile{toc}{\contentsline {section}{Biographies}{13}{IEEEbiography.0}}
-\@writefile{toc}{\contentsline {subsection}{Frederik Ebert}{13}{IEEEbiography.1}}
-\@writefile{toc}{\contentsline {subsection}{Chelsea Finn}{13}{IEEEbiography.2}}
-\@writefile{toc}{\contentsline {subsection}{Annie Xie}{13}{IEEEbiography.3}}
-\@writefile{toc}{\contentsline {subsection}{Sudeep Dasari}{13}{IEEEbiography.4}}
-\@writefile{toc}{\contentsline {subsection}{Alex Lee}{13}{IEEEbiography.5}}
-\@writefile{toc}{\contentsline {subsection}{Sergey Levine}{13}{IEEEbiography.6}}
 \@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Skip Connection Neural Advection Model}{13}{section*.16}}
 \newlabel{sec:skipcon}{{A}{13}{\appendixname \nobreakspace \thesectiondis \\* Skip Connection Neural Advection Model}{section*.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The blue dot indicates the designated pixel\relax }}{13}{figure.caption.17}}
@@ -204,16 +205,14 @@
 \newlabel{sec:folding_sampling}{{B}{13}{\appendixname \nobreakspace \thesectiondis \\* Improved Action Sampling Distributions for Data Collection}{section*.19}{}}
 \@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  C: Improvements of the CEM-Optimizer}{13}{section*.20}}
 \newlabel{sec:cem_improv}{{C}{13}{\appendixname \nobreakspace \thesectiondis \\* Improvements of the CEM-Optimizer}{section*.20}{}}
-\citation{todorov2012mujoco}
-\citation{sna}
-\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  D: Experimental Setup}{14}{section*.21}}
-\newlabel{sec:experiment_setup}{{D}{14}{\appendixname \nobreakspace \thesectiondis \\* Experimental Setup}{section*.21}{}}
-\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  E: Experimental Evaluation}{14}{section*.22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Experiments with multiple-objects rearrangement with occlusion}{14}{subsection.Appendix.E.1}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  D: Experimental Setup}{13}{section*.21}}
+\newlabel{sec:experiment_setup}{{D}{13}{\appendixname \nobreakspace \thesectiondis \\* Experimental Setup}{section*.21}{}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  E: Experimental Evaluation}{13}{section*.22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Experiments with multiple-objects rearrangement with occlusion}{13}{subsection.Appendix.E.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Applying our method to a pushing task. In the first 3 time instants the object behaves unexpectedly, moving down. The tracking then allows the robot to retry, allowing it to eventually bring the object to the goal.}\relax }}{14}{figure.caption.23}}
+\newlabel{fig:push_retry}{{15}{14}{\small {Applying our method to a pushing task. In the first 3 time instants the object behaves unexpectedly, moving down. The tracking then allows the robot to retry, allowing it to eventually bring the object to the goal.}\relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Retrying behavior of our method combining prehensile and non-prehensile manipulation. In the first 4 time instants shown the robot pushes the object. It then loses the object, and decides to grasp it pulling it all the way to the goal. Retrying is enabled by applying the learned registration to both camera views (here we only show the front view).}\relax }}{14}{figure.caption.24}}
+\newlabel{fig:push_grasp}{{16}{14}{\small {Retrying behavior of our method combining prehensile and non-prehensile manipulation. In the first 4 time instants shown the robot pushes the object. It then loses the object, and decides to grasp it pulling it all the way to the goal. Retrying is enabled by applying the learned registration to both camera views (here we only show the front view).}\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Left: Task setup with green dot marking the obstacle. Right, first row: the predicted frames generated by SNA. Second row: the probability distribution of the designated pixel on the \textit  {moving} object (brown stuffed animal). Note that part of the distribution shifts down and left, which is the indicated goal. Third row: the probability distribution of the designated pixel on the obstacle-object (blue power drill). Although the distribution increases in entropy during the occlusion (in the middle), it then recovers and remains on its original position. \relax }}{14}{figure.caption.25}}
+\newlabel{fig:goingaroundocclusion}{{17}{14}{Left: Task setup with green dot marking the obstacle. Right, first row: the predicted frames generated by SNA. Second row: the probability distribution of the designated pixel on the \textit {moving} object (brown stuffed animal). Note that part of the distribution shifts down and left, which is the indicated goal. Third row: the probability distribution of the designated pixel on the obstacle-object (blue power drill). Although the distribution increases in entropy during the occlusion (in the middle), it then recovers and remains on its original position. \relax }{figure.caption.25}{}}
 \@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  F: Simulated Experiments}{14}{section*.26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Applying our method to a pushing task. In the first 3 time instants the object behaves unexpectedly, moving down. The tracking then allows the robot to retry, allowing it to eventually bring the object to the goal.}\relax }}{15}{figure.caption.23}}
-\newlabel{fig:push_retry}{{15}{15}{\small {Applying our method to a pushing task. In the first 3 time instants the object behaves unexpectedly, moving down. The tracking then allows the robot to retry, allowing it to eventually bring the object to the goal.}\relax }{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \relax \fontsize  {9bp}{10bp}\selectfont  {Retrying behavior of our method combining prehensile and non-prehensile manipulation. In the first 4 time instants shown the robot pushes the object. It then loses the object, and decides to grasp it pulling it all the way to the goal. Retrying is enabled by applying the learned registration to both camera views (here we only show the front view).}\relax }}{15}{figure.caption.24}}
-\newlabel{fig:push_grasp}{{16}{15}{\small {Retrying behavior of our method combining prehensile and non-prehensile manipulation. In the first 4 time instants shown the robot pushes the object. It then loses the object, and decides to grasp it pulling it all the way to the goal. Retrying is enabled by applying the learned registration to both camera views (here we only show the front view).}\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Left: Task setup with green dot marking the obstacle. Right, first row: the predicted frames generated by SNA. Second row: the probability distribution of the designated pixel on the \textit  {moving} object (brown stuffed animal). Note that part of the distribution shifts down and left, which is the indicated goal. Third row: the probability distribution of the designated pixel on the obstacle-object (blue power drill). Although the distribution increases in entropy during the occlusion (in the middle), it then recovers and remains on its original position. \relax }}{15}{figure.caption.25}}
-\newlabel{fig:goingaroundocclusion}{{17}{15}{Left: Task setup with green dot marking the obstacle. Right, first row: the predicted frames generated by SNA. Second row: the probability distribution of the designated pixel on the \textit {moving} object (brown stuffed animal). Note that part of the distribution shifts down and left, which is the indicated goal. Third row: the probability distribution of the designated pixel on the obstacle-object (blue power drill). Although the distribution increases in entropy during the occlusion (in the middle), it then recovers and remains on its original position. \relax }{figure.caption.25}{}}
