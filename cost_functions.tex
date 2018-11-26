@@ -41,7 +41,6 @@ The flow map $\hat{F}_{0 \leftarrow t}$ can be used to warp the image of the cur
 \hat{I}_g = \hat{F}_{g \leftarrow t} \diamond  I_t 
 \end{align}
 In essence for a current image $\hat{F}_{0 \leftarrow t}$ puts $I_t$ in correspondence with $I_0$, and $\hat{F}_{g \leftarrow t}$ puts $I_t$ in correspondence with $I_g$. The motivation for registering to both $I_0$ and $I_g$ is to increase accuracy and robustness. In principle, registering to either $I_0$ or $I_g$ is sufficient.
-
 While the registration network is trained to perform a global registration between the images, we only evaluate it at the points $d_0$ and $d_g$ chosen by the user. This results in a cost function that ignores distractors. The flow map produced by the registration network is used to find the pixel locations corresponding to $d_0$ and $d_g$ in the current frame: 
 \begin{align}
 \hat{d}_{0,t} = d_0 + \hat{F}_{0 \leftarrow t}(d_0) &&
