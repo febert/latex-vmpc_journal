@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  28 NOV 2018 11:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.21)  28 NOV 2018 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -732,7 +732,7 @@ nput line 20.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 6.
  [4 <./images_sna/occlusionaware/architecture_2.pdf>]
-<images_rfr/registration_singletime.pdf, id=350, 376.40625pt x 239.89626pt>
+<images_rfr/registration_singletime.pdf, id=351, 376.40625pt x 239.89626pt>
 File: images_rfr/registration_singletime.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_singletime.pdf>
@@ -740,7 +740,7 @@ Package pdftex.def Info: images_rfr/registration_singletime.pdf used on input l
 ine 23.
 (pdftex.def)             Requested size: 177.06071pt x 112.85008pt.
 
-<images_rfr/registration_test_start.pdf, id=355, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_start.pdf, id=356, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_start.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_start.pdf>
@@ -748,7 +748,7 @@ Package pdftex.def Info: images_rfr/registration_test_start.pdf used on input l
 ine 54.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_test_goal.pdf, id=356, 221.82875pt x 122.4575pt>
+<images_rfr/registration_test_goal.pdf, id=357, 221.82875pt x 122.4575pt>
 File: images_rfr/registration_test_goal.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_test_goal.pdf>
@@ -756,7 +756,7 @@ Package pdftex.def Info: images_rfr/registration_test_goal.pdf used on input li
 ne 55.
 (pdftex.def)             Requested size: 88.53229pt x 48.87187pt.
 
-<images_rfr/registration_train.pdf, id=357, 390.45876pt x 229.85875pt>
+<images_rfr/registration_train.pdf, id=358, 390.45876pt x 229.85875pt>
 File: images_rfr/registration_train.pdf Graphic file (type pdf)
 
 <use images_rfr/registration_train.pdf>
@@ -764,7 +764,7 @@ Package pdftex.def Info: images_rfr/registration_train.pdf used on input line 6
 1.
 (pdftex.def)             Requested size: 139.12051pt x 75.81432pt.
 
-<images_rfr/reg_over_time.png, id=359, 1806.75pt x 339.2675pt>
+<images_rfr/reg_over_time.png, id=360, 1806.75pt x 339.2675pt>
 File: images_rfr/reg_over_time.png Graphic file (type png)
 
 <use images_rfr/reg_over_time.png>
@@ -773,7 +773,7 @@ Package pdftex.def Info: images_rfr/reg_over_time.png used on input line 73.
  [5 <./images_rfr/registration_train.pdf> <./images_rfr/registration_singletime
 .pdf> <./images_rfr/registration_test_start.pdf> <./images_rfr/registration_tes
 t_goal.pdf>]
-<images_cls/cls_fig_2.jpeg, id=449, 758.835pt x 324.21124pt>
+<images_cls/cls_fig_2.jpeg, id=450, 758.835pt x 324.21124pt>
 File: images_cls/cls_fig_2.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_fig_2.jpeg>
@@ -799,7 +799,7 @@ Overfull \hbox (0.97163pt too wide) in paragraph at lines 27--30
  []
 
 [7 <./images_cls/cls_fig_2.jpeg>]) (./scaling_up.tex
-<images_general/robot_setup_scheme.pdf, id=478, 1027.84pt x 770.88pt>
+<images_general/robot_setup_scheme.pdf, id=479, 1027.84pt x 770.88pt>
 File: images_general/robot_setup_scheme.pdf Graphic file (type pdf)
 
 <use images_general/robot_setup_scheme.pdf>
@@ -817,26 +817,26 @@ Underfull \hbox (badness 2393) in paragraph at lines 19--21
  []
 
 ) (./experiments.tex [8 <./images_general/robot_setup_scheme.pdf>]
-<images_cls/cls_results_3.jpeg, id=519, 935.495pt x 390.45876pt>
+<images_cls/cls_results_3.jpeg, id=520, 935.495pt x 390.45876pt>
 File: images_cls/cls_results_3.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_results_3.jpeg>
 Package pdftex.def Info: images_cls/cls_results_3.jpeg used on input line 70.
 (pdftex.def)             Requested size: 252.94499pt x 105.57422pt.
  [9 <./images_cls/cls_results_3.jpeg>]
-<images_cls/cls_charts_2.jpeg, id=534, 673.51625pt x 271.0125pt>
+<images_cls/cls_charts_2.jpeg, id=535, 673.51625pt x 271.0125pt>
 File: images_cls/cls_charts_2.jpeg Graphic file (type jpg)
 
 <use images_cls/cls_charts_2.jpeg>
 Package pdftex.def Info: images_cls/cls_charts_2.jpeg used on input line 87.
 (pdftex.def)             Requested size: 248.60658pt x 100.03734pt.
  [10 <./images_cls/cls_charts_2.jpeg>]
-<images_general/tile_2.png, id=553, 2007.5pt x 967.615pt>
+<images_general/tile_2.png, id=554, 2007.5pt x 967.615pt>
 File: images_general/tile_2.png Graphic file (type png)
 
 <use images_general/tile_2.png>
 Package pdftex.def Info: images_general/tile_2.png used on input line 116.
-(pdftex.def)             Requested size: 362.55292pt x 174.739pt.
+(pdftex.def)             Requested size: 252.94499pt x 121.91127pt.
 ) (./main.bbl
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 77.
 
@@ -847,12 +847,12 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <8.03> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
-
+ [11 <./images_general/tile_2.png>]
 Underfull \hbox (badness 2856) in paragraph at lines 114--117
 []\OT1/ppl/m/n/8.03 M. Zhang, S. Vikram, L. Smith, P. Abbeel, M. J. John-
  []
 
-[11]
+
 Underfull \hbox (badness 2503) in paragraph at lines 157--160
 []\OT1/ppl/m/n/8.03 A. Zeng, S. Song, S. Welker, J. Lee, A. Ro-driguez, and
  []
@@ -863,12 +863,15 @@ Underfull \hbox (badness 1590) in paragraph at lines 162--165
  []
 
 
+Underfull \vbox (badness 1394) has occurred while \output is active []
+
+
 Underfull \hbox (badness 2351) in paragraph at lines 265--267
 []\OT1/ppl/m/n/8.03 A. X. Lee, R. Zhang, F. Ebert, P. Abbeel, C. Finn, and
  []
 
-) [12 <./images_general/tile_2.png>] (./appendix.tex
-<images_sna/occlusionaware/img_desigpixb0.png, id=585, 100.375pt x 100.375pt>
+) (./appendix.tex [12]
+<images_sna/occlusionaware/img_desigpixb0.png, id=587, 100.375pt x 100.375pt>
 File: images_sna/occlusionaware/img_desigpixb0.png Graphic file (type png)
 
 <use images_sna/occlusionaware/img_desigpixb0.png>
@@ -885,8 +888,8 @@ Underfull \hbox (badness 1694) in paragraph at lines 19--20
 \OT1/ppl/m/n/9.53561 the skip con-nec-tion neu-ral ad-
  []
 
-[13 <./images_sna/occlusionaware/img_desigpixb0.png>]
-<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=600, 5
+
+<images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png, id=592, 5
 13.92pt x 128.48pt>
 File: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png Graph
 ic file (type png)
@@ -896,7 +899,7 @@ Package pdftex.def Info: images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0
 _overtime.png used on input line 25.
 (pdftex.def)             Requested size: 227.64894pt x 56.91168pt.
 
-<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=601, 514.92375pt
+<images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png, id=593, 514.92375pt
  x 128.48pt>
 File: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png Graphic file (t
 ype png)
@@ -905,14 +908,17 @@ Package pdftex.def Info: images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.
 png used on input line 31.
 (pdftex.def)             Requested size: 227.64894pt x 56.79994pt.
 
-<images_rfr/push_correction.pdf, id=607, 995.84645pt x 85.35826pt>
+[13 <./images_sna/occlusionaware/img_desigpixb0.png> <./images_sna/occlusionawa
+re/cdna_1ststep_bckgd_gen_pixb0_overtime.png> <./images_sna/occlusionaware/orig
+_dna_gen_pixb0_overtime.png>]
+<images_rfr/push_correction.pdf, id=612, 995.84645pt x 85.35826pt>
 File: images_rfr/push_correction.pdf Graphic file (type pdf)
 
 <use images_rfr/push_correction.pdf>
 Package pdftex.def Info: images_rfr/push_correction.pdf used on input line 60.
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_rfr/pick_place_plush.pdf, id=608, 995.84645pt x 85.35826pt>
+<images_rfr/pick_place_plush.pdf, id=613, 995.84645pt x 85.35826pt>
 File: images_rfr/pick_place_plush.pdf Graphic file (type pdf)
 
 <use images_rfr/pick_place_plush.pdf>
@@ -920,7 +926,7 @@ Package pdftex.def Info: images_rfr/pick_place_plush.pdf used on input line 67.
 
 (pdftex.def)             Requested size: 517.935pt x 44.39566pt.
 
-<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=610, 1280.37404pt x 
+<images_sna/multiobject_qualitative/avoid_obstacle.pdf, id=615, 1280.37404pt x 
 227.62204pt>
 File: images_sna/multiobject_qualitative/avoid_obstacle.pdf Graphic file (type 
 pdf)
@@ -931,9 +937,9 @@ used on input line 78.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 682.
 
-[14 <./images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png> <./
-images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png>] [15 <./images_rfr/p
-ush_correction.pdf> <./images_rfr/pick_place_plush.pdf
+[14
+
+] [15 <./images_rfr/push_correction.pdf> <./images_rfr/pick_place_plush.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images_rfr/pick_place_plush.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
@@ -954,7 +960,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 682.
 Here is how much of TeX's memory you used:
  10855 strings out of 493029
  167504 string characters out of 6136234
- 287634 words of memory out of 5000000
+ 287653 words of memory out of 5000000
  14006 multiletter control sequences out of 15000+600000
  60351 words of font info for 152 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -985,10 +991,10 @@ dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pal
 atino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.
 pfb>
-Output written on main.pdf (15 pages, 9113273 bytes).
+Output written on main.pdf (15 pages, 9113169 bytes).
 PDF statistics:
- 776 PDF objects out of 1000 (max. 8388607)
- 651 compressed objects within 7 object streams
+ 777 PDF objects out of 1000 (max. 8388607)
+ 652 compressed objects within 7 object streams
  145 named destinations out of 1000 (max. 500000)
  385 words of extra memory for PDF output out of 10000 (max. 10000000)
 
