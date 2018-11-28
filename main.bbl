@@ -41,6 +41,14 @@ D.~Silver, T.~Hubert, J.~Schrittwieser, I.~Antonoglou, M.~Lai, A.~Guez,
   and shogi by self-play with a general reinforcement learning algorithm,''
   \emph{arXiv preprint arXiv:1712.01815}, 2017.
 
+\bibitem{predictionandbrain}
+\BIBentryALTinterwordspacing
+A.~Bubic, D.~Y. Von~Cramon, and R.~Schubotz, ``Prediction, cognition and the
+  brain,'' \emph{Frontiers in Human Neuroscience}, vol.~4, p.~25, 2010.
+  [Online]. Available:
+  \url{https://www.frontiersin.org/article/10.3389/fnhum.2010.00025}
+\BIBentrySTDinterwordspacing
+
 \bibitem{foresight}
 C.~Finn and S.~Levine, ``Deep visual foresight for planning robot motion,'' in
   \emph{Robotics and Automation (ICRA), 2017 IEEE International Conference on},
@@ -107,6 +115,10 @@ M.~Zhang, S.~Vikram, L.~Smith, P.~Abbeel, M.~J. Johnson, and S.~Levine,
   ``Solar: Deep structured latent representations for model-based reinforcement
   learning,'' \emph{arXiv preprint arXiv:1808.09105}, 2018.
 
+\bibitem{se3}
+A.~Byravan and D.~Fox, ``Se3-nets: Learning rigid body motion using deep neural
+  networks,'' \emph{arXiv preprint arXiv:1606.02378}, 2016.
+
 \bibitem{agrawal2016learning}
 P.~Agrawal, A.~V. Nair, P.~Abbeel, J.~Malik, and S.~Levine, ``Learning to poke
   by poking: Experiential learning of intuitive physics,'' in \emph{Advances in
@@ -118,12 +130,6 @@ A.~Nair, D.~Chen, P.~Agrawal, P.~Isola, P.~Abbeel, J.~Malik, and S.~Levine,
   manipulation,'' in \emph{Robotics and Automation (ICRA), 2017 IEEE
   International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2017, pp. 2146--2153.
-
-\bibitem{mottaghi2016happens}
-R.~Mottaghi, M.~Rastegari, A.~Gupta, and A.~Farhadi, ``“what happens if...”
-  learning to predict the effect of forces in images,'' in \emph{European
-  Conference on Computer Vision}.\hskip 1em plus 0.5em minus 0.4em\relax
-  Springer, 2016, pp. 269--285.
 
 \bibitem{lerrel}
 L.~Pinto and A.~Gupta, ``Supersizing self-supervision: Learning to grasp from
@@ -216,9 +222,9 @@ W.~Lotter, G.~Kreiman, and D.~Cox, ``Deep predictive coding networks for video
 B.~De~Brabandere, X.~Jia, T.~Tuytelaars, and L.~Van~Gool, ``Dynamic filter
   networks,'' in \emph{Neural Information Processing Systems (NIPS)}, 2016.
 
-\bibitem{se3}
-A.~Byravan and D.~Fox, ``Se3-nets: Learning rigid body motion using deep neural
-  networks,'' \emph{arXiv preprint arXiv:1606.02378}, 2016.
+\bibitem{betts1998survey}
+J.~T. Betts, ``Survey of numerical methods for trajectory optimization,''
+  \emph{Journal of guidance, control, and dynamics}, 1998.
 
 \bibitem{zhou2016view}
 T.~Zhou, S.~Tulsiani, W.~Sun, J.~Malik, and A.~A. Efros, ``View synthesis by
@@ -254,6 +260,27 @@ B.~Babenko, M.-H. Yang, and S.~Belongie, ``Visual tracking with online multiple
   instance learning,'' in \emph{Computer Vision and Pattern Recognition, 2009.
   CVPR 2009. IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2009, pp. 983--990.
+
+\bibitem{savp}
+A.~X. Lee, R.~Zhang, F.~Ebert, P.~Abbeel, C.~Finn, and S.~Levine, ``Stochastic
+  adversarial video prediction,'' \emph{arXiv preprint arXiv:1804.01523}, 2018.
+
+\bibitem{instancenorm}
+D.~Ulyanov, A.~Vedaldi, and V.~S. Lempitsky, ``Instance normalization: The
+  missing ingredient for fast stylization,'' \emph{arXiv preprint
+  arXiv:1607.08022}, 2016.
+
+\bibitem{odena2016deconvolution}
+\BIBentryALTinterwordspacing
+A.~Odena, V.~Dumoulin, and C.~Olah, ``Deconvolution and checkerboard
+  artifacts,'' \emph{Distill}, 2016. [Online]. Available:
+  \url{http://distill.pub/2016/deconv-checkerboard}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Niklaus_ICCV_2017}
+S.~Niklaus, L.~Mai, and F.~Liu, ``Video frame interpolation via adaptive
+  separable convolution,'' in \emph{International Conference on Computer Vision
+  (ICCV)}, 2017.
 
 \bibitem{todorov2012mujoco}
 E.~Todorov, T.~Erez, and Y.~Tassa, ``Mujoco: A physics engine for model-based
