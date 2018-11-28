@@ -1,3 +1,5 @@
+\newpage
+
 \section{Skip Connection Neural Advection Model}
 \label{sec:skipcon}
 \begin{wrapfigure}{r}{.37\columnwidth}
@@ -6,6 +8,13 @@
 	\caption{The blue dot indicates the designated pixel}
 	\label{fig:desig_pix_bluedot}
 \end{wrapfigure}
+
+Our video prediction model, shown in ~\autoref{fig:prediction_model}, is inspired by the dynamic neural advection (DNA) model proposed by~\cite{finn_nips} and it is a variant of the SNA model proposed by~\cite{sna}. The model uses a convolutional LSTM \cite{} to predict future frames. The prediction is initialized with an initial sequence of 2 ground truth frames, and predicts 13 futures frames. The model predicts these frames by iteratively making next-frame predictions and feeding those predictions back to itself. Each predicted frame, is given by a compositing layer, which composes intermediate frames with predicted compositing masks. The intermediate frames include the previous 2 frames and transformed versions them. To easily allow various transformations for different parts of the image, we predict 8 transformed frames, 4 of which are the transformed from the previous frame, and the other 4 from the frame of 2 steps in the past. These intermediate frames are then combined with compositing masks, which are also predicted by the convolutional LSTM. For simplicity, we collectively refer to these transformations as a single transformation $\hat{F}_{t+1 \leftarrow t}$ in~\autoref{simple_dna}. In addition, the first frame of the sequence is also given as one of the intermediate frames~\cite{sna}.
+
+To enable action conditioning, the robot actions are also given to the generator. The action is passed to all the convolutional layers of the main network, by concatenating it along the channel dimension of the inputs of these layers. Since they are vectors with no spatial dimensions, they are replicated spatially to match the spatial dimensions of the inputs.
+
+The SNA variant that we use incorporate the architectural improvements proposed by~\cite{savp}. Each convolutional layer is followed by instance normalization (Ulyanov et al., 2016) and ReLU activations. We also use instance normalization on the LSTM pre-activations (i.e., the input, forget, and output gates, as well as the transformed and next cell of the LSTM). In addition, we modify the spatial downsampling and upsampling mechanisms. Standard subsampling and upsampling between convolutions is known to produce artifacts for dense image generation tasks (Odena et al., 2016; Zhao et al., 2017; Niklaus et al., 2017). In the encoding layers, we reduce the spatial resolution of the feature maps by average pooling, and in the decoding layers, we increase the resolution by using bilinear interpolation. All convolutions in the generator use a stride of 1. In the case of the action-conditioned dataset, actions are concatenated to the inputs of all the convolutional layers of the main network, as opposed to only the bottleneck.
+
 
 We provide an example of the skip connection neural advection (SNA) model recovering from occlusion in \autoref{fig:pix_reappear}. In this figure, the arm is predicted to move in front of the designated pixel, marked in blue in \autoref{fig:desig_pix_bluedot}. The predictions of the DNA model, shown in figure \autoref{fig:pix_reappear}(b), contain incorrect motion of the marked object, as shown in the heatmaps visualizing $\hat{P}_t$, although the arm actually passes in front of it. This is because the DNA model cannot recover information about an object that it has `overwritten' during its predictions, causing the model to predict that the pixel \emph{moves with the arm}. We identified this as one of the major causes of planning failure using the DNA model. By contrast our SNA model predicts that the occluded object will not move, shown in figure  \autoref{fig:pix_reappear}(a).
 
@@ -30,12 +39,9 @@ We provide an example of the skip connection neural advection (SNA) model recove
 	\label{fig:pix_reappear}
 \end{figure}
 
-
-\edit{
 \section{Improved Action Sampling Distributions for Data Collection}
 \label{sec:folding_sampling}
 In order to collect meaningful interaction data for learning folding of deformable objects such as towels and cloth, we found that the grasping primitive can be slightly adapted to increase the likelihood of encountering states where cloths are actually folded. When using actions sampled from a simple distribution or the previously-described distribution, clothing would become tangled up. To improve the efficiency of folding cloths we use an action primitive similar to the grasping primitive, but additionally we reduce lateral motion of the end-effector when the gripper is close to the table, thus reducing events where cloths become tangled up.
-}
 
 \section{Improvements of the CEM-Optimizer}
 \label{sec:cem_improv}
