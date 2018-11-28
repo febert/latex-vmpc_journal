@@ -7,7 +7,7 @@ The key to generalization is diversity. When deployed in a narrow, closed-world 
 Learning skills in diverse  environments, such as the real world, presents a number of significant challenges: external reward feedback is extremely sparse or non-existent, and the agent has only indirect access to the state of the world through its senses, which, in the case of a robot, might correspond to cameras and joint encoders.
 
 
-We approach the problem of learning generalizable behavior in the real world from the standpoint of sensory prediction. Prediction is often considered a fundamental component of intelligence. Through prediction, it is possible to learn useful concepts about the world even from a raw stream of sensory observations, such as images from a camera. If we predict raw sensory observations directly, we do not need to assume availability of low-dimensional state information or an extrinsic reward signal.  Image observations are both information-rich and high-dimensional, presenting both an opportunity and a challenge. Future observations provide a substantial amount of supervisory information for a machine learning algorithm. However, the predictive model must have the capacity to predict these high-dimensional observations, and the control algorithm must be able to use such a model to effectively select actions to accomplish human-specified goals.  Examples of such goals are shown in figure \ref{fig:example_traj}.
+We approach the problem of learning generalizable behavior in the real world from the standpoint of sensory prediction. Prediction is often considered a fundamental component of intelligence \cite{predictionandbrain}. Through prediction, it is possible to learn useful concepts about the world even from a raw stream of sensory observations, such as images from a camera. If we predict raw sensory observations directly, we do not need to assume availability of low-dimensional state information or an extrinsic reward signal.  Image observations are both information-rich and high-dimensional, presenting both an opportunity and a challenge. Future observations provide a substantial amount of supervisory information for a machine learning algorithm. However, the predictive model must have the capacity to predict these high-dimensional observations, and the control algorithm must be able to use such a model to effectively select actions to accomplish human-specified goals.  Examples of such goals are shown in figure \ref{fig:example_traj}.
 
 
 %Instead of focusing on mastery of highly-specialized skills in closed-world environments, here we focus on \emph{generalization} in diverse environments.
@@ -39,7 +39,7 @@ This article combines and extends material from several prior conference papers~
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth,trim={0mm 0 0 0},clip]{images_general/overview_roughdraft.png}
-\caption{\small{Overview of visual MPC. At training time (top) interaction data is collected autonomously and used to train a video-prediction model. At test time (bottom) this model is used for sampling-based planning. In this work we discuss three different choices for the planning objective.}}
+\caption{\small{Overview of visual MPC. (top) At training time, interaction data is collected autonomously and used to train a video-prediction model. (bottom) At test time, this model is used for sampling-based planning. In this work we discuss three different choices for the planning objective.}}
 \label{fig:overview}
 \end{figure}
 
