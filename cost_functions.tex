@@ -5,7 +5,7 @@ In this section, we discuss how to specify and evaluate goals for planning. One 
 
 \subsection{Pixel Distance Cost}
 \label{subsec:pixel_dist_cost}
-A convenient way to define a robot task is by choosing one or more \emph{designated pixels} in the robot's camera view and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left. \edit{This type of objective is general, in that it can define any object relocation task on the viewing plane. Further, success can be measured quantitatively, as detailed in section \ref{sec:experiments}.} 
+A convenient way to define a robot task is by choosing one or more \emph{designated pixels} in the robot's camera view and choosing a destination where each pixel should be moved. For example, the user might select a pixel on an object and ask the robot to move it 10 cm to the left. This type of objective is general, in that it can define any object relocation task on the viewing plane. Further, success can be measured quantitatively, as detailed in section \ref{sec:experiments}.
 Given a distribution over pixel positions $P_0$, our model predicts distributions over its positions $P_t$ at time $t \in \{ 1, \dots, T \}$. One way of defining the cost per time-step $c_t$ is by using the expected Euclidean distance to the goal point $d_g$, which is straight-forward to calculate from $P_t$ and $g$, as follows:
  \begin{align}
 c = \sum_{t = 1, \dots, T} c_t =  \sum_{t = 1, \dots, T} \mathbb{E}_{\hat{d}_{t} \sim P_{t}} \left[\|\hat{d}_{t} - d_{g}\|_2\right] 

@@ -3,7 +3,7 @@
 \BOOKMARK [1][-]{section.3}{Overview}{}% 3
 \BOOKMARK [1][-]{section.4}{Video Prediction for Control}{}% 4
 \BOOKMARK [1][-]{section.5}{Planning Cost Functions}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Pixel-Distance Cost}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.1}{Pixel Distance Cost}{section.5}% 6
 \BOOKMARK [2][-]{subsection.5.2}{Registration-Based Cost}{section.5}% 7
 \BOOKMARK [2][-]{subsection.5.3}{Classifier-Based Cost Functions}{section.5}% 8
 \BOOKMARK [2][-]{subsection.5.4}{When to Use Which Cost Function?}{section.5}% 9
