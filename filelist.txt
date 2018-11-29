@@ -1,0 +1,117 @@
+IEEEtran.cls    2015/08/26 V1.8b by Michael Shell
+  ot1ppl.fd    2001/06/04 font definitions for OT1/ppl.
+   color.sty    1999/02/16
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+  pdftex.def    2011/05/27 v0.06d Graphics/color for pdfTeX
+infwarerr.sty    2010/04/08 v1.3 Providing info/warning/error messages (HO)
+ ltxcmds.sty    2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+   babel.sty    2016/02/24 3.9q The Babel package
+ english.ldf    2012/08/20 v3.3p English support from the babel system
+graphicx.sty    2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+  keyval.sty    2014/10/28 v1.15 key=value parser (DPC)
+graphics.sty    2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+    trig.sty    2016/01/03 v1.10 sin cos tan (DPC)
+graphics.cfg    2010/04/23 v1.9 graphics configuration of TeX Live
+ caption.sty    2016/02/21 v3.3-144 Customizing captions (AR)
+caption3.sty    2016/02/04 v1.7-139 caption3 kernel (AR)
+subcaption.sty    2016/02/20 v1.1-142 Sub-captions (AR)
+ wrapfig.sty    2003/01/31  v 3.6
+hyperref.sty    2012/11/06 v6.83m Hypertext links for LaTeX
+hobsub-hyperref.sty    2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+hobsub-generic.sty    2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+  hobsub.sty    2012/05/28 v1.13 Construct package bundles (HO)
+ifluatex.sty    2010/03/01 v1.3 Provides the ifluatex switch (HO)
+  ifvtex.sty    2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+ intcalc.sty    2007/09/27 v1.1 Expandable calculations with integers (HO)
+   ifpdf.sty    2011/01/30 v2.3 Provides the ifpdf switch (HO)
+etexcmds.sty    2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+kvsetkeys.sty    2012/04/25 v1.16 Key value parser (HO)
+kvdefinekeys.sty    2011/04/07 v1.3 Define keys (HO)
+pdftexcmds.sty    2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
+pdfescape.sty    2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+bigintcalc.sty    2012/04/08 v1.3 Expandable calculations on big integers (HO)
+  bitset.sty    2011/01/30 v1.1 Handle bit-vector datatype (HO)
+uniquecounter.sty    2011/01/30 v1.2 Provide unlimited unique counter (HO)
+letltxmacro.sty    2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+ hopatch.sty    2012/05/28 v1.2 Wrapper for package hooks (HO)
+xcolor-patch.sty    2011/01/30 xcolor patch
+atveryend.sty    2011/06/30 v1.8 Hooks at the very end of document (HO)
+atbegshi.sty    2011/10/05 v1.16 At begin shipout hook (HO)
+refcount.sty    2011/10/16 v3.4 Data extraction from label references (HO)
+ hycolor.sty    2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+ ifxetex.sty    2010/09/12 v0.6 Provides ifxetex conditional
+ auxhook.sty    2011/03/04 v1.3 Hooks for auxiliary files (HO)
+kvoptions.sty    2011/06/30 v3.11 Key value format for package options (HO)
+  pd1enc.def    2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+hyperref.cfg    2002/06/06 v1.2 hyperref configuration of TeXLive
+     url.sty    2013/09/16  ver 3.4  Verb mode for urls, etc.
+ hpdftex.def    2012/11/06 v6.83m Hyperref driver for pdfTeX
+rerunfilecheck.sty    2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+booktabs.sty    2005/04/14 v1.61803 publication quality tables
+makecell.sty    2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+   array.sty    2014/10/28 v2.4c Tabular extension package (FMi)
+algorithm.sty    2009/08/24 v0.1 Document Style `algorithm' - floating environm
+ent
+   float.sty    2001/11/08 v1.3d Float enhancements (AL)
+  ifthen.sty    2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+algpseudocode.sty    
+algorithmicx.sty    2005/04/27 v1.2 Algorithmicx
+varwidth.sty    2009/03/30 ver 0.92;  Variable-width minipages
+    etex.sty    2016/01/11 v2.6 eTeX basic definition package (PEB,DPC)
+    defs.tex
+  xcolor.sty    2007/01/21 v2.11 LaTeX color extensions (UK)
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+    cite.sty    2015/02/27  v 5.5
+ amsmath.sty    2016/03/03 v2.15a AMS math features
+ amstext.sty    2000/06/29 v2.01 AMS text
+  amsgen.sty    1999/11/30 v2.0 generic functions
+  amsbsy.sty    1999/11/29 v1.2d Bold Symbols
+  amsopn.sty    1999/12/14 v2.01 operator names
+amsfonts.sty    2013/01/14 v3.01 Basic AMSFonts support
+mathtools.sty    2015/11/12 v1.18 mathematical typesetting tools
+    calc.sty    2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+ mhsetup.sty    2010/01/21 v1.2a programming setup (MH)
+   cuted.sty    2012/10/04 v1.5 Mixing onecolumn and twocolumn modes
+supp-pdf.mkii
+epstopdf-base.sty    2010/02/09 v2.5 Base part for package epstopdf
+  grfext.sty    2010/08/19 v1.1 Manage graphics extensions (HO)
+epstopdf-sys.cfg    2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+ nameref.sty    2012/10/27 v2.43 Cross-referencing by name of section
+gettitlestring.sty    2010/12/03 v1.4 Cleanup title references (HO)
+    main.out
+    main.out
+  ot1phv.fd    2001/06/04 scalable font definitions for OT1/phv.
+    umsa.fd    2013/01/14 v3.01 AMS symbols A
+    umsb.fd    2013/01/14 v3.01 AMS symbols B
+    upzd.fd    2001/06/04 font definitions for U/pzd.
+images_general/tile_row.png
+   intro.tex
+images_general/overview_roughdraft.png
+related_work.tex
+preliminaries.tex
+video_prediction.tex
+images_general/prediction_model.pdf
+images_sna/occlusionaware/architecture_2.pdf
+cost_functions.tex
+images_rfr/registration_singletime.pdf
+images_rfr/registration_test_start.pdf
+images_rfr/registration_test_goal.pdf
+images_rfr/registration_train.pdf
+images_rfr/reg_over_time.png
+images_cls/cls_fig_2.jpeg
+optimizer.tex
+scaling_up.tex
+images_general/robot_setup_scheme.pdf
+experiments.tex
+images_cls/cls_results_3.jpeg
+images_cls/cls_charts_2.jpeg
+images_general/2colfig.png
+    main.bbl
+  omsppl.fd    
+appendix.tex
+images_sna/occlusionaware/img_desigpixb0.png
+images_sna/occlusionaware/cdna_1ststep_bckgd_gen_pixb0_overtime.png
+images_sna/occlusionaware/orig_dna_gen_pixb0_overtime.png
+images_rfr/push_correction.pdf
+images_rfr/pick_place_plush.pdf
+images_sna/multiobject_qualitative/avoid_obstacle.pdf
