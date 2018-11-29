@@ -102,6 +102,14 @@ We found that the dynamics model often generalizes well to objects outside of th
 We found that the model sometimes exhibits confusion about whether an object follows the dynamics of a cloth or rigid objects, which is likely caused by a lack of training data in the particular regime. To overcome this issue we add a binary token to the state vector indicating whether the object in the bin is hard or soft. 
 We expect that adding more training data would remove the need for this indicator and allow the model to infer material properties directly from images.
 
+\begin{figure*}
+	\centering
+	\includegraphics[width=2.05\columnwidth]{images_general/2colfig.png}
+	\caption{Visual MPC successfully solves a wide variety of tasks including multi-objective tasks, such as placing an object on a plate (row 5 and 6), object positioning with obstacle avoidance (row 7) and folding shorts (row 8). Zoom in on PDF.   
+		\label{fig:tile_2}}
+\end{figure*}
+% was: {images_general/tile_2.png}
+
 The ability to specify tasks in multiple different ways adds to the flexibility of the proposed system. Using designated pixels, object positioning tasks can be defined in 3D space, as shown in Task 1 and 2 in Figure~\ref{fig:example_traj} and task 5-6 in Figure~\ref{fig:tile_2}. When adding a goal image, the positioning accuracy can be improved by utilizing the registration scheme discussed in Section \ref{subsec:reg_cost}.
 For tasks where we care about \emph{relative} rather than absolute positioning, a meta-learned classifier can be used, as discussed in Section \ref{subsec:class_cost}.
 
@@ -111,12 +119,7 @@ The quantitative comparison is shown in Table \ref{table:cloth_folding}, illustr
 Visual MPC succeeded for most of the tasks. While the baseline succeeded for some of the cloth folding tasks, it failed for almost all of the object relocation tasks. This indicates that an implicit understanding of physics, as captured by our video prediction models, is indeed essential for performing this diverse range of object relocation and manipulation tasks, and the model must perform non-trivial physical reasoning beyond simply placing and moving the end-effector.
 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\columnwidth]{images_general/tile_2.png}
-	\caption{Visual MPC successfully solves a wide variety of tasks including multi-objective tasks, such as placing an object on a plate (row 5 and 6), object positioning with obstacle avoidance (row 7) and folding shorts (row 8). \textbf{Zoom in on PDF}.   
-		\label{fig:tile_2}}
-\end{figure}
+
 
 \label{subsec:cloth_folding_data}
 \begin{table}
@@ -138,4 +141,4 @@ Visual MPC succeeded for most of the tasks. While the baseline succeeded for som
 \subsection{Discussion of Experimental Results}
 
 Generalization to many distinct tasks in visually diverse settings is arguably one of the biggest challenges in reinforcement learning and robotics today. While deep learning has relieved us from much of the problem-specific engineering, most of the works either require extensive amounts of labeled data or focus on the mastery of single tasks while relying on human-provided reward signals. 
-From the experiments with visual MPC, especially the qualitative examples and the multi-task experiment, we can conclude that visual MPC \emph{generalizes} to a wide range of tasks it has never seen during training. This is in contrast to many model-free approaches for robotic control which often struggle to perform well on novel tasks. Most of the generalization performance is likely a result of large-scale self-supervised learning, which allows to acquire a rich dynamics model of the environment. 
+From the experiments with visual MPC, especially the qualitative examples and the multi-task experiment, we can conclude that visual MPC \emph{generalizes} to a wide range of tasks it has never seen during training. This is in contrast to many model-free approaches for robotic control which often struggle to perform well on novel tasks. Most of the generalization performance is likely a result of large-scale self-supervised learning, which allows to acquire a rich, task-agnostic dynamics model of the environment. 

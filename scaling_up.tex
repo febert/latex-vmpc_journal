@@ -10,14 +10,14 @@ It is worth noting that, other than this reflex, no grasping-specific or folding
 
 \section{Multi-View Visual MPC}
 \label{sec:multiview}
-\begin{wrapfigure}{r}{.45\columnwidth}
+\begin{wrapfigure}{r}{.5\columnwidth}
 	\centering
-	\includegraphics[width=0.45\columnwidth]{images_general/robot_setup_scheme.pdf}
+	\includegraphics[width=0.5\columnwidth]{images_general/robot_setup_scheme.pdf}
 	\caption{\small{Robot setup, with 2 standard web-cams arranged at different viewing angles.}}	\label{fig:robot_setup}
 \end{wrapfigure}
 
 The visual MPC algorithm as described so far is only able to solve manipulation tasks specified in 2D, like rearranging objects on the table. However, this can impose severe limitations; for example, a task such as lifting an object to a particular position in 3D cannot be fully specified with a single view, since it would be ambiguous. 
-We use a combination of two views, taken from two cameras arranged appropriately, to jointly define a 3D task. Figure \ref{fig:robot_setup} shows the robot setup, including two standard webcams observing the workspace from different angles. The registration method described in the previous section is used separately per view to allow for dynamic retrying and solving temporally extended tasks. The planning costs from each view are combined using weighted averaging where the weights are provided by the registration network (see equation \ref{eqn:cost_avg}). The the first two rows of figure \ref{fig:tile_2} show a 3D object positioning task, where an object needs to be positioned at a particular point in 3D space. This task needs two views to be fully specified.
+We use a combination of two views, taken from two cameras arranged appropriately, to jointly define a 3D task. Figure \ref{fig:robot_setup} shows the robot setup, including two standard webcams observing the workspace from different angles. The registration method described in the previous section is used separately per view to allow for dynamic retrying and solving temporally extended tasks. The planning costs from each view are combined using weighted averaging where the weights are provided by the registration network (see equation \ref{eqn:cost_avg}). Rows 5 and 6 of figure \ref{fig:tile_2} show a 3D object positioning task, where an object needs to be positioned at a particular point in 3D space. This task needs two views to be fully specified.
 
 
 
