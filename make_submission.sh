@@ -1,7 +1,7 @@
 output_dir=submission
 mkdir -p ${output_dir}
 
-for fname in IEEEtran.cls defs.tex bare_adv.tex bare_conf_compsoc.tex bare_jrnl_compsoc.tex mybib.bib; do #list all .tex files that are needed here
+for fname in IEEEtran.cls defs.tex bare_adv.tex bare_conf_compsoc.tex bare_jrnl_compsoc.tex mybib.bib main.bbl; do #list all .tex files that are needed here
 	echo "copying file $fname"
 	cp $fname ${output_dir}/${fname}
 done
